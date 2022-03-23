@@ -1,0 +1,43 @@
+.profile-pic{
+  border-radius: 50%;
+  width: 8em;
+}
+.pic-preview{
+  max-width:8em;
+  max-height:8em;
+}
+.post-pic{
+  max-width:14em;
+  max-height:14em;
+}
+.profile-pic-sm{
+  border-radius: 50%;
+  width: 4em;
+}
+.home-logo{
+  width: 8em;
+  top:50%;
+  position: relative;
+}
+.banner-pic{
+  min-width: 100%;
+}
+.blog-tease{
+  width:80%;
+}
+
+.blog-main-img{
+  max-height:85vh;
+  border-radius:5px;
+}
+
+.blog-dyptich{
+  max-height: 85vh;
+  max-width:45vw;
+  border-radius:5px;
+}
+
+.calculator-icon{
+  max-width:55%;
+  border-radius:5px;
+}

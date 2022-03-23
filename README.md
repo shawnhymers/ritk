@@ -1,3 +1,16 @@
+cd Documents/websites/ritk && npm start
+
+
+
+cd Documents/websites/ritk && npm install react-icons --save
+cd Documents/websites/ritk && npm i react-bootstrap
+
+cd Documents/websites/ritk && npm i eact-router-dom
+
+cd Documents/websites/ritk && npm install --save redux
+cd Documents/websites/ritk && npm install react-router-dom --save
+cd Documents/websites/ritk && npm install react-router-dom
+cd Documents/websites/ritk && npm install redux-thunk
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

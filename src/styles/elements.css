@@ -1,0 +1,23 @@
+
+.home-image{
+  width:100vw;
+  margin-top:10vh;
+}
+.home-header{
+  min-height: 10vh;
+}
+.section-break{
+  width:100vw;
+  margin: none;
+}
+.page-segment{
+  min-height: 100vh;
+}
+.dropdown-item{
+  min-width:25vw;
+  overflow-x: hidden;
+
+}
+.dropdown-item:hover{
+  background-color: #91A98F;
+}
