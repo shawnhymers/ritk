@@ -2,6 +2,7 @@ import  {  Component } from "react";
 import React from "react";
 import DesktopApp from "./desktop/desktopApp"
 import MobileApp from "./mobile/mobileApp"
+import OutcomeMessage from"./standardComponents/outcomeMessage"
 // import { Container, Row, Col, Button} from 'react-bootstrap';
 class Main extends Component {
   // Setting up initial state
@@ -9,6 +10,7 @@ class Main extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      showOutcomeMessage:false,
       flights:[],
       transports:[],
       food:[],
@@ -61,25 +63,44 @@ class Main extends Component {
     if (data.type==='flight') {
       console.log('adding flight')
       console.log(data)
-      this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint})
+      this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint,
+                     showOutcomeMessage:true,
+                     outcomeMessageType:'positive',
+                     outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='transport') {
       console.log('adding transport')
       console.log(data)
-      this.setState({totalTransportCost:this.state.totalTransportCost+data.carbonFootprint})
+      this.setState({totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+                     showOutcomeMessage:true,
+                     outcomeMessageType:'positive',
+                     outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='food') {
       console.log('adding food')
       console.log(data)
-      this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint})
+      this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
+                     showOutcomeMessage:true,
+                     outcomeMessageType:'positive',
+                     outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='accomodation') {
       console.log('adding accomodation')
       console.log(data)
-      this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint})
+      this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
+                     showOutcomeMessage:true,
+                     outcomeMessageType:'positive',
+                     outcomeMessage:'Added succesfully!'})
     }
-
+    else {
+      this.setState({showOutcomeMessage:true,
+                     outcomeMessageType:'negative',
+                     outcomeMessage:'Oops! Something went wrong.'})
+    }
     this.setState({totalCarbonCost:this.state.totalCarbonCost+data.carbonFootprint})
+  }
+  closeMessage = ()=>{
+    this.setState({showOutcomeMessage:false})
   }
   render() {
 
@@ -88,11 +109,26 @@ class Main extends Component {
 
       {this.state.isMobile?
         <>
+          {this.state.showOutcomeMessage?
+            <>
+              <OutcomeMessage screen='mobile'
+                              outcomeMessageType = {this.state.outcomeMessageType}
+                              closeMessage ={this.closeMessage}
+                              message ={this.state.outcomeMessage}/>
+            </>:null}
+
           <MobileApp view={this.props.match.params.view}
                       addCarbonCostItem ={this.addCarbonCostItem}/>
         </>
       :
         <>
+          {this.state.showOutcomeMessage?
+            <>
+              <OutcomeMessage screen='desktop'
+                              outcomeMessageType = {this.state.outcomeMessageType}
+                              closeMessage ={this.closeMessage}
+                              message ={this.state.outcomeMessage}/>
+            </>:null}
           <DesktopApp view={this.props.match.params.view}
                       addCarbonCostItem ={this.addCarbonCostItem}
                       totalCarbonCost = {this.state.totalCarbonCost}

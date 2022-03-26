@@ -17,7 +17,7 @@ class Dropdown extends Component {
 
   return(
 <>
-  <option value={this.props.value}  >{this.props.value}</option>
+  <option value={this.props.value}  >{this.props.displayValue}</option>
 </>
 )}};
 export default Dropdown;

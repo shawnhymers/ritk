@@ -15,19 +15,19 @@ let dietData = [
   {
     food: "Barley",
     ghg_ratio: "1.18",
-    servingDescr:'100 Grams',
-    serving: "0.1"
+    servingDescr:'4 Ounces',
+    serving: "0.113398"
   },
   {
     food: "Beef (beef herd)",
     ghg_ratio: "99.48",
-    servingDescr:'Quarter Pound',
+    servingDescr:'4 Ounces',
     serving: "0.113398"
   },
   {
     food: "Beef (dairy herd)",
     ghg_ratio: "33.3",
-    servingDescr:'Quarter Pound',
+    servingDescr:'4 Ounces',
     serving: "0.113398"
   },
   {
@@ -45,8 +45,8 @@ let dietData = [
   {
     food: "Brassicas",
     ghg_ratio: "0.51",
-    servingDescr:'1/3 Pound',
-    serving: "0.1496855"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Cane Sugar",
@@ -57,13 +57,13 @@ let dietData = [
   {
     food: "Cassava",
     ghg_ratio: "1.32",
-    servingDescr:'1/3 Pound',
-    serving: "0.1496855"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Cheese",
     ghg_ratio: "23.88",
-    servingDescr:'One Cup (Diced)',
+    servingDescr:'One Cup',
     serving: "0.132"
   },
   {
@@ -81,8 +81,8 @@ let dietData = [
   {
     food: "Dark Chocolate",
     ghg_ratio: "46.65",
-    servingDescr:'50 Grams',
-    serving: "0.05"
+    servingDescr:'1 Ounce',
+    serving: "0.0283495"
   },
   {
     food: "Eggs",
@@ -93,8 +93,8 @@ let dietData = [
   {
     food: "Fish (farmed)",
     ghg_ratio: "13.63",
-    servingDescr:'1/3 Pound',
-    serving: "0.1496855"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Groundnuts",
@@ -105,7 +105,7 @@ let dietData = [
   {
     food: "Lamb & Mutton",
     ghg_ratio: "39.72",
-    servingDescr:'Quarter Pound',
+    servingDescr:'4 Ounces',
     serving: "0.113398"
   },
   {
@@ -160,7 +160,7 @@ let dietData = [
   {
     food: "Pig Meat",
     ghg_ratio: "12.31",
-    servingDescr:'Quarter Pound',
+    servingDescr:'4 Ounces',
     serving: "0.113398"
   },
   {
@@ -172,14 +172,14 @@ let dietData = [
   {
     food: "Poultry Meat",
     ghg_ratio: "9.87",
-    servingDescr:'Quarter Pound',
-    serving: "0.113398"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Prawns (farmed)",
     ghg_ratio: "26.87",
-    servingDescr:'Quarter Pound',
-    serving: "0.113398"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Rice",
@@ -202,8 +202,8 @@ let dietData = [
   {
     food: "Tofu (soybeans)",
     ghg_ratio: "3.16",
-    servingDescr:'1/2 Brick',
-    serving: "0.175"
+    servingDescr:'5 Ounces',
+    serving: "0.141748"
   },
   {
     food: "Tomatoes",

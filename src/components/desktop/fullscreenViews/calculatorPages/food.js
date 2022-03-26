@@ -13,7 +13,7 @@ const Food= props =>{
   // const [type, setType] = useState('average');
 
   const [selectedDiet, setDietType] = useState({food:"Balanced Diet",
-                                               ghg_ratio:'8.25',
+                                               ghg_ratio:'10.2',
                                                servingDescr:'One Average Day',
                                                serving:'1'})
   const [dietQuantity, setDietQuantity] = useState('');
@@ -29,37 +29,27 @@ const Food= props =>{
   const [isAdvanced, setType]=useState(false)
 
   function updateDietQuantity(e){
-    console.log('updating the diet quantity')
-    console.log(e.target.value)
     setDietQuantity(e.target.value)
     let carbonFootprint =e.target.value*selectedDiet.ghg_ratio;
     setCarbonFootprint(carbonFootprint)
-
   }
   function updateDietType(e){
-    console.log('changing diet type')
     let selectedDiet = dietData[dietData.findIndex(x=>x.food === e.target.value)];
     setDietType(selectedDiet)
     let carbonFootprint = selectedDiet.ghg_ratio*dietQuantity;
-    console.log(selectedDiet)
-    console.log(dietQuantity)
-    console.log(carbonFootprint)
     setCarbonFootprint(carbonFootprint)
   }
 
   function updateFoodQuantity(e){
     setFoodQuantity(e.target.value)
-    let carbonFootprint = e.target.value*selectedFood.ghg_ratio;
+    let carbonFootprint = e.target.value*selectedFood.ghg_ratio*selectedFood.serving;
     setCarbonFootprint(carbonFootprint)
   }
   function updateFoodType(e){
     let food = foodData[foodData.findIndex(x=>x.food === e.target.value)]
     setFoodType(food)
-    console.log(food.ghg_ratio)
-    console.log(foodQuantity)
-    let carbonFootprint = food.ghg_ratio*foodQuantity;
+    let carbonFootprint = food.ghg_ratio*foodQuantity*food.serving;
     setCarbonFootprint(carbonFootprint)
-
   }
 
   function updateType(type){
@@ -115,7 +105,6 @@ const Food= props =>{
 
   return(
     <>
-
     <Row className ='vertical-padding-sm'>
       <Col xs={1} sm={1} md={1} lg={2} xl={3}>
         &nbsp;
@@ -151,6 +140,7 @@ const Food= props =>{
                       className="browser-default"
                       style ={{width:'25vw'}}>
                 {foodData.map((food, i)=>{return <Dropdown value = {food.food}
+                                                           displayValue ={food.food+' ('+food.servingDescr+')'}
                                                            key={food.food+i}/>})}
               </select>
             </Row>
@@ -161,6 +151,7 @@ const Food= props =>{
                      min="1"
                      max="100"
                      value = {foodQuantity}
+                     placeholder = 'Number of Servings'
                      onChange = {(e)=>updateFoodQuantity(e)}
                      style ={{width:'25vw'}}/>
               <label htmlFor="foodQuantity">{'Number of Servings'}</label>
@@ -174,6 +165,7 @@ const Food= props =>{
                       className="browser-default"
                       style ={{width:'25vw'}}>
                 {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
+                                                           displayValue ={diet.food+' ('+diet.servingDescr+')'}
                                                            key={diet.food+i}/>})}
               </select>
             </Row>
@@ -186,6 +178,7 @@ const Food= props =>{
                      min="1"
                      max="100"
                      value = {dietQuantity}
+                     placeholder ='Number of Days'
                      onChange = {(e)=>updateDietQuantity(e)}
                      style ={{width:'25vw'}}/>
               <label htmlFor="dietQuantity">{'Number of Days'}</label>

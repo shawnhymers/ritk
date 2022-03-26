@@ -8,6 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import SearchDrop from '../../../standardComponents/searchDrop';
+import HelpIcon from "../../../standardComponents/helpIcon"
 import CarbonTotal from './elements/carbonTotal'
 
 class FlightCalculator extends Component {
@@ -299,6 +300,9 @@ class FlightCalculator extends Component {
       <Container className ='form-container white'>
         <Row className ='form-line'>
           <p className ='form-title'>Flight Details</p>
+          <Col>
+            <HelpIcon message ='this is a test'/>
+          </Col>
         </Row>
         <Row className ='form-line'>
           <FormControl component="fieldset">
