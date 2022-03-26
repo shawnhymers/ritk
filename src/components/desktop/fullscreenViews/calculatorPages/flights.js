@@ -29,7 +29,10 @@ class FlightCalculator extends Component {
       class:'Economy',
       flightFinalCost:'0',
       flightType:'Round Trip',
-      searchBy:'City'
+      searchBy:'City',
+
+      fromAirportError:false,
+      toAirportError:false
     };
   };
 
@@ -200,7 +203,8 @@ class FlightCalculator extends Component {
               flightType: this.state.flightType,
               type :'flight'}
 
-    if (data.toAirport!==''&&data.fromAirport!=='') {
+    console.log(data.toAirport)
+    if (data.toAirport!==''&&data.fromAirport!=='' && data.carbonFootprint>0) {
       this.props.addCarbonCostItem(data)
       this.setState({toCity:{temp:''},
                      fromCity:{temp:''},
@@ -213,7 +217,23 @@ class FlightCalculator extends Component {
                      toSearchValue:'',
                      fromSearchValue:'',
                      fromOptions:airportData,
-                     toOptions:airportData},()=>{console.log(this.state)})
+                     toOptions:airportData,
+                     fromAirportError:false,
+                     toAirportError:false},()=>{console.log(this.state)})
+    }
+    else {
+      if (data.toAirport==='') {
+        this.setState({toAirportError:true})
+      }
+      else {
+        this.setState({toAirportError:false})
+      }
+      if (data.fromAirport==='') {
+        this.setState({fromAirportError:true})
+      }
+      else {
+        this.setState({fromAirportError:false})
+      }
     }
 
   }
@@ -314,7 +334,7 @@ class FlightCalculator extends Component {
             </RadioGroup>
           </FormControl>
         </Row>
-        <Row className ='form-line'>
+        <Row className ='form-line '>
           <SearchDrop options={this.state.fromOptions}
                       inputId ={'fromOptions'}
                       inputName={'from'}
@@ -324,7 +344,8 @@ class FlightCalculator extends Component {
                       selectOption = {this.selectFromAirport}
                       setSearchValue ={this.setFromSearchValue}
                       displayKeys ={['City','Airport','Code']}
-                      keyFields ={['index']}/>
+                      keyFields ={['index']}
+                      invalidInput ={this.state.fromAirportError}/>
         </Row>
         <Row className ='form-line'>
           <SearchDrop options={this.state.toOptions}
@@ -336,7 +357,8 @@ class FlightCalculator extends Component {
                       selectOption = {this.selectToAirport}
                       setSearchValue ={this.setToSearchValue}
                       displayKeys ={['City','Airport','Code']}
-                      keyFields ={['index']}/>
+                      keyFields ={['index']}
+                      invalidInput ={this.state.toAirportError}/>
         </Row>
         <Row className ='form-line'>
           <FormControl component="fieldset">

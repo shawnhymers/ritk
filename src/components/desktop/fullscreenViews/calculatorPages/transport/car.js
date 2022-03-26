@@ -36,6 +36,11 @@ const Car = props => {
 
   const [passengers, setPassengers]= useState('');
 
+  const [basicErrors, setBasicErrors]=useState({passengerError:false,
+                                                distanceError:false})
+  const [advancedErrors, setAdvancedErrors]=useState({passengerError:false,
+                                                      vehicleError:false,
+                                                      distanceError:false})
   function selectYear(e){
     setYear(e.target.value)
   }
@@ -259,7 +264,15 @@ const Car = props => {
   }
   function updateCarbonFootprint(distance,milage,passengers){
     let carbonFootprint = (distance/100)*milage*2.3/passengers;
-    setCarbonFootprint(carbonFootprint)
+
+    // This if just avoid division by 0
+    if(passengers>0){
+      setCarbonFootprint(carbonFootprint)
+    }
+    else {
+      setCarbonFootprint(0)
+    }
+
   }
 
   function addDrive(){
@@ -287,13 +300,53 @@ const Car = props => {
       }
       resetState()
     }
+    else {
+      console.log('failed car add')
+      let passengerError = false;
+      let vehicleError = false;
+      let distanceError = false;
 
+      if (isAdvanced) {
+        console.log('vehicle:')
+        console.log(vehicle)
+        if (distance<=0) {
+          distanceError = true;
+        }
+        if (passengers<=0) {
+          passengerError=true
+        }
+        if (vehicle.Year===undefined) {
+          console.log('vehicle error')
+          vehicleError=true
+        }
+        let advancedErrors ={passengerError:passengerError,
+                             vehicleError:vehicleError,
+                             distanceError:distanceError}
+        setAdvancedErrors(advancedErrors)
+      }
+      else {
+        console.log('basic type')
+        if (distance<=0) {
+          console.log('distance error')
+          distanceError = true;
+        }
+        else {
+          distanceError=false;
+        }
+        if (passengers<=0) {
+          console.log('passenger error')
+          passengerError=true;
+        }
+        else {
+          passengerError=false;
+        }
+        let basicErrors ={ passengerError:passengerError,
+                           distanceError:distanceError}
+        setBasicErrors(basicErrors)
+        }
+      }
+    }
 
-
-
-
-
-  }
   function resetState(){
     setType(false)
     // setEmmisions('200')
@@ -376,8 +429,12 @@ return(
                    value = {passengers}
                    placeholder = "Number of Passengers"
                    onChange = {updatePassengers}
-                   style ={{width:'25vw'}}/>
-            <label htmlFor="passengers">Number of Passengers</label>
+                   style ={{width:'25vw'}}
+                   className ={basicErrors.passengerError? "error-input":""}/>
+            <label htmlFor="passengers"
+                   className ={basicErrors.passengerError? "error-label":""}>
+              Number of Passengers
+            </label>
           </Row>
 
           <Row className ='form-line nice-input-wrapper'>
@@ -388,8 +445,12 @@ return(
                    value = {distance}
                    placeholder = "Distance (Km)"
                    onChange = {updateDistance}
-                   style = {{maxWidth:'25vw'}}/>
-            <label htmlFor="distance">Distance (Km)</label>
+                   style = {{maxWidth:'25vw'}}
+                   className ={basicErrors.distanceError? "error-input":""}/>
+            <label htmlFor="distance"
+                   className ={basicErrors.distanceError? "error-label":""}>
+              Distance (Km)
+            </label>
           </Row>
           </>
           :
@@ -418,6 +479,7 @@ return(
               <FormLabel component="legend">Production Year:</FormLabel>
               <select value = {year} onChange = {selectYear} className="browser-default">
                 {years.map((year, i)=>{return <CustomDropdown value = {year}
+                                                              displayValue ={year}
                                                               key={year+i}/>})}
               </select>
             </Row>
@@ -433,7 +495,8 @@ return(
                           selectOption = {selectVehicleOption}
                           displayKeys = {['Year','Make','Model']}
                           valueKey ={'Make'}
-                          keyFields ={['Year','Make','Model']}/>
+                          keyFields ={['Year','Make','Model']}
+                          invalidInput={advancedErrors.vehicleError}/>
             </Row>
 
             <Row className ='form-line nice-input-wrapper'>
@@ -444,8 +507,12 @@ return(
                      value = {passengers}
                      placeholder = "Number of Passengers"
                      onChange = {updatePassengers}
-                     style ={{width:'25vw'}}/>
-              <label htmlFor="passengers">Number of Passengers</label>
+                     style ={{width:'25vw'}}
+                     className ={advancedErrors.passengerError? "error-input":""}/>
+              <label htmlFor="passengers"
+                     className ={advancedErrors.passengerError? "error-label":""}>
+                Number of Passengers
+              </label>
             </Row>
 
             <Row className ='form-line nice-input-wrapper'>
@@ -456,8 +523,12 @@ return(
                      value = {distance}
                      placeholder = "Distance (Km)"
                      onChange = {updateDistance}
-                     style ={{width:'25vw'}}/>
-              <label htmlFor="distance">Distance (Km)</label>
+                     style ={{width:'25vw'}}
+                     className ={advancedErrors.distanceError? "error-input":""}/>
+              <label htmlFor="distance"
+                     className = {advancedErrors.distanceError? "error-label":""}>
+                Distance (Km)
+              </label>
             </Row>
 
           </>}

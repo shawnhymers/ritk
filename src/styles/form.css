@@ -63,3 +63,10 @@ opacity: 0;
   line-height: 1.4em;
   font-size: calc((1.8 - 1) * 1.1vw + 1rem);
 }
+
+.error-input{
+  border-bottom: .2vmin solid #e05046!important;
+}
+.error-label{
+  color: #e05046!important;
+}

@@ -18,6 +18,8 @@ const Bus = props => {
   const [drivingType, setDrivingType] = useState('City')
   const [fullness, setFullness] = useState('Packed')
 
+  const [distanceError,setDistanceError] =useState(false);
+
 
   function updateDistance(e){
     setDistance(e.target.value);
@@ -82,6 +84,11 @@ const Bus = props => {
       props.addCarbonCostItem(data)
       resetState()
     }
+    else {
+      if (distance<=0) {
+        setDistanceError(true)
+      }
+    }
 
   }
 
@@ -91,6 +98,7 @@ const Bus = props => {
     setCarbonFootprint(0)
     setDrivingType('City')
     setFullness('Packed')
+    setDistanceError(false)
   }
 
 return(
@@ -139,8 +147,12 @@ return(
                    value = {distance}
                    placeholder = "Distance (Km)"
                    onChange = {updateDistance}
-                   style ={{width:'25vw'}}/>
-            <label htmlFor="distance">Distance (Km)</label>
+                   style ={{width:'25vw'}}
+                   className ={distanceError? "error-input":""}/>
+            <label htmlFor="distance"
+                   className ={distanceError? "error-label":""}>
+              Distance (Km)
+            </label>
           </Row>
 
           <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>

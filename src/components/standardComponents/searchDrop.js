@@ -93,13 +93,19 @@ return(
           <Row className ='nice-input-wrapper'>
 
               <input style ={{width:'25vw'}}
+                    className ={props.invalidInput? 'error-input':''}
                      type = 'text'
                      id= {props.inputId}
                      value = {props.searchValue}
                      name = {props.inputName}
                      placeholder={props.inputLabel}
                      onChange ={(e)=>updateSearch(e)}/>
-              <label htmlFor={props.inputId}>{props.inputLabel}</label>
+              <label htmlFor={props.inputId}
+                     className ={props.invalidInput? 'error-label':''}>
+
+                {props.inputLabel}
+
+              </label>
 
           </Row>
           </form>
