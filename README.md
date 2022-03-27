@@ -1,6 +1,6 @@
 cd Documents/websites/ritk && npm start
 
-
+cd Documents/websites/ritk &&npm install @mui/material @emotion/react @emotion/styled
 
 cd Documents/websites/ritk && npm install react-icons --save
 cd Documents/websites/ritk && npm i react-bootstrap

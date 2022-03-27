@@ -314,7 +314,9 @@ class FlightCalculator extends Component {
   <>
 
 
-
+  <div className="tooltip">Hover over me
+    <span className="tooltiptext">Tooltip text</span>
+  </div>
   <Row className ='vertical-padding-sm'>
     <Col xs={1} sm={1} md={1} lg={2} xl={3}>
       &nbsp;
@@ -323,8 +325,10 @@ class FlightCalculator extends Component {
       <Container className ='form-container white'>
         <Row className ='form-line'>
           <p className ='form-title'>Flight Details</p>
-          <Col>
+          <Col >
             <HelpIcon message ='this is a test'/>
+
+
           </Col>
         </Row>
         <Row className ='form-line'>

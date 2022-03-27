@@ -3,6 +3,9 @@ import React from 'react';
 import  { useState } from 'react';
 import {MdHelp } from "react-icons/md";
 
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+
 const HelpIcon = props => {
   const [showMessage, setShowMessage] = useState(false)
 
@@ -12,15 +15,11 @@ const HelpIcon = props => {
   }
 return(
   <>
-    <MdHelp onClick ={toggleMessage}/>
-    {showMessage?
-      <>
-        <Container className ='help-message-container'>
-          <div className ='help-message'>
-            {props.message}
-          </div>
-        </Container>
-      </>:null}
+    <Tooltip title={props.message} arrow>
+      <IconButton>
+        <MdHelp onClick ={toggleMessage} />
+      </IconButton>
+    </Tooltip>
   </>
 )}
 
