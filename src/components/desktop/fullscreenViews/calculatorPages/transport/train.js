@@ -24,6 +24,8 @@ const Train = props => {
 
   const [carbonFootprint,setCarbonFootprint] =useState(0)
 
+  const [countryError,setCountryError]=useState(false)
+  const [distanceError,setDistanceError]=useState(false)
 
 
   function updateGridRegions(e){
@@ -80,6 +82,21 @@ const Train = props => {
       props.addCarbonCostItem(data)
       resetState()
     }
+    else {
+      if (distance<=0) {
+        setDistanceError(true)
+      }
+      else {
+        setDistanceError(false)
+      }
+      if (selectedGridRegion.country===undefined) {
+        setCountryError(true)
+      }
+      else{
+        setCountryError(false)
+      }
+      console.log(selectedGridRegion)
+    }
   }
 
   function resetState(){
@@ -89,6 +106,8 @@ const Train = props => {
     setEngineType('diesel')
     setCountrySearchValue('')
     setCarbonFootprint(0)
+    setDistanceError(false)
+    setCountryError(false)
   }
 return(
   <>
@@ -123,7 +142,8 @@ return(
                         selectOption = {selectGridRegion}
                         displayKeys = {['country']}
                         valueKey ={'carbon'}
-                        keyFields ={['country']}/>
+                        keyFields ={['country']}
+                        invalidInput={countryError}/>
           </Row>
 
           <Row className ='form-line nice-input-wrapper'>
@@ -135,8 +155,12 @@ return(
                    name = "distance"
                    placeholder = "Distance (Km)"
                    onChange ={updateDistance}
-                   style ={{width:'25vw'}}/>
-            <label htmlFor="distance">Distance (km)</label>
+                   style ={{width:'25vw'}}
+                   className ={distanceError? "error-input":""}/>
+            <label htmlFor="distance"
+                   className ={distanceError? "error-label":""}>
+              Distance (km)
+            </label>
           </Row>
 
           <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>

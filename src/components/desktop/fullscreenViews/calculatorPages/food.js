@@ -28,6 +28,9 @@ const Food= props =>{
 
   const [isAdvanced, setType]=useState(false)
 
+  const [foodQuantityError,setFoodQuantityError]=useState(false)
+  const [dietQuantityError,setDietQuantityError]=useState(false)
+
   function updateDietQuantity(e){
     setDietQuantity(e.target.value)
     let carbonFootprint =e.target.value*selectedDiet.ghg_ratio;
@@ -99,8 +102,27 @@ const Food= props =>{
                    serving: "0.136078"});
 
       setType(false)
+      setFoodQuantityError(false)
+      setDietQuantityError(false)
     }
-
+    else {
+      if (isAdvanced) {
+        if (foodQuantity==='') {
+          setFoodQuantityError(true)
+        }
+        else {
+          setFoodQuantityError(false)
+        }
+      }
+      else {
+        if (dietQuantity==='') {
+          setDietQuantityError(true)
+        }
+        else {
+          setDietQuantityError(false)
+        }
+      }
+    }
   }
 
   return(
@@ -153,8 +175,12 @@ const Food= props =>{
                      value = {foodQuantity}
                      placeholder = 'Number of Servings'
                      onChange = {(e)=>updateFoodQuantity(e)}
-                     style ={{width:'25vw'}}/>
-              <label htmlFor="foodQuantity">{'Number of Servings'}</label>
+                     style ={{width:'25vw'}}
+                     className ={foodQuantityError? "error-input":""}/>
+              <label htmlFor="foodQuantity"
+                     className ={foodQuantityError? "error-label":""}>
+              {'Number of Servings'}
+              </label>
             </Row>
           </>
           :
@@ -180,8 +206,12 @@ const Food= props =>{
                      value = {dietQuantity}
                      placeholder ='Number of Days'
                      onChange = {(e)=>updateDietQuantity(e)}
-                     style ={{width:'25vw'}}/>
-              <label htmlFor="dietQuantity">{'Number of Days'}</label>
+                     style ={{width:'25vw'}}
+                     className ={dietQuantityError? "error-input":""}/>
+              <label htmlFor="dietQuantity"
+                     className ={dietQuantityError? "error-label":""}>
+                {'Number of Days'}
+              </label>
             </Row>
           </>
           }
