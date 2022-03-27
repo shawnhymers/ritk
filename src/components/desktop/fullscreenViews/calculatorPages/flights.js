@@ -36,23 +36,23 @@ class FlightCalculator extends Component {
     };
   };
 
-  selectAirport = (airport,toOrFrom)=>{
-
-    if (toOrFrom ==='from') {
-      let fromOptions = []
-      fromOptions.push(airport)
-      console.log('from Options are')
-      console.log(fromOptions)
-      this.setState({fromCity:airport.Airport,selectedFromCity:airport, fromOptions:[],toOptions:[]},()=>{this.updateDistance()})
-    }
-    else if (toOrFrom ==='to') {
-      let toOptions = []
-      toOptions.push(airport)
-      console.log('to Options are')
-      console.log(toOptions)
-      this.setState({toCity:airport.Airport,selectedToCity:airport,fromOptions:[],toOptions:[]},()=>{this.updateDistance()})
-    }
-  }
+  // selectAirport = (airport,toOrFrom)=>{
+  //
+  //   if (toOrFrom ==='from') {
+  //     let fromOptions = []
+  //     fromOptions.push(airport)
+  //     console.log('from Options are')
+  //     console.log(fromOptions)
+  //     this.setState({fromCity:airport.Airport,selectedFromCity:airport, fromOptions:[],toOptions:[]},()=>{this.updateDistance()})
+  //   }
+  //   else if (toOrFrom ==='to') {
+  //     let toOptions = []
+  //     toOptions.push(airport)
+  //     console.log('to Options are')
+  //     console.log(toOptions)
+  //     this.setState({toCity:airport.Airport,selectedToCity:airport,fromOptions:[],toOptions:[]},()=>{this.updateDistance()})
+  //   }
+  // }
 
   //  Using Vincenty's formula to calculate distance between two lat and long co ordinates
   updateDistance = ()=>{
@@ -222,13 +222,13 @@ class FlightCalculator extends Component {
                      toAirportError:false},()=>{console.log(this.state)})
     }
     else {
-      if (data.toAirport==='') {
+      if (data.toAirport.Airport===undefined) {
         this.setState({toAirportError:true})
       }
       else {
         this.setState({toAirportError:false})
       }
-      if (data.fromAirport==='') {
+      if (data.fromAirport.Airport===undefined) {
         this.setState({fromAirportError:true})
       }
       else {
@@ -290,20 +290,23 @@ class FlightCalculator extends Component {
   }
 
   selectFromAirport=(data)=>{
-
-    // let selectedCity = airportData[airportData.findIndex(x=>x.Code === data.Code)];
     this.setState({fromCity:data},()=>this.updateDistance())
   }
   selectToAirport=(data)=>{
-    // let selectedCity = airportData[airportData.findIndex(x=>x.Code === code)];
     this.setState({toCity:data},()=>this.updateDistance())
   }
 
   setFromSearchValue = (value) => {
     this.setState({fromSearchValue:value})
+    if (value==='') {
+      this.setState({fromCity:{}},()=>this.updateDistance())
+    }
   }
   setToSearchValue = (value) => {
-      this.setState({toSearchValue:value})
+    this.setState({toSearchValue:value})
+    if (value==='') {
+      this.setState({toCity:{}},()=>this.updateDistance())
+    }
   }
   render() {
 

@@ -69,6 +69,12 @@ const Train = props => {
     }
 
   }
+  function updateCountrySearchValue(value){
+    setCountrySearchValue(value)
+    if (value==='') {
+      setGridRegion({})
+    }
+  }
   function addTrain(){
 
     if (carbonFootprint>0) {
@@ -137,7 +143,7 @@ return(
                         inputName={'gridRegion'}
                         inputLabel={'Select The Country'}
                         searchValue = {countrySearchValue}
-                        setSearchValue ={setCountrySearchValue}
+                        setSearchValue ={updateCountrySearchValue}
                         updateOptions = {updateGridRegions}
                         selectOption = {selectGridRegion}
                         displayKeys = {['country']}

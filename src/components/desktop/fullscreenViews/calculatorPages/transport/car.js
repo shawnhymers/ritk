@@ -244,6 +244,12 @@ const Car = props => {
     setVehicleOptions(options);
   }
 
+  function updateCarSearchValue(value){
+    setCarSearchValue(value)
+    if (value==='') {
+      setVehicle({})
+    }
+  }
   function updateAdvancedDrivingType(e){
     let advancedDrivingType = e.target.value;
     setAdvancedDrivingType(advancedDrivingType)
@@ -490,7 +496,7 @@ return(
                           inputName={'vehicle'}
                           inputLabel={'Vehicle'}
                           searchValue = {carSearchValue}
-                          setSearchValue ={setCarSearchValue}
+                          setSearchValue ={updateCarSearchValue}
                           updateOptions = {updateVehicleOptions}
                           selectOption = {selectVehicleOption}
                           displayKeys = {['Year','Make','Model']}

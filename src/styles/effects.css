@@ -15,3 +15,6 @@
   -moz-transition: opacity 1200ms ease-in;
   -o-transition: opacity 1200ms ease-in;
 }
+.fadded{
+  opacity: 0.5;
+}
