@@ -3,10 +3,123 @@ import { Container, Row, Col, Button} from 'react-bootstrap';
 import {useState} from "react";
 import CarbonTotal from "./elements/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
+import countryFootprintData from "../../../data/countryFootprintData"
+import regionFootprintData from "../../../data/regionFootprintData"
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import SearchDrop from '../../../standardComponents/searchDrop';
 
 const Overview= props =>{
+  const [compareType, setCompareType] =useState('country')
+
+  const [countrySearchValue, setCountrySearchValue] =useState('')
+  const [countryError, setCountryError]=useState(false);
+  const [countryOptions, setCountryOptions] = useState(countryFootprintData);
+  const [selectedCountry, setSelectedCountry] =useState({})
+
+  const [regionSearchValue, setRegionSearchValue] =useState('')
+  const [regionError, setRegionError]=useState(false);
+  const [regionOptions, setRegionOptions] = useState(countryFootprintData);
+  const [selectedRegion, setSelectedRegion] =useState({})
+
+
+  function updateCompareType(e){
+    console.log(e.target.value)
+    setCompareType(e.target.value)
+  }
+  function updateCountrySearchValue(value){
+    setCountrySearchValue(value)
+    if (value==='') {
+      setSelectedCountry({})
+    }
+  }
+  function updateCompareToCountry(e){
+    console.log(e.target.value)
+    var options = countryFootprintData.filter(function (el)
+    {
+      return el.Country.toUpperCase().includes(e.target.value.toUpperCase())
+    })
+    setCountryOptions(options);
+  }
+  function selectCompareToCountry(country){
+    console.log(country)
+    setSelectedCountry(country)
+  }
+
+  function updateRegionSearchValue(value){
+    setRegionSearchValue(value);
+    if (value==='') {
+      setSelectedRegion({})
+    }
+  }
+  function updateCompareToRegion(e){
+    console.log(e.target.value)
+    var options = regionFootprintData.filter(function (el)
+    {
+      return el.Entity.toUpperCase().includes(e.target.value.toUpperCase())
+    })
+    setRegionOptions(options);
+  }
+  function selectCompareToRegion(region) {
+    setSelectedRegion(region)
+  }
+
   return(
     <>
+    <Container>
+    <Row className ='form-line'>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Compare To:</FormLabel>
+        <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
+          <FormControlLabel value="country" control={<Radio />} label="Country" />
+          <FormControlLabel value="region" control={<Radio />} label="Region" />
+        </RadioGroup>
+      </FormControl>
+    </Row>
+    {compareType==='country'?
+      <>
+        <Row className ='form-line'>
+          <SearchDrop options={countryOptions}
+                      inputId ={'compareToCountry'}
+                      inputName={'compareToCountry'}
+                      inputLabel={'Select The Country'}
+                      searchValue = {countrySearchValue}
+                      setSearchValue ={updateCountrySearchValue}
+                      updateOptions = {updateCompareToCountry}
+                      selectOption = {selectCompareToCountry}
+                      displayKeys = {['Country']}
+                      valueKey ={'Footprint'}
+                      keyFields ={['Country','Footprint']}
+                      invalidInput={countryError}/>
+        </Row>
+      </>
+      :
+      <>
+        <Row className ='form-line'>
+          <SearchDrop options={regionOptions}
+                      inputId ={'compareToRegion'}
+                      inputName={'compareToRegion'}
+                      inputLabel={'Select The Region'}
+                      searchValue = {regionSearchValue}
+                      setSearchValue ={updateRegionSearchValue}
+                      updateOptions = {updateCompareToRegion}
+                      selectOption = {selectCompareToRegion}
+                      displayKeys = {['Entity']}
+                      valueKey ={'Footprint'}
+                      keyFields ={['Entity','Footprint']}
+                      invalidInput={countryError}/>
+        </Row>
+      </>}
+      <Row>
+        {selectedCountry.Footprint}
+      </Row>
+      <Row>
+        {selectedRegion.Footprint}
+      </Row>
+    </Container>
     <Container className ='white round-borders raised-borders'>
       <div id="chart" className ='vertical-padding-sm'>
         <ReactApexCharts  type="bar" height={350}

@@ -325,11 +325,6 @@ class FlightCalculator extends Component {
       <Container className ='form-container white'>
         <Row className ='form-line'>
           <p className ='form-title'>Flight Details</p>
-          <Col >
-            <HelpIcon message ='this is a test'/>
-
-
-          </Col>
         </Row>
         <Row className ='form-line'>
           <FormControl component="fieldset">

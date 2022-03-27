@@ -12,6 +12,7 @@ import smallCarData from "../../../../data/smallCarData";
 // import CarOptions from "../forms/carOptions";
 import SearchDrop from '../../../../standardComponents/searchDrop';
 import CarbonTotal from "../elements/carbonTotal"
+import HelpIcon from "../../../../standardComponents/helpIcon"
 
 const Car = props => {
 
@@ -423,40 +424,55 @@ return(
                 <FormControlLabel value="GasGuzzler" control={<Radio />} label="Gas Guzzler" />
                 <FormControlLabel value="StandardCar" control={<Radio />} label="Standard Car" />
                 <FormControlLabel value="EfficientCar" control={<Radio />} label="Efficient Car" />
+                <HelpIcon message ='Select a type of car to get a rough estimate of fuel effeciency.'/>
               </RadioGroup>
             </FormControl>
           </Row>
 
           <Row className ='form-line nice-input-wrapper'>
-            <input type="number"
-                   name="passengers"
-                   min="1"
-                   max="10000"
-                   value = {passengers}
-                   placeholder = "Number of Passengers"
-                   onChange = {updatePassengers}
-                   style ={{width:'25vw'}}
-                   className ={basicErrors.passengerError? "error-input":""}/>
-            <label htmlFor="passengers"
-                   className ={basicErrors.passengerError? "error-label":""}>
-              Number of Passengers
-            </label>
+            <Col>
+              <Row>
+                <input type="number"
+                       name="passengers"
+                       min="1"
+                       max="10000"
+                       value = {passengers}
+                       placeholder = "Number of Passengers"
+                       onChange = {updatePassengers}
+                       style ={{width:'25vw'}}
+                       className ={basicErrors.passengerError? "error-input":""}/>
+                <label htmlFor="passengers"
+                       className ={basicErrors.passengerError? "error-label":""}>
+                  Number of Passengers
+                </label>
+              </Row>
+            </Col>
+            <Col>
+              <HelpIcon message ="Number of passenegers making the trip. Only count the driver if they are a part of the tip. Cab and Uber drivers don't count."/>
+            </Col>
           </Row>
 
           <Row className ='form-line nice-input-wrapper'>
-            <input type="number"
-                   name="distance"
-                   min="1"
-                   max="100"
-                   value = {distance}
-                   placeholder = "Distance (Km)"
-                   onChange = {updateDistance}
-                   style = {{maxWidth:'25vw'}}
-                   className ={basicErrors.distanceError? "error-input":""}/>
-            <label htmlFor="distance"
-                   className ={basicErrors.distanceError? "error-label":""}>
-              Distance (Km)
-            </label>
+            <Col>
+              <Row>
+              <input type="number"
+                     name="distance"
+                     min="1"
+                     max="100"
+                     value = {distance}
+                     placeholder = "Distance (Km)"
+                     onChange = {updateDistance}
+                     style = {{maxWidth:'25vw'}}
+                     className ={basicErrors.distanceError? "error-input":""}/>
+              <label htmlFor="distance"
+                     className ={basicErrors.distanceError? "error-label":""}>
+                Distance (Km)
+              </label>
+            </Row>
+            </Col>
+            <Col>
+              <HelpIcon message ="Total distance driven in this car."/>
+            </Col>
           </Row>
           </>
           :
