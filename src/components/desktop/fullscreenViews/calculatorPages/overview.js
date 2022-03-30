@@ -28,6 +28,12 @@ const Overview= props =>{
 
   function updateCompareType(e){
     console.log(e.target.value)
+    if (e.target.value!==compareType) {
+      setSelectedRegion({})
+      setSelectedCountry({})
+      setCountrySearchValue('')
+      setRegionSearchValue('')
+    }
     setCompareType(e.target.value)
   }
   function updateCountrySearchValue(value){
@@ -37,12 +43,24 @@ const Overview= props =>{
     }
   }
   function updateCompareToCountry(e){
+    console.log('updating the compare to country')
     console.log(e.target.value)
-    var options = countryFootprintData.filter(function (el)
-    {
-      return el.Country.toUpperCase().includes(e.target.value.toUpperCase())
-    })
-    setCountryOptions(options);
+
+    if (e.target.value ==='') {
+      console.log('search value is empty')
+      let options = countryFootprintData;
+      setCountryOptions(options);
+    }
+    else {
+      console.log('search value is not empty')
+      let options = countryFootprintData.filter(function (el)
+      {
+        return el.Country.toUpperCase().includes(e.target.value.toUpperCase())
+      })
+      setCountryOptions(options);
+    }
+
+
   }
   function selectCompareToCountry(country){
     console.log(country)

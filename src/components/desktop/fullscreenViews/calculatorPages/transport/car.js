@@ -31,7 +31,7 @@ const Car = props => {
   const [year, setYear] = useState('2020');
   const [vehicleSearch, setVehicleSearch] = useState('');
   const [vehicle, setVehicle] = useState('');
-  const [vehicleOptions, setVehicleOptions] = useState([smallCarData]);
+  const [vehicleOptions, setVehicleOptions] = useState(smallCarData);
 
   const [carSearchValue, setCarSearchValue]= useState('');
 

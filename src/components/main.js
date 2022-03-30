@@ -11,6 +11,7 @@ class Main extends Component {
     this.state = {
       isMobile:false,
       showOutcomeMessage:false,
+      pageView:'main',
       flights:[],
       transports:[],
       food:[],
@@ -102,6 +103,9 @@ class Main extends Component {
   closeMessage = ()=>{
     this.setState({showOutcomeMessage:false})
   }
+  updatePageView =(pageView)=>{
+    this.setState({pageView:pageView})
+  }
   render() {
 
   return(
@@ -117,8 +121,15 @@ class Main extends Component {
                               message ={this.state.outcomeMessage}/>
             </>:null}
 
-          <MobileApp view={this.props.match.params.view}
-                      addCarbonCostItem ={this.addCarbonCostItem}/>
+          <MobileApp urlView={this.props.match.params.view}
+                     pageView ={this.state.pageView}
+                     updatePageView={this.updatePageView}
+                     addCarbonCostItem ={this.addCarbonCostItem}
+                     totalCarbonCost = {this.state.totalCarbonCost}
+                     totalFlightCost = {this.state.totalFlightCost}
+                     totalTransportCost ={this.state.totalTransportCost}
+                     totalFoodCost ={this.state.totalFoodCost}
+                     totalAccomodationCost = {this.state.totalAccomodationCost}/>
         </>
       :
         <>
@@ -129,7 +140,9 @@ class Main extends Component {
                               closeMessage ={this.closeMessage}
                               message ={this.state.outcomeMessage}/>
             </>:null}
-          <DesktopApp view={this.props.match.params.view}
+          <DesktopApp urlView={this.props.match.params.view}
+                      pageView ={this.state.pageView}
+                      updatePageView={this.updatePageView}
                       addCarbonCostItem ={this.addCarbonCostItem}
                       totalCarbonCost = {this.state.totalCarbonCost}
                       totalFlightCost = {this.state.totalFlightCost}

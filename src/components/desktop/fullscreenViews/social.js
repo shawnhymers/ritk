@@ -4,14 +4,7 @@ import Header from "../homeSections/header";
 import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube,BsTwitter} from "react-icons/bs";
 
-
-
-
-
-
-
 const SocialFull = props => {
-
 
 return(
   <>
@@ -75,10 +68,6 @@ return(
         <Row className ='roaming-white' style = {{height:'15vh'}}>
           &nbsp;
         </Row>
-
-
-
-
   </>
 )}
 

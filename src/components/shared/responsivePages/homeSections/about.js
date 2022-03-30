@@ -9,10 +9,10 @@ const About = props => {
 return(
   <>
   <Row className = 'roaming-white vertical-padding-md centered-children' style ={{height:'100vh'}}>
-    <Col xs={5} sm={5} md={5} lg={5} xl={5} className ='centered-children'>
+    <Col xs={12} sm={12} md={5} lg={5} xl={5} className ='centered-children'>
       <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
     </Col>
-    <Col xs={7} sm={7} md={7} lg={7} xl={7}>
+    <Col xs={12} sm={12} md={7} lg={7} xl={7}>
       <Row>
         <p className ='roaming-yellow-text roaming-text large-header-text centered-text'>WE ARE ROAMING IN THE KNOW!</p>
       </Row>
@@ -22,7 +22,7 @@ return(
     </Col>
   </Row>
 
-    {props.view ==='about'? 
+    {props.view ==='about'?
       <>
         <Row className ='roaming-white vertical-padding-sm'>
           <Col>

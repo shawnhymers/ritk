@@ -52,15 +52,15 @@ const SearchDrop = props => {
   function updateSearch(e){
     console.log('updating search')
     props.setSearchValue(e.target.value)
-    if (e.target.value.length>0) {
+    // if (e.target.value.length>0) {
       console.log('showing dropdown')
       console.log(props.options)
       setShowDropDown(true)
-    }
-    else {
-      console.log('hiding dropdown')
-      setShowDropDown(false)
-    }
+    // }
+    // else {
+    //   console.log('hiding dropdown')
+    //   setShowDropDown(false)
+    // }
     props.updateOptions(e)
     // setOptions(newOptions)
   }
@@ -80,8 +80,18 @@ const SearchDrop = props => {
     }
 
     props.setSearchValue(display)
-    setShowDropDown(false)
+    setShowDropDown(false);
     props.selectOption(selection)
+  }
+  function showDefaultOptions(){
+      setShowDropDown(true);
+  }
+  function cancelOptions(){
+    console.log('canceling options')
+    setTimeout(() => {
+     setShowDropDown(false);
+  },100)
+
   }
 
 return(
@@ -99,7 +109,9 @@ return(
                      value = {props.searchValue}
                      name = {props.inputName}
                      placeholder={props.inputLabel}
-                     onChange ={(e)=>updateSearch(e)}/>
+                     onChange ={(e)=>updateSearch(e)}
+                     onFocus = {showDefaultOptions}
+                     onBlur = {cancelOptions}/>
               <label htmlFor={props.inputId}
                      className ={props.invalidInput? 'error-label':''}>
 
@@ -132,46 +144,3 @@ return(
 )}
 
 export default SearchDrop;
-
-      // <Dropdown.Item disabled>{props.inputLabel}</Dropdown.Item>
-
-
-
-
-
-      //
-      //
-      // <Dropdown >
-      //   <Dropdown.Toggle as={CustomToggle}>
-      //     <Row>
-      //       <Col>
-      //         <form autoComplete="off" >
-      //           <input style ={{width:'25vw'}}type = 'text' id= {props.inputId} value = {searchValue} name = {props.inputName} placeholder={props.inputLabel} onChange ={(e)=>updateSearch(e)}/>
-      //         </form>
-      //       </Col>
-      //     </Row>
-      //   </Dropdown.Toggle>
-      //   <Row>
-      //     <Col>
-      //       <Dropdown.Menu style ={{margin:'0vh',padding:'0vh',width:'25vw',overflowX:'scroll'}}>
-      //         {props.options.slice(0,10)!==undefined?
-      //         <>
-      //           {props.options.slice(0,10).map((option, i)=>{return <Options option = {option}
-      //                                                      displayKey = {props.displayKey}
-      //                                                      select = {select}
-      //                                                      valueKey ={props.valueKey}
-      //                                                      key={option[props.keyField]}/>})}
-      //         </>
-      //         :
-      //         <>
-      //           {props.options.map((option, i)=>{return <Options option = {option}
-      //                                                      displayKey = {props.displayKey}
-      //                                                      select = {select}
-      //                                                      valueKey ={props.valueKey}
-      //                                                      key={option[props.keyField]}/>})}
-      //         </>
-      //       }
-      //       </Dropdown.Menu>
-      //     </Col>
-      //   </Row>
-      // </Dropdown>

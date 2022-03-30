@@ -7,7 +7,8 @@ const Blog = props => {
 
 return(
   <>
-    <Row className = 'roaming-green centered-children vertical-padding-sm' >
+
+    <Row className = 'roaming-green centered-children vertical-padding-sm'  >
       <Col  xs={1} sm={1} md={1} lg={1} xl={1} >
         &nbsp;
       </Col>
@@ -18,8 +19,8 @@ return(
         &nbsp;
       </Col>
     </Row>
-    <Row className = 'roaming-green' style ={{height:'100vh'}}>
-      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+    <Row className = 'roaming-green fill-width' style ={{minHeight:'100vh'}}>
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
             <img src = '/nyc.jpg' alt ='nyc' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
@@ -29,7 +30,7 @@ return(
           <p className ='centered-text roaming-text'>Caption</p>
         </Row>
       </Col>
-      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
             <img src = '/boat.jpg' alt ='boat' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
@@ -39,7 +40,7 @@ return(
           <p className ='centered-text roaming-text'>Caption</p>
         </Row>
       </Col>
-      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+      <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
           <img src = '/planeWing.jpg' alt ='planeWing' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
@@ -50,7 +51,6 @@ return(
         </Row>
       </Col>
     </Row>
-
   </>
 )}
 

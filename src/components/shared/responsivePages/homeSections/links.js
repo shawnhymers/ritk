@@ -8,7 +8,7 @@ const Links = props => {
 return(
   <>
     <Row className ='nice-white vertical-padding-md centered-children' style ={{height:'100vh'}}>
-      <Col xs={3} sm={3} md={3} lg={3} xl={3} onClick ={()=>props.useLink('food')}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3} onClick ={()=>props.useLink('food')}>
         <Row className = 'centered-children'>
           <img  className ='image-highlight round-borders blog-tease vertical-margin-sm' src ='/avacado.png' alt ='avacado'/>
         </Row>
@@ -17,7 +17,7 @@ return(
         </Row>
       </Col>
 
-      <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/tent.png' alt ='tent'/>
         </Row>
@@ -25,7 +25,7 @@ return(
           <p className ='centered-text roaming-text'>Accommodation Reccomendations</p>
         </Row>
       </Col>
-      <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/boots.png' alt ='boots'/>
         </Row>
@@ -33,7 +33,7 @@ return(
           <p className ='centered-text roaming-text'>Unique Activities</p>
         </Row>
       </Col>
-      <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/train.png' alt ='train'/>
         </Row>

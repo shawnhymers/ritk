@@ -1,51 +1,20 @@
-import Header from "../homeSections/header";
 import  {  Component } from "react";
 import React from "react";
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
-
-const LeftCol = props =>{
-
-  return(
-    <>
-    {props.index% 2 === 0?
-      <>
-        <Row >
-
-          <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
-          </Link>
-        </Row>
-        <Row className = 'centered-children'>
-          <p className = ' centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
-        </Row>
-      </>
-    :null}
-
-
-    </>
-  )}
-
-
-const RightCol = props =>{
+const BlogRows = props =>{
 
   return(
     <>
-    {props.index% 2 !== 0?
-      <>
-        <Row >
-          <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
-          </Link>
-        </Row>
-        <Row className = 'centered-children'>
-           <p className = 'centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
-        </Row>
-      </>
-    :null}
-
-
+      <Row >
+        <Link to={props.blog.link} className = 'centered-children' >
+          <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
+        </Link>
+      </Row>
+      <Row className = 'centered-children'>
+        <p className = ' centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
+      </Row>
     </>
   )}
 
@@ -97,8 +66,7 @@ class BlogFull extends Component {
 
   return(
     <>
-    <Header page ='blog'
-            changeView ={this.props.changeView}/>
+
 
 
         <Row className ='nice-input-wrapper form-line vertical-margin-lg'>
@@ -112,20 +80,12 @@ class BlogFull extends Component {
           <label htmlFor="searchValue" >Search</label>
         </Row>
     <Row>
-      <Col>
         {this.state.blogs.map((blog, i)=>{
-                return <LeftCol blog ={blog}
+                return <BlogRows blog ={blog}
                                 index = {i}
                                 key={blog.name+i}/>
                                  })}
-      </Col>
-      <Col>
-        {this.state.blogs.map((blog, i)=>{
-                return <RightCol blog ={blog}
-                                 index ={i}
-                                 key={blog.name+i}/>
-                                 })}
-      </Col>
+
     </Row>
 
 

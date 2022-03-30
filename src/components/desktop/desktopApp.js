@@ -1,10 +1,10 @@
 import  {  Component } from "react";
 import React from "react";
 import { Container, Row, Col, Button} from 'react-bootstrap';
-import About from "./homeSections/about";
+import About from "../shared/responsivePages/homeSections/about";
 import Header from "./homeSections/header";
-import Links from "./homeSections/links";
-import Blog from "./homeSections/blog";
+import Links from "../shared/responsivePages/homeSections/links";
+import Blog from "../shared/responsivePages/homeSections/blog";
 
 import AboutFull from "./fullscreenViews/about";
 import SocialFull from "./fullscreenViews/social";
@@ -56,10 +56,7 @@ class DesktopApp extends Component {
       this.setState({view:'main'})
     }
   }
-  changeView =(view)=>{
-    console.log(view)
-    this.setState({view:view,blogSearch:''})
-  }
+
   useLink =(link)=>{
     console.log('using this link...'+link)
     this.setState({view:'blog',blogSearch:link})
@@ -72,9 +69,9 @@ class DesktopApp extends Component {
     <>
 
     <div style ={{overflowX:'hidden'}}>
-      {this.state.view ==='main'?
+      {this.props.pageView ==='main'?
         <>
-          <Header changeView ={this.changeView}/>
+          <Header changeView ={this.props.updatePageView}/>
             <Row className ='red'style ={{pading:'0vh'}}>
               <img src= "/bannerPic.jpeg" alt = 'banner pic' className = 'banner-pic'/>
             </Row>
@@ -83,22 +80,22 @@ class DesktopApp extends Component {
           <Blog/>
         </>
       :null}
-      {this.state.view === 'about'?
+      {this.props.pageView === 'about'?
       <>
-        <AboutFull changeView ={this.changeView}
+        <AboutFull changeView ={this.props.updatePageView}
                    view ={this.state.view}/>
       </>
       :null}
-      {this.state.view === 'blog'?
+      {this.props.pageView === 'blog'?
       <>
-        <BlogFull changeView ={this.changeView}
+        <BlogFull changeView ={this.props.updatePageView}
                   blogs = {this.state.blogs}
                   blogSearch ={this.state.blogSearch}/>
       </>
       :null}
-      {this.state.view === 'calculator'?
+      {this.props.pageView === 'calculator'?
       <>
-        <CalculatorFull changeView ={this.changeView}
+        <CalculatorFull changeView ={this.props.updatePageView}
                         addCarbonCostItem ={this.props.addCarbonCostItem}
                         totalCarbonFootprint={this.props.totalCarbonCost}
                         totalFlightCost = {this.props.totalFlightCost}
@@ -107,9 +104,9 @@ class DesktopApp extends Component {
                         totalAccomodationCost = {this.props.totalAccomodationCost}/>
       </>
       :null}
-      {this.state.view === 'social'?
+      {this.props.pageView === 'social'?
       <>
-        <SocialFull changeView ={this.changeView}/>
+        <SocialFull changeView ={this.props.updatePageView}/>
       </>
       :null}
 

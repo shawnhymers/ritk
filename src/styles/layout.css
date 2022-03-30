@@ -102,6 +102,31 @@
   padding-bottom:3em;
 }
 
+.bottom-padding-sm{
+  padding-bottom:1em;
+}
+
+.bottom-padding-md{
+  padding-bottom:2em;
+}
+
+.bottom-padding-lg{
+  padding-bottom:3em;
+}
+
+.top-padding-sm{
+  padding-top:1em;
+}
+
+.top-padding-md{
+  padding-top:2em;
+}
+
+.top-padding-lg{
+  padding-top:3em;
+}
+
+
 .blog-row{
   margin-left: 15vw;
   margin-right: 15vw;
