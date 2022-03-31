@@ -102,7 +102,7 @@ return(
         <form autoComplete="off" >
           <Row className ='nice-input-wrapper'>
 
-              <input style ={{width:'25vw'}}
+              <input style ={{minWidth:'25vw'}}
                     className ={props.invalidInput? 'error-input':''}
                      type = 'text'
                      id= {props.inputId}

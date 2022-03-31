@@ -63,12 +63,14 @@
 }
 .outcome-message-container-mobile{
   position: absolute;
-  background-color: green;
+  position: fixed;
   top: 5vh;
   width:80vw;
   left: 10vw;
   right: 10vw;
   border-radius:5px;
+  z-index: 100;
+  opacity: 0.9;
   box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
 
 }

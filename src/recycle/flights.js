@@ -290,7 +290,8 @@ class FlightCalculator extends Component {
   }
 
   selectFromAirport=(data)=>{
-    this.setState({fromCity:data},()=>this.updateDistance())
+    this.setState({fromCity:data},
+      ()=>this.updateDistance())
   }
   selectToAirport=(data)=>{
     this.setState({toCity:data},()=>this.updateDistance())

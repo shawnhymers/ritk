@@ -1,14 +1,14 @@
-import NewFoodForm from './forms/newFoodForm'
+// import NewFoodForm from './forms/newFoodForm'
 import { Container, Row, Col, Button} from 'react-bootstrap';
-import FoodList from "./lists/foodList"
+import FoodList from "../lists/foodList"
 import {useState} from "react";
 import Dropdown from '../../../standardComponents/dropdown';
 import foodData from "../../../data/foodData"
 import dietData from "../../../data/dietData"
-import CarbonTotal from "./elements/carbonTotal"
+import CarbonTotal from "../../elements/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
 
-const Food= props =>{
+const FoodForm = props =>{
 
   // const [type, setType] = useState('average');
 
@@ -231,100 +231,4 @@ const Food= props =>{
     </>
   )
 }
-export default Food;
-
-
-
-// <Col className ='centered-children'>
-//   <label htmlFor="quantity">{'Number of Servings: ('+selectedFood.servingDescr+'/serving)'}</label>
-//   <input type="number" id="quantity" name="quantity" min="1" max="100" value = {foodQuantity} onChange = {updateFoodQuantity}/>
-// </Col>
-//
-//
-//
-// <Row>
-//   <Col xs sm md lg xl={6}>
-//     <Container className = "w3-card main-white w3-round" style ={{minHeight:'85vh',maxHeight:'85vh'}}>
-//       <NewFoodForm />
-//     </Container>
-//   </Col>
-//   <Col xs sm md lg xl={6}>
-//     <Container className = 'w3-card main-white w3-round' style ={{minHeight:'85vh',maxHeight:'85vh'}}>
-//
-//     <Row>
-//       <Col>
-//         Food
-//       </Col>
-//       <Col>
-//         Amount
-//       </Col>
-//       <Col>
-//         Footprint
-//       </Col>
-//     </Row>
-//     {food.map((food, i)=>{
-//             return <FoodList food={food}
-//                              index = {i}
-//                              key={food._id}/>
-//                               })}
-//     </Container>
-//   </Col>
-// </Row>
-
-
-
-
-//
-// <Row className ='vertical-padding-md'>
-//   <Col>
-//     &nbsp;
-//   </Col>
-//   <Col onClick ={()=>selectType('average')} className ='centered-children'>
-//     <p className = {'centered-text medium-link-text '+(type ==='average'? 'roaming-text roaming-yellow-text':'roaming-text')} >Average Diets</p>
-//   </Col>
-//   <Col className ='centered-children'>
-//     <p>|</p>
-//   </Col>
-//   <Col onClick ={()=>selectType('individual')} className ='centered-children'>
-//     <p className = {'centered-text medium-link-text '+(type ==='individual'? 'roaming-text roaming-yellow-text':'roaming-text')} >Individual Food</p>
-//   </Col>
-//   <Col>
-//     &nbsp;
-//   </Col>
-// </Row>
-
-// <Row>
-//   <Col className ='centered-children'>
-//     <select value = {selectedDiet.food} onChange = {updateDietType} className="browser-default">
-//       {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
-//                                                  key={diet.food+i}/>})}
-//     </select>
-//   </Col>
-//   <Col className ='centered-children'>
-//     <label htmlFor="foodQuantity">{'Number of Days'}</label>
-//     <input type="number" id="foodQuantity" name="foodQuantity" min="1" max="100" value = {foodQuantity} onChange = {(e)=>updateFoodQuantity(e)}/>
-//   </Col>
-// </Row>
-//
-//
-//
-//   <Row>
-//     <Col className ='centered-children'>
-//       <select value = {selectedFood.food} onChange = {updateFoodType} className="browser-default">
-//         {foodData.map((food, i)=>{return <Dropdown value = {food.food}
-//                                                    key={food.food+i}/>})}
-//       </select>
-//     </Col>
-//     <Col className ='centered-children'>
-//       <label htmlFor="quantity">{'Number of Servings'}</label>
-//       <input type="number" id="foodQuantity" name="foodQuantity" min="1" max="100" value = {foodQuantity} onChange = {(e)=>updateFoodQuantity(e)}/>
-//     </Col>
-//   </Row>
-
-// <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)}/>
-//
-// <Row className = 'centered-children vertical-padding-sm'>
-//   <Button onClick = {addFood}>Add</Button>
-// </Row>
-//
-//
+export default FoodForm;

@@ -2,12 +2,12 @@ import React from 'react';
 import  { useState } from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
 import Header from "../homeSections/header";
-import Flights from "./calculatorPages/flights"
-import Food from "./calculatorPages/food"
-import Transport from "./calculatorPages/transport/main"
-import Accomodation from "./calculatorPages/accomodation"
-import Overview from "./calculatorPages/overview"
-import CarbonTotal from "./calculatorPages/elements/carbonTotal"
+import FlightForm from "../../shared/forms/calculatorForms/flights"
+import FoodForm from "../../shared/forms/calculatorForms/food"
+import CarForm from "../../shared/forms/calculatorForms/car"
+import AccomodationForm from "../../shared/forms/calculatorForms/accomodation"
+import Overview from "../../shared/forms/calculatorForms/overview"
+import CarbonTotal from "../../shared/elements/carbonTotal"
 
 
 const CalculatorFull = props => {
@@ -62,7 +62,7 @@ return(
             <Row className ='centered-children'>
             <p className = {'centered-text '
                            +(view==='transport'? 'balloon-text medium-link-text':'balloon-text roaming-yellow-text medium-link-text ')
-                           +((stepCount>1)? " ":"fadded")}>Other Transport</p>
+                           +((stepCount>1)? " ":"fadded")}>Transport</p>
             </Row>
           </Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2} onClick ={(e)=>changeView('food')}>
@@ -98,7 +98,7 @@ return(
             <Row className ='centered-children'>
             <p className = {'centered-text '
                            +(view==='overview'? 'balloon-text medium-link-text':'balloon-text roaming-yellow-text medium-link-text ')
-                           +((stepCount>4)? "":"fadded")}>Trip Overview</p>
+                           +((stepCount>4)? "":"fadded")}>Overview</p>
             </Row>
           </Col>
           <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
@@ -110,19 +110,19 @@ return(
 
         {view==='flights'?
         <>
-          <Flights addCarbonCostItem ={props.addCarbonCostItem}/>
+          <FlightForm addCarbonCostItem ={props.addCarbonCostItem}/>
         </>:null}
         {view==='transport'?
         <>
-          <Transport addCarbonCostItem ={props.addCarbonCostItem}/>
+          <CarForm addCarbonCostItem ={props.addCarbonCostItem}/>
         </>:null}
         {view==='food'?
         <>
-          <Food addCarbonCostItem ={props.addCarbonCostItem}/>
+          <FoodForm addCarbonCostItem ={props.addCarbonCostItem}/>
         </>:null}
         {view==='accomodation'?
         <>
-          <Accomodation addCarbonCostItem ={props.addCarbonCostItem}/>
+          <AccomodationForm addCarbonCostItem ={props.addCarbonCostItem}/>
         </>:null}
         {view ==='overview'?
         <>

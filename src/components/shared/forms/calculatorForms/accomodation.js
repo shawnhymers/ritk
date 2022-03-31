@@ -1,4 +1,3 @@
-import NewFoodForm from './forms/newFoodForm'
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import  { useState } from 'react';
 import Radio from '@material-ui/core/Radio';
@@ -6,7 +5,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import CarbonTotal from "./elements/carbonTotal"
+import CarbonTotal from "../../elements/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
 
 const Accomodation = props =>{
@@ -444,63 +443,3 @@ const Accomodation = props =>{
   )
 }
 export default Accomodation;
-
-
-
-
-//
-//
-// <Row className = 'vertical-padding-md'>
-//   <Col>
-//     &nbsp;
-//   </Col>
-//   <Col>
-//     &nbsp;
-//   </Col>
-//   <Col className ='horizontal-centered-children'>
-//     <FormCheck
-//       onChange={(e)=>{updateType(e)}}
-//       type="switch"
-//       id="custom-switch-"
-//       label="Advanced Calculation"
-//       checked={isAdvanced}/>
-//   </Col>
-// </Row>
-//
-// {type === 'basic'?
-//   <>
-//     <Row className = 'vertical-padding-sm'>
-//       <FormControl component="fieldset">
-//         <FormLabel component="legend">Hotel Type:</FormLabel>
-//         <RadioGroup aria-label="gender" name="gender1" value={hotelType} onChange={updateHotelType} row>
-//           <FormControlLabel value="smallAvg" control={<Radio />} label="Small Hotel" />
-//           <FormControlLabel value="medAvg" control={<Radio />} label="Medium Hotel" />
-//           <FormControlLabel value="largeAvg" control={<Radio />} label="Large Hotel" />
-//         </RadioGroup>
-//       </FormControl>
-//       </Row>
-//     <Row className ='vertical-padding-md'>
-//       <Col className = 'centered-children'>
-//         <label htmlFor="names">Name:</label>
-//         <input type="text" id="name" name="name" min="1" max="100" value = {hotelName} onChange = {updateHotelName}/>
-//       </Col>
-//       <Col className = 'centered-children'>
-//         <label htmlFor="numberOfNights">Number of Nights:</label>
-//         <input type="number" id="numberOfNights" name="numberOfNights" min="1" max="100" value = {numberOfNights} onChange = {updateNumberOfNights}/>
-//       </Col>
-//     </Row>
-//
-//   </>
-// :null}
-// {type === 'advanced'?
-//   <>
-//     <Row>
-//       advanced
-//     </Row>
-//   </>
-//   :null}
-//   <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)}/>
-//
-// <Row className = 'centered-children vertical-padding-md'>
-//   <Button>Add</Button>
-// </Row>

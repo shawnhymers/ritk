@@ -107,6 +107,7 @@
   font-size: calc((1.8 - 1) * 0.9vw + 1rem);
   cursor: pointer;
 }
+
 .medium-link-text:hover{
   font-weight: 500;
   font-style: normal;

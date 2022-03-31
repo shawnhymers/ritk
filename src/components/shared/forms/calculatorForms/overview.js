@@ -1,7 +1,6 @@
-import NewFoodForm from './forms/newFoodForm'
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import {useState} from "react";
-import CarbonTotal from "./elements/carbonTotal"
+import CarbonTotal from "../../elements/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
 import countryFootprintData from "../../../data/countryFootprintData"
 import regionFootprintData from "../../../data/regionFootprintData"

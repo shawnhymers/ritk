@@ -6,6 +6,7 @@ import Links from "../shared/responsivePages/homeSections/links"
 import Blog from "../shared/responsivePages/homeSections/blog"
 import AboutFull from "./fullscreenViews/about"
 import BlogFull from "./fullscreenViews/blog"
+import CalculatorFull from "./fullscreenViews/calculator"
 import SocialFull from "./fullscreenViews/social"
 // import { Container, Row, Col, Button} from 'react-bootstrap';
 class MobileApp extends Component {
@@ -72,7 +73,13 @@ class MobileApp extends Component {
       :null}
       {this.props.pageView ==='calculator'?
       <>
-        calc
+        <CalculatorFull changeView ={this.props.updatePageView}
+                        addCarbonCostItem ={this.props.addCarbonCostItem}
+                        totalCarbonFootprint={this.props.totalCarbonCost}
+                        totalFlightCost = {this.props.totalFlightCost}
+                        totalTransportCost = {this.props.totalTransportCost}
+                        totalFoodCost = {this.props.totalFoodCost}
+                        totalAccomodationCost = {this.props.totalAccomodationCost}/>
       </>
       :null}
       {this.props.pageView ==='social'?
