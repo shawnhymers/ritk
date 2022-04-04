@@ -99,7 +99,7 @@ return(
     {view==='flights'?
     <>
       <Row  className =' centered-children' style ={{marginBottom:'20vw'}}>
-        <FlightForm addCarbonCostItem={props.addCarbonCostItem}/>
+        <FlightForm addCarbonCostItem={props.addCarbonCostItem} />
       </Row>
     </>:null}
     {view==='transportation'?

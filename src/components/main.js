@@ -1,7 +1,7 @@
 import  {  Component } from "react";
 import React from "react";
-import DesktopApp from "./desktop/desktopApp"
-import MobileApp from "./mobile/mobileApp"
+import AppMain from "./app/appMain"
+// import MobileApp from "./mobile/mobileApp"
 import OutcomeMessage from"./standardComponents/outcomeMessage"
 // import { Container, Row, Col, Button} from 'react-bootstrap';
 class Main extends Component {
@@ -11,12 +11,8 @@ class Main extends Component {
     this.state = {
       isMobile:false,
       showOutcomeMessage:false,
-      pageView:'main',
-      flights:[],
-      transports:[],
-      food:[],
-      accommodations:[],
-      food:[],
+      outcomeMessageType:'positive',
+      flightFormData:{},
       totalCarbonCost:0,
       totalFlightCost:0,
       totalTransportCost:0,
@@ -35,7 +31,6 @@ class Main extends Component {
       console.log(this.props.match.params.view)
     }
   }
-
 
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
@@ -103,54 +98,71 @@ class Main extends Component {
   closeMessage = ()=>{
     this.setState({showOutcomeMessage:false})
   }
-  updatePageView =(pageView)=>{
-    this.setState({pageView:pageView})
-  }
   render() {
 
   return(
     <>
+      {this.state.showOutcomeMessage?
+        <OutcomeMessage isMobile ={this.state.isMobile}
+                        outcomeMessageType = {this.state.outcomeMessageType}
+                        closeMessage ={this.closeMessage}
+                        message ={this.state.outcomeMessage}/>
+      :null}
 
-      {this.state.isMobile?
-        <>
-          {this.state.showOutcomeMessage?
-            <>
-              <OutcomeMessage screen='mobile'
-                              outcomeMessageType = {this.state.outcomeMessageType}
-                              closeMessage ={this.closeMessage}
-                              message ={this.state.outcomeMessage}/>
-            </>:null}
-
-          <MobileApp urlView={this.props.match.params.view}
-                     pageView ={this.state.pageView}
-                     updatePageView={this.updatePageView}
-                     addCarbonCostItem ={this.addCarbonCostItem}
-                     totalCarbonCost = {this.state.totalCarbonCost}
-                     totalFlightCost = {this.state.totalFlightCost}
-                     totalTransportCost ={this.state.totalTransportCost}
-                     totalFoodCost ={this.state.totalFoodCost}
-                     totalAccomodationCost = {this.state.totalAccomodationCost}/>
-        </>
-      :
-        <>
-          {this.state.showOutcomeMessage?
-            <>
-              <OutcomeMessage screen='desktop'
-                              outcomeMessageType = {this.state.outcomeMessageType}
-                              closeMessage ={this.closeMessage}
-                              message ={this.state.outcomeMessage}/>
-            </>:null}
-          <DesktopApp urlView={this.props.match.params.view}
-                      pageView ={this.state.pageView}
-                      updatePageView={this.updatePageView}
-                      addCarbonCostItem ={this.addCarbonCostItem}
-                      totalCarbonCost = {this.state.totalCarbonCost}
-                      totalFlightCost = {this.state.totalFlightCost}
-                      totalTransportCost ={this.state.totalTransportCost}
-                      totalFoodCost ={this.state.totalFoodCost}
-                      totalAccomodationCost = {this.state.totalAccomodationCost}/>
-        </>
-      }
+      <AppMain isMobile ={this.state.isMobile}
+               urlView={this.props.match.params.view}
+               addCarbonCostItem ={this.addCarbonCostItem}
+               totalCarbonCost = {this.state.totalCarbonCost}
+               totalFlightCost = {this.state.totalFlightCost}
+               totalTransportCost ={this.state.totalTransportCost}
+               totalFoodCost ={this.state.totalFoodCost}
+               totalAccomodationCost = {this.state.totalAccomodationCost}/>
     </>
 )}};
 export default Main;
+//
+//
+//
+//
+// {this.state.isMobile?
+//   <>
+//     {this.state.showOutcomeMessage?
+//       <>
+//         <OutcomeMessage screen='mobile'
+//                         outcomeMessageType = {this.state.outcomeMessageType}
+//                         closeMessage ={this.closeMessage}
+//                         message ={this.state.outcomeMessage}/>
+//       </>:null}
+//
+//       <MobileApp urlView={this.props.match.params.view}
+//                  pageView ={this.state.pageView}
+//                  updatePageView={this.updatePageView}
+//                  flightFormData ={this.state.flightFormData}
+//                  addCarbonCostItem ={this.addCarbonCostItem}
+//                  totalCarbonCost = {this.state.totalCarbonCost}
+//                  totalFlightCost = {this.state.totalFlightCost}
+//                  totalTransportCost ={this.state.totalTransportCost}
+//                  totalFoodCost ={this.state.totalFoodCost}
+//                  totalAccomodationCost = {this.state.totalAccomodationCost}/>
+//   </>
+// :
+//   <>
+//     {this.state.showOutcomeMessage?
+//       <>
+//         <OutcomeMessage screen='desktop'
+//                         outcomeMessageType = {this.state.outcomeMessageType}
+//                         closeMessage ={this.closeMessage}
+//                         message ={this.state.outcomeMessage}/>
+//       </>:null}
+//     <DesktopApp isMobile ={this.state.isMobile}
+//                 urlView={this.props.match.params.view}
+//                 pageView ={this.state.pageView}
+//                 updatePageView={this.updatePageView}
+//                 addCarbonCostItem ={this.addCarbonCostItem}
+//                 totalCarbonCost = {this.state.totalCarbonCost}
+//                 totalFlightCost = {this.state.totalFlightCost}
+//                 totalTransportCost ={this.state.totalTransportCost}
+//                 totalFoodCost ={this.state.totalFoodCost}
+//                 totalAccomodationCost = {this.state.totalAccomodationCost}/>
+//   </>
+// }

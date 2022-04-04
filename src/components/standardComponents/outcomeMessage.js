@@ -12,7 +12,7 @@ const OutcomeMessage = props => {
   }
 return(
   <>
-    {props.screen ==='desktop'?
+    {!props.isMobile?
       <>
         <Container className ={'outcome-message-container-desktop centered-children '
                                + (props.outcomeMessageType==='positive'? 'positive-message':'negative-message')}>
@@ -29,7 +29,7 @@ return(
           </Row>
         </Container>
       </>:null}
-  {props.screen ==='mobile'?
+  {props.isMobile?
   <>
     <Container className ={'outcome-message-container-mobile centered-children '
                            + (props.outcomeMessageType==='positive'? 'positive-message':'negative-message')}>

@@ -96,7 +96,7 @@ const SearchDrop = props => {
 
 return(
   <>
-    <Container>
+
       <Row>
         <Col className =''>
         <form autoComplete="off" >
@@ -138,7 +138,7 @@ return(
         </>
       :null}
 
-    </Container>
+
 
   </>
 )}

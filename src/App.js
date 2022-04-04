@@ -11,10 +11,10 @@ import './styles/effects.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import Main from './components/main.js';
-import WhistlerFoodGuide from './components/blogs/whistlerFoodGuide';
-import WhistlerActivityGuide from './components/blogs/whistlerActivityGuide';
-import VancouverFoodGuide from './components/blogs/vancouverFoodGuide';
-import VancouverActivityGuide from './components/blogs/vancouverActivityGuide';
+// import WhistlerFoodGuide from './components/blogs/whistlerFoodGuide';
+// import WhistlerActivityGuide from './components/blogs/whistlerActivityGuide';
+// import VancouverFoodGuide from './components/blogs/vancouverFoodGuide';
+// import VancouverActivityGuide from './components/blogs/vancouverActivityGuide';
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
 
@@ -26,10 +26,7 @@ function App() {
             <Route exact path="/" component={Main} />
             <Route exact path="/home/:view" component={Main} />
 
-            <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
-            <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
-            <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
-            <Route  exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
+
           </ScrollToTop>
         </Router>
 
@@ -38,3 +35,9 @@ function App() {
 }
 
 export default App;
+
+//
+// <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
+// <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
+// <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
+// <Route  exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />

@@ -110,7 +110,7 @@ return(
 
         {view==='flights'?
         <>
-          <FlightForm addCarbonCostItem ={props.addCarbonCostItem}/>
+          <FlightForm addCarbonCostItem ={props.addCarbonCostItem} />
         </>:null}
         {view==='transport'?
         <>
