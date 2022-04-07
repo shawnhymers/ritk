@@ -7,73 +7,215 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import CarbonTotal from "../../elements/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
+import HelpIcon from "../../../standardComponents/helpIcon"
 
 const Accomodation = props =>{
 
   const [type, setType] = useState('basic');
   const [isAdvanced, setIsAdvanced] = useState(false)
 
-  const [hotelType, setHotelType] = useState('smallAvg');
+  const [hotelName, setHotelName] =useState('')
+  const [hotelSize, setHotelSize]=useState('large')
+  const [hotelEffeciency, setHotelEffeciency]=useState('good')
+  const [numberOfNights, setNumberOfNights] =useState('')
+  const [avgOccupancy, setAvgOccupancy] =useState(95)
 
-  const [advancedHotelDetails, setAdvancedHotelDetails]=useState({ hotelName:'',
-                                                                   numberOfNights:'',
-                                                                   numberOfRooms:180,
-                                                                   avgOccupancy:95,
-                                                                   electricConsumption:2540802,
-                                                                   electricEF:0.2988,
-                                                                   gasConsumption:4207102,
-                                                                   gasEF:0.1822,
-                                                                   oilConsumption:657,
-                                                                   oilEF:2.6765})
+  const [electricConsumption, setElectricConsumption] =useState(80)
+  const [fuelConsumption, setFuelConsumption]=useState(210)
+  const [waterConsumption, setWaterConsumption]=useState(172.5)
+
   const [carbonFootprint, setCarbonFootprint] = useState(0);
 
-  const [basicErrors, setBasicErrors] =useState({nameError:false,
-                                                 nightsError:false})
-
-  const [advancedErrors, setAdvancedErrors] = useState({nameError:false,
+  const [errors, seterrors] = useState({nameError:false,
                                                         nightsError:false,
                                                         occupancyError:false,
                                                         numberOfRoomsError:false,
                                                         electricConsumptionError:false,
-                                                        electricEFError:false,
-                                                        gasConsumptionError:false,
-                                                        gasEFError:false,
-                                                        oilConsumptionError:false,
-                                                        oilEFError:false})
+                                                        fuelConsumptionError:false,
+                                                        waterConsumptionError:false})
   function selectType(type){
     setType(type);
   }
-  function updateNumberOfNights(e){
+  function updateHotelSize(e){
+    console.log(e.target.value)
 
+    setHotelSize(e.target.value);
+
+    if (e.target.value ==='large') {
+      if (hotelEffeciency==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(165)
+        setFuelConsumption(200)
+        setWaterConsumption(220)
+
+        updateFootprint(numberOfNights,165,200,220,avgOccupancy)
+      }
+      else if (hotelEffeciency==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(182.5)
+        setFuelConsumption(220)
+        setWaterConsumption(255)
+
+        updateFootprint(numberOfNights,182.5,220,255,avgOccupancy)
+      }
+      else if (hotelEffeciency==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(225)
+        setFuelConsumption(270)
+        setWaterConsumption(300)
+
+        updateFootprint(numberOfNights,225,270,300,avgOccupancy)
+      }
+    }
+    else if (e.target.value ==='medium') {
+      if (hotelEffeciency==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(70)
+        setFuelConsumption(190)
+        setWaterConsumption(160)
+
+        updateFootprint(numberOfNights,70,190,160,avgOccupancy)
+      }
+      else if (hotelEffeciency==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(80)
+        setFuelConsumption(210)
+        setWaterConsumption(172.5)
+
+        updateFootprint(numberOfNights,80,210,172.5,avgOccupancy)
+      }
+      else if (hotelEffeciency==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(105)
+        setFuelConsumption(245)
+        setWaterConsumption(202.5)
+
+        updateFootprint(numberOfNights,105,245,202.5,avgOccupancy)
+      }
+    }
+    else if (e.target.value ==='small') {
+      if (hotelEffeciency==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(60)
+        setFuelConsumption(180)
+        setWaterConsumption(120)
+
+        updateFootprint(numberOfNights,60,180,120,avgOccupancy)
+      }
+      else if (hotelEffeciency==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(70)
+        setFuelConsumption(195)
+        setWaterConsumption(130)
+
+        updateFootprint(numberOfNights,70,195,130,avgOccupancy)
+      }
+      else if (hotelEffeciency==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(90)
+        setFuelConsumption(225)
+        setWaterConsumption(150)
+
+        updateFootprint(numberOfNights,90,225,150,avgOccupancy)
+      }
+    }
+
+  }
+  function updateHotelEfficiency(e){
+    console.log(e.target.value)
+    setHotelEffeciency(e.target.value)
+
+    if (hotelSize ==='large') {
+      if (e.target.value==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(165)
+        setFuelConsumption(200)
+        setWaterConsumption(220)
+
+        updateFootprint(numberOfNights,165,200,220,avgOccupancy)
+      }
+      else if (e.target.value==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(182.5)
+        setFuelConsumption(220)
+        setWaterConsumption(255)
+
+        updateFootprint(numberOfNights,182.5,220,255,avgOccupancy)
+      }
+      else if (e.target.value==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(225)
+        setFuelConsumption(270)
+        setWaterConsumption(300)
+
+        updateFootprint(numberOfNights,225,270,300,avgOccupancy)
+      }
+    }
+    else if (hotelSize ==='medium') {
+      if (e.target.value==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(70)
+        setFuelConsumption(190)
+        setWaterConsumption(160)
+
+        updateFootprint(numberOfNights,70,190,160,avgOccupancy)
+      }
+      else if (e.target.value==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(80)
+        setFuelConsumption(210)
+        setWaterConsumption(172.5)
+
+        updateFootprint(numberOfNights,80,210,172.5,avgOccupancy)
+      }
+      else if (e.target.value==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(105)
+        setFuelConsumption(245)
+        setWaterConsumption(202.5)
+
+        updateFootprint(numberOfNights,105,245,202.5,avgOccupancy)
+      }
+    }
+    else if (hotelSize ==='small') {
+      if (e.target.value==='good') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(60)
+        setFuelConsumption(180)
+        setWaterConsumption(120)
+
+        updateFootprint(numberOfNights,60,180,120,avgOccupancy)
+      }
+      else if (e.target.value==='fair') {
+        // all units are (kWh/m2 year)
+        setElectricConsumption(70)
+        setFuelConsumption(195)
+        setWaterConsumption(130)
+
+        updateFootprint(numberOfNights,70,195,130,avgOccupancy)
+      }
+      else if (e.target.value==='poor'){
+        // all units are (kWh/m2 year)
+        setElectricConsumption(90)
+        setFuelConsumption(225)
+        setWaterConsumption(150)
+
+        updateFootprint(numberOfNights,90,225,150,avgOccupancy)
+      }
+    }
+  }
+  function updateNumberOfNights(e){
+    console.log('updating number of nights')
+    console.log(e.target.value)
     if (parseInt(e.target.value)>0) {
-      console.log(parseInt(e.target.value))
-      let tempDetails = {hotelName:advancedHotelDetails.hotelName,
-                         numberOfNights:parseInt(e.target.value),
-                         numberOfRooms:advancedHotelDetails.numberOfRooms,
-                         avgOccupancy:advancedHotelDetails.avgOccupancy,
-                         electricConsumption:advancedHotelDetails.electricConsumption,
-                         electricEF:advancedHotelDetails.electricEF,
-                         gasConsumption:advancedHotelDetails.gasConsumption,
-                         gasEF:advancedHotelDetails.gasEF,
-                         oilConsumption:advancedHotelDetails.oilConsumption,
-                         oilEF:advancedHotelDetails.oilEF}
-      setAdvancedHotelDetails(tempDetails)
-      updateFootprint(parseInt(e.target.value))
+      console.log('good number to update with')
+      setNumberOfNights(parseInt(e.target.value)*1)
+      updateFootprint(parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
     else if (e.target.value==='') {
-      console.log(parseInt(e.target.value))
-      let tempDetails = {hotelName:advancedHotelDetails.hotelName,
-                         numberOfNights:'',
-                         numberOfRooms:advancedHotelDetails.numberOfRooms,
-                         avgOccupancy:advancedHotelDetails.avgOccupancy,
-                         electricConsumption:advancedHotelDetails.electricConsumption,
-                         electricEF:advancedHotelDetails.electricEF,
-                         gasConsumption:advancedHotelDetails.gasConsumption,
-                         gasEF:advancedHotelDetails.gasEF,
-                         oilConsumption:advancedHotelDetails.oilConsumption,
-                         oilEF:advancedHotelDetails.oilEF}
-      setAdvancedHotelDetails(tempDetails)
-      updateFootprint(parseInt(e.target.value))
+      console.log('no good number to update with')
+      setNumberOfNights('')
+      updateFootprint(parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
 
 
@@ -82,32 +224,49 @@ const Accomodation = props =>{
   }
   function updateHotelName(e){
     console.log(e.target.value)
-    let tempDetails = {hotelName:e.target.value,
-                       numberOfNights:advancedHotelDetails.numberOfNights,
-                       numberOfRooms:advancedHotelDetails.numberOfRooms,
-                       avgOccupancy:advancedHotelDetails.avgOccupancy,
-                       electricConsumption:advancedHotelDetails.electricConsumption,
-                       electricEF:advancedHotelDetails.electricEF,
-                       gasConsumption:advancedHotelDetails.gasConsumption,
-                       gasEF:advancedHotelDetails.gasEF,
-                       oilConsumption:advancedHotelDetails.oilConsumption,
-                       oilEF:advancedHotelDetails.oilEF}
-    setAdvancedHotelDetails(tempDetails)
+    setHotelName(e.target.value)
   }
-  function updateFootprint(numberOfNights){
-    console.log('updating footprint')
+
+  function updateElectricConsumption(e){
+    console.log(e.target.value)
+    setElectricConsumption(e.target.value)
+    updateFootprint(numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
+
+  }
+
+  function updateFuelConsumption(e){
+    setFuelConsumption(e.target.value)
+    updateFootprint(numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
+  }
+
+  function updateWaterConsumption(e){
+    setWaterConsumption(e.target.value)
+    updateFootprint(numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
+  }
+
+  function updateAvgOccupancy(e){
+    setAvgOccupancy(e.target.value)
+    updateFootprint(numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
+
+  }
+
+  function updateFootprint(numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy){
+    console.log('-----updating footprint------')
     console.log('number of nights...'+numberOfNights)
+    console.log('electric Consumption...'+electricConsumption)
+    console.log('fuel Consumption...'+fuelConsumption)
+    console.log('water Consumption..'+waterConsumption)
+    console.log('avg occupancy..'+avgOccupancy)
+    console.log('-----------------------------')
+
     if (numberOfNights<1) {
       setCarbonFootprint(0)
     }
     else {
-      let totalRooms = advancedHotelDetails.numberOfRooms*365*(advancedHotelDetails.avgOccupancy/100)
-      console.log('total rooms...'+totalRooms)
-      let cost = ((advancedHotelDetails.electricConsumption*advancedHotelDetails.electricEF +
-                  advancedHotelDetails.gasConsumption*advancedHotelDetails.gasEF+
-                  advancedHotelDetails.oilConsumption*advancedHotelDetails.oilEF)/totalRooms)*numberOfNights
 
-      console.log(cost)
+      let cost =parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100);
+
+      console.log('calculated cost...'+cost)
       setCarbonFootprint(cost)
     }
 
@@ -116,57 +275,28 @@ const Accomodation = props =>{
     if (isAdvanced) {
       console.log('setting advanced off')
       setIsAdvanced(false)
-      setCarbonFootprint(0)
 
     }
     else {
       console.log('setting advanced on')
       setIsAdvanced(true)
-      setCarbonFootprint(0)
 
     }
   }
-  function updateHotelDetails(e){
-    let temp ={hotelName:advancedHotelDetails.hotelName,
-               numberOfNights:advancedHotelDetails.numberOfNights,
-               numberOfRooms:advancedHotelDetails.numberOfRooms,
-               avgOccupancy:advancedHotelDetails.avgOccupancy,
-               electricConsumption:advancedHotelDetails.electricConsumption,
-               electricEF:advancedHotelDetails.electricEF,
-               gasConsumption:advancedHotelDetails.gasConsumption,
-               gasEF:advancedHotelDetails.gasEF,
-               oilConsumption:advancedHotelDetails.oilConsumption,
-               oilEF:advancedHotelDetails.oilEF}
-    temp[e.target.name]=e.target.value;
-    if (e.target.name ==='avgOccupancy') {
-      if (e.target.value>100) {
-        temp['avgOccupancy']=100;
-      }
-    }
-    setAdvancedHotelDetails(temp)
-  }
+
   function resetState(){
     setIsAdvanced(false)
     setCarbonFootprint(0)
-    setAdvancedHotelDetails({ hotelName:'',
-                              numberOfNights:'',
-                              numberOfRooms:180,
-                              avgOccupancy:95,
-                              electricConsumption:2540802,
-                              electricEF:0.2988,
-                              gasConsumption:4207102,
-                              gasEF:0.1822,
-                              oilConsumption:657,
-                              oilEF:2.6765})
+
 
   }
   function addHotel(){
-    if (advancedHotelDetails.hotelName!=='' && carbonFootprint>0) {
+    if (hotelName!=='' && carbonFootprint>0) {
 
       let data ={ type: 'accomodation',
                   carbonFootprint: carbonFootprint,
-                  hotelName:advancedHotelDetails.hotelName,
-                  numberOfNights:advancedHotelDetails.numberOfNights}
+                  hotelName:hotelName,
+                  numberOfNights:numberOfNights}
 
 
       props.addCarbonCostItem(data)
@@ -177,70 +307,55 @@ const Accomodation = props =>{
       let occupancyError=false;
       let numberOfRoomsError=false;
       let electricConsumptionError=false;
-      let electricEFError=false;
-      let gasConsumptionError=false;
-      let gasEFError=false;
-      let oilConsumptionError=false;
-      let oilEFError=false;
+      let fuelConsumptionError=false;
+      let waterConsumptionError=false;
 
       if (isAdvanced) {
 
-        if (advancedHotelDetails.hotelName ==='') {
+        if (hotelName ==='') {
           nameError=true;
         }
-        if (advancedHotelDetails.numberOfNights==='') {
+        if (numberOfNights==='') {
           nightsError =true;
         }
-        if (advancedHotelDetails.avgOccupancy===''){
+        if (avgOccupancy===''){
           occupancyError=true;
         }
-        if (advancedHotelDetails.numberOfRooms===''){
-          numberOfRoomsError=true;
-        }
-        if (advancedHotelDetails.electricConsumption===''){
+        if (electricConsumption===''){
           electricConsumptionError=true;
         }
-        if (advancedHotelDetails.electricEF===''){
-          electricEFError=true;
+        if (fuelConsumption===''){
+          fuelConsumptionError=true;
         }
-        if (advancedHotelDetails.gasConsumption===''){
-          gasConsumptionError=true;
+        if (waterConsumption===''){
+          waterConsumptionError=true;
         }
-        if (advancedHotelDetails.gasEF===''){
-          gasEFError=true;
-        }
-        if (advancedHotelDetails.oilConsumption===''){
-          oilConsumptionError=true;
-        }
-        if (advancedHotelDetails.oilEF===''){
-            oilEFError=true;
-        }
-        let advancedErrors ={nameError:nameError,
+
+        let errors ={nameError:nameError,
                              nightsError:nightsError,
                              occupancyError:occupancyError,
                              numberOfRoomsError:numberOfRoomsError,
                              electricConsumptionError:electricConsumptionError,
-                             electricEFError:electricEFError,
-                             gasConsumptionError:gasConsumptionError,
-                             gasEFError:gasEFError,
-                             oilConsumptionError:oilConsumptionError,
-                             oilEFError:oilEFError}
-        setAdvancedErrors(advancedErrors);
+                             fuelConsumptionError:fuelConsumptionError,
+                             waterConsumptionError:waterConsumptionError,
+                             }
+        seterrors(errors);
         }
       else {
-        if (advancedHotelDetails.hotelName==='') {
+        if (hotelName==='') {
           nameError=true;
         }
-        if (advancedHotelDetails.numberOfNights==='') {
+        if (numberOfNights==='') {
           nightsError =true;
         }
-        let basicErrors ={nameError:nameError,
+        let errors ={nameError:nameError,
                           nightsError:nightsError}
-        setBasicErrors(basicErrors)
+        seterrors(errors)
       }
 
     }
   }
+
 
   return(
     <>
@@ -275,25 +390,6 @@ const Accomodation = props =>{
           {isAdvanced?
           <>
             <Row className ='form-line nice-input-wrapper'>
-            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-              <Row>
-                <input type="number"
-                       id="numberOfRooms"
-                       name="numberOfRooms"
-                       placeholder ='Number of Rooms'
-                       min="1"
-                       max="100"
-                       value = {advancedHotelDetails.numberOfRooms}
-                       onChange = {updateHotelDetails}
-                       className ={advancedErrors.numberOfRoomsError? "error-input":""}/>
-                <label htmlFor="numberOfRooms"
-                       className ={advancedErrors.numberOfRoomsError? "error-label":""}>
-                  Number of Rooms
-                </label>
-                </Row>
-              </Col>
-            </Row>
-            <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
                   <input type="number"
@@ -302,11 +398,11 @@ const Accomodation = props =>{
                          placeholder ='Average Occupancy (%)'
                          min="1"
                          max="100"
-                         value = {advancedHotelDetails.avgOccupancy}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.occupancyError? "error-input":""}/>
+                         value = {avgOccupancy}
+                         onChange = {updateAvgOccupancy}
+                         className ={errors.occupancyError? "error-input":""}/>
                   <label htmlFor="avgOccupancy"
-                         className ={advancedErrors.occupancyError? "error-label":""}>
+                         className ={errors.occupancyError? "error-label":""}>
                     Average Occupancy (%)
                   </label>
                 </Row>
@@ -318,32 +414,32 @@ const Accomodation = props =>{
                   <input type="number"
                          id="electricConsumption"
                          name="electricConsumption"
-                         placeholder = 'Electricity Consumption (kWh/Year)'
+                         placeholder = 'Electricity Consumption (kWh/ M^2 Year)'
                          min="1"
                          max="100"
-                         value = {advancedHotelDetails.electricConsumption}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.electricConsumptionError? "error-input":""}/>
+                         value = {electricConsumption}
+                         onChange = {updateElectricConsumption}
+                         className ={errors.electricConsumptionError? "error-input":""}/>
                   <label htmlFor="electricConsumption"
-                         className ={advancedErrors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/Year)</label>
+                         className ={errors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/ M^2 Year)</label>
                 </Row>
               </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                <input type="number"
-                         id="electricEF"
-                         name="electricEF"
-                         placeholder ='Electricity EF'
+                  <input type="number"
+                         id="fuelConsumption"
+                         name="fuelConsumption"
+                         placeholder ='Fuel Consumption (kWh/m^2 Year)'
                          min="1"
-                         max="100"
-                         value = {advancedHotelDetails.electricEF}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.electricEFError? "error-input":""}/>
-                  <label htmlFor="electricEF"
-                         className ={advancedErrors.electricEFError? "error-label":""}>
-                    Electricity EF
+                         max="1000"
+                         value = {fuelConsumption}
+                         onChange = {updateFuelConsumption}
+                         className ={errors.fuelConsumptionError? "error-input":""}/>
+                  <label htmlFor="fuelConsumption"
+                         className ={errors.fuelConsumptionError? "error-label":""}>
+                    Fuel Consumption (kWh/ M^2 Year)
                   </label>
                 </Row>
               </Col>
@@ -353,77 +449,23 @@ const Accomodation = props =>{
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
                   <input type="number"
-                         id="gasConsumption"
-                         name="gasConsumption"
-                         placeholder ='Gas Consumption (kWh/Year)'
+                         id="waterConsumption"
+                         name="waterConsumption"
+                         placeholder ='Water Consumption (kWh/m^2 Year)'
                          min="1"
-                         max="100"
-                         value = {advancedHotelDetails.gasConsumption}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.gasConsumptionError? "error-input":""}/>
+                         max="1000"
+                         value = {waterConsumption}
+                         onChange = {updateWaterConsumption}
+                         className ={errors.waterConsumptionError? "error-input":""}/>
                   <label htmlFor="gasConsumption"
-                         className ={advancedErrors.gasConsumptionError? "error-label":""}>
-                    Gas Consumption (kWh/Year)
-                  </label>
-                </Row>
-              </Col>
-            </Row>
-            <Row className ='form-line nice-input-wrapper'>
-              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                  <input type="number"
-                         id="gasEF"
-                         name="gasEF"
-                         placeholder ='Gas EF'
-                         min="1"
-                         max="100"
-                         value = {advancedHotelDetails.gasEF}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.gasEFError? "error-input":""}/>
-                  <label htmlFor="gasEF"
-                         className ={advancedErrors.gasEFError? "error-label":""}>
-                    Gas EF
+                         className ={errors.waterConsumptionError? "error-label":""}>
+                    Water Consumption (kWh/ M^2 Year)
                   </label>
                 </Row>
               </Col>
             </Row>
 
-            <Row className ='form-line nice-input-wrapper'>
-              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                  <input type="number"
-                         id="oilConsumption"
-                         name="oilConsumption"
-                         placeholder ='Oil Consumption (kWh/Year)'
-                         min="1"
-                         max="100"
-                         value = {advancedHotelDetails.oilConsumption}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.oilConsumptionError? "error-input":""}/>
-                  <label htmlFor="oilConsumption"
-                         className ={advancedErrors.oilConsumptionError? "error-label":""}>
-                    Oil Consumption (kWh/Year)
-                  </label>
-                </Row>
-              </Col>
-            </Row>
-            <Row className ='form-line nice-input-wrapper'>
-              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                  <input type="number"
-                         id="oilEF"
-                         name="oilEF"
-                         placeholder ='Oil EF'
-                         min="1"
-                         max="100"
-                         value = {advancedHotelDetails.oilEF}
-                         onChange = {updateHotelDetails}
-                         className ={advancedErrors.oilEFError? "error-input":""}/>
-                  <label htmlFor="oilEF"
-                         className ={advancedErrors.oilEFError? "error-label":""}>Oil EF</label>
-                </Row>
-              </Col>
-            </Row>
+
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
@@ -431,14 +473,12 @@ const Accomodation = props =>{
                          id="name"
                          name="name"
                          placeholder='Name'
-                         min="1"
-                         max="100"
-                         value = {advancedHotelDetails.hotelName}
+                         value = {hotelName}
                          placeholder ='Name:'
                          onChange = {updateHotelName}
-                         className ={advancedErrors.nameError? "error-input":""}/>
+                         className ={errors.nameError? "error-input":""}/>
                   <label htmlFor="names"
-                         className ={advancedErrors.nameError? "error-label":""}>
+                         className ={errors.nameError? "error-label":""}>
                     Name:
                   </label>
                 </Row>
@@ -452,13 +492,13 @@ const Accomodation = props =>{
                          name="numberOfNightsAdv"
                          placeholder ='Number of Nights'
                          min="1"
-                         max="100"
+                         max="10000"
                          placeholder ='Number of Nights:'
-                         value = {advancedHotelDetails.numberOfNights}
+                         value = {numberOfNights}
                          onChange = {updateNumberOfNights}
-                         className ={advancedErrors.nightsError? "error-input":""}/>
+                         className ={errors.nightsError? "error-input":""}/>
                   <label htmlFor="numberOfNightsAdv"
-                         className ={advancedErrors.nightsError? "error-label":""}>
+                         className ={errors.nightsError? "error-label":""}>
                     Number of Nights
                   </label>
                 </Row>
@@ -468,6 +508,29 @@ const Accomodation = props =>{
           :
           <>
 
+            <Row className ='form-line '>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Hotel Size:</FormLabel>
+                <RadioGroup row aria-label="hotelSize" name="hotelSize" value={hotelSize} onChange={updateHotelSize}>
+                  <FormControlLabel value="large" control={<Radio />} label="Large" />
+                  <FormControlLabel value="medium" control={<Radio />} label="Medium" />
+                  <FormControlLabel value="small" control={<Radio />} label="Small" />
+                  <HelpIcon message ='Large hotels (more than 150 rooms) with air conditioning, laundry & indoor swimming pool. Medium‐sized hotels (50‐150 rooms) without laundry, with heating & air conditioning in some areas. Small hotels (4‐50 rooms) without laundry, with heating & air conditioning in some areas.'/>
+                </RadioGroup>
+              </FormControl>
+            </Row>
+
+            <Row className ='form-line '>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">Hotel Efficiency:</FormLabel>
+                <RadioGroup row aria-label="hotelEffeciency" name="hotelEffeciency" value={hotelEffeciency} onChange={updateHotelEfficiency}>
+                  <FormControlLabel value="good" control={<Radio />} label="Good" />
+                  <FormControlLabel value="fair" control={<Radio />} label="Fair" />
+                  <FormControlLabel value="poor" control={<Radio />} label="Poor" />
+                  <HelpIcon message ="A lot goes into determining the efficiency of a hotel. The hotel age, design, location, and amenities. Generally, old and luxury hotels are inefficient. Also, any hotel where there is a large temperature difference inside and outside are very inefficient. New hotels in moderate climates tend to be the most efficient. If you’re unsure, just select ‘Fair’ for an approximation. "/>
+                </RadioGroup>
+              </FormControl>
+            </Row>
 
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -477,12 +540,12 @@ const Accomodation = props =>{
                          name="name"
                          min="1"
                          max="100"
-                         value = {advancedHotelDetails.hotelName}
+                         value = {hotelName}
                          placeholder ='Name:'
                          onChange = {updateHotelName}
-                         className ={basicErrors.nameError? "error-input":""}/>
+                         className ={errors.nameError? "error-input":""}/>
                   <label htmlFor="names"
-                         className ={basicErrors.nameError? "error-label":""}>
+                         className ={errors.nameError? "error-label":""}>
                     Name:
                   </label>
                 </Row>
@@ -497,12 +560,12 @@ const Accomodation = props =>{
                      name="numberOfNights"
                      min="1"
                      max="100"
-                     value = {advancedHotelDetails.numberOfNights}
+                     value = {numberOfNights}
                      placeholder ='Number of Nights:'
                      onChange = {updateNumberOfNights}
-                     className ={basicErrors.nightsError? "error-input":""}/>
+                     className ={errors.nightsError? "error-input":""}/>
               <label htmlFor="numberOfNights"
-                     className ={basicErrors.nightsError? "error-label":""}>
+                     className ={errors.nightsError? "error-label":""}>
                 Number of Nights:
               </label>
               </Row>
@@ -510,7 +573,7 @@ const Accomodation = props =>{
           </Row>
           </>}
 
-          <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+          <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
             <Button onClick = {addHotel}>Add</Button>

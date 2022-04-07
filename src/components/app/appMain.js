@@ -109,7 +109,7 @@ class AppMain extends Component {
       <>
         <Calculator changeView ={this.props.updatePageView}
                     addCarbonCostItem ={this.props.addCarbonCostItem}
-                    totalCarbonFootprint={this.props.totalCarbonCost}
+                    totalCarbonCost={this.props.totalCarbonCost}
                     totalFlightCost = {this.props.totalFlightCost}
                     totalTransportCost = {this.props.totalTransportCost}
                     totalFoodCost = {this.props.totalFoodCost}
@@ -123,6 +123,8 @@ class AppMain extends Component {
                 isMobile={this.props.isMobile}/>
       </>
       :null}
+
+
 
       </div>
     </>

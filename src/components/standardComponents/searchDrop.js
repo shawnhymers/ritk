@@ -56,11 +56,6 @@ const SearchDrop = props => {
       console.log('showing dropdown')
       console.log(props.options)
       setShowDropDown(true)
-    // }
-    // else {
-    //   console.log('hiding dropdown')
-    //   setShowDropDown(false)
-    // }
     props.updateOptions(e)
     // setOptions(newOptions)
   }
@@ -90,7 +85,7 @@ const SearchDrop = props => {
     console.log('canceling options')
     setTimeout(() => {
      setShowDropDown(false);
-  },100)
+  },1000)
 
   }
 

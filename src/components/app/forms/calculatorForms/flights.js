@@ -299,7 +299,8 @@ return(
                       setSearchValue ={setFromSearchValue}
                       displayKeys ={['City','Airport','Code']}
                       keyFields ={['index']}
-                      invalidInput ={errors.fromAirportError}/>
+                      invalidInput ={errors.fromAirportError}
+                      key ={'From Airport Search'}/>
         </Row>
         <Row className ='form-line'>
           <SearchDrop options={toOptions}
@@ -312,7 +313,8 @@ return(
                       setSearchValue ={setToSearchValue}
                       displayKeys ={['City','Airport','Code']}
                       keyFields ={['index']}
-                      invalidInput ={errors.toAirportError}/>
+                      invalidInput ={errors.toAirportError}
+                      key ={'To Airport Search'}/>
         </Row>
         <Row className ='form-line'>
           <FormControl component="fieldset">
@@ -335,7 +337,7 @@ return(
         </Row>
           {parseFloat(distance)>0?
             <>
-              <CarbonTotal footprint={parseFloat(flightFinalCost).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+              <CarbonTotal footprint={flightFinalCost} label ={'Carbon Footprint (KG)'}/>
             </>
             :
             <>

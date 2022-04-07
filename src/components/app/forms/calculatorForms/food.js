@@ -227,7 +227,7 @@ const FoodForm = props =>{
           </>
           }
 
-          <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+          <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
             <Button onClick = {addFood}>Add</Button>

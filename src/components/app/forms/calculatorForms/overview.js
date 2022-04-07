@@ -2,8 +2,8 @@ import { Container, Row, Col, Button} from 'react-bootstrap';
 import {useState} from "react";
 import CarbonTotal from "../../elements/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
-import countryFootprintData from "../../../data/countryFootprintData"
-import regionFootprintData from "../../../data/regionFootprintData"
+import countryFootprintData from "../../data/countryFootprintData"
+import regionFootprintData from "../../data/regionFootprintData"
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -62,6 +62,7 @@ const Overview= props =>{
 
   }
   function selectCompareToCountry(country){
+    console.log('selectingcompare to country')
     console.log(country)
     setSelectedCountry(country)
   }
@@ -81,63 +82,13 @@ const Overview= props =>{
     setRegionOptions(options);
   }
   function selectCompareToRegion(region) {
+
     setSelectedRegion(region)
   }
 
   return(
     <>
-    <Container>
-    <Row className ='form-line'>
-      <FormControl component="fieldset">
-        <FormLabel component="legend">Compare To:</FormLabel>
-        <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
-          <FormControlLabel value="country" control={<Radio />} label="Country" />
-          <FormControlLabel value="region" control={<Radio />} label="Region" />
-        </RadioGroup>
-      </FormControl>
-    </Row>
-    {compareType==='country'?
-      <>
-        <Row className ='form-line'>
-          <SearchDrop options={countryOptions}
-                      inputId ={'compareToCountry'}
-                      inputName={'compareToCountry'}
-                      inputLabel={'Select The Country'}
-                      searchValue = {countrySearchValue}
-                      setSearchValue ={updateCountrySearchValue}
-                      updateOptions = {updateCompareToCountry}
-                      selectOption = {selectCompareToCountry}
-                      displayKeys = {['Country']}
-                      valueKey ={'Footprint'}
-                      keyFields ={['Country','Footprint']}
-                      invalidInput={countryError}/>
-        </Row>
-      </>
-      :
-      <>
-        <Row className ='form-line'>
-          <SearchDrop options={regionOptions}
-                      inputId ={'compareToRegion'}
-                      inputName={'compareToRegion'}
-                      inputLabel={'Select The Region'}
-                      searchValue = {regionSearchValue}
-                      setSearchValue ={updateRegionSearchValue}
-                      updateOptions = {updateCompareToRegion}
-                      selectOption = {selectCompareToRegion}
-                      displayKeys = {['Entity']}
-                      valueKey ={'Footprint'}
-                      keyFields ={['Entity','Footprint']}
-                      invalidInput={countryError}/>
-        </Row>
-      </>}
-      <Row>
-        {selectedCountry.Footprint}
-      </Row>
-      <Row>
-        {selectedRegion.Footprint}
-      </Row>
-    </Container>
-    <Container className ='white round-borders raised-borders'>
+    <Container className ='white round-borders raised-borders'style ={{width:'90vw'}}>
       <div id="chart" className ='vertical-padding-sm'>
         <ReactApexCharts  type="bar" height={350}
         series = {[{name: 'Carbon Footprint',
@@ -195,6 +146,99 @@ const Overview= props =>{
       </div>
     </Container>
 
+    <Container style ={{width:'90vw'}}>
+    <Row className ='form-line'>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Compare To:</FormLabel>
+        <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
+          <FormControlLabel value="country" control={<Radio />} label="Country" />
+          <FormControlLabel value="region" control={<Radio />} label="Region" />
+        </RadioGroup>
+      </FormControl>
+    </Row>
+    {compareType==='country'?
+      <>
+        <Row className ='form-line'>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <SearchDrop options={countryOptions}
+                        inputId ={'compareToCountry'}
+                        inputName={'compareToCountry'}
+                        inputLabel={'Select The Country'}
+                        searchValue = {countrySearchValue}
+                        setSearchValue ={updateCountrySearchValue}
+                        updateOptions = {updateCompareToCountry}
+                        selectOption = {selectCompareToCountry}
+                        displayKeys = {['Country']}
+                        valueKey ={'Footprint'}
+                        keyFields ={['Country','Footprint']}
+                        invalidInput={countryError}
+                        key ={'Country Compare Search'}/>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Row>
+              <CarbonTotal footprint={props.totalCarbonCost}
+                           label={'Your trips Carbon Footprint (KG)'}/>
+            </Row>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+            {selectedCountry.Country ===undefined?
+              <Row>
+                <p>Select a country to compare your trip to.</p>
+              </Row>
+            :
+              <Row>
+                <CarbonTotal footprint={selectedCountry.Footprint*1000}
+                             label={'The annual average of '+ selectedCountry.Country+ ' (KG/Person)'} />
+              </Row>}
+          </Col>
+        </Row>
+      </>
+      :
+      <>
+        <Row className ='form-line'>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <SearchDrop options={regionOptions}
+                        inputId ={'compareToRegion'}
+                        inputName={'compareToRegion'}
+                        inputLabel={'Select The Region'}
+                        searchValue = {regionSearchValue}
+                        setSearchValue ={updateRegionSearchValue}
+                        updateOptions = {updateCompareToRegion}
+                        selectOption = {selectCompareToRegion}
+                        displayKeys = {['Entity']}
+                        valueKey ={'Footprint'}
+                        keyFields ={['Entity','Footprint']}
+                        invalidInput={countryError}
+                        key ={'Region Compare Search'}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Row>
+              <CarbonTotal footprint={props.totalCarbonCost}
+                           label={'Your trips Carbon Footprint (KG)'}/>
+            </Row>
+          </Col>
+          <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Row>
+              <CarbonTotal footprint={selectedRegion.Footprint*1000}
+                           label={'The annual average of '+ selectedRegion.Entity+ ' (KG/Person)'} />
+            </Row>
+          </Col>
+        </Row>
+      </>}
+
+
+
+
+
+
+
+
+    </Container>
     </>
   )
 }

@@ -516,7 +516,8 @@ return(
                             displayKeys = {['Year','Make','Model']}
                             valueKey ={'Make'}
                             keyFields ={['Year','Make','Model']}
-                            invalidInput={advancedErrors.vehicleError}/>
+                            invalidInput={advancedErrors.vehicleError}
+                            key ={'Vehicle Option Search'}/>
               </Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4}>
                 <HelpIcon message ="Total distance driven in this car."/>
@@ -569,7 +570,7 @@ return(
             </Row>
 
           </>}
-        <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+        <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
         <Row className ='form-submit-line'>
           <Button onClick = {addDrive}>Add</Button>

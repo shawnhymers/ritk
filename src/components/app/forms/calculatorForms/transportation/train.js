@@ -150,7 +150,8 @@ return(
                           displayKeys = {['country']}
                           valueKey ={'carbon'}
                           keyFields ={['country']}
-                          invalidInput={countryError}/>
+                          invalidInput={countryError}
+                          key ={'Grid Region Search'}/>
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
               <HelpIcon message ="Total distance driven in this car."/>
@@ -180,7 +181,7 @@ return(
             </Col>
           </Row>
 
-          <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+          <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
             <Button onClick = {addTrain}>Add</Button>

@@ -4,6 +4,7 @@ import FlightForm from "../forms/calculatorForms/flights"
 import TransportForm from "../forms/calculatorForms/transportation/main"
 import FoodForm from "../forms/calculatorForms/food"
 import AccomodationForm from "../forms/calculatorForms/accomodation"
+import Overview from "../forms/calculatorForms/overview"
 import  { useState } from 'react';
 import CarbonTotal from "../elements/carbonTotal"
 
@@ -12,7 +13,7 @@ const MobileNav = props => {
 return(
   <>
 
-    <Row style ={{position:'fixed',bottom:'0vh',margin:'auto',height:'8em'}}
+    <Row style ={{position:'fixed',bottom:'0vh',margin:'auto',minHeight:'6em'}}
          className ='centered-children fill-width white vertical-padding-sm'>
       <Col onClick={()=>props.updateView('flights')}
            className ='mobile-nav-col'>
@@ -199,7 +200,7 @@ return(
     </>}
 
     <Row >
-        <CarbonTotal footprint={parseFloat(props.totalCarbonFootprint).toFixed(1)}
+        <CarbonTotal footprint={props.totalCarbonCost}
                      label={'Total Carbon Footprint (KG)'}/>
     </Row>
     {view==='flights'?
@@ -220,12 +221,25 @@ return(
         <FoodForm addCarbonCostItem={props.addCarbonCostItem}/>
       </Row>
     </>:null}
+
     {view==='accomodation'?
     <>
     <Row  className ='centered-children' style ={{marginBottom:'9em'}}>
       <AccomodationForm addCarbonCostItem={props.addCarbonCostItem}/>
     </Row>
     </>:null}
+
+    {view==='overview'?
+    <>
+      <Row  className ='centered-children' style ={{marginBottom:'9em'}}>
+        <Overview totalCarbonCost = {props.totalCarbonCost}
+                  totalFlightCost = {props.totalFlightCost}
+                  totalTransportCost ={props.totalTransportCost}
+                  totalFoodCost ={props.totalFoodCost}
+                  totalAccomodationCost = {props.totalAccomodationCost}/>
+      </Row>
+    </>:null}
+
 
     {props.isMobile?
       <>

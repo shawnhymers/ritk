@@ -161,7 +161,7 @@ return(
             </Col>
           </Row>
 
-          <CarbonTotal footprint={parseFloat(carbonFootprint).toFixed(1)} label ={'Carbon Footprint (KG)'}/>
+          <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
             <Button onClick = {addDrive}>Add</Button>
