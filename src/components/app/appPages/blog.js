@@ -13,10 +13,10 @@ const LeftCol = props =>{
         <Row >
 
           <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
+            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>
-        <Row className = 'centered-children'>
+        <Row className = 'centered-children bottom-padding-md'>
           <p className = ' centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
         </Row>
       </>
@@ -35,10 +35,10 @@ const RightCol = props =>{
       <>
         <Row >
           <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
+            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom vertical-margin-sm'/>
           </Link>
         </Row>
-        <Row className = 'centered-children'>
+        <Row className = 'centered-children bottom-padding-md'>
            <p className = 'centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
         </Row>
       </>
@@ -54,7 +54,7 @@ const RightCol = props =>{
       <>
         <Row >
           <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'zoom round-borders vertical-margin-sm'/>
+            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>
         <Row className = 'centered-children'>
@@ -113,7 +113,7 @@ class Blog extends Component {
 
     {this.props.isMobile?
     <>
-      <Row className ='nice-input-wrapper form-line vertical-margin-lg'>
+      <Row className ='nice-input-wrapper form-line '>
         <input onChange={this.tagInput}
                onBlur = {this.tagSearch}
                value={this.state.searchValue}
@@ -134,7 +134,7 @@ class Blog extends Component {
     </>
     :
     <>
-      <Row className ='nice-input-wrapper form-line vertical-margin-lg'>
+      <Row className ='nice-input-wrapper form-line'>
         <input onChange={this.tagInput}
                onBlur = {this.tagSearch}
                value={this.state.searchValue}

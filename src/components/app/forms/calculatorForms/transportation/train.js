@@ -133,6 +133,7 @@ return(
               <RadioGroup row aria-label="train" name="selectedEngineType" value={engineType} onChange={updateEngineType}>
                 <FormControlLabel value="electric" control={<Radio />} label="Electric" />
                 <FormControlLabel value="diesel" control={<Radio />} label="Diesel" />
+                <HelpIcon message ="Select the engine type for your trip. Electric engines generally have a smaller footprint, but the exact footprint depends on the energy grid powering the engine."/>
               </RadioGroup>
             </FormControl>
           </Row>
@@ -154,7 +155,7 @@ return(
                           key ={'Grid Region Search'}/>
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-              <HelpIcon message ="Total distance driven in this car."/>
+              <HelpIcon message ="Select the country. Different countries energy grids have different carbon consequences. Right now, we only have accurate data for several European countries. We are working hard to add more countries to this list."/>
             </Col>
           </Row>
 
@@ -177,14 +178,14 @@ return(
               </Row>
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-              <HelpIcon message ="Total distance driven in this car."/>
+              <HelpIcon message ="Total distance of your train journey."/>
             </Col>
           </Row>
 
           <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
-            <Button onClick = {addTrain}>Add</Button>
+            <Button onClick = {addTrain} variant='custom'>Add</Button>
           </Row>
 
         </Container>

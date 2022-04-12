@@ -7,7 +7,7 @@ import MobileHeader from "./elements/mobileHeader";
 
 import HomePage from "./appPages/home/main"
 import About from "./appPages/about";
-import Social from "./appPages/social";
+import Gallery from "./appPages/gallery";
 import Calculator from "./appPages/calculator";
 import Blog from "./appPages/blog";
 
@@ -40,7 +40,15 @@ class AppMain extends Component {
                 pic:'/vancouverActivity.jpg',
                 tags:['activity', 'notbc',''],
                 link:'/VancouverActivityGuide'}
-             ]
+             ],
+      galleryImages:[{src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
+                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"}]
     };
   };
 
@@ -97,12 +105,12 @@ class AppMain extends Component {
       :null}
 
       {this.state.view === 'blog'?
-      <>
+      <div className ='roaming-white'>
         <Blog changeView ={this.props.updatePageView}
               blogs = {this.state.blogs}
               blogSearch ={this.state.blogSearch}
               isMobile={this.props.isMobile}/>
-      </>
+      </div>
       :null}
 
       {this.state.view === 'calculator'?
@@ -117,9 +125,10 @@ class AppMain extends Component {
                     isMobile={this.props.isMobile}/>
       </>
       :null}
-      {this.state.view === 'social'?
+      {this.state.view === 'gallery'?
       <>
-        <Social changeView ={this.props.updatePageView}
+        <Gallery changeView ={this.props.updatePageView}
+                 galleryImages ={this.state.galleryImages}
                 isMobile={this.props.isMobile}/>
       </>
       :null}

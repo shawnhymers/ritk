@@ -8,22 +8,14 @@ const BlogPreview = props => {
 return(
   <>
 
-    <Row className = 'roaming-green centered-children vertical-padding-sm'  >
-      <Col  xs={1} sm={1} md={1} lg={1} xl={1} >
-        &nbsp;
-      </Col>
-      <Col  xs={2} sm={2} md={2} lg={2} xl={2}>
-        <p className =' roaming-text large-header-text'>Blog</p>
-      </Col>
-      <Col  xs={9} sm={9} md={9} lg={9} xl={9}>
-        &nbsp;
-      </Col>
+    <Row className = 'roaming-white centered-children vertical-padding-sm'  >
+        <p className =' roaming-text large-header-text centered-text'>Latest From The Blog</p>
     </Row>
-    <Row className = 'roaming-green fill-width' style ={{minHeight:'100vh'}}>
+    <Row className = 'roaming-white ' style ={{minHeight:'80vh',paddingBottom:'5em'}}>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-            <img src = '/nyc.jpg' alt ='nyc' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
+            <img src = '/nyc.jpg' alt ='nyc' className = ' blog-tease vertical-margin-sm'/>
           </Col>
         </Row>
         <Row className ='centered-children'>
@@ -33,7 +25,7 @@ return(
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-            <img src = '/boat.jpg' alt ='boat' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
+            <img src = '/boat.jpg' alt ='boat' className = ' blog-tease vertical-margin-sm'/>
           </Col>
         </Row>
         <Row className ='centered-children'>
@@ -43,7 +35,7 @@ return(
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-          <img src = '/planeWing.jpg' alt ='planeWing' className = 'zoom round-borders blog-tease vertical-margin-sm'/>
+          <img src = '/planeWing.jpg' alt ='planeWing' className = ' blog-tease vertical-margin-sm'/>
           </Col>
         </Row>
         <Row className ='centered-children'>

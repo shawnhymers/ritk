@@ -18,12 +18,14 @@
   width: 8em;
   top:50%;
   position: relative;
+  cursor: pointer;
 }
 .banner-pic{
   min-width: 100%;
 }
 .blog-tease{
   width:80%;
+  cursor: pointer;
 }
 
 .blog-main-img{
@@ -46,4 +48,25 @@
   max-width: 7.5em;
   max-height:5em;
   border-radius:5px;
+}
+
+
+.gallery-col{
+  position: relative;
+}
+
+.gallery-img:hover{
+  filter: brightness(70%);
+
+}
+.gallery-label{
+  display: none;
+}
+.gallery-col:hover .gallery-label{
+  position: absolute;
+  display: block;
+  z-index: 16;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

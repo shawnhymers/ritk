@@ -79,3 +79,11 @@
 .mobile-nav-col{
   max-width: 20%;
 }
+
+
+.btn-custom {
+  background-color: #BED3C7;
+}
+.btn-custom:hover{
+  background-color: #91A98F;
+}

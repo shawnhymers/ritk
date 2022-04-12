@@ -1,5 +1,5 @@
 // import NewFoodForm from './forms/newFoodForm'
-import { Container, Row, Col, Button} from 'react-bootstrap';
+import { Container, Row, Col, Button,Form} from 'react-bootstrap';
 import FoodList from "../lists/foodList"
 import {useState} from "react";
 import Dropdown from '../../../standardComponents/dropdown';
@@ -7,6 +7,7 @@ import foodData from "../../data/foodData"
 import dietData from "../../data/dietData"
 import CarbonTotal from "../../elements/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
+import HelpIcon from "../../../standardComponents/helpIcon"
 
 const FoodForm = props =>{
 
@@ -159,14 +160,22 @@ const FoodForm = props =>{
             <Row className ='form-line'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                <select value = {selectedFood.food}
-                        onChange = {updateFoodType}
-                        className="browser-default">
-                  {foodData.map((food, i)=>{return <Dropdown value = {food.food}
-                                                             displayValue ={food.food+' ('+food.servingDescr+')'}
-                                                             key={food.food+i}/>})}
-                </select>
+
+                <Form.Select aria-label="Default select example"
+                             value = {selectedFood.food}
+                             onChange = {updateFoodType}
+                             className="browser-default">
+                             {foodData.map((food, i)=>{return <Dropdown value = {food.food}
+                                                                        displayValue ={food.food+' ('+food.servingDescr+')'}
+                                                                        key={food.food+i}/>})}
+
+
+                </Form.Select>
+
                 </Row>
+              </Col>
+              <Col>
+                <HelpIcon message =""/>
               </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
@@ -187,23 +196,32 @@ const FoodForm = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message =""/>
+              </Col>
             </Row>
           </>
           :
           <>
+
+
             <Row className ='form-line'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                  <select value = {selectedDiet.food}
-                          onChange = {(e)=>updateDietType(e)}
-                          className="browser-default">
-                    {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
-                                                               displayValue ={diet.food+' ('+diet.servingDescr+')'}
-                                                               key={diet.food+i}/>})}
-                  </select>
+              <Row>
+                <Form.Select aria-label="Default select example"
+                             value = {selectedDiet.food}
+                             onChange = {(e)=>updateDietType(e)}
+                             className="browser-default">
+                {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
+                                                           displayValue ={diet.food+' ('+diet.servingDescr+')'}
+                                                           key={diet.food+i}/>})}
+
+
+                </Form.Select>
                 </Row>
               </Col>
             </Row>
+
 
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -223,6 +241,9 @@ const FoodForm = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message =""/>
+              </Col>
             </Row>
           </>
           }
@@ -230,7 +251,7 @@ const FoodForm = props =>{
           <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
-            <Button onClick = {addFood}>Add</Button>
+            <Button onClick = {addFood}  variant='custom'>Add</Button>
           </Row>
 
         </Container>
@@ -243,3 +264,23 @@ const FoodForm = props =>{
   )
 }
 export default FoodForm;
+
+
+//
+//
+// <Row className ='form-line'>
+//   <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+//     <Row>
+//       <select value = {selectedDiet.food}
+//               onChange = {(e)=>updateDietType(e)}
+//               className="browser-default">
+//         {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
+//                                                    displayValue ={diet.food+' ('+diet.servingDescr+')'}
+//                                                    key={diet.food+i}/>})}
+//       </select>
+//     </Row>
+//   </Col>
+//   <Col>
+//     <HelpIcon message =""/>
+//   </Col>
+// </Row>

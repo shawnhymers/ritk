@@ -121,6 +121,7 @@ return(
                 <FormControlLabel value="City" control={<Radio />} label="City" />
                 <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
                 <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
               </RadioGroup>
             </FormControl>
           </Row>
@@ -135,6 +136,8 @@ return(
                 <FormControlLabel value="Mostly Empty" control={<Radio />} label="Mostly Empty" />
                 <FormControlLabel value="Ghost Town" control={<Radio />} label="Ghost Town" />
                 <FormControlLabel value="Just Me" control={<Radio />} label="Just Me" />
+                <HelpIcon message ='Select how busy the bus is. A full bus splits the carbon cost across more passengers, resulting in a lower personal footprint.'/>
+
               </RadioGroup>
             </FormControl>
           </Row>
@@ -157,14 +160,14 @@ return(
               </Row>
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-              <HelpIcon message ="Total distance driven in this car."/>
+              <HelpIcon message ="Total distance driven on the bus."/>
             </Col>
           </Row>
 
           <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
-            <Button onClick = {addDrive}>Add</Button>
+            <Button onClick = {addDrive} variant='custom'>Add</Button>
           </Row>
 
         </Container>

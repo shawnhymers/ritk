@@ -576,7 +576,7 @@ const Accomodation = props =>{
           <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
           <Row className ='form-submit-line'>
-            <Button onClick = {addHotel}>Add</Button>
+            <Button onClick = {addHotel}  variant='custom'>Add</Button>
           </Row>
 
         </Container>

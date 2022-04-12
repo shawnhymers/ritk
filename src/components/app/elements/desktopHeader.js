@@ -22,7 +22,7 @@ return(
         <p className = {'centered-text '+(props.page==='calculator'? 'balloon-text medium-link-text':'balloon-text roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('calculator')}>Calculator</p>
       </Col>
       <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
-        <p className = {'centered-text '+(props.page==='social'? 'balloon-text  medium-link-text':'balloon-text  roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('social')}>Socials</p>
+        <p className = {'centered-text '+(props.page==='gallery'? 'balloon-text  medium-link-text':'balloon-text  roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('gallery')}>Galleries</p>
       </Col>
     </Row>
 

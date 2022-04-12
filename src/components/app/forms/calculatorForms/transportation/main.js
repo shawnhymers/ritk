@@ -10,6 +10,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import HelpIcon from "../../../../standardComponents/helpIcon"
 
 const TransportForm = props => {
 
@@ -34,6 +35,7 @@ return(
                 <FormControlLabel value="car" control={<Radio />} label="Car" />
                 <FormControlLabel value="bus" control={<Radio />} label="Bus" />
                 <FormControlLabel value="train" control={<Radio />} label="Train" />
+                <HelpIcon message ='Select your mode of transportation.'/>
               </RadioGroup>
             </FormControl>
           </Row>

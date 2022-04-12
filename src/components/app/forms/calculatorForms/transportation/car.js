@@ -411,6 +411,7 @@ return(
                 <FormControlLabel value="City" control={<Radio />} label="City" />
                 <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
                 <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
               </RadioGroup>
             </FormControl>
           </Row>
@@ -422,7 +423,7 @@ return(
                 <FormControlLabel value="GasGuzzler" control={<Radio />} label="Gas Guzzler" />
                 <FormControlLabel value="StandardCar" control={<Radio />} label="Standard Car" />
                 <FormControlLabel value="EfficientCar" control={<Radio />} label="Efficient Car" />
-                <HelpIcon message ='Select a type of car to get a rough estimate of fuel effeciency.'/>
+                <HelpIcon message ="Select a type of car to get a rough estimate of fuel effeciency. If you're unsure, select standard car."/>
               </RadioGroup>
             </FormControl>
           </Row>
@@ -481,6 +482,7 @@ return(
                   <FormControlLabel value="City" control={<Radio />} label="City" />
                   <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
                   <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                  <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
                 </RadioGroup>
               </FormControl>
             </Row>
@@ -490,17 +492,23 @@ return(
                 <RadioGroup row aria-label="searchBy" name="searchBy" value={searchBy} onChange={selectSearchBy}>
                   <FormControlLabel value="Make" control={<Radio />} label="Make" />
                   <FormControlLabel value="Model" control={<Radio />} label="Model" />
+                  <HelpIcon message ="Select whether you want to search for your specific vehicle by make or model."/>
                 </RadioGroup>
               </FormControl>
             </Row>
 
             <Row className ='form-line'>
-              <FormLabel component="legend">Production Year:</FormLabel>
-              <select value = {year} onChange = {selectYear} className="browser-default">
-                {years.map((year, i)=>{return <CustomDropdown value = {year}
-                                                              displayValue ={year}
-                                                              key={year+i}/>})}
-              </select>
+              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                <FormLabel component="legend">Production Year:</FormLabel>
+                <select value = {year} onChange = {selectYear} className="browser-default">
+                  {years.map((year, i)=>{return <CustomDropdown value = {year}
+                                                                displayValue ={year}
+                                                                key={year+i}/>})}
+                </select>
+              </Col>
+              <Col>
+                <HelpIcon message ="Select the year the car you are using was manufactured."/>
+              </Col>
             </Row>
 
             <Row className ='form-line'>
@@ -520,7 +528,7 @@ return(
                             key ={'Vehicle Option Search'}/>
               </Col>
               <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-                <HelpIcon message ="Total distance driven in this car."/>
+                <HelpIcon message ="Select the exact car you are using."/>
               </Col>
             </Row>
 
@@ -543,7 +551,7 @@ return(
               </Col>
 
               <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-                <HelpIcon message ="Total distance driven in this car."/>
+                <HelpIcon message ="Number of passenegers making the trip. Only count the driver if they are a part of the tip. Cab and Uber drivers don't count."/>
               </Col>
             </Row>
 
@@ -573,7 +581,7 @@ return(
         <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
 
         <Row className ='form-submit-line'>
-          <Button onClick = {addDrive}>Add</Button>
+          <Button onClick = {addDrive} variant='custom'>Add</Button>
         </Row>
 
       </Container>

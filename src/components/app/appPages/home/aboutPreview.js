@@ -8,61 +8,85 @@ const AboutPreview = props => {
 
 return(
   <>
-  <Row className = 'roaming-white vertical-padding-md centered-children' style ={{height:'100vh'}}>
+  <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'80vh'}}>
     <Col xs={12} sm={12} md={5} lg={5} xl={5} className ='centered-children'>
-      <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
+      <Container>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
+          </Col>
+        </Row>
+        <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+          </Col>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+          </Col>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+          </Col>
+          <Col style ={{maxWidth:'10em'}}>
+             <p className ='centered-text roaming-text-sm'>@roamingintheknow</p>
+          </Col>
+        </Row>
+      </Container>
     </Col>
     <Col xs={12} sm={12} md={7} lg={7} xl={7}>
-      <Row>
+      <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}  >
         <p className ='roaming-yellow-text roaming-text large-header-text centered-text'>WE ARE ROAMING IN THE KNOW!</p>
       </Row>
-      <Row style ={{marginLeft:'10vw',marginRight:'10vw'}} className ='centered-children'>
-        <p className ='roaming-yellow-text centered-text'>We’re Shawn and Alia, a married twenty-something couple with a desire to travel full time and live our lives to the fullest, all while being mindful of our footprint. We believe balance is an essential part of life which means we want to see the world, but we also want to see it be habitable for generations to come. </p>
+      <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}>
+        <p className ='roaming-yellow-text roaming-text-sm centered-text'>We’re Shawn and Alia, a married twenty-something couple with a desire to travel full time and live our lives to the fullest, all while being mindful of our footprint. We believe balance is an essential part of life which means we want to see the world, but we also want to see it be habitable for generations to come. </p>
       </Row>
     </Col>
   </Row>
 
-    {props.view ==='about'?
-      <>
-        <Row className ='roaming-white vertical-padding-sm'>
-          <Col>
-            <Row className ='vertical-margin-sm centered-children'>
-              <BsInstagram size ='4em'/>
-            </Row>
-            <Row className ='centered-children'>
-              <p className ='centered-text'>@roamingintheknow</p>
-            </Row>
-          </Col>
-          <Col>
-            <Row className ='vertical-margin-sm centered-children'>
-              <SiTiktok size ='4em'/>
-            </Row>
-            <Row className ='centered-children'>
-              <p className ='centered-text'>@roamingintheknow</p>
-            </Row>
-          </Col>
-          <Col>
-            <Row className ='vertical-margin-sm centered-children'>
-              <BsYoutube size ='4em'/>
-            </Row>
-            <Row className ='centered-children'>
-              <p className ='centered-text'>@roamingintheknow</p>
-            </Row>
-          </Col>
-          <Col>
-            <Row className ='vertical-margin-sm centered-children'>
-              <BsTwitter size ='4em'/>
-            </Row>
-            <Row className ='centered-children'>
-              <p className ='centered-text'>@roamingintheknow</p>
-            </Row>
-          </Col>
-        </Row>
-      </>
-    :null}
+
 
 
   </>
 )}
 
 export default AboutPreview;
+
+//
+//
+// {props.view ==='about'?
+//   <>
+//     <Row className ='roaming-white vertical-padding-sm'>
+//       <Col>
+//         <Row className ='vertical-margin-sm centered-children'>
+//           <BsInstagram size ='4em'/>
+//         </Row>
+//         <Row className ='centered-children'>
+//           <p className ='centered-text'>@roamingintheknow</p>
+//         </Row>
+//       </Col>
+//       <Col>
+//         <Row className ='vertical-margin-sm centered-children'>
+//           <SiTiktok size ='4em'/>
+//         </Row>
+//         <Row className ='centered-children'>
+//           <p className ='centered-text'>@roamingintheknow</p>
+//         </Row>
+//       </Col>
+//       <Col>
+//         <Row className ='vertical-margin-sm centered-children'>
+//           <BsYoutube size ='4em'/>
+//         </Row>
+//         <Row className ='centered-children'>
+//           <p className ='centered-text'>@roamingintheknow</p>
+//         </Row>
+//       </Col>
+//       <Col>
+//         <Row className ='vertical-margin-sm centered-children'>
+//           <BsTwitter size ='4em'/>
+//         </Row>
+//         <Row className ='centered-children'>
+//           <p className ='centered-text'>@roamingintheknow</p>
+//         </Row>
+//       </Col>
+//     </Row>
+//   </>
+// :null}

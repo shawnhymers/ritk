@@ -25,7 +25,7 @@ return(
         <p className = {'centered-text '+(props.view==='calculator'? 'balloon-text medium-link-text':'balloon-text roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('calculator')}>Calculator</p>
       </Row>
       <Row className ='vertical-padding-sm'>
-        <p className = {'centered-text '+(props.view==='social'? 'balloon-text  medium-link-text':'balloon-text  roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('social')}>Socials</p>
+        <p className = {'centered-text '+(props.view==='gallery'? 'balloon-text  medium-link-text':'balloon-text  roaming-yellow-text medium-link-text')}  onClick ={()=>props.changeView('gallery')}>Galleries</p>
       </Row>
 
     </div>

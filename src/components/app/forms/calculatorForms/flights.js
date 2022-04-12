@@ -285,24 +285,32 @@ return(
               <FormControlLabel value="City" control={<Radio />} label="City" />
               <FormControlLabel value="Country" control={<Radio />} label="Country" />
               <FormControlLabel value="Airport" control={<Radio />} label="Airport"/>
+              <FormControlLabel value="Code" control={<Radio />} label="Code"/>
+              <HelpIcon message ='Select how you would like to search for your airport—city name, country name, airport name, or airport code.'/>
             </RadioGroup>
           </FormControl>
         </Row>
         <Row className ='form-line '>
-          <SearchDrop options={fromOptions}
-                      inputId ={'fromOptions'}
-                      inputName={'from'}
-                      inputLabel={'From:'}
-                      searchValue = {fromSearchValue}
-                      updateOptions = {updateFromAirportOptions}
-                      selectOption = {selectFromAirport}
-                      setSearchValue ={setFromSearchValue}
-                      displayKeys ={['City','Airport','Code']}
-                      keyFields ={['index']}
-                      invalidInput ={errors.fromAirportError}
-                      key ={'From Airport Search'}/>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <SearchDrop options={fromOptions}
+                        inputId ={'fromOptions'}
+                        inputName={'from'}
+                        inputLabel={'From:'}
+                        searchValue = {fromSearchValue}
+                        updateOptions = {updateFromAirportOptions}
+                        selectOption = {selectFromAirport}
+                        setSearchValue ={setFromSearchValue}
+                        displayKeys ={['City','Airport','Code']}
+                        keyFields ={['index']}
+                        invalidInput ={errors.fromAirportError}
+                        key ={'From Airport Search'}/>
+          </Col>
+          <Col>
+            <HelpIcon message ='Select the airport you are flying out of. We use the location of this airport to calculate the flight distance.'/>
+          </Col>
         </Row>
         <Row className ='form-line'>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
           <SearchDrop options={toOptions}
                       inputId ={'toOptions'}
                       inputName={'to'}
@@ -315,6 +323,10 @@ return(
                       keyFields ={['index']}
                       invalidInput ={errors.toAirportError}
                       key ={'To Airport Search'}/>
+          </Col>
+          <Col>
+            <HelpIcon message ='Select your destination airport. We use the location of this airport to calculate the flight distance.'/>
+          </Col>
         </Row>
         <Row className ='form-line'>
           <FormControl component="fieldset">
@@ -323,6 +335,7 @@ return(
               <FormControlLabel value="Economy" control={<Radio />} label="Economy" />
               <FormControlLabel value="Business" control={<Radio />} label="Business" />
               <FormControlLabel value="First Class" control={<Radio />} label="FirstClass" />
+              <HelpIcon message ='Select the type of ticket you’ve purchased. When flying business or first class the portion of the flights carbon footprint you’re responsible for increases. '/>
             </RadioGroup>
           </FormControl>
         </Row>
@@ -332,6 +345,7 @@ return(
             <RadioGroup row aria-label="drivingType" name="searchBy" value={flightType} onChange={(e)=>selectFlightType(e)}>
               <FormControlLabel value="Round Trip" control={<Radio />} label="Round Trip" />
               <FormControlLabel value="One Way" control={<Radio />} label="One Way" />
+              <HelpIcon message ='Select whether you’re flying round trip or just one way.'/>
             </RadioGroup>
           </FormControl>
         </Row>
@@ -345,7 +359,7 @@ return(
             </>
           }
         <Row className ='form-submit-line'>
-          <Button onClick ={addFlight}>Add</Button>
+          <Button onClick ={addFlight} variant='custom'>Add</Button>
         </Row>
       </Container>
     </Col>
