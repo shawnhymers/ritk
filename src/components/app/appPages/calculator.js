@@ -90,7 +90,7 @@ const DesktopNav = props =>{
 
 
   return(
-    <Row className ='vertical-padding-sm'>
+    <Row className ='vertical-padding-sm roaming-white'>
       <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
         &nbsp;
       </Col>
@@ -187,51 +187,52 @@ return(
 
   {!props.isMobile?
     <>
-    <Row style ={{marginTop:'10vh'}} >
+    <Row style ={{paddingTop:'10vh'}} className ='roaming-white'>
       <DesktopNav view ={view}
                   stepCount ={stepCount}
                   updateView ={updateView}/>
     </Row>
-    </>:
+    </>
+    :
     <>
     <Row style ={{marginTop:'10vh'}} >
       &nbsp;
     </Row>
     </>}
 
-    <Row >
+    <Row className ='roaming-white'>
         <CarbonTotal footprint={props.totalCarbonCost}
                      label={'Total Carbon Footprint (KG)'}/>
     </Row>
     {view==='flights'?
     <>
-      <Row  className =' centered-children' style ={{paddingBottom:'9em'}}>
+      <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
         <FlightForm addCarbonCostItem={props.addCarbonCostItem} />
       </Row>
     </>:null}
     {view==='transportation'?
     <>
-      <Row  className =' centered-children' style ={{marginBottom:'9em'}}>
+      <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
         <TransportForm addCarbonCostItem={props.addCarbonCostItem}/>
       </Row>
     </>:null}
     {view==='food'?
     <>
-      <Row  className =' centered-children' style ={{marginBottom:'9em'}}>
+      <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
         <FoodForm addCarbonCostItem={props.addCarbonCostItem}/>
       </Row>
     </>:null}
 
     {view==='accomodation'?
     <>
-    <Row  className ='centered-children' style ={{marginBottom:'9em'}}>
+    <Row  className ='centered-children roaming-white' style ={{paddingBottom:'9em'}}>
       <AccomodationForm addCarbonCostItem={props.addCarbonCostItem}/>
     </Row>
     </>:null}
 
     {view==='overview'?
     <>
-      <Row  className ='centered-children' style ={{marginBottom:'9em'}}>
+      <Row  className ='centered-children roaming-white' style ={{paddingBottom:'9em'}}>
         <Overview totalCarbonCost = {props.totalCarbonCost}
                   totalFlightCost = {props.totalFlightCost}
                   totalTransportCost ={props.totalTransportCost}

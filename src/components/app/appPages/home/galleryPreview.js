@@ -15,8 +15,7 @@ const Images = props => {
         <p className ='gallery-label'>{props.img.label}</p>
         <img src ={props.img.src}
         alt={props.img.alt}
-        className ='img-fluid gallery-img'
-        />
+        className ='img-fluid gallery-img'/>
 
       </Col>
     </>

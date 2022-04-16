@@ -55,18 +55,22 @@
   position: relative;
 }
 
-.gallery-img:hover{
-  filter: brightness(70%);
-
+.gallery-col:hover{
+    filter: brightness(50%);
 }
+
 .gallery-label{
   display: none;
 }
 .gallery-col:hover .gallery-label{
   position: absolute;
   display: block;
+  font-family: roamingFont;
+  font-size: 2em;
+  color: #ebeae6;
   z-index: 16;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
 }

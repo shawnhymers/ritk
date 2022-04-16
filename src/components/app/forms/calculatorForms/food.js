@@ -160,7 +160,6 @@ const FoodForm = props =>{
             <Row className ='form-line'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-
                 <Form.Select aria-label="Default select example"
                              value = {selectedFood.food}
                              onChange = {updateFoodType}
@@ -168,14 +167,11 @@ const FoodForm = props =>{
                              {foodData.map((food, i)=>{return <Dropdown value = {food.food}
                                                                         displayValue ={food.food+' ('+food.servingDescr+')'}
                                                                         key={food.food+i}/>})}
-
-
                 </Form.Select>
-
                 </Row>
               </Col>
               <Col>
-                <HelpIcon message =""/>
+                <HelpIcon message ="Select your food. (More foods are on their way.)"/>
               </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
@@ -197,7 +193,7 @@ const FoodForm = props =>{
                 </Row>
               </Col>
               <Col>
-                <HelpIcon message =""/>
+                <HelpIcon message ="Enter the number of servings. (Average serving size is shown above.)"/>
               </Col>
             </Row>
           </>
@@ -219,6 +215,9 @@ const FoodForm = props =>{
 
                 </Form.Select>
                 </Row>
+              </Col>
+              <Col>
+                <HelpIcon message ="Select your diet type. If you're unsure what your diet type is, select Balance Diet for an approximation."/>
               </Col>
             </Row>
 
@@ -242,7 +241,7 @@ const FoodForm = props =>{
                 </Row>
               </Col>
               <Col>
-                <HelpIcon message =""/>
+                <HelpIcon message ="Enter the number of days you're planning on eating this diet."/>
               </Col>
             </Row>
           </>

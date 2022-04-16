@@ -11,10 +11,12 @@ import './styles/effects.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import Main from './components/main.js';
-// import WhistlerFoodGuide from './components/blogs/whistlerFoodGuide';
-// import WhistlerActivityGuide from './components/blogs/whistlerActivityGuide';
-// import VancouverFoodGuide from './components/blogs/vancouverFoodGuide';
-// import VancouverActivityGuide from './components/blogs/vancouverActivityGuide';
+
+import WhistlerFoodGuide from './components/app/blogs/whistlerFoodGuide';
+import WhistlerActivityGuide from './components/app/blogs/whistlerActivityGuide';
+import VancouverFoodGuide from './components/app/blogs/vancouverFoodGuide';
+import VancouverActivityGuide from './components/app/blogs/vancouverActivityGuide';
+
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
 
@@ -24,9 +26,7 @@ function App() {
         <Router>
           <ScrollToTop>
             <Route exact path="/" component={Main} />
-            <Route exact path="/home/:view" component={Main} />
-
-
+            <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
           </ScrollToTop>
         </Router>
 

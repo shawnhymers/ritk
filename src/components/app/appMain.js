@@ -7,7 +7,6 @@ import MobileHeader from "./elements/mobileHeader";
 
 import HomePage from "./appPages/home/main"
 import About from "./appPages/about";
-import Gallery from "./appPages/gallery";
 import Calculator from "./appPages/calculator";
 import Blog from "./appPages/blog";
 
@@ -23,32 +22,45 @@ class AppMain extends Component {
       blogs:[
              {name:'Vancouver Food Guide',
               pic:'/vancouverFood.jpg',
-              tags:['food', 'bc',''],
+              tags:['food', 'bc','','','','','','','',''],
               link:'/VancouverFoodGuide'},
 
               {name:'Whistler Food Guide',
                pic:'/whistlerFood.jpg',
-               tags:['food', 'bc',''],
+               tags:['food', 'bc','','','','','','','',''],
                link:'/WhistlerFoodGuide'},
 
               {name:'Whistler Activity Guide',
                pic:'/whistlerActivity.jpg',
-               tags:['activity', 'bc',''],
+               tags:['activity', 'bc','','','','','','','',''],
                link:'/WhistlerActivityGuide'},
 
                {name:'Vancouver Activity Guide',
                 pic:'/vancouverActivity.jpg',
-                tags:['activity', 'notbc',''],
+                tags:['activity', 'notbc','','','','','','','',''],
                 link:'/VancouverActivityGuide'}
              ],
-      galleryImages:[{src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"},
-                     {src:"vancouverFood.jpg",alt:"test-alt",label:"test"}]
+      galleries:[
+             {name:'Ometepe Island',
+              pic:'/galleryTest1.jpg',
+              tags:['food', 'bc','','','','','','','',''],
+              link:'/VancouverFoodGuide'},
+
+              {name:'Granada, Nicaragua',
+               pic:'/galleryTest2.jpg',
+               tags:['food', 'bc','','','','','','','',''],
+               link:'/WhistlerFoodGuide'},
+
+              {name:'Costa Rica',
+               pic:'/galleryTest3.jpg',
+               tags:['activity', 'bc','','','','','','','',''],
+               link:'/WhistlerActivityGuide'},
+
+               {name:'Another Thing',
+                pic:'/galleryTest1.jpg',
+                tags:['activity', 'notbc','','','','','','','',''],
+                link:'/VancouverActivityGuide'}
+             ]
     };
   };
 
@@ -115,6 +127,7 @@ class AppMain extends Component {
 
       {this.state.view === 'calculator'?
       <>
+
         <Calculator changeView ={this.props.updatePageView}
                     addCarbonCostItem ={this.props.addCarbonCostItem}
                     totalCarbonCost={this.props.totalCarbonCost}
@@ -123,13 +136,17 @@ class AppMain extends Component {
                     totalFoodCost = {this.props.totalFoodCost}
                     totalAccomodationCost = {this.props.totalAccomodationCost}
                     isMobile={this.props.isMobile}/>
+      
       </>
       :null}
       {this.state.view === 'gallery'?
       <>
-        <Gallery changeView ={this.props.updatePageView}
-                 galleryImages ={this.state.galleryImages}
+        <div className ='roaming-white'>
+          <Blog changeView ={this.props.updatePageView}
+                blogs = {this.state.galleries}
+                blogSearch ={this.state.blogSearch}
                 isMobile={this.props.isMobile}/>
+        </div>
       </>
       :null}
 

@@ -18,6 +18,7 @@ const Accomodation = props =>{
   const [hotelSize, setHotelSize]=useState('large')
   const [hotelEffeciency, setHotelEffeciency]=useState('good')
   const [numberOfNights, setNumberOfNights] =useState('')
+  const [numberOfGuests, setNumberOfGuests] =useState('')
   const [avgOccupancy, setAvgOccupancy] =useState(95)
 
   const [electricConsumption, setElectricConsumption] =useState(80)
@@ -48,7 +49,7 @@ const Accomodation = props =>{
         setFuelConsumption(200)
         setWaterConsumption(220)
 
-        updateFootprint(numberOfNights,165,200,220,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,165,200,220,avgOccupancy)
       }
       else if (hotelEffeciency==='fair') {
         // all units are (kWh/m2 year)
@@ -56,7 +57,7 @@ const Accomodation = props =>{
         setFuelConsumption(220)
         setWaterConsumption(255)
 
-        updateFootprint(numberOfNights,182.5,220,255,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,182.5,220,255,avgOccupancy)
       }
       else if (hotelEffeciency==='poor'){
         // all units are (kWh/m2 year)
@@ -64,7 +65,7 @@ const Accomodation = props =>{
         setFuelConsumption(270)
         setWaterConsumption(300)
 
-        updateFootprint(numberOfNights,225,270,300,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,225,270,300,avgOccupancy)
       }
     }
     else if (e.target.value ==='medium') {
@@ -74,7 +75,7 @@ const Accomodation = props =>{
         setFuelConsumption(190)
         setWaterConsumption(160)
 
-        updateFootprint(numberOfNights,70,190,160,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,70,190,160,avgOccupancy)
       }
       else if (hotelEffeciency==='fair') {
         // all units are (kWh/m2 year)
@@ -82,7 +83,7 @@ const Accomodation = props =>{
         setFuelConsumption(210)
         setWaterConsumption(172.5)
 
-        updateFootprint(numberOfNights,80,210,172.5,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,80,210,172.5,avgOccupancy)
       }
       else if (hotelEffeciency==='poor'){
         // all units are (kWh/m2 year)
@@ -90,7 +91,7 @@ const Accomodation = props =>{
         setFuelConsumption(245)
         setWaterConsumption(202.5)
 
-        updateFootprint(numberOfNights,105,245,202.5,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,105,245,202.5,avgOccupancy)
       }
     }
     else if (e.target.value ==='small') {
@@ -100,7 +101,7 @@ const Accomodation = props =>{
         setFuelConsumption(180)
         setWaterConsumption(120)
 
-        updateFootprint(numberOfNights,60,180,120,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,60,180,120,avgOccupancy)
       }
       else if (hotelEffeciency==='fair') {
         // all units are (kWh/m2 year)
@@ -108,7 +109,7 @@ const Accomodation = props =>{
         setFuelConsumption(195)
         setWaterConsumption(130)
 
-        updateFootprint(numberOfNights,70,195,130,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,70,195,130,avgOccupancy)
       }
       else if (hotelEffeciency==='poor'){
         // all units are (kWh/m2 year)
@@ -116,7 +117,7 @@ const Accomodation = props =>{
         setFuelConsumption(225)
         setWaterConsumption(150)
 
-        updateFootprint(numberOfNights,90,225,150,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,90,225,150,avgOccupancy)
       }
     }
 
@@ -132,7 +133,7 @@ const Accomodation = props =>{
         setFuelConsumption(200)
         setWaterConsumption(220)
 
-        updateFootprint(numberOfNights,165,200,220,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,165,200,220,avgOccupancy)
       }
       else if (e.target.value==='fair') {
         // all units are (kWh/m2 year)
@@ -140,7 +141,7 @@ const Accomodation = props =>{
         setFuelConsumption(220)
         setWaterConsumption(255)
 
-        updateFootprint(numberOfNights,182.5,220,255,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,182.5,220,255,avgOccupancy)
       }
       else if (e.target.value==='poor'){
         // all units are (kWh/m2 year)
@@ -148,7 +149,7 @@ const Accomodation = props =>{
         setFuelConsumption(270)
         setWaterConsumption(300)
 
-        updateFootprint(numberOfNights,225,270,300,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,225,270,300,avgOccupancy)
       }
     }
     else if (hotelSize ==='medium') {
@@ -158,7 +159,7 @@ const Accomodation = props =>{
         setFuelConsumption(190)
         setWaterConsumption(160)
 
-        updateFootprint(numberOfNights,70,190,160,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,70,190,160,avgOccupancy)
       }
       else if (e.target.value==='fair') {
         // all units are (kWh/m2 year)
@@ -166,7 +167,7 @@ const Accomodation = props =>{
         setFuelConsumption(210)
         setWaterConsumption(172.5)
 
-        updateFootprint(numberOfNights,80,210,172.5,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,80,210,172.5,avgOccupancy)
       }
       else if (e.target.value==='poor'){
         // all units are (kWh/m2 year)
@@ -174,7 +175,7 @@ const Accomodation = props =>{
         setFuelConsumption(245)
         setWaterConsumption(202.5)
 
-        updateFootprint(numberOfNights,105,245,202.5,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,105,245,202.5,avgOccupancy)
       }
     }
     else if (hotelSize ==='small') {
@@ -184,7 +185,7 @@ const Accomodation = props =>{
         setFuelConsumption(180)
         setWaterConsumption(120)
 
-        updateFootprint(numberOfNights,60,180,120,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,60,180,120,avgOccupancy)
       }
       else if (e.target.value==='fair') {
         // all units are (kWh/m2 year)
@@ -192,7 +193,7 @@ const Accomodation = props =>{
         setFuelConsumption(195)
         setWaterConsumption(130)
 
-        updateFootprint(numberOfNights,70,195,130,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,70,195,130,avgOccupancy)
       }
       else if (e.target.value==='poor'){
         // all units are (kWh/m2 year)
@@ -200,7 +201,7 @@ const Accomodation = props =>{
         setFuelConsumption(225)
         setWaterConsumption(150)
 
-        updateFootprint(numberOfNights,90,225,150,avgOccupancy)
+        updateFootprint(numberOfGuests,numberOfNights,90,225,150,avgOccupancy)
       }
     }
   }
@@ -210,17 +211,29 @@ const Accomodation = props =>{
     if (parseInt(e.target.value)>0) {
       console.log('good number to update with')
       setNumberOfNights(parseInt(e.target.value)*1)
-      updateFootprint(parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
+      updateFootprint(numberOfGuests,parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
     else if (e.target.value==='') {
       console.log('no good number to update with')
       setNumberOfNights('')
-      updateFootprint(parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
+      updateFootprint(numberOfGuests,parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
 
 
 
 
+  }
+  function updateNumberOfGuests(e){
+    console.log('updating the number of guests...'+e.target.value)
+
+    if (parseInt(e.target.value)>0) {
+      setNumberOfGuests(parseInt(e.target.value)*1)
+      updateFootprint(parseInt(e.target.value),numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
+    }
+    else if (e.target.value==='') {
+      setNumberOfGuests('')
+      updateFootprint(parseInt(e.target.value),numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
+    }
   }
   function updateHotelName(e){
     console.log(e.target.value)
@@ -230,27 +243,27 @@ const Accomodation = props =>{
   function updateElectricConsumption(e){
     console.log(e.target.value)
     setElectricConsumption(e.target.value)
-    updateFootprint(numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
+    updateFootprint(numberOfGuests,numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
 
   }
 
   function updateFuelConsumption(e){
     setFuelConsumption(e.target.value)
-    updateFootprint(numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
+    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
   }
 
   function updateWaterConsumption(e){
     setWaterConsumption(e.target.value)
-    updateFootprint(numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
+    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
   }
 
   function updateAvgOccupancy(e){
     setAvgOccupancy(e.target.value)
-    updateFootprint(numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
+    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
 
   }
 
-  function updateFootprint(numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy){
+  function updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy){
     console.log('-----updating footprint------')
     console.log('number of nights...'+numberOfNights)
     console.log('electric Consumption...'+electricConsumption)
@@ -264,10 +277,18 @@ const Accomodation = props =>{
     }
     else {
 
-      let cost =parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100);
+      if (numberOfGuests==='') {
+        let cost =parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100);
+        console.log('calculated cost...'+cost)
+        setCarbonFootprint(cost)
+      }
+      else {
+        let cost =(parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100))/numberOfGuests;
+        console.log('calculated cost...'+cost)
+        setCarbonFootprint(cost)
+      }
 
-      console.log('calculated cost...'+cost)
-      setCarbonFootprint(cost)
+
     }
 
   }
@@ -407,6 +428,9 @@ const Accomodation = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message ='How full is this hotel typically? A fully booked hotel more effeciently divides their overall carbon footprint over more guests.'/>
+              </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -423,6 +447,9 @@ const Accomodation = props =>{
                   <label htmlFor="electricConsumption"
                          className ={errors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/ M^2 Year)</label>
                 </Row>
+              </Col>
+              <Col>
+                <HelpIcon message ='Enter the energy use due to electricity consumption.'/>
               </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
@@ -442,6 +469,9 @@ const Accomodation = props =>{
                     Fuel Consumption (kWh/ M^2 Year)
                   </label>
                 </Row>
+              </Col>
+              <Col>
+                <HelpIcon message ='Enter the energy use due to fuel consumption.'/>
               </Col>
             </Row>
 
@@ -463,6 +493,9 @@ const Accomodation = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message ='Enter the energy use due to water consumption.'/>
+              </Col>
             </Row>
 
 
@@ -482,6 +515,9 @@ const Accomodation = props =>{
                     Name:
                   </label>
                 </Row>
+              </Col>
+              <Col>
+                <HelpIcon message ='Your hotel name helps make sense of all your carbon footprints when you review your trip.'/>
               </Col>
             </Row>
             <Row className ='form-line nice-input-wrapper'>
@@ -503,7 +539,32 @@ const Accomodation = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message ='How many nights are you staying for?'/>
+              </Col>
             </Row>
+            <Row className ='form-line nice-input-wrapper'>
+            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+              <Row>
+              <input type="number"
+                     id="numberOfGuests"
+                     name="numberOfGuests"
+                     min="1"
+                     max="100"
+                     value = {numberOfGuests}
+                     placeholder ='People Per Room'
+                     onChange = {updateNumberOfGuests}
+                     className ={errors.nightsError? "error-input":""}/>
+              <label htmlFor="numberOfGuests"
+                     className ={errors.nightsError? "error-label":""}>
+                People Per Room
+              </label>
+              </Row>
+            </Col>
+            <Col>
+              <HelpIcon message ='How many people are you sharing the room with? Sharing a standard size room distributes the carbon footprint of the stay amongst all those staying in the room.'/>
+            </Col>
+          </Row>
           </>
           :
           <>
@@ -550,6 +611,9 @@ const Accomodation = props =>{
                   </label>
                 </Row>
               </Col>
+              <Col>
+                <HelpIcon message ='Your hotel name helps make sense of all your carbon footprints when you review your trip.'/>
+              </Col>
             </Row>
 
             <Row className ='form-line nice-input-wrapper'>
@@ -570,7 +634,33 @@ const Accomodation = props =>{
               </label>
               </Row>
             </Col>
+            <Col>
+              <HelpIcon message ='How many nights will you be staying?'/>
+            </Col>
           </Row>
+
+          <Row className ='form-line nice-input-wrapper'>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <Row>
+            <input type="number"
+                   id="numberOfGuests"
+                   name="numberOfGuests"
+                   min="1"
+                   max="100"
+                   value = {numberOfGuests}
+                   placeholder ='People Per Room'
+                   onChange = {updateNumberOfGuests}
+                   className ={errors.nightsError? "error-input":""}/>
+            <label htmlFor="numberOfGuests"
+                   className ={errors.nightsError? "error-label":""}>
+              People Per Room
+            </label>
+            </Row>
+          </Col>
+          <Col>
+            <HelpIcon message ='How many people are you sharing the room with? Sharing a standard size room distributes the carbon footprint of the stay amongst all those staying in the room.'/>
+          </Col>
+        </Row>
           </>}
 
           <CarbonTotal footprint={carbonFootprint} label ={'Carbon Footprint (KG)'}/>
