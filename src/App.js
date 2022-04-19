@@ -17,6 +17,10 @@ import WhistlerActivityGuide from './components/app/blogs/whistlerActivityGuide'
 import VancouverFoodGuide from './components/app/blogs/vancouverFoodGuide';
 import VancouverActivityGuide from './components/app/blogs/vancouverActivityGuide';
 
+import CostaRica from './components/app/galleries/costaRica'
+import Granada from './components/app/galleries/granada'
+import Ometepe from './components/app/galleries/ometepe'
+
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
 
@@ -26,7 +30,17 @@ function App() {
         <Router>
           <ScrollToTop>
             <Route exact path="/" component={Main} />
+            <Route exact path="/home/:redirectView" component={Main} />
+
+            <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
+            <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
             <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
+            <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
+
+            <Route exact path="/CostaRica" component={CostaRica} />
+            <Route exact path="/Granada" component={Granada} />
+            <Route exact path="/Ometepe" component={Ometepe} />
+
           </ScrollToTop>
         </Router>
 

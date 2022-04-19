@@ -17,6 +17,7 @@ class AppMain extends Component {
     this.state = {
 
       view:'main',
+      urlOverride:false,
 
       blogSearch :'',
       blogs:[
@@ -44,22 +45,22 @@ class AppMain extends Component {
              {name:'Ometepe Island',
               pic:'/galleryTest1.jpg',
               tags:['food', 'bc','','','','','','','',''],
-              link:'/VancouverFoodGuide'},
+              link:'/ometepeGallery'},
 
               {name:'Granada, Nicaragua',
                pic:'/galleryTest2.jpg',
                tags:['food', 'bc','','','','','','','',''],
-               link:'/WhistlerFoodGuide'},
+               link:'/nicaraguaGallery'},
 
               {name:'Costa Rica',
                pic:'/galleryTest3.jpg',
                tags:['activity', 'bc','','','','','','','',''],
-               link:'/WhistlerActivityGuide'},
+               link:'/costaRicaGallery'},
 
                {name:'Another Thing',
                 pic:'/galleryTest1.jpg',
                 tags:['activity', 'notbc','','','','','','','',''],
-                link:'/VancouverActivityGuide'}
+                link:'/anotherGallery'}
              ]
     };
   };
@@ -81,9 +82,12 @@ class AppMain extends Component {
     this.setState({view:'blog',blogSearch:link})
   }
 
+  resetRedirectView = ()=>{
+    console.log('triggering the redirect view reset')
+  }
   updateView=(view)=>{
     console.log('updating app view')
-    this.setState({view:view})
+    this.setState({view:view,urlOverride:true})
   }
 
   render() {
@@ -99,16 +103,19 @@ class AppMain extends Component {
                          page ={this.state.view}/>
       :
           <DesktopHeader changeView ={this.updateView}
+                         urlView ={this.props.urlView}
+                         urlOverride ={this.state.urlOverride}
                          page ={this.state.view}/>
       }
 
-      {this.state.view ==='main'?
+      {this.state.view ==='main' && this.props.urlView!=='about' && this.props.urlView!=='blog'
+                                 && this.props.urlView!=='calculator' && this.props.urlView!=='gallery'?
         <>
           <HomePage isMobile={this.props.isMobile}/>
         </>
       :null}
 
-      {this.state.view === 'about'?
+      {this.state.view === 'about' || (this.props.urlView==='about' && this.state.urlOverride===false)?
       <>
         <About changeView ={this.props.updatePageView}
                view ={this.state.view}
@@ -116,7 +123,7 @@ class AppMain extends Component {
       </>
       :null}
 
-      {this.state.view === 'blog'?
+      {this.state.view === 'blog' || (this.props.urlView==='blog' && this.state.urlOverride===false)?
       <div className ='roaming-white'>
         <Blog changeView ={this.props.updatePageView}
               blogs = {this.state.blogs}
@@ -125,7 +132,7 @@ class AppMain extends Component {
       </div>
       :null}
 
-      {this.state.view === 'calculator'?
+      {this.state.view === 'calculator'|| (this.props.urlView==='calculator' && this.state.urlOverride===false)?
       <>
 
         <Calculator changeView ={this.props.updatePageView}
@@ -136,10 +143,10 @@ class AppMain extends Component {
                     totalFoodCost = {this.props.totalFoodCost}
                     totalAccomodationCost = {this.props.totalAccomodationCost}
                     isMobile={this.props.isMobile}/>
-      
+
       </>
       :null}
-      {this.state.view === 'gallery'?
+      {this.state.view === 'gallery' || (this.props.urlView==='gallery' && this.state.urlOverride===false)?
       <>
         <div className ='roaming-white'>
           <Blog changeView ={this.props.updatePageView}

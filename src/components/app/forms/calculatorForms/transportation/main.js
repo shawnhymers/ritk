@@ -27,7 +27,7 @@ return(
         &nbsp;
       </Col>
       <Col>
-        <Container className ='form-container'>
+        <Container className ='form-container white'>
           <Row className ='form-line'>
             <FormControl component="fieldset">
               <FormLabel component="legend">Transport Type:</FormLabel>

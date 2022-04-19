@@ -23,6 +23,7 @@ class Main extends Component {
     this.updateDimensions = this.updateDimensions.bind(this);
   };
   componentDidMount(){
+
     window.addEventListener('resize', this.updateDimensions);
     this.updateDimensions();
     if(this.props.match.params.view!==undefined){
@@ -110,7 +111,7 @@ class Main extends Component {
       :null}
 
       <AppMain isMobile ={this.state.isMobile}
-               urlView={this.props.match.params.view}
+               urlView={this.props.match.params.redirectView}
                addCarbonCostItem ={this.addCarbonCostItem}
                totalCarbonCost = {this.state.totalCarbonCost}
                totalFlightCost = {this.state.totalFlightCost}

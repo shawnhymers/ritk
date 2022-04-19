@@ -306,10 +306,19 @@ const Accomodation = props =>{
   }
 
   function resetState(){
+    setType('basic')
     setIsAdvanced(false)
     setCarbonFootprint(0)
-
-
+    setHotelName('')
+    setHotelSize('large')
+    setHotelEffeciency('good')
+    setNumberOfNights('')
+    setNumberOfGuests('')
+    setAvgOccupancy(95)
+    setElectricConsumption(80)
+    setFuelConsumption(210)
+    setWaterConsumption(172.5)
+    setCarbonFootprint(0)
   }
   function addHotel(){
     if (hotelName!=='' && carbonFootprint>0) {
@@ -321,6 +330,7 @@ const Accomodation = props =>{
 
 
       props.addCarbonCostItem(data)
+      resetState()
     }
     else {
       let nameError=false;

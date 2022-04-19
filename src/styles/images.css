@@ -72,5 +72,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
+}
+
+
+.blog-header-wrapper{
+
+  display: flex;
+      justify-content: center;
+      align-items: center;
+}
+.blog-label{
+  position: absolute;
+  display: block;
+  font-family: roamingFont;
+  font-size: 7em;
+  color: #ebeae6;
+  z-index: 16;
+
+
+
 }

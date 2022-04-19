@@ -146,7 +146,7 @@ const Overview= props =>{
       </div>
     </Container>
 
-    <Container style ={{width:'90vw'}}>
+    <Container  className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
     <Row className ='form-line'>
       <FormControl component="fieldset">
         <FormLabel component="legend">Compare To:</FormLabel>

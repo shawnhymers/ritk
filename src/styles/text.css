@@ -168,17 +168,17 @@
 
 .blog-body{
   font-family: roamingFont;
-  font-weight: 300;
-  font-style: normal;
-  /* letter-spacing: 0.08em; */
-  text-transform: none;
-  line-height: 1.4em;
-  margin: 0!important;
-  font-size: calc((1.4 - 1) * 0.9vw + 1rem);
+  line-height: 1.5em;
+  font-size: calc((1.9 - 1) * 0.9vw + 1rem);
 }
 
 
 .centered-text{
   align-self: center;
   margin: auto;
+}
+.center-justified-text{
+  align-self: center;
+  align-content: center;
+  align:center;
 }
