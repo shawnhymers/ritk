@@ -45,22 +45,38 @@ class AppMain extends Component {
              {name:'Ometepe Island',
               pic:'/galleryTest1.jpg',
               tags:['food', 'bc','','','','','','','',''],
-              link:'/ometepeGallery'},
+              link:'/ometepeGallery',
+              key:'1'},
 
               {name:'Granada, Nicaragua',
                pic:'/galleryTest2.jpg',
                tags:['food', 'bc','','','','','','','',''],
-               link:'/nicaraguaGallery'},
+               link:'/nicaraguaGallery',
+               key:'2'},
 
               {name:'Costa Rica',
                pic:'/galleryTest3.jpg',
                tags:['activity', 'bc','','','','','','','',''],
-               link:'/costaRicaGallery'},
+               link:'/costaRicaGallery',
+               key:'3'},
 
                {name:'Another Thing',
                 pic:'/galleryTest1.jpg',
                 tags:['activity', 'notbc','','','','','','','',''],
-                link:'/anotherGallery'}
+                link:'/anotherGallery',
+                key:'4'},
+
+                {name:'Costa Rica',
+                 pic:'/galleryTest3.jpg',
+                 tags:['activity', 'bc','','','','','','','',''],
+                 link:'/costaRicaGallery',
+                 key:'5'},
+
+                 {name:'Another Thing',
+                  pic:'/galleryTest1.jpg',
+                  tags:['activity', 'notbc','','','','','','','',''],
+                  link:'/anotherGallery',
+                  key:'6'}
              ]
     };
   };
@@ -108,10 +124,12 @@ class AppMain extends Component {
                          page ={this.state.view}/>
       }
 
-      {this.state.view ==='main' && this.props.urlView!=='about' && this.props.urlView!=='blog'
-                                 && this.props.urlView!=='calculator' && this.props.urlView!=='gallery'?
+      {(this.state.view ==='main' && this.props.urlView===undefined)
+    || (this.props.urlView==='home' && this.state.urlOverride===false)
+    || (this.state.view ==='main' &&this.state.urlOverride===true)?
         <>
-          <HomePage isMobile={this.props.isMobile}/>
+          <HomePage galleryImages ={this.state.galleries}
+                    isMobile={this.props.isMobile}/>
         </>
       :null}
 

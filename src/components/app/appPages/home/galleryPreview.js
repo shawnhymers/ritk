@@ -12,9 +12,9 @@ const Images = props => {
            style={{margin:'0vw',padding:'0vw'}}
            className ='gallery-col'>
 
-        <p className ='gallery-label'>{props.img.label}</p>
-        <img src ={props.img.src}
-        alt={props.img.alt}
+        <p className ='gallery-label'>{props.img.name}</p>
+        <img src ={props.img.pic}
+        alt={props.img.name}
         className ='img-fluid gallery-img'/>
 
       </Col>
@@ -37,7 +37,7 @@ return(
 
     {props.galleryImages.map((img, i)=>{
             return <Images img={img}
-                           key={img.src+i}/> })}
+                           key={img.key}/> })}
 
 
     </Row>
