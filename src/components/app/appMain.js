@@ -45,19 +45,19 @@ class AppMain extends Component {
              {name:'Ometepe Island',
               pic:'/galleryTest1.jpg',
               tags:['food', 'bc','','','','','','','',''],
-              link:'/ometepeGallery',
+              link:'/Ometepe',
               key:'1'},
 
               {name:'Granada, Nicaragua',
                pic:'/galleryTest2.jpg',
                tags:['food', 'bc','','','','','','','',''],
-               link:'/nicaraguaGallery',
+               link:'/Granada',
                key:'2'},
 
               {name:'Costa Rica',
                pic:'/galleryTest3.jpg',
                tags:['activity', 'bc','','','','','','','',''],
-               link:'/costaRicaGallery',
+               link:'/Costarica',
                key:'3'},
 
                {name:'Another Thing',
@@ -69,7 +69,7 @@ class AppMain extends Component {
                 {name:'Costa Rica',
                  pic:'/galleryTest3.jpg',
                  tags:['activity', 'bc','','','','','','','',''],
-                 link:'/costaRicaGallery',
+                 link:'/Costarica',
                  key:'5'},
 
                  {name:'Another Thing',
