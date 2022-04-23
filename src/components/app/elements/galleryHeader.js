@@ -26,13 +26,12 @@ return(
     </>:null}
 
     <Row>
-    <Col className ='centered-children'>
-      <MdMenu size ={'2em'} onClick={toggleSideMenu}/>
-    </Col>
-
-    <Col xs={4} sm={4} md={4} lg={4} xl={4} className ='centered-children' style = {{maxHeight:'4em'}}>
-      <img src = "/logo1.png" alt = 'logo 2' className = 'home-logo'/>
-    </Col>
+      <Col className ='centered-children'>
+        <MdMenu size ={'2em'} onClick={toggleSideMenu}/>
+      </Col>
+      <Col xs={4} sm={4} md={4} lg={4} xl={4} className ='centered-children' style = {{maxHeight:'4em'}}>
+        <img src = "/logo1.png" alt = 'logo 2' className = 'home-logo'/>
+      </Col>
       <Col>
         &nbsp;
       </Col>
@@ -49,8 +48,9 @@ return(
     </Link>
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2 } className ='centered-children'>
-      <p className = 'balloon-text  medium-link-text'  >Blog</p>
-
+    <Link to='home/blog'  className = 'centered-children'style = {{textDecoration:'none'}} >
+      <p className = 'balloon-text  medium-link-text roaming-yellow-text'  >Blog</p>
+    </Link>
   </Col>
   <Col xs={4} sm={4} md={4} lg={4} xl={4} className ='centered-children' style = {{maxHeight:'4em'}}>
     <Link to='home/home'  className = 'home-logo'style = {{textDecoration:'none'}} >
@@ -63,9 +63,7 @@ return(
     </Link>
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
-    <Link to='home/gallery' className = 'centered-children'style = {{textDecoration:'none'}} >
-      <p className = 'balloon-text  roaming-yellow-text medium-link-text'>Galleries</p>
-    </Link>
+      <p className = 'balloon-text medium-link-text'>Galleries</p>
   </Col>
 </Row>
 </>}

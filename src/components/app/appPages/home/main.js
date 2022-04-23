@@ -12,7 +12,7 @@ const HomePage = props => {
 
 return(
   <>
-    <Row className ='red'style ={{pading:'0vh'}}>
+    <Row style ={{pading:'0vh'}}>
       <img src= "/bannerPic.jpeg" alt = 'banner pic' className = 'banner-pic'/>
     </Row>
     <AboutPreview />

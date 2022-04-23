@@ -2,13 +2,33 @@ import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
 import BlogHeader from "../elements/blogHeader";
 import BlogBody from "../../standardComponents/blogBody";
+import  { useState,useEffect } from 'react';
 
 const VancouverFoodGuide = props => {
 
+  const[isMobile, setIsMobile]=useState(false)
+
+  useEffect(() => {
+    window.addEventListener('resize', updateDimensions);
+    updateDimensions()
+    })
+
+  function updateDimensions() {
+    let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+    console.log('updating dimensions')
+    if (windowWidth>= windowHeight) {
+      setIsMobile(false)
+    }
+    else {
+      setIsMobile(true)
+    }
+  }
 
 return(
   <>
-    <BlogHeader />
+
+    <BlogHeader isMobile={isMobile}/>
     <BlogBody header ={{src:'vancouverFood.jpg', label:'Vancouver Food Guide'}}
               blurb ={"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}
               updated={'December 2021'}
@@ -42,7 +62,9 @@ return(
 
                              {type:'paragraph', text:'Honestly, there are so many other amazing places to try in Vancouver and I could easily go on but I had to limit myself. What are your favourite spots? I would love to know! '},
 
-                             {type:'diptych',src1:'/galleryTest1.jpg',src2:'galleryTest2.jpg'}
+                             {type:'diptych',src1:'/galleryTest1.jpg',src2:'galleryTest2.jpg'},
+                             {type:'horizontalImage',src:'/galleryTest1.jpg'},
+                             {type:'verticalImage',src:'/galleryTest1.jpg'}
                            ]}/>
   </>
 )}

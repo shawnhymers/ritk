@@ -20,7 +20,7 @@ const BlogSegment = props =>{
   )
 }
 
-const BlogBody = props => {
+const GalleryBody = props => {
 
 return(
   <>
@@ -82,15 +82,15 @@ return(
         </Col>
       </Row>
       <Row>
-        <Col xs={2} sm={2} md={3} lg={3} xl={3}>
+        <Col xs={3} sm={3} md={3} lg={2} xl={2}>
           &nbsp;
         </Col>
-        <Col xs={8} sm={8} md={6} lg={6} xl={6}>
+        <Col xs={6} sm={6} md={6} lg={8} xl={8}>
           {props.contentTest.map((content, i)=>{
                         return <BlogSegment content ={content}
                                             key={content.type+i}/>})}
         </Col>
-        <Col xs={2} sm={2} md={3} lg={3} xl={3}>
+        <Col xs={3} sm={3} md={3} lg={2} xl={2}>
           &nbsp;
         </Col>
       </Row>
@@ -134,7 +134,7 @@ const HorizontalBlogImage = props =>{
 
   return(
     <>
-      <Row className ='vertical-padding-md '>
+      <Row className ='vertical-padding-sm '>
         <Col className ='centered-children '>
           <img src ={props.src} style ={{width:'100%'}} onContextMenu={false}/>
         </Col>
@@ -149,7 +149,7 @@ const VerticalBlogImage = props =>{
   }
   return(
     <>
-      <Row className ='vertical-padding-md'>
+      <Row className ='vertical-padding-sm'>
         <Col className ='centered-children'>
           <img src ={props.src} style ={{width:'100%'}} onContextMenu={dummy} />
         </Col>
@@ -164,7 +164,7 @@ const DipTych = props =>{
   }
   return(
 
-    <Row className ='vertical-padding-md'>
+    <Row className ='vertical-padding-sm'>
       <Col className ='centered-children'>
         <img src ={props.src1} style ={{width:'95%'}} onContextMenu={dummy} />
       </Col>
@@ -176,4 +176,4 @@ const DipTych = props =>{
   )
 }
 
-export default BlogBody;
+export default GalleryBody;
