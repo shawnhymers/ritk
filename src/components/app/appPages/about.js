@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container,Row,Col,Button} from 'react-bootstrap';
+import { Container,Row,Col} from 'react-bootstrap';
 import {SiTiktok} from "react-icons/si";
-import {BsInstagram, BsYoutube,BsTwitter} from "react-icons/bs";
+import {BsInstagram, BsYoutube} from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const About = props => {
 
@@ -17,15 +18,33 @@ return(
           </Col>
         </Row>
         <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}>
-          <Col style ={{maxWidth:'2.6em'}}>
-            <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
-          </Col>
-          <Col style ={{maxWidth:'2.6em'}}>
-            <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
-          </Col>
-          <Col style ={{maxWidth:'2.6em'}}>
-            <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
-          </Col>
+        <Col style ={{maxWidth:'2.6em'}}>
+          <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
+                className = 'centered-children'
+                target="_blank" >
+            <BsInstagram size ='1.5em'
+                         style ={{cursor:'pointer'}}
+                         color='black'/>
+          </Link>
+        </Col>
+        <Col style ={{maxWidth:'2.6em'}}>
+          <Link to={{pathname:'https://www.tiktok.com/@roamingintheknow'}}
+                className = 'centered-children'
+                target="_blank" >
+            <SiTiktok size ='1.5em'
+                      style ={{cursor:'pointer'}}
+                      color='black'/>
+          </Link>
+        </Col>
+        <Col style ={{maxWidth:'2.6em'}}>
+          <Link to={{pathname:'https://www.youtube.com/'}}
+                className = 'centered-children'
+                target="_blank">
+            <BsYoutube size ='1.5em'
+                       style ={{cursor:'pointer'}}
+                       color='black'/>
+          </Link>
+        </Col>
           <Col style ={{maxWidth:'10em'}}>
              <p className ='centered-text roaming-text-sm'>@roamingintheknow</p>
           </Col>

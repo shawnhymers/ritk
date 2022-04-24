@@ -1,11 +1,10 @@
 import React from 'react';
-import { Container,Row,Col,Button} from 'react-bootstrap';
 import GalleryHeader from "../elements/galleryHeader";
 import GalleryBody from "../../standardComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
 const Ometepe = props => {
-
+ 
   const[isMobile, setIsMobile]=useState(false)
 
   useEffect(() => {

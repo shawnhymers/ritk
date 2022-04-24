@@ -38,11 +38,11 @@ const FlightForm = props => {
   useEffect(() => {
    console.log('Do something after distance has changed');
    calculateFlightFootprint(distance)
- }, [distance,flightClass,flightType]);
+ });
    useEffect(() => {
     console.log('Do something after city has changed');
     updateDistance()
-  }, [toCity,fromCity]);
+  });
 
   // Functions
   function updateDistance(){
@@ -65,13 +65,7 @@ const FlightForm = props => {
 
     let distance = 2*6378.1*Math.asin(Math.sqrt((elm1+elm2)))
 
-    if (flightType ==='One Way') {
-      setDistance(distance)
-    }
-    else if (flightType==='Round Trip') {
-      let newDistance = distance*2
-      setDistance(distance)
-    }
+    setDistance(distance)
 
     return(distance)
   }
@@ -184,10 +178,13 @@ const FlightForm = props => {
         else if (searchBy==='Code') {
           return el.Code.toUpperCase().includes(e.target.value.toUpperCase())
         }
+        else {
+          return el.City.toUpperCase().includes(e.target.value.toUpperCase())
+        }
       });
     }
     else {
-      var options = airportData;
+      options = airportData;
     }
     setToOptions(options)
     return(options)
@@ -209,10 +206,13 @@ const FlightForm = props => {
         else if (searchBy==='Code') {
           return el.Code.toUpperCase().includes(e.target.value.toUpperCase())
         }
+        else {
+          return el.City.toUpperCase().includes(e.target.value.toUpperCase())
+        }
       });
     }
     else {
-      var options = airportData;
+      options = airportData;
     }
     setFromOptions(options)
     return(options)

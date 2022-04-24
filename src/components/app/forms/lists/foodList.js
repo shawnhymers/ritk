@@ -1,6 +1,6 @@
 import  {  Component } from "react";
-import { Container, Row, Col, Button} from 'react-bootstrap';
-import {MdKeyboardBackspace,MdDeleteForever,MdAddCircle,MdAdd} from "react-icons/md";
+import { Row, Col} from 'react-bootstrap';
+import {MdDeleteForever} from "react-icons/md";
 
 import foodData from "../../data/allFoodData"
 

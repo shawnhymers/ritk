@@ -1,6 +1,6 @@
 import  {  Component } from "react";
 import React from "react";
-import { Container, Row, Col, Button} from 'react-bootstrap';
+import {  Row, Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import HelpIcon from "../../standardComponents/helpIcon"
 
@@ -70,6 +70,7 @@ class Blog extends Component {
     this.state = {
       isMobile:false,
       searchValue:'',
+      emptySearch:false,
       blogs:[]
     };
   };
@@ -127,7 +128,13 @@ class Blog extends Component {
       }
     }
 
-    this.setState({blogs:tempBlogs})
+    if (tempBlogs.length===0) {
+      this.setState({emptySearch:true,blogs:tempBlogs})
+    }
+    else {
+      this.setState({emptySearch:false,blogs:tempBlogs})
+    }
+
 
   }
 
@@ -140,14 +147,24 @@ class Blog extends Component {
 
     {this.props.isMobile?
     <>
-      <Row className ='nice-input-wrapper form-line '>
-        <input onChange={this.tagInput}
-               value={this.state.searchValue}
-               id="searchValue"
-               type="text"
-               placeholder='Search'
-               style ={{width:'25vw' }}/>
-        <label htmlFor="searchValue" >Search</label>
+      <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          &nbsp;
+        </Col>
+        <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+          <Row>
+            <input onChange={this.tagInput}
+                   value={this.state.searchValue}
+                   id="searchValue"
+                   type="text"
+                   placeholder='Search'
+                   className ='roaming-white'/>
+            <label htmlFor="searchValue" >Search</label>
+          </Row>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          &nbsp;
+        </Col>
       </Row>
       <Row>
           {this.state.blogs.map((blog, i)=>{
@@ -198,6 +215,16 @@ class Blog extends Component {
                                    })}
         </Col>
       </Row>
+      {this.state.emptySearch?
+        <>
+          <Row className ='roaming-white' style ={{minHeight:'100vh'}}>
+            <p>Whoops! We don't have a blog about that yet.</p>
+            <p>Try some of these popular tags:</p>
+            <p>Food, Colombia, Accomodation</p>
+          </Row>
+        </>
+
+      :null}
     </>
 }
 

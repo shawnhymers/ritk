@@ -11,7 +11,7 @@ import HelpIcon from "../../../standardComponents/helpIcon"
 
 const Accomodation = props =>{
 
-  const [type, setType] = useState('basic');
+  // const [type, setType] = useState('basic');
   const [isAdvanced, setIsAdvanced] = useState(false)
 
   const [hotelName, setHotelName] =useState('')
@@ -34,9 +34,9 @@ const Accomodation = props =>{
                                                         electricConsumptionError:false,
                                                         fuelConsumptionError:false,
                                                         waterConsumptionError:false})
-  function selectType(type){
-    setType(type);
-  }
+  // function selectType(type){
+  //   setType(type);
+  // }
   function updateHotelSize(e){
     console.log(e.target.value)
 
@@ -306,7 +306,7 @@ const Accomodation = props =>{
   }
 
   function resetState(){
-    setType('basic')
+    // setType('basic')
     setIsAdvanced(false)
     setCarbonFootprint(0)
     setHotelName('')
@@ -513,14 +513,13 @@ const Accomodation = props =>{
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
                   <input type="text"
-                         id="name"
-                         name="name"
-                         placeholder='Name'
+                         id="hotelName"
+                         name="hotelName"
                          value = {hotelName}
                          placeholder ='Name:'
                          onChange = {updateHotelName}
                          className ={errors.nameError? "error-input":""}/>
-                  <label htmlFor="names"
+                  <label htmlFor="hotelName"
                          className ={errors.nameError? "error-label":""}>
                     Name:
                   </label>
@@ -536,7 +535,6 @@ const Accomodation = props =>{
                   <input type="number"
                          id="numberOfNightsAdv"
                          name="numberOfNightsAdv"
-                         placeholder ='Number of Nights'
                          min="1"
                          max="10000"
                          placeholder ='Number of Nights:'

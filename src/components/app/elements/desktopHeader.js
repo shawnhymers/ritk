@@ -1,9 +1,7 @@
 import React from 'react';
-import { Container,Row,Col,Button} from 'react-bootstrap';
-
+import {Row,Col} from 'react-bootstrap';
 
 const DesktopHeader = props => {
-
 
 return(
   <>

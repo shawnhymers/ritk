@@ -28,7 +28,7 @@ const CarForm = props => {
   const [advancedDrivingType,setAdvancedDrivingType] = useState('City')
   const [searchBy, setSearchBy] = useState('Make');
   const [year, setYear] = useState('2020');
-  const [vehicleSearch, setVehicleSearch] = useState('');
+  // const [vehicleSearch, setVehicleSearch] = useState('');
   const [vehicle, setVehicle] = useState('');
   const [vehicleOptions, setVehicleOptions] = useState(smallCarData);
 
@@ -150,35 +150,35 @@ const CarForm = props => {
     setDistance(e.target.value)
     updateCarbonFootprint(e.target.value,milage,passengers)
   }
-  function updateVehicleInput(e){
-    setVehicleSearch(e.target.value)
-    let options = []
-    if (e.target.value !=='') {
-
-      var yearOptions = smallCarData.filter(function (el)
-      {
-          return el.Year===parseInt(year)
-      });
-      console.log('year options are')
-      console.log(yearOptions)
-
-      let options = yearOptions.filter(function (el)
-      {
-        if (searchBy==='Make') {
-          return el.Make.toUpperCase().includes(e.target.value.toUpperCase())
-        }
-        else if (searchBy==='Model') {
-          return el.Model.toUpperCase().includes(e.target.value.toUpperCase())
-        }
-      });
-        setVehicleOptions(options)
-    }
-    else {
-        setVehicleOptions(options)
-    }
-
-
-  }
+  // function updateVehicleInput(e){
+  //   setVehicleSearch(e.target.value)
+  //   let options = []
+  //   if (e.target.value !=='') {
+  //
+  //     var yearOptions = smallCarData.filter(function (el)
+  //     {
+  //         return el.Year===parseInt(year)
+  //     });
+  //     console.log('year options are')
+  //     console.log(yearOptions)
+  //
+  //     let options = yearOptions.filter(function (el)
+  //     {
+  //       if (searchBy==='Make') {
+  //         return el.Make.toUpperCase().includes(e.target.value.toUpperCase())
+  //       }
+  //       else if (searchBy==='Model') {
+  //         return el.Model.toUpperCase().includes(e.target.value.toUpperCase())
+  //       }
+  //     });
+  //       setVehicleOptions(options)
+  //   }
+  //   else {
+  //       setVehicleOptions(options)
+  //   }
+  //
+  //
+  // }
   function updateType(e){
     console.log(e.target.value)
     if (isAdvanced) {
@@ -218,8 +218,6 @@ const CarForm = props => {
 
   }
   function updateVehicleOptions(e){
-    console.log('updating vehicle options')
-    console.log(e.target.value)
     if (e.target.value !=='') {
 
       var yearOptions = smallCarData.filter(function (el)
@@ -234,6 +232,9 @@ const CarForm = props => {
         }
         else if (searchBy==='Model') {
           return el.Model.toUpperCase().includes(e.target.value.toUpperCase())
+        }
+        else {
+          return(el.Model.toUpperCase().includes(e.target.value.toUpperCase()))
         }
       });
     }
@@ -364,9 +365,10 @@ const CarForm = props => {
     setAdvancedDrivingType('City')
     setSearchBy('Make')
     setYear('2020')
-    setVehicleSearch('')
+    // setVehicleSearch('')
     setVehicle('')
-    setVehicleOptions([smallCarData])
+    setVehicleOptions(smallCarData)
+    setPassengers('')
   }
 
   const years=['2022','2021','2020','2019','2018','2017','2016','2015','2014'

@@ -1,15 +1,9 @@
-import { Container, Row, Col, Button,Dropdown} from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
-import  { useState } from 'react';
 import {MdClose } from "react-icons/md";
 
 const OutcomeMessage = props => {
-  const [showMessage, setShowMessage] = useState(false)
 
-  function toggleMessage(){
-    console.log('toggling message')
-    setShowMessage(!showMessage)
-  }
 return(
   <>
     {!props.isMobile?

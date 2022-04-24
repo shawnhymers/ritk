@@ -1,8 +1,5 @@
 import React from 'react';
-import { Container,Row,Col,Button} from 'react-bootstrap';
-import {SiTiktok} from "react-icons/si";
-import {BsInstagram, BsYoutube,BsTwitter} from "react-icons/bs";
-import  { useState } from 'react';
+import {Row,Col} from 'react-bootstrap';
 
 const Images = props => {
 

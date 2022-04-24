@@ -1,7 +1,4 @@
 import  {  Component } from "react";
-import { Container, Row, Col, Button,Form} from 'react-bootstrap';
-// import {MdKeyboardArrowRight,MdKeyboardArrowDown} from "react-icons/md";
-
 
 class Dropdown extends Component {
   // Setting up initial state
@@ -11,10 +8,7 @@ class Dropdown extends Component {
       temp:''
     };
   };
-
-
   render() {
-
   return(
 <>
   <option value={this.props.value}  >{this.props.displayValue}</option>

@@ -8,8 +8,7 @@ import './styles/images.css';
 import './styles/layout.css';
 import './styles/text.css';
 import './styles/effects.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './components/main.js';
 
 import WhistlerFoodGuide from './components/app/blogs/whistlerFoodGuide';

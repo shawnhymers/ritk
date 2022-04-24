@@ -1,10 +1,7 @@
 import  {  Component } from "react";
 import React from "react";
-import { Container, Row, Col, Button} from 'react-bootstrap';
-
 import DesktopHeader from "./elements/desktopHeader";
 import MobileHeader from "./elements/mobileHeader";
-
 import HomePage from "./appPages/home/main"
 import About from "./appPages/about";
 import Calculator from "./appPages/calculator";
@@ -142,12 +139,14 @@ class AppMain extends Component {
       :null}
 
       {this.state.view === 'blog' || (this.props.urlView==='blog' && this.state.urlOverride===false)?
-      <div className ='roaming-white'>
-        <Blog changeView ={this.props.updatePageView}
-              blogs = {this.state.blogs}
-              blogSearch ={this.state.blogSearch}
-              isMobile={this.props.isMobile}/>
-      </div>
+      <>
+        <div className ='roaming-white'>
+          <Blog changeView ={this.props.updatePageView}
+                blogs = {this.state.blogs}
+                blogSearch ={this.state.blogSearch}
+                isMobile={this.props.isMobile}/>
+        </div>
+      </>
       :null}
 
       {this.state.view === 'calculator'|| (this.props.urlView==='calculator' && this.state.urlOverride===false)?

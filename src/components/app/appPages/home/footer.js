@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container,Row,Col,Button} from 'react-bootstrap';
+import {Row,Col,Button} from 'react-bootstrap';
 import {SiTiktok} from "react-icons/si";
-import {BsInstagram, BsYoutube,BsTwitter} from "react-icons/bs";
+import {BsInstagram, BsYoutube} from "react-icons/bs";
 import  { useState,useRef } from 'react';
 import LargeModal from "../../../standardComponents/largeModal"
 import { sendForm } from 'emailjs-com';
@@ -56,7 +56,6 @@ return(
             <input type="text"
                    id="userEmail"
                    name="userEmail"
-                   placeholder='userEmail'
                    value = {userEmail}
                    placeholder ='Your Email:'
                    onChange = {updateEmail}/>
@@ -101,7 +100,6 @@ return(
                                   <input type="text"
                                          id="user_email"
                                          name="user_email"
-                                         placeholder='user_email'
                                          value = {userEmail}
                                          placeholder ='Your Email:'
                                          onChange = {updateEmail}/>

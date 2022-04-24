@@ -1,6 +1,6 @@
 // import NewFoodForm from './forms/newFoodForm'
 import { Container, Row, Col, Button,Form} from 'react-bootstrap';
-import FoodList from "../lists/foodList"
+// import FoodList from "../lists/foodList"
 import {useState} from "react";
 import Dropdown from '../../../standardComponents/dropdown';
 import foodData from "../../data/foodData"

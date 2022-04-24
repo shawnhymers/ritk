@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button} from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import {useState} from "react";
 import CarbonTotal from "../../elements/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
@@ -15,18 +15,17 @@ const Overview= props =>{
   const [compareType, setCompareType] =useState('country')
 
   const [countrySearchValue, setCountrySearchValue] =useState('')
-  const [countryError, setCountryError]=useState(false);
+  const [countryError]=useState(false);
   const [countryOptions, setCountryOptions] = useState(countryFootprintData);
   const [selectedCountry, setSelectedCountry] =useState({})
 
   const [regionSearchValue, setRegionSearchValue] =useState('')
-  const [regionError, setRegionError]=useState(false);
+  const [regionError]=useState(false);
   const [regionOptions, setRegionOptions] = useState(countryFootprintData);
   const [selectedRegion, setSelectedRegion] =useState({})
 
 
   function updateCompareType(e){
-    console.log(e.target.value)
     if (e.target.value!==compareType) {
       setSelectedRegion({})
       setSelectedCountry({})
@@ -211,7 +210,7 @@ const Overview= props =>{
                         displayKeys = {['Entity']}
                         valueKey ={'Footprint'}
                         keyFields ={['Entity','Footprint']}
-                        invalidInput={countryError}
+                        invalidInput={regionError}
                         key ={'Region Compare Search'}/>
           </Col>
         </Row>

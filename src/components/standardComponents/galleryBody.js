@@ -1,9 +1,5 @@
-import { Container, Row, Col, Button,Dropdown} from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
-import  { useState } from 'react';
-import {MdHelp } from "react-icons/md";
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 
 import {  MdFiberManualRecord } from "react-icons/md";
 
@@ -29,6 +25,7 @@ return(
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>
         <img src ={props.header.src}
+             alt ={props.header.label}
              style ={{margin:'0vh',padding:'0vh',minWidth:'100vw'}}
              className ='img-fluid blog-img'/>
       </Row>
@@ -136,7 +133,10 @@ const HorizontalBlogImage = props =>{
     <>
       <Row className ='vertical-padding-sm '>
         <Col className ='centered-children '>
-          <img src ={props.src} style ={{width:'100%'}} onContextMenu={false}/>
+          <img src ={props.src}
+               alt = {props.label}
+               style ={{width:'100%'}}
+               onContextMenu={false}/>
         </Col>
       </Row>
     </>
@@ -151,7 +151,10 @@ const VerticalBlogImage = props =>{
     <>
       <Row className ='vertical-padding-sm'>
         <Col className ='centered-children'>
-          <img src ={props.src} style ={{width:'100%'}} onContextMenu={dummy} />
+          <img src ={props.src}
+               alt = {props.label}
+               style ={{width:'100%'}}
+               onContextMenu={dummy} />
         </Col>
       </Row>
     </>
@@ -166,11 +169,17 @@ const DipTych = props =>{
 
     <Row className ='vertical-padding-sm'>
       <Col className ='centered-children'>
-        <img src ={props.src1} style ={{width:'95%'}} onContextMenu={dummy} />
+        <img src ={props.src1}
+             alt = {props.label}
+             style ={{width:'95%'}}
+             onContextMenu={dummy} />
       </Col>
 
       <Col className ='centered-children'>
-        <img src ={props.src2} style ={{width:'95%'}} onContextMenu={dummy} />
+        <img src ={props.src2}
+             alt = {props.label}
+             style ={{width:'95%'}}
+             onContextMenu={dummy} />
       </Col>
     </Row>
   )
