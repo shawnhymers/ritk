@@ -1,6 +1,7 @@
 cd Documents/websites/ritk && npm start
 
-
+cd Documents/websites/ritk && npm i react-apexcharts
+cd Documents/websites/ritk && npm install --save react-apexcharts apexcharts
 cd Documents/websites/ritk && npm i emailjs-com
 cd Documents/websites/ritk && npm install @mui/material @emotion/react @emotion/styled
 
