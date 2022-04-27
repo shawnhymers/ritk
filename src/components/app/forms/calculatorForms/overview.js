@@ -21,7 +21,7 @@ const Overview= props =>{
 
   const [regionSearchValue, setRegionSearchValue] =useState('')
   const [regionError]=useState(false);
-  const [regionOptions, setRegionOptions] = useState(countryFootprintData);
+  const [regionOptions, setRegionOptions] = useState(regionFootprintData);
   const [selectedRegion, setSelectedRegion] =useState({})
 
 
@@ -41,11 +41,7 @@ const Overview= props =>{
     }
   }
   function updateCompareToCountry(e){
-    console.log('updating the compare to country')
-    console.log(e.target.value)
-
     if (e.target.value ==='') {
-      console.log('search value is empty')
       let options = countryFootprintData;
       setCountryOptions(options);
     }
@@ -61,8 +57,6 @@ const Overview= props =>{
 
   }
   function selectCompareToCountry(country){
-    console.log('selectingcompare to country')
-    console.log(country)
     setSelectedCountry(country)
   }
 
@@ -73,7 +67,6 @@ const Overview= props =>{
     }
   }
   function updateCompareToRegion(e){
-    console.log(e.target.value)
     var options = regionFootprintData.filter(function (el)
     {
       return el.Entity.toUpperCase().includes(e.target.value.toUpperCase())
@@ -81,7 +74,6 @@ const Overview= props =>{
     setRegionOptions(options);
   }
   function selectCompareToRegion(region) {
-
     setSelectedRegion(region)
   }
 

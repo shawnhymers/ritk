@@ -86,7 +86,7 @@
   position: absolute;
   display: block;
   font-family: roamingFont;
-  font-size: 7em;
+  font-size: calc((6 - 1) * 1.2vw + 1em);
   color: #ebeae6;
   z-index: 16;
 

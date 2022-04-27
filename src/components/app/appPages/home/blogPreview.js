@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row,Col} from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 
 const BlogPreview = props => {
 
@@ -15,31 +15,44 @@ return(
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-            <img src = '/nyc.jpg' alt ='nyc' className = ' blog-tease vertical-margin-sm'/>
+          <Link to='/WhistlerActivityGuide'
+                className ='centered-children'>
+              <img src = '/whistlerActivity.jpg'
+                   alt ='whisterlActivity'
+                   className = ' blog-tease vertical-margin-sm'/>
+            </Link>
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Caption</p>
+          <p className ='centered-text roaming-text'>Whistler Activity Guide</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-            <img src = '/boat.jpg' alt ='boat' className = ' blog-tease vertical-margin-sm'/>
+            <Link to='/WhistlerFoodGuide' className ='centered-children'>
+              <img src = '/whistlerFood.jpg'
+                   alt ='whistlerFood'
+                   className = ' blog-tease vertical-margin-sm'/>
+            </Link>
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Caption</p>
+          <p className ='centered-text roaming-text'>Whistler Food Guide</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-          <img src = '/planeWing.jpg' alt ='planeWing' className = ' blog-tease vertical-margin-sm'/>
+            <Link to='/WhistlerFoodGuide' className ='centered-children'>
+              <img src = '/planeWing.jpg'
+                   alt ='planeWing'
+                   className = ' blog-tease vertical-margin-sm'/>
+            </Link>
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Caption</p>
+          <p className ='centered-text roaming-text'>Medellin Food Guide</p>
         </Row>
       </Col>
     </Row>

@@ -92,7 +92,8 @@ class AppMain extends Component {
 
   useLink =(link)=>{
     console.log('using this link...'+link)
-    this.setState({view:'blog',blogSearch:link})
+    this.setState({view:'blog',blogSearch:link,urlOverride:true})
+
   }
 
   resetRedirectView = ()=>{
@@ -126,7 +127,8 @@ class AppMain extends Component {
     || (this.state.view ==='main' &&this.state.urlOverride===true)?
         <>
           <HomePage galleryImages ={this.state.galleries}
-                    isMobile={this.props.isMobile}/>
+                    isMobile={this.props.isMobile}
+                    useLink ={this.useLink}/>
         </>
       :null}
 

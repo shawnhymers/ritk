@@ -20,7 +20,7 @@ const BlogBody = props => {
 return(
   <>
     <Container className ='full-width ' style ={{margin:'0vh',padding:'0vh'}}>
-      <Row className ='fill-width red blog-header-wrapper'
+      <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>
         <img src ={props.header.src}
@@ -50,33 +50,67 @@ return(
           &nbsp;
         </Col>
       </Row>
-      <Row>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          &nbsp;
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          <Row className = 'vertical-padding-sm'>
-            <Col className ='centered-children'>
+      {props.isMobile?
+        <>
+          <Row className = 'vertical-padding-sm '>
+            <Col>
+              &nbsp;
+            </Col>
+            <Col className ='centered-children'
+                 xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#E7E2CD"/>
             </Col>
-            <Col className ='centered-children'>
+            <Col className ='centered-children'
+                 xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#E2B54B"/>
             </Col>
-            <Col className ='centered-children'>
+            <Col className ='centered-children'
+                 xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#91A98F"/>
             </Col>
-            <Col className ='centered-children'>
+            <Col className ='centered-children'
+                 xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#BED3C7"/>
             </Col>
-            <Col className ='centered-children'>
+            <Col className ='centered-children'
+                 xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#B97F51"/>
             </Col>
+            <Col>
+              &nbsp;
+            </Col>
           </Row>
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          &nbsp;
-        </Col>
-      </Row>
+        </>
+      :
+        <>
+          <Row>
+            <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+              &nbsp;
+            </Col>
+            <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+              <Row className = 'vertical-padding-sm'>
+                <Col className ='centered-children'>
+                  <MdFiberManualRecord size ='2em' color ="#E7E2CD"/>
+                </Col>
+                <Col className ='centered-children'>
+                  <MdFiberManualRecord size ='2em' color ="#E2B54B"/>
+                </Col>
+                <Col className ='centered-children'>
+                  <MdFiberManualRecord size ='2em' color ="#91A98F"/>
+                </Col>
+                <Col className ='centered-children'>
+                  <MdFiberManualRecord size ='2em' color ="#BED3C7"/>
+                </Col>
+                <Col className ='centered-children'>
+                  <MdFiberManualRecord size ='2em' color ="#B97F51"/>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+              &nbsp;
+            </Col>
+          </Row>
+        </>}
       <Row>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
@@ -130,7 +164,7 @@ const HorizontalBlogImage = props =>{
 
   return(
     <>
-      <Row className ='vertical-padding-md '>
+      <Row className ='vertical-padding-sm '>
         <Col className ='centered-children '>
           <img src ={props.src}
                alt = {props.label}
@@ -148,7 +182,7 @@ const VerticalBlogImage = props =>{
   }
   return(
     <>
-      <Row className ='vertical-padding-md'>
+      <Row className ='vertical-padding-sm'>
         <Col className ='centered-children'>
           <img src ={props.src}
                alt = {props.label}
@@ -166,7 +200,7 @@ const DipTych = props =>{
   }
   return(
 
-    <Row className ='vertical-padding-md'>
+    <Row className ='vertical-padding-sm'>
       <Col className ='centered-children'>
         <img src ={props.src1}
              alt = {props.label}

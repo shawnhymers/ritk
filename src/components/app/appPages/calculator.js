@@ -195,12 +195,12 @@ return(
     </>
     :
     <>
-    <Row style ={{marginTop:'10vh'}} >
+    <Row  >
       &nbsp;
     </Row>
     </>}
 
-    <Row className ='roaming-white'>
+    <Row className ='roaming-white'style ={{paddingTop:'10vh'}} >
         <CarbonTotal footprint={props.totalCarbonCost}
                      label={'Total Carbon Footprint (KG)'}/>
     </Row>

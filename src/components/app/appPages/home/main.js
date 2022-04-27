@@ -11,10 +11,12 @@ const HomePage = props => {
 return(
   <>
     <Row style ={{pading:'0vh'}}>
-      <img src= "/bannerPic.jpeg" alt = 'banner pic' className = 'banner-pic'/>
+      <img src= "/bannerPic.jpeg"
+           alt = 'banner pic'
+           className = 'banner-pic'/>
     </Row>
     <AboutPreview />
-    <LinksPreview />
+    <LinksPreview useLink={props.useLink}/>
     <BlogPreview/>
     <GalleryPreview galleryImages={props.galleryImages}/>
     <Footer/>

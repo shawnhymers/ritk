@@ -2,7 +2,7 @@ import React from 'react';
 import GalleryHeader from "../elements/galleryHeader";
 import GalleryBody from "../../standardComponents/galleryBody";
 import  { useState,useEffect } from 'react';
- 
+
 const Granada = props => {
 
   const[isMobile, setIsMobile]=useState(false)
@@ -31,6 +31,7 @@ return(
   <GalleryBody header ={{src:'GranadaGallery/granada10.jpg', label:'Granada'}}
             blurb ={"Granada Blurb"}
             updated={'December 2021'}
+            isMobile={isMobile}
             contentTest ={[
                            {type:'header',text:"Granada Title"},
                            {type:'horizontalImage',src:'GranadaGallery/granada6.jpg'},

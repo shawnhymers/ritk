@@ -12,7 +12,7 @@ return(
   <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
     <Col xs={12} sm={12} md={5} lg={5} xl={5} className ='centered-children'>
       <Container>
-        <Row>
+        <Row  style ={{paddingTop:'2em'}}>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
           </Col>

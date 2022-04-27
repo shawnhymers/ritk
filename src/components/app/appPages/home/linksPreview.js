@@ -15,7 +15,7 @@ return(
         </Row>
       </Col>
 
-      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3} onClick ={()=>props.useLink('accomodation')}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/tent.png' alt ='tent'/>
         </Row>
@@ -23,7 +23,7 @@ return(
           <p className ='centered-text roaming-text-sm'>Accommodation Reccomendations</p>
         </Row>
       </Col>
-      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3} onClick ={()=>props.useLink('activities')}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/boots.png' alt ='boots'/>
         </Row>
@@ -31,7 +31,7 @@ return(
           <p className ='centered-text roaming-text-sm'>Unique Activities</p>
         </Row>
       </Col>
-      <Col xs={6} sm={6} md={3} lg={3} xl={3}>
+      <Col xs={6} sm={6} md={3} lg={3} xl={3} onClick ={()=>props.useLink('transportation')}>
         <Row className = 'centered-children'>
           <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/train.png' alt ='train'/>
         </Row>

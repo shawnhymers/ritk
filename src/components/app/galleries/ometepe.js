@@ -4,7 +4,7 @@ import GalleryBody from "../../standardComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
 const Ometepe = props => {
- 
+
   const[isMobile, setIsMobile]=useState(false)
 
   useEffect(() => {
@@ -31,6 +31,7 @@ return(
   <GalleryBody header ={{src:'OmetepeGallery/ometepe7.jpg', label:'Ometepe Island'}}
             blurb ={"Ometepe Blurb"}
             updated={'December 2021'}
+            isMobile={isMobile}
             contentTest ={[
                            {type:'header',text:"Ometepe Title"},
                            {type:'horizontalImage',src:'OmetepeGallery/ometepe13.jpg'},

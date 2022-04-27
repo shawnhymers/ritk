@@ -12,12 +12,17 @@ const LeftCol = props =>{
       <>
         <Row >
 
-          <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
+          <Link to={props.blog.link}
+                className = 'centered-children' >
+            <img src={props.blog.pic}
+                 alt="Nita lake"
+                 style = {{width:'80%'}}
+                 className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>
         <Row className = 'centered-children bottom-padding-md'>
-          <p className = ' centered-children roaming-text large-caption-text' style = {{fontSize:'2em'}}>{props.blog.name}</p>
+          <p className = ' centered-children roaming-text large-caption-text'
+             style = {{fontSize:'2em'}}>{props.blog.name}</p>
         </Row>
       </>
     :null}
@@ -76,6 +81,8 @@ class Blog extends Component {
   };
 
   componentDidMount(){
+    console.log('blog mounted')
+    window.scrollTo(-10, 0);
     this.setState({blogs:this.props.blogs,searchValue:this.props.blogSearch})
     let tempBlogs = []
 
@@ -84,8 +91,12 @@ class Blog extends Component {
         tempBlogs.push(this.props.blogs[i])
       }
     }
-
-    this.setState({blogs:tempBlogs})
+    if (tempBlogs.length>0) {
+      this.setState({blogs:tempBlogs})
+    }
+    else {
+      this.setState({blogs:tempBlogs,emptySearch:true})
+    }
 
   }
   tagInput = (e)=>{
