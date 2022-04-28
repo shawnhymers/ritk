@@ -163,7 +163,7 @@ class Blog extends Component {
           &nbsp;
         </Col>
         <Col xs={6} sm={6} md={6} lg={6} xl={6}>
-          <Row className ='centered-children'>
+          <Row>
             <input onChange={this.tagInput}
                    value={this.state.searchValue}
                    id="searchValue"
@@ -177,7 +177,7 @@ class Blog extends Component {
           &nbsp;
         </Col>
       </Row>
-      <Row>
+      <Row className ='centered-children'>
           {this.state.blogs.map((blog, i)=>{
                   return <BlogRows blog ={blog}
                                    index = {i}
