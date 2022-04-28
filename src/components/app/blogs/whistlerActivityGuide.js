@@ -9,7 +9,7 @@ const WhistlerActivityGuide = props => {
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
       updateDimensions()
-    // window.addEventListener("contextmenu", e => e.preventDefault());
+    window.addEventListener("contextmenu", e => e.preventDefault());
 
     })
 
@@ -26,7 +26,7 @@ const WhistlerActivityGuide = props => {
   }
 
 return(
-  <>
+
 
   <>
   <div style={{overflofX:'hidden',maxWidth:'100vw'}}>
@@ -84,9 +84,9 @@ return(
                              {type:'horizontalImage',src:'WhistlerActivityBlog/whistlerActivity17.jpg'}
 
                            ]}/>
-  <div/>
+  </div>
   </>
-  </>
+
 
 )}
 

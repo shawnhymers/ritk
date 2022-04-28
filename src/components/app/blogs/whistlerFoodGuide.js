@@ -9,7 +9,7 @@ const WhistlerFoodGuide = props => {
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
       updateDimensions()
-    // window.addEventListener("contextmenu", e => e.preventDefault());
+    window.addEventListener("contextmenu", e => e.preventDefault());
 
     })
 
@@ -27,7 +27,7 @@ const WhistlerFoodGuide = props => {
 
 return(
   <>
-
+  <div style={{overflofX:'hidden',maxWidth:'100vw'}}>
   <BlogHeader isMobile={isMobile}/>
   <BlogBody header ={{src:'WhistlerFoodGuide/whistlerFood5.jpg', label:'Whistler Food Guide'}}
             blurb ={"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}
@@ -69,6 +69,7 @@ return(
                            {type:'paragraph',text:'The Green Moustache is one of the few 100% plant-based spots in Whistler (Eds BReD being the other) and while we really want to love this place, we haven’t been *that* impressed by what we have tried. We felt like we couldn’t leave a 100% vegan spot off the list though, and admit that we haven’t tried much from their menu. So if you’re looking for breakfast items, smoothies, and take out items before 3pm, this might be worth a try!'},
                            {type:'paragraph',text:'That wraps up our Whistler Vegan food guide! Eating vegan is one of the easiest ways to reduce your carbon footprint while at home or on the road. If you’ve been to this special place, where did you eat? Let us know if we missed one of your favourites!'}
             ]}/>
+            </div>
   </>
 )}
 
