@@ -29,6 +29,7 @@ return(
   <>
 
   <>
+  <div style={{overflofX:'hidden',maxWidth:'100vw'}}>
     <BlogHeader />
     <BlogBody header ={{src:'WhistlerActivityBlog/whistlerActivity16.jpg', label:'Whistler Activity Guide'}}
               blurb ={"Whether you're a winter sports junkie, or a beach bum; Whistler has a great day in store for you."}
@@ -83,9 +84,10 @@ return(
                              {type:'horizontalImage',src:'WhistlerActivityBlog/whistlerActivity17.jpg'}
 
                            ]}/>
+  <div/>
+  </>
   </>
 
-  </>
 )}
 
 export default WhistlerActivityGuide;
