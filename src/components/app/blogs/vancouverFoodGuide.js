@@ -18,7 +18,7 @@ const VancouverFoodGuide = props => {
     console.log('updating dimensions')
     if (windowWidth>= windowHeight) {
       setIsMobile(false)
-    }
+    } 
     else {
       setIsMobile(true)
     }

@@ -19,7 +19,7 @@ const BlogBody = props => {
 
 return(
   <>
-    <Container className ='full-width ' style ={{margin:'0vh',padding:'0vh'}}>
+    <Container className ='full-width ' style ={{margin:'0vh',padding:'0vh',overflofX:'hidden'}}>
       <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>

@@ -57,8 +57,8 @@ const RightCol = props =>{
 
     return(
       <>
-        <Row >
-          <Link to={props.blog.link} className = 'centered-children' >
+        <Row className ='centered-children'>
+          <Link to={props.blog.link} className = 'centered-children' className ='centered-children'>
             <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>
@@ -163,7 +163,7 @@ class Blog extends Component {
           &nbsp;
         </Col>
         <Col xs={6} sm={6} md={6} lg={6} xl={6}>
-          <Row>
+          <Row className ='centered-children'>
             <input onChange={this.tagInput}
                    value={this.state.searchValue}
                    id="searchValue"
