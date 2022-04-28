@@ -8,7 +8,7 @@ const VancouverActivityGuide = props => {
 return(
   <>
     <Container>
-      <BlogHeader />
+      <BlogHeader isMobile={isMobile}/>
       <Row>
         <p>Vancouver Activity Guide</p>
       </Row>

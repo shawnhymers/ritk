@@ -28,7 +28,7 @@ const WhistlerFoodGuide = props => {
 return(
   <>
 
-  <BlogHeader />
+  <BlogHeader isMobile={isMobile}/>
   <BlogBody header ={{src:'WhistlerFoodGuide/whistlerFood5.jpg', label:'Whistler Food Guide'}}
             blurb ={"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}
             updated={'December 2021'}

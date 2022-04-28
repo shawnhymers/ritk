@@ -30,7 +30,7 @@ return(
 
   <>
   <div style={{overflofX:'hidden',maxWidth:'100vw'}}>
-    <BlogHeader />
+    <BlogHeader isMobile={isMobile}/>
     <BlogBody header ={{src:'WhistlerActivityBlog/whistlerActivity16.jpg', label:'Whistler Activity Guide'}}
               blurb ={"Whether you're a winter sports junkie, or a beach bum; Whistler has a great day in store for you."}
               updated={'December 2021'}
