@@ -8,7 +8,7 @@ const BlogSegment = props =>{
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
     {props.content.type ==='listItem'?<BlogListItem text ={props.content.text}/>:null}
-    {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2}/>:null}
+    {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2} isMobile={props.isMobile}/>:null}
     {props.content.type === 'horizontalImage'? <HorizontalBlogImage src ={props.content.src}/> :null}
     {props.content.type === 'verticalImage'? <VerticalBlogImage src = {props.content.src}/>:null}
     </>
@@ -118,6 +118,7 @@ return(
         <Col xs={8} sm={8} md={6} lg={6} xl={6}>
           {props.contentTest.map((content, i)=>{
                         return <BlogSegment content ={content}
+                                            isMobile={props.isMobile}
                                             key={content.type+i}/>})}
         </Col>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
@@ -199,22 +200,45 @@ const DipTych = props =>{
     return(false)
   }
   return(
+<>
+    {props.isMobile?
+    <>
+      <Row className ='vertical-padding-sm'>
 
-    <Row className ='vertical-padding-sm'>
-      <Col className ='centered-children'>
-        <img src ={props.src1}
-             alt = {props.label}
-             style ={{width:'95%'}}
-             onContextMenu={dummy} />
-      </Col>
+            <img src ={props.src1}
+                 alt = {props.label}
+                 style ={{width:'95%'}}
+                 onContextMenu={dummy} />
+          </Row>
+          <Row className ='vertical-padding-sm'>
+            <img src ={props.src2}
+                 alt = {props.label}
+                 style ={{width:'95%'}}
+                 onContextMenu={dummy} />
+          </Row>
 
-      <Col className ='centered-children'>
-        <img src ={props.src2}
-             alt = {props.label}
-             style ={{width:'95%'}}
-             onContextMenu={dummy} />
-      </Col>
-    </Row>
+    </>
+    :
+    <>
+      <Row className ='vertical-padding-sm'>
+        <Col className ='centered-children'>
+          <img src ={props.src1}
+               alt = {props.label}
+               style ={{width:'95%'}}
+               onContextMenu={dummy} />
+        </Col>
+
+        <Col className ='centered-children'>
+          <img src ={props.src2}
+               alt = {props.label}
+               style ={{width:'95%'}}
+               onContextMenu={dummy} />
+        </Col>
+      </Row>
+    </>}
+
+
+    </>
   )
 }
 

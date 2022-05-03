@@ -269,6 +269,8 @@ const CarForm = props => {
 
   }
   function updateCarbonFootprint(distance,milage,passengers){
+
+    // Based on the 8.887 KG ofco2 pergallon(2.3 per L) from the EPA
     let carbonFootprint = (distance/100)*milage*2.3/passengers;
 
     // This if just avoid division by 0
