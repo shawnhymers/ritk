@@ -27,6 +27,7 @@ const Ometepe = props => {
 
 return(
   <>
+    <div style={{overflowX:'hidden'}}>
   <GalleryHeader isMobile={isMobile}/>
   <GalleryBody header ={{src:'OmetepeGallery/ometepe7.jpg', label:'Ometepe Island'}}
             blurb ={"Ometepe Blurb"}
@@ -45,6 +46,7 @@ return(
                            {type:'diptych',src1:'OmetepeGallery/ometepe8.jpg',src2:'OmetepeGallery/ometepe9.jpg'},
                            {type:'horizontalImage',src:'OmetepeGallery/ometepe7.jpg'}
                          ]}/>
+                         </div>
   </>
 )}
 

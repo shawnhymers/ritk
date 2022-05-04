@@ -45,11 +45,11 @@ return(
 
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
     <Link to='home/about'  className = 'centered-children'style = {{textDecoration:'none'}} >
-      <p className = 'balloon-text  roaming-yellow-text medium-link-text'  >About</p>
+      <p className = 'balloon-text  roaming-yellow-text medium-link-text auto-margins'  >About</p>
     </Link>
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2 } className ='centered-children'>
-      <p className = 'balloon-text  medium-link-text'  >Blog</p>
+      <p className = 'balloon-text  medium-link-text auto-margins'  >Blog</p>
 
   </Col>
   <Col xs={4} sm={4} md={4} lg={4} xl={4} className ='centered-children' style = {{maxHeight:'4em'}}>
@@ -59,12 +59,12 @@ return(
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
     <Link to='home/calculator' className = 'centered-children'style = {{textDecoration:'none'}} >
-      <p className = 'balloon-text  roaming-yellow-text medium-link-text'>Calculator</p>
+      <p className = 'balloon-text  roaming-yellow-text medium-link-text auto-margins'>Calculator</p>
     </Link>
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
     <Link to='home/gallery' className = 'centered-children'style = {{textDecoration:'none'}} >
-      <p className = 'balloon-text  roaming-yellow-text medium-link-text'>Galleries</p>
+      <p className = 'balloon-text  roaming-yellow-text medium-link-text auto-margins'>Galleries</p>
     </Link>
   </Col>
 </Row>

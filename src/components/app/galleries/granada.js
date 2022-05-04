@@ -27,6 +27,7 @@ const Granada = props => {
 
 return(
   <>
+    <div style={{overflowX:'hidden'}}>
   <GalleryHeader isMobile={isMobile}/>
   <GalleryBody header ={{src:'GranadaGallery/granada10.jpg', label:'Granada'}}
             blurb ={"Granada Blurb"}
@@ -45,6 +46,7 @@ return(
                            {type:'diptych',src1:'GranadaGallery/granada7.jpg',src2:'GranadaGallery/granada8.jpg'},
                            {type:'horizontalImage',src:'GranadaGallery/granada10.jpg'}
                          ]}/>
+</div>
   </>
 )}
 
