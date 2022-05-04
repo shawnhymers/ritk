@@ -10,11 +10,24 @@ const HomePage = props => {
 
 return(
   <>
-    <Row style ={{pading:'0vh'}}>
-      <img src= "/bannerPic.jpeg"
-           alt = 'banner pic'
-           className = 'banner-pic'/>
-    </Row>
+
+    {props.isMobile?
+      <>
+        <Row style ={{pading:'0vh'}}>
+          <img src= "/mobileCover1.jpg"
+               alt = 'banner pic'
+               className = 'banner-pic'/>
+        </Row>
+      </>
+      :
+      <>
+        <Row style ={{pading:'0vh'}}>
+          <img src= "/bannerPic.jpeg"
+               alt = 'banner pic'
+               className = 'banner-pic'/>
+        </Row>
+      </>}
+
     <AboutPreview />
     <LinksPreview useLink={props.useLink}/>
     <BlogPreview/>

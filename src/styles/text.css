@@ -68,7 +68,7 @@
 }
 .roaming-text-sm{
   font-family: roamingFont;
-  font-size:1.3em;
+  font-size: calc((1.8 - 1) * 0.9vw + 0.9rem);
 
 }
 .roaming-brown-text{
@@ -173,10 +173,16 @@
 
 .centered-text{
   align-self: center;
-  margin: auto;
+  justify-content: center;
+   word-wrap: normal;
 }
 .center-justified-text{
   align-self: center;
   align-content: center;
   align:center;
+  justify-content: center;
+  justify:center;
+  word-wrap: normal;
+   text-align: center;
+   text-overflow: inherit;
 }
