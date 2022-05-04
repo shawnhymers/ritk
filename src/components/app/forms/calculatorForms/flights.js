@@ -10,6 +10,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import SearchDrop from '../../../standardComponents/searchDrop';
 import HelpIcon from "../../../standardComponents/helpIcon"
 import CarbonTotal from '../../elements/carbonTotal'
+import GreenRadio from "../../../standardComponents/greenRadio"
 
 const FlightForm = props => {
 
@@ -282,16 +283,16 @@ return(
           <FormControl component="fieldset">
             <FormLabel component="legend">Search By:</FormLabel>
             <RadioGroup row aria-label="drivingType" name="searchBy" value={searchBy} onChange={(e)=>selectSearchBy(e)}>
-              <FormControlLabel value="City" control={<Radio />} label="City" />
-              <FormControlLabel value="Country" control={<Radio />} label="Country" />
-              <FormControlLabel value="Airport" control={<Radio />} label="Airport"/>
-              <FormControlLabel value="Code" control={<Radio />} label="Code"/>
+              <FormControlLabel value="City" control={<GreenRadio />} label="City" />
+              <FormControlLabel value="Country" control={<GreenRadio />} label="Country" />
+              <FormControlLabel value="Airport" control={<GreenRadio />} label="Airport"/>
+              <FormControlLabel value="Code" control={<GreenRadio />} label="Code"/>
               <HelpIcon message ='Select how you would like to search for your airport—city name, country name, airport name, or airport code.'/>
             </RadioGroup>
           </FormControl>
         </Row>
         <Row className ='form-line '>
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+          <Col xs={10} sm={10} md={8} lg={8} xl={8}>
             <SearchDrop options={fromOptions}
                         inputId ={'fromOptions'}
                         inputName={'from'}
@@ -305,12 +306,12 @@ return(
                         invalidInput ={errors.fromAirportError}
                         key ={'From Airport Search'}/>
           </Col>
-          <Col>
+          <Col xs={2} sm={2} md={4} lg={4} xl={4}>
             <HelpIcon message ='Select the airport you are flying out of. We use the location of this airport to calculate the flight distance.'/>
           </Col>
         </Row>
         <Row className ='form-line'>
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+          <Col xs={10} sm={10} md={8} lg={8} xl={8}>
           <SearchDrop options={toOptions}
                       inputId ={'toOptions'}
                       inputName={'to'}
@@ -324,7 +325,7 @@ return(
                       invalidInput ={errors.toAirportError}
                       key ={'To Airport Search'}/>
           </Col>
-          <Col>
+          <Col xs={2} sm={2} md={4} lg={4} xl={4}>
             <HelpIcon message ='Select your destination airport. We use the location of this airport to calculate the flight distance.'/>
           </Col>
         </Row>
@@ -332,9 +333,9 @@ return(
           <FormControl component="fieldset">
             <FormLabel component="legend">Class:</FormLabel>
             <RadioGroup row aria-label="drivingType" name="searchBy" value={flightClass} onChange={(e)=>selectClass(e)}>
-              <FormControlLabel value="Economy" control={<Radio />} label="Economy" />
-              <FormControlLabel value="Business" control={<Radio />} label="Business" />
-              <FormControlLabel value="First Class" control={<Radio />} label="FirstClass" />
+              <FormControlLabel value="Economy" control={<GreenRadio />} label="Economy" />
+              <FormControlLabel value="Business" control={<GreenRadio />} label="Business" />
+              <FormControlLabel value="First Class" control={<GreenRadio />} label="FirstClass" />
               <HelpIcon message ='Select the type of ticket you’ve purchased. When flying business or first class the portion of the flights carbon footprint you’re responsible for increases. '/>
             </RadioGroup>
           </FormControl>
@@ -343,8 +344,8 @@ return(
           <FormControl component="fieldset">
             <FormLabel component="legend">Trip Type:</FormLabel>
             <RadioGroup row aria-label="drivingType" name="searchBy" value={flightType} onChange={(e)=>selectFlightType(e)}>
-              <FormControlLabel value="Round Trip" control={<Radio />} label="Round Trip" />
-              <FormControlLabel value="One Way" control={<Radio />} label="One Way" />
+              <FormControlLabel value="Round Trip" control={<GreenRadio />} label="Round Trip" />
+              <FormControlLabel value="One Way" control={<GreenRadio />} label="One Way" />
               <HelpIcon message ='Select whether you’re flying round trip or just one way.'/>
             </RadioGroup>
           </FormControl>

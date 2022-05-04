@@ -12,6 +12,7 @@ import smallCarData from "../../../data/smallCarData";
 import SearchDrop from '../../../../standardComponents/searchDrop';
 import CarbonTotal from "../../../elements/carbonTotal"
 import HelpIcon from "../../../../standardComponents/helpIcon"
+import GreenRadio from "../../../../standardComponents/greenRadio"
 
 const CarForm = props => {
 
@@ -400,9 +401,9 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">Type of Driving:</FormLabel>
               <RadioGroup row aria-label="drivingType" name="searchBy" value={basicDrivingType} onChange={updateBasicDrivingType}>
-                <FormControlLabel value="City" control={<Radio />} label="City" />
-                <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
-                <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                <FormControlLabel value="City" control={<GreenRadio />} label="City" />
+                <FormControlLabel value="Highway" control={<GreenRadio />} label="Highway" />
+                <FormControlLabel value="Mixed" control={<GreenRadio />} label="Mixed" />
                 <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
               </RadioGroup>
             </FormControl>
@@ -412,9 +413,9 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">Type of Car:</FormLabel>
               <RadioGroup row aria-label="carType" name="carType" value={basicCarType} onChange={updateBasicCarType}>
-                <FormControlLabel value="GasGuzzler" control={<Radio />} label="Gas Guzzler" />
-                <FormControlLabel value="StandardCar" control={<Radio />} label="Standard Car" />
-                <FormControlLabel value="EfficientCar" control={<Radio />} label="Efficient Car" />
+                <FormControlLabel value="GasGuzzler" control={<GreenRadio />} label="Gas Guzzler" />
+                <FormControlLabel value="StandardCar" control={<GreenRadio />} label="Standard Car" />
+                <FormControlLabel value="EfficientCar" control={<GreenRadio />} label="Efficient Car" />
                 <HelpIcon message ="Select a type of car to get a rough estimate of fuel effeciency. If you're unsure, select standard car."/>
               </RadioGroup>
             </FormControl>
@@ -472,9 +473,9 @@ return(
               <FormControl component="fieldset">
                 <FormLabel component="legend">Type of Driving:</FormLabel>
                 <RadioGroup row aria-label="drivingType" name="advancedDrivingType" value={advancedDrivingType} onChange={updateAdvancedDrivingType}>
-                  <FormControlLabel value="City" control={<Radio />} label="City" />
-                  <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
-                  <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                  <FormControlLabel value="City" control={<GreenRadio />} label="City" />
+                  <FormControlLabel value="Highway" control={<GreenRadio />} label="Highway" />
+                  <FormControlLabel value="Mixed" control={<GreenRadio />} label="Mixed" />
                   <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
                 </RadioGroup>
               </FormControl>
@@ -483,8 +484,8 @@ return(
               <FormControl component="fieldset">
                 <FormLabel component="legend">Search By:</FormLabel>
                 <RadioGroup row aria-label="searchBy" name="searchBy" value={searchBy} onChange={selectSearchBy}>
-                  <FormControlLabel value="Make" control={<Radio />} label="Make" />
-                  <FormControlLabel value="Model" control={<Radio />} label="Model" />
+                  <FormControlLabel value="Make" control={<GreenRadio />} label="Make" />
+                  <FormControlLabel value="Model" control={<GreenRadio />} label="Model" />
                   <HelpIcon message ="Select whether you want to search for your specific vehicle by make or model."/>
                 </RadioGroup>
               </FormControl>

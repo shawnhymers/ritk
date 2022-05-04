@@ -8,6 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import CarbonTotal from "../../elements/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
 import HelpIcon from "../../../standardComponents/helpIcon"
+import GreenRadio from "../../../standardComponents/greenRadio"
 
 const Accomodation = props =>{
 
@@ -619,9 +620,9 @@ const Accomodation = props =>{
               <FormControl component="fieldset">
                 <FormLabel component="legend">Hotel Size:</FormLabel>
                 <RadioGroup row aria-label="hotelSize" name="hotelSize" value={hotelSize} onChange={updateHotelSize}>
-                  <FormControlLabel value="large" control={<Radio />} label="Large" />
-                  <FormControlLabel value="medium" control={<Radio />} label="Medium" />
-                  <FormControlLabel value="small" control={<Radio />} label="Small" />
+                  <FormControlLabel value="large" control={<GreenRadio />} label="Large" />
+                  <FormControlLabel value="medium" control={<GreenRadio />} label="Medium" />
+                  <FormControlLabel value="small" control={<GreenRadio />} label="Small" />
                   <HelpIcon message ='Large hotels (more than 150 rooms) with air conditioning, laundry & indoor swimming pool. Medium‐sized hotels (50‐150 rooms) without laundry, with heating & air conditioning in some areas. Small hotels (4‐50 rooms) without laundry, with heating & air conditioning in some areas.'/>
                 </RadioGroup>
               </FormControl>
@@ -631,9 +632,9 @@ const Accomodation = props =>{
               <FormControl component="fieldset">
                 <FormLabel component="legend">Hotel Efficiency:</FormLabel>
                 <RadioGroup row aria-label="hotelEffeciency" name="hotelEffeciency" value={hotelEffeciency} onChange={updateHotelEfficiency}>
-                  <FormControlLabel value="good" control={<Radio />} label="Good" />
-                  <FormControlLabel value="fair" control={<Radio />} label="Fair" />
-                  <FormControlLabel value="poor" control={<Radio />} label="Poor" />
+                  <FormControlLabel value="good" control={<GreenRadio />} label="Good" />
+                  <FormControlLabel value="fair" control={<GreenRadio />} label="Fair" />
+                  <FormControlLabel value="poor" control={<GreenRadio />} label="Poor" />
                   <HelpIcon message ="A lot goes into determining the efficiency of a hotel. The hotel age, design, location, and amenities. Generally, old and luxury hotels are inefficient. Also, any hotel where there is a large temperature difference inside and outside are very inefficient. New hotels in moderate climates tend to be the most efficient. If you’re unsure, just select ‘Fair’ for an approximation. "/>
                 </RadioGroup>
               </FormControl>

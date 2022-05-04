@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import CarbonTotal from "../../../elements/carbonTotal"
 import HelpIcon from "../../../../standardComponents/helpIcon"
+import GreenRadio from "../../../../standardComponents/greenRadio"
 
 
 const TrainForm = props => {
@@ -136,8 +137,8 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">Engine Type:</FormLabel>
               <RadioGroup row aria-label="train" name="selectedEngineType" value={engineType} onChange={updateEngineType}>
-                <FormControlLabel value="electric" control={<Radio />} label="Electric" />
-                <FormControlLabel value="diesel" control={<Radio />} label="Diesel" />
+                <FormControlLabel value="electric" control={<GreenRadio />} label="Electric" />
+                <FormControlLabel value="diesel" control={<GreenRadio />} label="Diesel" />
                 <HelpIcon message ="Select the engine type for your trip. Electric engines generally have a smaller footprint, but the exact footprint depends on the energy grid powering the engine."/>
               </RadioGroup>
             </FormControl>

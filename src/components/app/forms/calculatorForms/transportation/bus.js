@@ -8,6 +8,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import  { useState } from 'react';
 import HelpIcon from "../../../../standardComponents/helpIcon"
+import GreenRadio from "../../../../standardComponents/greenRadio"
+
 
 const BusForm = props => {
 
@@ -123,9 +125,9 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">Type of Driving:</FormLabel>
               <RadioGroup row aria-label="drivingType" name="searchBy" value={drivingType} onChange={updateDrivingType}>
-                <FormControlLabel value="City" control={<Radio />} label="City" />
-                <FormControlLabel value="Highway" control={<Radio />} label="Highway" />
-                <FormControlLabel value="Mixed" control={<Radio />} label="Mixed" />
+                <FormControlLabel value="City" control={<GreenRadio />} label="City" />
+                <FormControlLabel value="Highway" control={<GreenRadio />} label="Highway" />
+                <FormControlLabel value="Mixed" control={<GreenRadio />} label="Mixed" />
                 <HelpIcon message ='Select where you will be driving. Driving in the city produces more greenhouse gases than driving the same distance on the highway.'/>
               </RadioGroup>
             </FormControl>
@@ -135,12 +137,12 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">How Full?</FormLabel>
               <RadioGroup row aria-label="drivingType" name="searchBy" value={fullness} onChange={updateFullness}>
-                <FormControlLabel value="Packed" control={<Radio />} label="Packed" />
-                <FormControlLabel value="Mostly Full" control={<Radio />} label="Mostly Full" />
-                <FormControlLabel value="Half Full" control={<Radio />} label="Half Full" />
-                <FormControlLabel value="Mostly Empty" control={<Radio />} label="Mostly Empty" />
-                <FormControlLabel value="Ghost Town" control={<Radio />} label="Ghost Town" />
-                <FormControlLabel value="Just Me" control={<Radio />} label="Just Me" />
+                <FormControlLabel value="Packed" control={<GreenRadio />} label="Packed" />
+                <FormControlLabel value="Mostly Full" control={<GreenRadio />} label="Mostly Full" />
+                <FormControlLabel value="Half Full" control={<GreenRadio />} label="Half Full" />
+                <FormControlLabel value="Mostly Empty" control={<GreenRadio />} label="Mostly Empty" />
+                <FormControlLabel value="Ghost Town" control={<GreenRadio />} label="Ghost Town" />
+                <FormControlLabel value="Just Me" control={<GreenRadio />} label="Just Me" />
                 <HelpIcon message ='Select how busy the bus is. A full bus splits the carbon cost across more passengers, resulting in a lower personal footprint.'/>
 
               </RadioGroup>

@@ -10,6 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import HelpIcon from "../../../../standardComponents/helpIcon"
+import GreenRadio from "../../../../standardComponents/greenRadio"
 
 const TransportForm = props => {
 
@@ -31,9 +32,9 @@ return(
             <FormControl component="fieldset">
               <FormLabel component="legend">Transport Type:</FormLabel>
               <RadioGroup row aria-label="transportType" name="searchBy" value={transportType} onChange={(e)=>updateTransportType(e)}>
-                <FormControlLabel value="car" control={<Radio />} label="Car" />
-                <FormControlLabel value="bus" control={<Radio />} label="Bus" />
-                <FormControlLabel value="train" control={<Radio />} label="Train" />
+                <FormControlLabel value="car" control={<GreenRadio />} label="Car" />
+                <FormControlLabel value="bus" control={<GreenRadio />} label="Bus" />
+                <FormControlLabel value="train" control={<GreenRadio />} label="Train" />
                 <HelpIcon message ='Select your mode of transportation.'/>
               </RadioGroup>
             </FormControl>

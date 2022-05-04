@@ -1,9 +1,9 @@
 import  {  Component } from "react";
 import React from "react";
 import AppMain from "./app/appMain"
-// import MobileApp from "./mobile/mobileApp"
 import OutcomeMessage from"./standardComponents/outcomeMessage"
-// import { Container, Row, Col, Button} from 'react-bootstrap';
+import { ThemeProvider, createMuiTheme  } from '@mui/material/styles';
+
 class Main extends Component {
   // Setting up initial state
   constructor(props) {
@@ -17,7 +17,7 @@ class Main extends Component {
       totalFlightCost:0,
       totalTransportCost:0,
       totalFoodCost:0,
-      totalAccomodationCost:0
+      totalAccomodationCost:0,
 
     };
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -81,7 +81,22 @@ class Main extends Component {
   closeMessage = ()=>{
     this.setState({showOutcomeMessage:false})
   }
+
+
+
   render() {
+    const muiTheme = createMuiTheme({overrides: {
+      MuiRadio: {
+        root: {
+          color: '#91A98F',
+        },
+        colorSecondary: {
+          '&$checked': {
+            color: '#91A98F',
+          },
+        },
+      },
+    },})
 
   return(
     <>
@@ -91,15 +106,18 @@ class Main extends Component {
                         closeMessage ={this.closeMessage}
                         message ={this.state.outcomeMessage}/>
       :null}
+      <ThemeProvider theme={muiTheme}>
 
-      <AppMain isMobile ={this.state.isMobile}
-               urlView={this.props.match.params.redirectView}
-               addCarbonCostItem ={this.addCarbonCostItem}
-               totalCarbonCost = {this.state.totalCarbonCost}
-               totalFlightCost = {this.state.totalFlightCost}
-               totalTransportCost ={this.state.totalTransportCost}
-               totalFoodCost ={this.state.totalFoodCost}
-               totalAccomodationCost = {this.state.totalAccomodationCost}/>
+        <AppMain isMobile ={this.state.isMobile}
+                 urlView={this.props.match.params.redirectView}
+                 addCarbonCostItem ={this.addCarbonCostItem}
+                 totalCarbonCost = {this.state.totalCarbonCost}
+                 totalFlightCost = {this.state.totalFlightCost}
+                 totalTransportCost ={this.state.totalTransportCost}
+                 totalFoodCost ={this.state.totalFoodCost}
+                 totalAccomodationCost = {this.state.totalAccomodationCost}/>
+
+      </ThemeProvider>
     </>
 )}};
 export default Main;

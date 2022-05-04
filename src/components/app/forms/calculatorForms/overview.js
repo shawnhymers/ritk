@@ -10,6 +10,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import SearchDrop from '../../../standardComponents/searchDrop';
+import GreenRadio from '../../../standardComponents/greenRadio'
+import YellowRadio from '../../../standardComponents/yellowRadio'
+
 
 const Overview= props =>{
   const [compareType, setCompareType] =useState('country')
@@ -88,8 +91,11 @@ const Overview= props =>{
                                         parseFloat(props.totalFoodCost).toFixed(2),
                                         parseFloat(props.totalAccomodationCost).toFixed(2)]}]}
                      options = {{chart: {height: 360,
-                                         type: 'bar',
+                                         type: 'bar'
                                          },
+                                fill: {
+                                        colors:['#91A98F']
+                                      },
                                  plotOptions: {bar: {borderRadius: 10,
                                                      dataLabels: {position: 'bottom'},
                                                      }
@@ -98,7 +104,7 @@ const Overview= props =>{
                                               formatter: function (val) {return val + " Kg"},
                                               offsetY: -30,
                                               style: {fontSize: '12px',
-                                                      colors: ["#304758"]
+                                                      colors: ["#91A98F"]
                                                      }
                                               },
                                  xaxis: {categories: ['Flights','Transportation','Food','Accomodation'],
@@ -142,8 +148,10 @@ const Overview= props =>{
       <FormControl component="fieldset">
         <FormLabel component="legend">Compare To:</FormLabel>
         <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
-          <FormControlLabel value="country" control={<Radio />} label="Country" />
-          <FormControlLabel value="region" control={<Radio />} label="Region" />
+          <FormControlLabel value="country"
+                            control={<GreenRadio/>}
+                            label="Country" />
+          <FormControlLabel value="region" control={<YellowRadio />} label="Region" />
         </RadioGroup>
       </FormControl>
     </Row>
