@@ -15,7 +15,9 @@ const CustomOptions = props =>{
             <Row onClick = {(selection)=>props.select(props.option)}
                  style ={{margin:'0vh'}}
                  className ='dropdown-item '>
-              {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]}
+              <p className ='dropdown-text'>
+                {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]}
+              </p>
             </Row>
           </>
         :null}
@@ -24,7 +26,9 @@ const CustomOptions = props =>{
             <Row onClick = {(selection)=>props.select(props.option)}
                 style ={{margin:'0vh'}}
                  className ='dropdown-item '>
-              {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]+ ", "+props.option[props.displayKeys[2]]}
+                <p className ='dropdown-text'>
+                  {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]+ ", "+props.option[props.displayKeys[2]]}
+                </p>
             </Row>
           </>
         :null}
@@ -32,7 +36,9 @@ const CustomOptions = props =>{
       <Row onClick = {(selection)=>props.select(props.option)}
            style ={{margin:'0vh'}}
            className ='dropdown-item'>
-        {props.option[props.displayKeys[0]]}
+           <p className ='dropdown-text'>
+            {props.option[props.displayKeys[0]]}
+          </p>
       </Row>
     }
 

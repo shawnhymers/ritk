@@ -17,6 +17,12 @@
   min-width:25vw;
   overflow-x: hidden;
 
+
+}
+
+.dropdown-text{
+  font-size: calc((1.2 - 1) * 0.6vw + 0.7rem);
+  margin: auto;
 }
 .dropdown-item:hover{
   background-color: #91A98F;
@@ -89,5 +95,5 @@
 }
 
 .blog-container{
-  
+
 }
