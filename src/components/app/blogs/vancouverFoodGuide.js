@@ -28,7 +28,7 @@ const VancouverFoodGuide = props => {
 
 return(
   <>
-  <div style={{overflofX:'hidden',maxWidth:'100vw'}}>
+  <div style={{overflofX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
     <BlogBody header ={{src:'vancouverFood.jpg', label:'Vancouver Food Guide'}}
               blurb ={"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}

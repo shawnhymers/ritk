@@ -22,7 +22,7 @@ return(
       :
       <>
         <Row style ={{pading:'0vh'}}>
-          <img src= "/bannerPic.jpeg"
+          <img src= "/homePageHorizontal.jpg"
                alt = 'banner pic'
                className = 'banner-pic'/>
         </Row>

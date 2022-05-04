@@ -27,6 +27,7 @@ const VancouverActivityGuide = props => {
 
 return(
   <>
+    <div style ={{overflowX:'hidden'}}>
     <Container>
       <BlogHeader isMobile={isMobile}/>
       <Row>
@@ -38,7 +39,7 @@ return(
       </Row>
     </Container>
 
-
+    </div>
   </>
 )}
 

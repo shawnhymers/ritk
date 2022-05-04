@@ -186,3 +186,6 @@
    text-align: center;
    text-overflow: inherit;
 }
+.auto-margins{
+  margin: auto;
+}
