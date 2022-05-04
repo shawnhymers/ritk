@@ -43,9 +43,14 @@ const TrainForm = props => {
     setEngineType(e.target.value);
     updateCarbonFootprint(e.target.value,distance,selectedGridRegion)
   }
+  function initializeDistance(e){
+    if (distance ==='') {
+      setDistance(0)
+    }
+  }
   function updateDistance(e){
     console.log('updating distance')
-    setDistance(e.target.value);
+    setDistance(parseInt(e.target.value));
     updateCarbonFootprint(engineType,e.target.value,selectedGridRegion)
   }
   function selectGridRegion(region){
@@ -170,6 +175,7 @@ return(
                        name = "distance"
                        placeholder = "Distance (Km)"
                        onChange ={updateDistance}
+                       onClick ={initializeDistance}
                        className ={distanceError? "error-input":""}/>
                 <label htmlFor="distance"
                        className ={distanceError? "error-label":""}>

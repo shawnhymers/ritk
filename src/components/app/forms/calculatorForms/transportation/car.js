@@ -48,8 +48,15 @@ const CarForm = props => {
     setSearchBy(e.target.value)
   }
 
+  function initializePassengers(e){
+    console.log('initializing passengers')
+    if (passengers==='') {
+      console.log('setting to 0')
+      setPassengers(0)
+    }
+  }
   function updatePassengers(e){
-    setPassengers(e.target.value)
+    setPassengers(parseInt(e.target.value))
     updateCarbonFootprint(distance,milage,e.target.value)
   }
   function updateBasicCarType(e){
@@ -146,39 +153,20 @@ const CarForm = props => {
       }
     }
   }
+
+  function initializeDistance(e){
+    console.log('initializing distance')
+    if (distance==='') {
+      console.log('setting to 0')
+      setDistance(0)
+    }
+  }
   function updateDistance(e){
-    setDistance(e.target.value)
+
+    setDistance(parseInt(e.target.value))
     updateCarbonFootprint(e.target.value,milage,passengers)
   }
-  // function updateVehicleInput(e){
-  //   setVehicleSearch(e.target.value)
-  //   let options = []
-  //   if (e.target.value !=='') {
-  //
-  //     var yearOptions = smallCarData.filter(function (el)
-  //     {
-  //         return el.Year===parseInt(year)
-  //     });
-  //     console.log('year options are')
-  //     console.log(yearOptions)
-  //
-  //     let options = yearOptions.filter(function (el)
-  //     {
-  //       if (searchBy==='Make') {
-  //         return el.Make.toUpperCase().includes(e.target.value.toUpperCase())
-  //       }
-  //       else if (searchBy==='Model') {
-  //         return el.Model.toUpperCase().includes(e.target.value.toUpperCase())
-  //       }
-  //     });
-  //       setVehicleOptions(options)
-  //   }
-  //   else {
-  //       setVehicleOptions(options)
-  //   }
-  //
-  //
-  // }
+
   function updateType(e){
     console.log(e.target.value)
     if (isAdvanced) {
@@ -442,7 +430,7 @@ return(
                        value = {passengers}
                        placeholder = "Number of Passengers"
                        onChange = {updatePassengers}
-
+                       onClick={initializePassengers}
                        className ={basicErrors.passengerError? "error-input":""}/>
                 <label htmlFor="passengers"
                        className ={basicErrors.passengerError? "error-label":""}>
@@ -465,6 +453,7 @@ return(
                      value = {distance}
                      placeholder = "Distance (Km)"
                      onChange = {updateDistance}
+                     onClick={initializeDistance}
                      className ={basicErrors.distanceError? "error-input":""}/>
               <label htmlFor="distance"
                      className ={basicErrors.distanceError? "error-label":""}>
@@ -546,6 +535,7 @@ return(
                          value = {passengers}
                          placeholder = "Number of Passengers"
                          onChange = {updatePassengers}
+                         onClick ={initializePassengers}
                          className ={advancedErrors.passengerError? "error-input":""}/>
                   <label htmlFor="passengers"
                          className ={advancedErrors.passengerError? "error-label":""}>
@@ -569,6 +559,7 @@ return(
                          value = {distance}
                          placeholder = "Distance (Km)"
                          onChange = {updateDistance}
+                         onClick={initializeDistance}
                          className ={advancedErrors.distanceError? "error-input":""}/>
                   <label htmlFor="distance"
                          className = {advancedErrors.distanceError? "error-label":""}>

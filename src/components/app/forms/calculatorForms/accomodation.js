@@ -205,6 +205,11 @@ const Accomodation = props =>{
       }
     }
   }
+  function initializeNumberOfNights() {
+    if (numberOfNights==='') {
+      setNumberOfNights(0)
+    }
+  }
   function updateNumberOfNights(e){
     console.log('updating number of nights')
     console.log(e.target.value)
@@ -223,6 +228,12 @@ const Accomodation = props =>{
 
 
   }
+
+  function initializeNumberOfGuests(e){
+    if (numberOfGuests==='') {
+      setNumberOfGuests(0)
+    }
+  }
   function updateNumberOfGuests(e){
     console.log('updating the number of guests...'+e.target.value)
 
@@ -235,11 +246,17 @@ const Accomodation = props =>{
       updateFootprint(parseInt(e.target.value),numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
   }
+
   function updateHotelName(e){
     console.log(e.target.value)
     setHotelName(e.target.value)
   }
 
+  function initializeElectricConsumption(e){
+    if (electricConsumption==='') {
+      setElectricConsumption(0)
+    }
+  }
   function updateElectricConsumption(e){
     console.log(e.target.value)
     setElectricConsumption(e.target.value)
@@ -247,16 +264,31 @@ const Accomodation = props =>{
 
   }
 
+  function initializeFuelConsumption(e){
+    if (fuelConsumption==='') {
+      setFuelConsumption(0)
+    }
+  }
   function updateFuelConsumption(e){
     setFuelConsumption(e.target.value)
     updateFootprint(numberOfGuests,numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
   }
 
+  function initializeWaterConsumption(e){
+    if (waterConsumption==='') {
+      setWaterConsumption(0)
+    }
+  }
   function updateWaterConsumption(e){
     setWaterConsumption(e.target.value)
     updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
   }
 
+  function initializeAvgOccupancy(e){
+    if (avgOccupancy==='') {
+      setAvgOccupancy(0)
+    }
+  }
   function updateAvgOccupancy(e){
     setAvgOccupancy(e.target.value)
     updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
@@ -431,6 +463,7 @@ const Accomodation = props =>{
                          max="100"
                          value = {avgOccupancy}
                          onChange = {updateAvgOccupancy}
+                         onClick ={initializeAvgOccupancy}
                          className ={errors.occupancyError? "error-input":""}/>
                   <label htmlFor="avgOccupancy"
                          className ={errors.occupancyError? "error-label":""}>
@@ -453,6 +486,7 @@ const Accomodation = props =>{
                          max="100"
                          value = {electricConsumption}
                          onChange = {updateElectricConsumption}
+                         onClick={initializeElectricConsumption}
                          className ={errors.electricConsumptionError? "error-input":""}/>
                   <label htmlFor="electricConsumption"
                          className ={errors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/ M^2 Year)</label>
@@ -473,6 +507,7 @@ const Accomodation = props =>{
                          max="1000"
                          value = {fuelConsumption}
                          onChange = {updateFuelConsumption}
+                         onClick={initializeFuelConsumption}
                          className ={errors.fuelConsumptionError? "error-input":""}/>
                   <label htmlFor="fuelConsumption"
                          className ={errors.fuelConsumptionError? "error-label":""}>
@@ -496,6 +531,7 @@ const Accomodation = props =>{
                          max="1000"
                          value = {waterConsumption}
                          onChange = {updateWaterConsumption}
+                         onClick={initializeWaterConsumption}
                          className ={errors.waterConsumptionError? "error-input":""}/>
                   <label htmlFor="gasConsumption"
                          className ={errors.waterConsumptionError? "error-label":""}>
@@ -540,6 +576,7 @@ const Accomodation = props =>{
                          placeholder ='Number of Nights:'
                          value = {numberOfNights}
                          onChange = {updateNumberOfNights}
+                         onClick={initializeNumberOfNights}
                          className ={errors.nightsError? "error-input":""}/>
                   <label htmlFor="numberOfNightsAdv"
                          className ={errors.nightsError? "error-label":""}>
@@ -562,6 +599,7 @@ const Accomodation = props =>{
                      value = {numberOfGuests}
                      placeholder ='People Per Room'
                      onChange = {updateNumberOfGuests}
+                     onClick={initializeNumberOfGuests}
                      className ={errors.nightsError? "error-input":""}/>
               <label htmlFor="numberOfGuests"
                      className ={errors.nightsError? "error-label":""}>
@@ -635,6 +673,7 @@ const Accomodation = props =>{
                      value = {numberOfNights}
                      placeholder ='Number of Nights:'
                      onChange = {updateNumberOfNights}
+                     onClick={initializeNumberOfNights}
                      className ={errors.nightsError? "error-input":""}/>
               <label htmlFor="numberOfNights"
                      className ={errors.nightsError? "error-label":""}>
@@ -658,6 +697,7 @@ const Accomodation = props =>{
                    value = {numberOfGuests}
                    placeholder ='People Per Room'
                    onChange = {updateNumberOfGuests}
+                   onClick={initializeNumberOfGuests}
                    className ={errors.nightsError? "error-input":""}/>
             <label htmlFor="numberOfGuests"
                    className ={errors.nightsError? "error-label":""}>

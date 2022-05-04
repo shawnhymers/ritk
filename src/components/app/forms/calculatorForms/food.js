@@ -32,11 +32,18 @@ const FoodForm = props =>{
   const [foodQuantityError,setFoodQuantityError]=useState(false)
   const [dietQuantityError,setDietQuantityError]=useState(false)
 
+  function initializeDietQuantity(e){
+    if (dietQuantity==='') {
+      setDietQuantity(0)
+    }
+  }
   function updateDietQuantity(e){
     setDietQuantity(e.target.value)
     let carbonFootprint =e.target.value*selectedDiet.ghg_ratio;
     setCarbonFootprint(carbonFootprint)
   }
+
+
   function updateDietType(e){
     let selectedDiet = dietData[dietData.findIndex(x=>x.food === e.target.value)];
     setDietType(selectedDiet)
@@ -44,6 +51,11 @@ const FoodForm = props =>{
     setCarbonFootprint(carbonFootprint)
   }
 
+  function initializeFoodQuantity() {
+    if (foodQuantity==='') {
+      setFoodQuantity(0)
+    }
+  }
   function updateFoodQuantity(e){
     setFoodQuantity(e.target.value)
     let carbonFootprint = e.target.value*selectedFood.ghg_ratio*selectedFood.serving;
@@ -184,7 +196,8 @@ const FoodForm = props =>{
                          max="100"
                          value = {foodQuantity}
                          placeholder = 'Number of Servings'
-                         onChange = {(e)=>updateFoodQuantity(e)}
+                         onChange = {updateFoodQuantity}
+                         onClick = {initializeFoodQuantity}
                          className ={foodQuantityError? "error-input":""}/>
                   <label htmlFor="foodQuantity"
                          className ={foodQuantityError? "error-label":""}>
@@ -232,7 +245,8 @@ const FoodForm = props =>{
                          max="100"
                          value = {dietQuantity}
                          placeholder ='Number of Days'
-                         onChange = {(e)=>updateDietQuantity(e)}
+                         onChange = {updateDietQuantity}
+                         onClick={initializeDietQuantity}
                          className ={dietQuantityError? "error-input":""}/>
                   <label htmlFor="dietQuantity"
                          className ={dietQuantityError? "error-label":""}>

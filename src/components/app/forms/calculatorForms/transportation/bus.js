@@ -21,8 +21,13 @@ const BusForm = props => {
   const [distanceError,setDistanceError] =useState(false);
 
 
+  function initializeDistance(e){
+    if (distance==='') {
+      setDistance(0)
+    }
+  }
   function updateDistance(e){
-    setDistance(e.target.value);
+    setDistance(parseInt(e.target.value));
     updateCarbonFootprint(e.target.value,milage,fullness)
   }
   function updateCarbonFootprint(distance,milage,fullness){
@@ -152,6 +157,7 @@ return(
                        value = {distance}
                        placeholder = "Distance (Km)"
                        onChange = {updateDistance}
+                       onClick ={initializeDistance}
                        className ={distanceError? "error-input":""}/>
                 <label htmlFor="distance"
                        className ={distanceError? "error-label":""}>
