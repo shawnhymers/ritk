@@ -88,9 +88,11 @@ const SearchDrop = props => {
   }
   function cancelOptions(){
     console.log('canceling options')
+     // setShowDropDown(false);
     setTimeout(() => {
      setShowDropDown(false);
-  },1000)
+  },300)
+
 
   }
 

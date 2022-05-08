@@ -18,7 +18,9 @@ const Accomodation = props =>{
   const [hotelName, setHotelName] =useState('')
   const [hotelSize, setHotelSize]=useState('large')
   const [hotelEffeciency, setHotelEffeciency]=useState('good')
+
   const [numberOfNights, setNumberOfNights] =useState('')
+
   const [numberOfGuests, setNumberOfGuests] =useState('')
   const [avgOccupancy, setAvgOccupancy] =useState(95)
 
@@ -206,15 +208,11 @@ const Accomodation = props =>{
       }
     }
   }
-  function initializeNumberOfNights() {
-    if (numberOfNights==='') {
-      setNumberOfNights(0)
-    }
-  }
+
   function updateNumberOfNights(e){
     console.log('updating number of nights')
     console.log(e.target.value)
-    if (parseInt(e.target.value)>0) {
+    if (!isNaN(parseInt(e.target.value))) {
       console.log('good number to update with')
       setNumberOfNights(parseInt(e.target.value)*1)
       updateFootprint(numberOfGuests,parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
@@ -230,15 +228,11 @@ const Accomodation = props =>{
 
   }
 
-  function initializeNumberOfGuests(e){
-    if (numberOfGuests==='') {
-      setNumberOfGuests(0)
-    }
-  }
+
   function updateNumberOfGuests(e){
     console.log('updating the number of guests...'+e.target.value)
 
-    if (parseInt(e.target.value)>0) {
+    if (!isNaN(parseInt(e.target.value))) {
       setNumberOfGuests(parseInt(e.target.value)*1)
       updateFootprint(parseInt(e.target.value),numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
@@ -253,46 +247,57 @@ const Accomodation = props =>{
     setHotelName(e.target.value)
   }
 
-  function initializeElectricConsumption(e){
-    if (electricConsumption==='') {
-      setElectricConsumption(0)
-    }
-  }
+
   function updateElectricConsumption(e){
-    console.log(e.target.value)
-    setElectricConsumption(e.target.value)
-    updateFootprint(numberOfGuests,numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
 
-  }
-
-  function initializeFuelConsumption(e){
-    if (fuelConsumption==='') {
-      setFuelConsumption(0)
+    if (!isNaN(parseInt(e.target.value)))  {
+      setElectricConsumption(parseInt(e.target.value))
+      updateFootprint(numberOfGuests,numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
     }
+    else {
+      setElectricConsumption('')
+      updateFootprint(numberOfGuests,numberOfNights,parseInt(e.target.value),fuelConsumption,waterConsumption,avgOccupancy)
+    }
+
   }
+
+
   function updateFuelConsumption(e){
-    setFuelConsumption(e.target.value)
-    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
-  }
+    if (!isNaN(parseInt(e.target.value)))  {
+      setFuelConsumption(parseInt(e.target.value))
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
+    }
+    else {
+      setFuelConsumption('')
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,parseInt(e.target.value),waterConsumption,avgOccupancy)
 
-  function initializeWaterConsumption(e){
-    if (waterConsumption==='') {
-      setWaterConsumption(0)
     }
   }
+
+
   function updateWaterConsumption(e){
-    setWaterConsumption(e.target.value)
-    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
-  }
+    if (!isNaN(parseInt(e.target.value))) {
+      setWaterConsumption(parseInt(e.target.value))
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
 
-  function initializeAvgOccupancy(e){
-    if (avgOccupancy==='') {
-      setAvgOccupancy(0)
+    }
+    else {
+      setWaterConsumption('')
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,parseInt(e.target.value),avgOccupancy)
+
     }
   }
+
+
   function updateAvgOccupancy(e){
-    setAvgOccupancy(e.target.value)
-    updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
+    if (!isNaN(parseInt(e.target.value)))  {
+      setAvgOccupancy(parseInt(e.target.value))
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
+    }
+    else {
+      setAvgOccupancy('')
+      updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,e.target.value)
+    }
 
   }
 
@@ -456,7 +461,7 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="avgOccupancy"
                          name="avgOccupancy"
                          placeholder ='Average Occupancy (%)'
@@ -464,7 +469,6 @@ const Accomodation = props =>{
                          max="100"
                          value = {avgOccupancy}
                          onChange = {updateAvgOccupancy}
-                         onClick ={initializeAvgOccupancy}
                          className ={errors.occupancyError? "error-input":""}/>
                   <label htmlFor="avgOccupancy"
                          className ={errors.occupancyError? "error-label":""}>
@@ -479,7 +483,7 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="electricConsumption"
                          name="electricConsumption"
                          placeholder = 'Electricity Consumption (kWh/ M^2 Year)'
@@ -487,7 +491,6 @@ const Accomodation = props =>{
                          max="100"
                          value = {electricConsumption}
                          onChange = {updateElectricConsumption}
-                         onClick={initializeElectricConsumption}
                          className ={errors.electricConsumptionError? "error-input":""}/>
                   <label htmlFor="electricConsumption"
                          className ={errors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/ M^2 Year)</label>
@@ -500,7 +503,7 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="fuelConsumption"
                          name="fuelConsumption"
                          placeholder ='Fuel Consumption (kWh/m^2 Year)'
@@ -508,7 +511,6 @@ const Accomodation = props =>{
                          max="1000"
                          value = {fuelConsumption}
                          onChange = {updateFuelConsumption}
-                         onClick={initializeFuelConsumption}
                          className ={errors.fuelConsumptionError? "error-input":""}/>
                   <label htmlFor="fuelConsumption"
                          className ={errors.fuelConsumptionError? "error-label":""}>
@@ -524,15 +526,13 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="waterConsumption"
                          name="waterConsumption"
                          placeholder ='Water Consumption (kWh/m^2 Year)'
-                         min="1"
-                         max="1000"
+
                          value = {waterConsumption}
                          onChange = {updateWaterConsumption}
-                         onClick={initializeWaterConsumption}
                          className ={errors.waterConsumptionError? "error-input":""}/>
                   <label htmlFor="gasConsumption"
                          className ={errors.waterConsumptionError? "error-label":""}>
@@ -569,15 +569,13 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="numberOfNightsAdv"
                          name="numberOfNightsAdv"
-                         min="1"
-                         max="10000"
+
                          placeholder ='Number of Nights:'
                          value = {numberOfNights}
                          onChange = {updateNumberOfNights}
-                         onClick={initializeNumberOfNights}
                          className ={errors.nightsError? "error-input":""}/>
                   <label htmlFor="numberOfNightsAdv"
                          className ={errors.nightsError? "error-label":""}>
@@ -592,15 +590,12 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-              <input type="number"
+              <input type="text"
                      id="numberOfGuests"
                      name="numberOfGuests"
-                     min="1"
-                     max="100"
                      value = {numberOfGuests}
                      placeholder ='People Per Room'
                      onChange = {updateNumberOfGuests}
-                     onClick={initializeNumberOfGuests}
                      className ={errors.nightsError? "error-input":""}/>
               <label htmlFor="numberOfGuests"
                      className ={errors.nightsError? "error-label":""}>
@@ -666,7 +661,7 @@ const Accomodation = props =>{
             <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-              <input type="number"
+              <input type="text"
                      id="numberOfNights"
                      name="numberOfNights"
                      min="1"
@@ -674,7 +669,6 @@ const Accomodation = props =>{
                      value = {numberOfNights}
                      placeholder ='Number of Nights:'
                      onChange = {updateNumberOfNights}
-                     onClick={initializeNumberOfNights}
                      className ={errors.nightsError? "error-input":""}/>
               <label htmlFor="numberOfNights"
                      className ={errors.nightsError? "error-label":""}>
@@ -690,7 +684,7 @@ const Accomodation = props =>{
           <Row className ='form-line nice-input-wrapper'>
           <Col xs={8} sm={8} md={8} lg={8} xl={8}>
             <Row>
-            <input type="number"
+            <input type="text"
                    id="numberOfGuests"
                    name="numberOfGuests"
                    min="1"
@@ -698,7 +692,6 @@ const Accomodation = props =>{
                    value = {numberOfGuests}
                    placeholder ='People Per Room'
                    onChange = {updateNumberOfGuests}
-                   onClick={initializeNumberOfGuests}
                    className ={errors.nightsError? "error-input":""}/>
             <label htmlFor="numberOfGuests"
                    className ={errors.nightsError? "error-label":""}>

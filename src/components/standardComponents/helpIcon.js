@@ -15,8 +15,8 @@ const HelpIcon = props => {
 return(
   <>
     <Tooltip title={props.message} arrow>
-      <IconButton>
-        <MdHelp onClick ={toggleMessage} />
+      <IconButton onClick ={toggleMessage} >
+        <MdHelp />
       </IconButton>
     </Tooltip>
   </>

@@ -2,7 +2,7 @@ import  {  Component } from "react";
 import React from "react";
 import AppMain from "./app/appMain"
 import OutcomeMessage from"./standardComponents/outcomeMessage"
-import { ThemeProvider, createMuiTheme  } from '@mui/material/styles';
+// import { ThemeProvider, createMuiTheme  } from '@mui/material/styles';
 
 class Main extends Component {
   // Setting up initial state
@@ -85,18 +85,18 @@ class Main extends Component {
 
 
   render() {
-    const muiTheme = createMuiTheme({overrides: {
-      MuiRadio: {
-        root: {
-          color: '#91A98F',
-        },
-        colorSecondary: {
-          '&$checked': {
-            color: '#91A98F',
-          },
-        },
-      },
-    },})
+    // const muiTheme = createMuiTheme({overrides: {
+    //   MuiRadio: {
+    //     root: {
+    //       color: '#91A98F',
+    //     },
+    //     colorSecondary: {
+    //       '&$checked': {
+    //         color: '#91A98F',
+    //       },
+    //     },
+    //   },
+    // },})
 
   return(
     <>
@@ -106,7 +106,6 @@ class Main extends Component {
                         closeMessage ={this.closeMessage}
                         message ={this.state.outcomeMessage}/>
       :null}
-      <ThemeProvider theme={muiTheme}>
 
         <AppMain isMobile ={this.state.isMobile}
                  urlView={this.props.match.params.redirectView}
@@ -117,7 +116,6 @@ class Main extends Component {
                  totalFoodCost ={this.state.totalFoodCost}
                  totalAccomodationCost = {this.state.totalAccomodationCost}/>
 
-      </ThemeProvider>
     </>
 )}};
 export default Main;

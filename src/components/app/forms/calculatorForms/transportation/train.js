@@ -44,15 +44,17 @@ const TrainForm = props => {
     setEngineType(e.target.value);
     updateCarbonFootprint(e.target.value,distance,selectedGridRegion)
   }
-  function initializeDistance(e){
-    if (distance ==='') {
-      setDistance(0)
-    }
-  }
+
   function updateDistance(e){
-    console.log('updating distance')
-    setDistance(parseInt(e.target.value));
-    updateCarbonFootprint(engineType,e.target.value,selectedGridRegion)
+    if (!isNaN(parseInt(e.target.value))) {
+      setDistance(parseInt(e.target.value));
+      updateCarbonFootprint(engineType,parseInt(e.target.value),selectedGridRegion)
+    }
+    else {
+      setDistance('');
+      updateCarbonFootprint(engineType,0,selectedGridRegion)
+    }
+
   }
   function selectGridRegion(region){
     console.log('setting grid region')
@@ -144,39 +146,42 @@ return(
             </FormControl>
           </Row>
 
-          <Row className ='form-line'>
-            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-              <SearchDrop options={countryOptions}
-                          inputId ={'gridRegion'}
-                          inputName={'gridRegion'}
-                          inputLabel={'Select The Country'}
-                          searchValue = {countrySearchValue}
-                          setSearchValue ={updateCountrySearchValue}
-                          updateOptions = {updateGridRegions}
-                          selectOption = {selectGridRegion}
-                          displayKeys = {['country']}
-                          valueKey ={'carbon'}
-                          keyFields ={['country']}
-                          invalidInput={countryError}
-                          key ={'Grid Region Search'}/>
-            </Col>
-            <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-              <HelpIcon message ="Select the country. Different countries energy grids have different carbon consequences. Right now, we only have accurate data for several European countries. We are working hard to add more countries to this list."/>
-            </Col>
-          </Row>
+          {engineType==='diesel'?
+          null
+          :
+          <>
+            <Row className ='form-line'>
+              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                <SearchDrop options={countryOptions}
+                            inputId ={'gridRegion'}
+                            inputName={'gridRegion'}
+                            inputLabel={'Select The Country'}
+                            searchValue = {countrySearchValue}
+                            setSearchValue ={updateCountrySearchValue}
+                            updateOptions = {updateGridRegions}
+                            selectOption = {selectGridRegion}
+                            displayKeys = {['country']}
+                            valueKey ={'carbon'}
+                            keyFields ={['country']}
+                            invalidInput={countryError}
+                            key ={'Grid Region Search'}/>
+              </Col>
+              <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+                <HelpIcon message ="Select the country. Different countries energy grids have different carbon consequences. Right now, we only have accurate data for several European countries. We are working hard to add more countries to this list."/>
+              </Col>
+            </Row>
+          </>}
+
 
           <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-                <input type = 'number'
-                       min="1"
-                       max="10000"
+                <input type = 'text'
                        id= "distance"
                        value = {distance}
                        name = "distance"
                        placeholder = "Distance (Km)"
                        onChange ={updateDistance}
-                       onClick ={initializeDistance}
                        className ={distanceError? "error-input":""}/>
                 <label htmlFor="distance"
                        className ={distanceError? "error-label":""}>

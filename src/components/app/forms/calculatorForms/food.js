@@ -12,18 +12,47 @@ import HelpIcon from "../../../standardComponents/helpIcon"
 const FoodForm = props =>{
 
   // const [type, setType] = useState('average');
+  const [testState,setTestState]=useState('test')
+  const [foodQuantity, setFoodQuantity]=useState('')
+  function updateFoodQuantity(e){
+    console.log('updating food quantity test')
+    if (!isNaN(parseInt(e.target.value))) {
+      console.log('updating food quantity'+e.target.value)
+      setFoodQuantity(parseInt(e.target.value))
+      let carbonFootprint = parseInt(e.target.value)*selectedFood.ghg_ratio*selectedFood.serving;
+      setCarbonFootprint(carbonFootprint)
+    }
+    else if(e.target.value==='') {
+      setFoodQuantity('')
+      setCarbonFootprint(0)
+    }
+  }
+  const [selectedFood, setFoodType] = useState({food: "Apples",
+                                               ghg_ratio: "0.43",
+                                               servingDescr:'One Apple',
+                                               serving: "0.136078"})
 
   const [selectedDiet, setDietType] = useState({food:"Balanced Diet",
                                                ghg_ratio:'10.2',
                                                servingDescr:'One Average Day',
                                                serving:'1'})
-  const [dietQuantity, setDietQuantity] = useState('');
+  const [dietQuantity, setDietQuantity] = useState('')
+  function updateDietQuantity(e){
+    console.log('updating diet quantity test')
+    if (!isNaN(parseInt(e.target.value))) {
+      console.log('updating food quantity'+e.target.value)
+      setDietQuantity(parseInt(e.target.value))
+      let carbonFootprint = parseInt(e.target.value)*selectedFood.ghg_ratio*selectedFood.serving;
+      setCarbonFootprint(carbonFootprint)
+    }
+    else if(e.target.value==='') {
+      setDietQuantity('')
+      setCarbonFootprint(0)
+    }
+  }
 
-  const [selectedFood, setFoodType] = useState({food: "Apples",
-                                               ghg_ratio: "0.43",
-                                               servingDescr:'One Apple',
-                                               serving: "0.136078"})
-  const [foodQuantity, setFoodQuantity] = useState('');
+
+
 
   const [carbonFootprint, setCarbonFootprint] = useState(0);
 
@@ -32,18 +61,6 @@ const FoodForm = props =>{
   const [foodQuantityError,setFoodQuantityError]=useState(false)
   const [dietQuantityError,setDietQuantityError]=useState(false)
 
-  function initializeDietQuantity(e){
-    if (dietQuantity==='') {
-      setDietQuantity(0)
-    }
-  }
-  function updateDietQuantity(e){
-    setDietQuantity(e.target.value)
-    let carbonFootprint =e.target.value*selectedDiet.ghg_ratio;
-    setCarbonFootprint(carbonFootprint)
-  }
-
-
   function updateDietType(e){
     let selectedDiet = dietData[dietData.findIndex(x=>x.food === e.target.value)];
     setDietType(selectedDiet)
@@ -51,16 +68,6 @@ const FoodForm = props =>{
     setCarbonFootprint(carbonFootprint)
   }
 
-  function initializeFoodQuantity() {
-    if (foodQuantity==='') {
-      setFoodQuantity(0)
-    }
-  }
-  function updateFoodQuantity(e){
-    setFoodQuantity(e.target.value)
-    let carbonFootprint = e.target.value*selectedFood.ghg_ratio*selectedFood.serving;
-    setCarbonFootprint(carbonFootprint)
-  }
   function updateFoodType(e){
     let food = foodData[foodData.findIndex(x=>x.food === e.target.value)]
     setFoodType(food)
@@ -169,46 +176,46 @@ const FoodForm = props =>{
 
           {isAdvanced?
           <>
-            <Row className ='form-line'>
-              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                <Form.Select aria-label="Default select example"
-                             value = {selectedFood.food}
-                             onChange = {updateFoodType}
-                             className="browser-default">
-                             {foodData.map((food, i)=>{return <Dropdown value = {food.food}
-                                                                        displayValue ={food.food+' ('+food.servingDescr+')'}
-                                                                        key={food.food+i}/>})}
-                </Form.Select>
-                </Row>
-              </Col>
-              <Col>
-                <HelpIcon message ="Select your food. (More foods are on their way.)"/>
-              </Col>
+            <Row>
+              {testState}
             </Row>
-            <Row className ='form-line nice-input-wrapper'>
-              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <Row>
-                  <input type="number"
-                         id="foodQuantity"
-                         name="foodQuantity"
-                         min="1"
-                         max="100"
-                         value = {foodQuantity}
-                         placeholder = 'Number of Servings'
-                         onChange = {updateFoodQuantity}
-                         onClick = {initializeFoodQuantity}
-                         className ={foodQuantityError? "error-input":""}/>
-                  <label htmlFor="foodQuantity"
-                         className ={foodQuantityError? "error-label":""}>
-                  {'Number of Servings'}
-                  </label>
-                </Row>
-              </Col>
-              <Col>
-                <HelpIcon message ="Enter the number of servings. (Average serving size is shown above.)"/>
-              </Col>
-            </Row>
+              <Row className ='form-line'>
+                <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row>
+                  <Form.Select aria-label="Default select example"
+                               value = {selectedFood.food}
+                               onChange = {updateFoodType}
+                               className="browser-default">
+                               {foodData.map((food, i)=>{return <Dropdown value = {food.food}
+                                                                          displayValue ={food.food+' ('+food.servingDescr+')'}
+                                                                          key={food.food+i}/>})}
+                  </Form.Select>
+                  </Row>
+                </Col>
+                <Col>
+                  <HelpIcon message ="Select your food. (More foods are on their way.)"/>
+                </Col>
+              </Row>
+              <Row className ='form-line nice-input-wrapper'>
+                <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                  <Row>
+                    <input type='text'
+
+                           value = {foodQuantity }
+                           placeholder = 'Number of Servings'
+                           onChange = {updateFoodQuantity}
+                           className ={foodQuantityError? "error-input":""}/>
+                    <label htmlFor="foodQuantity"
+                           className ={foodQuantityError? "error-label":""}>
+                    {'Number of Servings'}
+                    </label>
+                  </Row>
+                </Col>
+                <Col>
+                  <HelpIcon message ="Enter the number of servings. (Average serving size is shown above.)"/>
+                </Col>
+              </Row>
+
           </>
           :
           <>
@@ -238,15 +245,13 @@ const FoodForm = props =>{
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          id="dietQuantity"
                          name="dietQuantity"
-                         min="1"
-                         max="100"
+
                          value = {dietQuantity}
                          placeholder ='Number of Days'
                          onChange = {updateDietQuantity}
-                         onClick={initializeDietQuantity}
                          className ={dietQuantityError? "error-input":""}/>
                   <label htmlFor="dietQuantity"
                          className ={dietQuantityError? "error-label":""}>

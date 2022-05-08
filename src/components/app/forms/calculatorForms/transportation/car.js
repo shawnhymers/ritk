@@ -49,16 +49,17 @@ const CarForm = props => {
     setSearchBy(e.target.value)
   }
 
-  function initializePassengers(e){
-    console.log('initializing passengers')
-    if (passengers==='') {
-      console.log('setting to 0')
-      setPassengers(0)
-    }
-  }
+
   function updatePassengers(e){
-    setPassengers(parseInt(e.target.value))
-    updateCarbonFootprint(distance,milage,e.target.value)
+    if (!isNaN(parseInt(e.target.value))) {
+      setPassengers(parseInt(e.target.value))
+      updateCarbonFootprint(distance,milage,parseInt(e.target.value))
+    }
+    else {
+      setPassengers('')
+      updateCarbonFootprint(distance,milage,0)
+    }
+
   }
   function updateBasicCarType(e){
     let basicCarType = e.target.value;
@@ -155,18 +156,20 @@ const CarForm = props => {
     }
   }
 
-  function initializeDistance(e){
-    console.log('initializing distance')
-    if (distance==='') {
-      console.log('setting to 0')
-      setDistance(0)
+
+  function updateDistance(e){
+    console.log('updating distance')
+    if (!isNaN(parseInt(e.target.value))) {
+      console.log('isa number')
+      setDistance(parseInt(e.target.value))
+      updateCarbonFootprint(parseInt(e.target.value),milage,passengers)
+    }
+    else {
+      setDistance('')
+      updateCarbonFootprint(0,milage,passengers)
     }
   }
-  function updateDistance(e){
 
-    setDistance(parseInt(e.target.value))
-    updateCarbonFootprint(e.target.value,milage,passengers)
-  }
 
   function updateType(e){
     console.log(e.target.value)
@@ -174,7 +177,7 @@ const CarForm = props => {
       console.log('setting advanced off')
       setType(false)
       setCarbonFootprint(0)
-      setMilage(0)
+      setMilage(7)
       setDistance('')
       setPassengers('')
     }
@@ -182,7 +185,7 @@ const CarForm = props => {
       console.log('setting advanced on')
       setType(true)
       setCarbonFootprint(0)
-      setMilage(0)
+      setMilage(7)
       setDistance('')
       setPassengers('')
     }
@@ -258,7 +261,10 @@ const CarForm = props => {
 
   }
   function updateCarbonFootprint(distance,milage,passengers){
-
+    console.log('updating carbon footprint...')
+    console.log(distance)
+    console.log(milage)
+    console.log(passengers)
     // Based on the 8.887 KG ofco2 pergallon(2.3 per L) from the EPA
     let carbonFootprint = (distance/100)*milage*2.3/passengers;
 
@@ -424,14 +430,11 @@ return(
           <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-                <input type="number"
+                <input type="text"
                        name="passengers"
-                       min="1"
-                       max="10000"
                        value = {passengers}
                        placeholder = "Number of Passengers"
                        onChange = {updatePassengers}
-                       onClick={initializePassengers}
                        className ={basicErrors.passengerError? "error-input":""}/>
                 <label htmlFor="passengers"
                        className ={basicErrors.passengerError? "error-label":""}>
@@ -447,14 +450,13 @@ return(
           <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-              <input type="number"
+              <input type="text"
                      name="distance"
                      min="1"
                      max="100"
                      value = {distance}
                      placeholder = "Distance (Km)"
                      onChange = {updateDistance}
-                     onClick={initializeDistance}
                      className ={basicErrors.distanceError? "error-input":""}/>
               <label htmlFor="distance"
                      className ={basicErrors.distanceError? "error-label":""}>
@@ -529,14 +531,12 @@ return(
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          name="passengers"
-                         min="1"
-                         max="10000"
+
                          value = {passengers}
                          placeholder = "Number of Passengers"
                          onChange = {updatePassengers}
-                         onClick ={initializePassengers}
                          className ={advancedErrors.passengerError? "error-input":""}/>
                   <label htmlFor="passengers"
                          className ={advancedErrors.passengerError? "error-label":""}>
@@ -553,14 +553,13 @@ return(
             <Row className ='form-line nice-input-wrapper'>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <Row>
-                  <input type="number"
+                  <input type="text"
                          name="distance"
                          min="1"
                          max="10000"
                          value = {distance}
                          placeholder = "Distance (Km)"
                          onChange = {updateDistance}
-                         onClick={initializeDistance}
                          className ={advancedErrors.distanceError? "error-input":""}/>
                   <label htmlFor="distance"
                          className = {advancedErrors.distanceError? "error-label":""}>

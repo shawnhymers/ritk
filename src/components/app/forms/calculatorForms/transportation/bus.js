@@ -23,14 +23,17 @@ const BusForm = props => {
   const [distanceError,setDistanceError] =useState(false);
 
 
-  function initializeDistance(e){
-    if (distance==='') {
-      setDistance(0)
-    }
-  }
+
   function updateDistance(e){
-    setDistance(parseInt(e.target.value));
-    updateCarbonFootprint(e.target.value,milage,fullness)
+    if (!isNaN(parseInt(e.target.value))) {
+      setDistance(parseInt(parseInt(e.target.value)));
+      updateCarbonFootprint(parseInt(e.target.value),milage,fullness)
+    }
+    else {
+      setDistance('');
+      updateCarbonFootprint(0,milage,fullness)
+    }
+
   }
   function updateCarbonFootprint(distance,milage,fullness){
     let carbonFootprint=0;
@@ -152,14 +155,11 @@ return(
           <Row className ='form-line nice-input-wrapper'>
             <Col xs={8} sm={8} md={8} lg={8} xl={8}>
               <Row>
-                <input type="number"
+                <input type="text"
                        name="distance"
-                       min="1"
-                       max="100000"
                        value = {distance}
                        placeholder = "Distance (Km)"
                        onChange = {updateDistance}
-                       onClick ={initializeDistance}
                        className ={distanceError? "error-input":""}/>
                 <label htmlFor="distance"
                        className ={distanceError? "error-label":""}>
