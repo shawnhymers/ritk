@@ -19,6 +19,7 @@ import VancouverActivityGuide from './components/app/blogs/vancouverActivityGuid
 import CostaRica from './components/app/galleries/costaRica'
 import Granada from './components/app/galleries/granada'
 import Ometepe from './components/app/galleries/ometepe'
+import Cartagena from './components/app/galleries/cartagena'
 
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route exact path="/CostaRica" component={CostaRica} />
             <Route exact path="/Granada" component={Granada} />
             <Route exact path="/Ometepe" component={Ometepe} />
+            <Route exact path="/Cartagena" component={Cartagena} />
 
           </ScrollToTop>
         </Router>

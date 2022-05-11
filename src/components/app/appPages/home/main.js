@@ -31,7 +31,7 @@ return(
     <AboutPreview />
     <LinksPreview useLink={props.useLink}/>
     <BlogPreview/>
-    <GalleryPreview galleryImages={props.galleryImages}/>
+    <GalleryPreview galleryImages={props.galleryPreviews}/>
     <Footer/>
   </>
 )

@@ -39,28 +39,29 @@ class AppMain extends Component {
                 link:'/VancouverActivityGuide'}
              ],
       galleries:[
+
+            {name:'Granada, Nicaragua',
+             pic:'/GranadaGallery/granada10.jpg',
+             tags:['food', 'bc','','','','','','','',''],
+             link:'/Granada',
+             key:'2'},
+
              {name:'Ometepe Island',
-              pic:'/galleryTest1.jpg',
+              pic:'/OmetepeGallery/ometepe8.jpg',
               tags:['food', 'bc','','','','','','','',''],
               link:'/Ometepe',
               key:'1'},
 
-              {name:'Granada, Nicaragua',
-               pic:'/galleryTest2.jpg',
-               tags:['food', 'bc','','','','','','','',''],
-               link:'/Granada',
-               key:'2'},
-
               {name:'Costa Rica',
-               pic:'/galleryTest3.jpg',
+               pic:'/CostaRicaGallery/costaRica1.jpg',
                tags:['activity', 'bc','','','','','','','',''],
                link:'/Costarica',
                key:'3'},
 
-               {name:'Another Thing',
-                pic:'/galleryTest1.jpg',
+               {name:'Cartagena',
+                pic:'/CartagenaGallery/cartagena1.jpg',
                 tags:['activity', 'notbc','','','','','','','',''],
-                link:'/anotherGallery',
+                link:'/cartagena',
                 key:'4'},
 
                 {name:'Costa Rica',
@@ -74,7 +75,39 @@ class AppMain extends Component {
                   tags:['activity', 'notbc','','','','','','','',''],
                   link:'/anotherGallery',
                   key:'6'}
-             ]
+             ],
+      previewGalleries:[
+        {name:'Costa Rica',
+         pic:'/galleryTest1.jpg',
+         tags:['activity', 'bc','','','','','','','',''],
+         link:'/Costarica',
+         key:'1'},
+         {name:'Costa Rica',
+          pic:'/galleryTest2.jpg',
+          tags:['activity', 'bc','','','','','','','',''],
+          link:'/Costarica',
+          key:'2'},
+          {name:'Costa Rica',
+           pic:'/galleryTest3.jpg',
+           tags:['activity', 'bc','','','','','','','',''],
+           link:'/Costarica',
+           key:'3'},
+           {name:'Costa Rica',
+            pic:'/galleryTest1.jpg',
+            tags:['activity', 'bc','','','','','','','',''],
+            link:'/Costarica',
+            key:'4'},
+        {name:'Costa Rica',
+         pic:'/galleryTest2.jpg',
+         tags:['activity', 'bc','','','','','','','',''],
+         link:'/Costarica',
+         key:'5'},
+         {name:'Costa Rica',
+          pic:'/galleryTest3.jpg',
+          tags:['activity', 'bc','','','','','','','',''],
+          link:'/Costarica',
+          key:'6'},
+      ]
     };
   };
 
@@ -127,6 +160,7 @@ class AppMain extends Component {
     || (this.state.view ==='main' &&this.state.urlOverride===true)?
         <>
           <HomePage galleryImages ={this.state.galleries}
+                    galleryPreviews={this.state.previewGalleries}
                     isMobile={this.props.isMobile}
                     useLink ={this.useLink}/>
         </>

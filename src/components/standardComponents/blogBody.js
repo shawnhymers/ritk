@@ -224,14 +224,14 @@ const DipTych = props =>{
         <Col className ='centered-children'>
           <img src ={props.src1}
                alt = {props.label}
-               style ={{width:'95%'}}
+               style ={{width:'100%'}}
                onContextMenu={dummy} />
         </Col>
 
         <Col className ='centered-children'>
           <img src ={props.src2}
                alt = {props.label}
-               style ={{width:'95%'}}
+               style ={{width:'100%'}}
                onContextMenu={dummy} />
         </Col>
       </Row>
