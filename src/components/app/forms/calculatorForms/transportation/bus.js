@@ -14,7 +14,7 @@ import GreenRadio from "../../../../standardComponents/greenRadio"
 const BusForm = props => {
 
 
-  const [milage, setMilage] = useState('7')
+  const [milage, setMilage] = useState(40)
   const [distance, setDistance]=useState('')
   const [carbonFootprint, setCarbonFootprint] = useState(0)
   const [drivingType, setDrivingType] = useState('City')

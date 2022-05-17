@@ -14,6 +14,8 @@ import GreenRadio from '../../../standardComponents/greenRadio'
 import YellowRadio from '../../../standardComponents/yellowRadio'
 
 
+
+
 const Overview= props =>{
   const [compareType, setCompareType] =useState('country')
 
@@ -151,7 +153,7 @@ const Overview= props =>{
           <FormControlLabel value="country"
                             control={<GreenRadio/>}
                             label="Country" />
-          <FormControlLabel value="region" control={<YellowRadio />} label="Region" />
+          <FormControlLabel value="region" control={<GreenRadio />} label="Region" />
         </RadioGroup>
       </FormControl>
     </Row>
@@ -228,6 +230,8 @@ const Overview= props =>{
             </Row>
           </Col>
         </Row>
+
+
       </>}
 
 
@@ -238,8 +242,191 @@ const Overview= props =>{
 
 
     </Container>
+
+
+    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+      <Row>
+        <p>Flights:</p>
+      </Row>
+      <Row>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>From</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>To</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Distance (KM)</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Footprint (KG)</p>
+        </Col>
+      </Row>
+      {props.flightList.map((flight, i)=>{
+                    return <FlightList flight ={flight}
+                                        isMobile={props.isMobile}
+                                        key={i}/>})}
+    </Container>
+
+    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+      <Row>
+        <p>Transportation:</p>
+      </Row>
+      <Row>
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+          <p>Type</p>
+        </Col>
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+          <p>Distance (KM)</p>
+        </Col>
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+          <p>Footprint (KG)</p>
+        </Col>
+      </Row>
+      {props.transportList.map((transport, i)=>{
+                    return <TransportList transport ={transport}
+                                        isMobile={props.isMobile}
+                                        key={i}/>})}
+    </Container>
+
+    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+      <Row>
+        <p>Food:</p>
+      </Row>
+      <Row>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Type</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Food/Diet</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Quantity</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Footprint (KG)</p>
+        </Col>
+      </Row>
+      {props.foodList.map((food, i)=>{
+                    return <FoodList food ={food}
+                                        isMobile={props.isMobile}
+                                        key={i}/>})}
+    </Container>
+
+    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+      <Row>
+        <p>Accomodation</p>
+      </Row>
+      <Row>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Name</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Number of Nights</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Number of Guests</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p>Footprint (KG)</p>
+        </Col>
+      </Row>
+      {props.hotelList.map((hotel, i)=>{
+                    return <HotelList hotel ={hotel}
+                                        isMobile={props.isMobile}
+                                        key={i}/>})}
+    </Container>
+
     </>
   )
 }
 
+const FlightList = props=>{
+
+
+  return(
+    <>
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.flight.fromAirport.City}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.flight.toAirport.City}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.flight.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        </Col>
+      </Row>
+    </>
+  )
+}
+
+const TransportList =props=>{
+
+  return(
+    <>
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.transport.subType}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+
+        </Col>
+      </Row>
+    </>
+  )
+}
+
+
+const FoodList =props=>{
+
+  return(
+    <>
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.food.subtype}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.food.food.servingDescr}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.food.quantity}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        </Col>
+      </Row>
+    </>
+  )
+}
+
+const HotelList =props=>{
+
+  return(
+    <>
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.hotel.hotelName}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.hotel.numberOfNights}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {props.hotel.numberOfGuests}
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          {(props.hotel.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        </Col>
+      </Row>
+    </>
+  )
+}
 export default Overview;

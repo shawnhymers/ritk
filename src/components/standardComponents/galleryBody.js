@@ -203,12 +203,12 @@ const DipTych = props =>{
 
             <img src ={props.src1}
                  alt = {props.label}
-                 style ={{width:'95%'}}/>
+                 style ={{width:'100%'}}/>
           </Row>
           <Row className ='vertical-padding-sm'>
             <img src ={props.src2}
                  alt = {props.label}
-                 style ={{width:'95%'}}/>
+                 style ={{width:'100%'}}/>
           </Row>
 
     </>

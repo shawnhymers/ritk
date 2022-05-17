@@ -41,7 +41,6 @@ const Accomodation = props =>{
   //   setType(type);
   // }
   function updateHotelSize(e){
-    console.log(e.target.value)
 
     setHotelSize(e.target.value);
 
@@ -126,7 +125,6 @@ const Accomodation = props =>{
 
   }
   function updateHotelEfficiency(e){
-    console.log(e.target.value)
     setHotelEffeciency(e.target.value)
 
     if (hotelSize ==='large') {
@@ -210,15 +208,11 @@ const Accomodation = props =>{
   }
 
   function updateNumberOfNights(e){
-    console.log('updating number of nights')
-    console.log(e.target.value)
     if (!isNaN(parseInt(e.target.value))) {
-      console.log('good number to update with')
       setNumberOfNights(parseInt(e.target.value)*1)
       updateFootprint(numberOfGuests,parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
     else if (e.target.value==='') {
-      console.log('no good number to update with')
       setNumberOfNights('')
       updateFootprint(numberOfGuests,parseInt(e.target.value),electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
     }
@@ -230,8 +224,6 @@ const Accomodation = props =>{
 
 
   function updateNumberOfGuests(e){
-    console.log('updating the number of guests...'+e.target.value)
-
     if (!isNaN(parseInt(e.target.value))) {
       setNumberOfGuests(parseInt(e.target.value)*1)
       updateFootprint(parseInt(e.target.value),numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy)
@@ -243,7 +235,6 @@ const Accomodation = props =>{
   }
 
   function updateHotelName(e){
-    console.log(e.target.value)
     setHotelName(e.target.value)
   }
 
@@ -302,14 +293,6 @@ const Accomodation = props =>{
   }
 
   function updateFootprint(numberOfGuests,numberOfNights,electricConsumption,fuelConsumption,waterConsumption,avgOccupancy){
-    console.log('-----updating footprint------')
-    console.log('number of nights...'+numberOfNights)
-    console.log('electric Consumption...'+electricConsumption)
-    console.log('fuel Consumption...'+fuelConsumption)
-    console.log('water Consumption..'+waterConsumption)
-    console.log('avg occupancy..'+avgOccupancy)
-    console.log('-----------------------------')
-
     if (numberOfNights<1) {
       setCarbonFootprint(0)
     }
@@ -317,12 +300,10 @@ const Accomodation = props =>{
 
       if (numberOfGuests==='') {
         let cost =parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100);
-        console.log('calculated cost...'+cost)
         setCarbonFootprint(cost)
       }
       else {
         let cost =(parseFloat(numberOfNights)*((((parseFloat(electricConsumption)+parseFloat(fuelConsumption)+parseFloat(waterConsumption))*15)/365)*0.85)/(parseFloat(avgOccupancy)/100))/numberOfGuests;
-        console.log('calculated cost...'+cost)
         setCarbonFootprint(cost)
       }
 
@@ -332,12 +313,10 @@ const Accomodation = props =>{
   }
   function updateType(e){
     if (isAdvanced) {
-      console.log('setting advanced off')
       setIsAdvanced(false)
 
     }
     else {
-      console.log('setting advanced on')
       setIsAdvanced(true)
 
     }
@@ -364,7 +343,8 @@ const Accomodation = props =>{
       let data ={ type: 'accomodation',
                   carbonFootprint: carbonFootprint,
                   hotelName:hotelName,
-                  numberOfNights:numberOfNights}
+                  numberOfNights:numberOfNights,
+                  numberOfGuests:numberOfGuests}
 
 
       props.addCarbonCostItem(data)

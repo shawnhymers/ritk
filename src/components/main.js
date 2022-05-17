@@ -18,6 +18,10 @@ class Main extends Component {
       totalTransportCost:0,
       totalFoodCost:0,
       totalAccomodationCost:0,
+      flight:[],
+      transport:[],
+      food:[],
+      accomodation:[]
 
     };
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -31,7 +35,6 @@ class Main extends Component {
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
     let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
-    console.log('updating dimensions')
     if (windowWidth>= windowHeight) {
       this.setState({isMobile:false});
     }
@@ -40,32 +43,38 @@ class Main extends Component {
     }
   }
   addToList =(type,data)=>{
+    console.log('adding to list of carbon items')
+    console.log('type is...'+type)
+    console.log('data is...'+data)
     let tempArray = this.state[type]
     tempArray.push(data);
-    this.setState({[type]:tempArray},()=>{this.updateCosts()});
+    console.log('temp array is...'+tempArray)
+    this.setState({[type]:tempArray},()=>{console.log(this.state[type])});
   }
   addCarbonCostItem = (data)=>{
     if (data.type==='flight') {
-      console.log('adding flight')
-      console.log(data)
+      this.addToList(data.type,data)
       this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint,
                      showOutcomeMessage:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='transport') {
+      this.addToList(data.type,data)
       this.setState({totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
                      showOutcomeMessage:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='food') {
+      this.addToList(data.type,data)
       this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
                      showOutcomeMessage:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='accomodation') {
+      this.addToList(data.type,data)
       this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
                      showOutcomeMessage:true,
                      outcomeMessageType:'positive',
@@ -85,18 +94,6 @@ class Main extends Component {
 
 
   render() {
-    // const muiTheme = createMuiTheme({overrides: {
-    //   MuiRadio: {
-    //     root: {
-    //       color: '#91A98F',
-    //     },
-    //     colorSecondary: {
-    //       '&$checked': {
-    //         color: '#91A98F',
-    //       },
-    //     },
-    //   },
-    // },})
 
   return(
     <>
@@ -114,7 +111,11 @@ class Main extends Component {
                  totalFlightCost = {this.state.totalFlightCost}
                  totalTransportCost ={this.state.totalTransportCost}
                  totalFoodCost ={this.state.totalFoodCost}
-                 totalAccomodationCost = {this.state.totalAccomodationCost}/>
+                 totalAccomodationCost = {this.state.totalAccomodationCost}
+                 flightList ={this.state.flight}
+                 transportList ={this.state.transport}
+                 foodList={this.state.food}
+                 hotelList={this.state.accomodation}/>
 
     </>
 )}};

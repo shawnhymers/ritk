@@ -55,18 +55,13 @@ const SearchDrop = props => {
   const [showDropDown, setShowDropDown] = useState(false);
 
   function updateSearch(e){
-    console.log('updating search')
     props.setSearchValue(e.target.value)
     // if (e.target.value.length>0) {
-      console.log('showing dropdown')
-      console.log(props.options)
       setShowDropDown(true)
     props.updateOptions(e)
     // setOptions(newOptions)
   }
   function select(selection){
-    console.log('searchdrop selection')
-    console.log(selection)
 
     let display = ''
     if (props.displayKeys.length>1) {
@@ -87,7 +82,6 @@ const SearchDrop = props => {
       setShowDropDown(true);
   }
   function cancelOptions(){
-    console.log('canceling options')
      // setShowDropDown(false);
     setTimeout(() => {
      setShowDropDown(false);

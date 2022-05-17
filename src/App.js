@@ -20,6 +20,11 @@ import CostaRica from './components/app/galleries/costaRica'
 import Granada from './components/app/galleries/granada'
 import Ometepe from './components/app/galleries/ometepe'
 import Cartagena from './components/app/galleries/cartagena'
+import Guatape from './components/app/galleries/guatape'
+import Quindio from './components/app/galleries/quindio'
+import Medellin from './components/app/galleries/medellin'
+import Quito from './components/app/galleries/quito'
+import Otavalo from './components/app/galleries/otavalo'
 
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
@@ -41,6 +46,12 @@ function App() {
             <Route exact path="/Granada" component={Granada} />
             <Route exact path="/Ometepe" component={Ometepe} />
             <Route exact path="/Cartagena" component={Cartagena} />
+            <Route exact path="/Quindo" component={Quindio} />
+            <Route exact path="/Guatape" component={Guatape} />
+            <Route exact path="/Medellin" component={Medellin} />
+
+            <Route exact path="/Quito" component={Quito} />
+            <Route exact path="/Otavalo" component={Otavalo} />
 
           </ScrollToTop>
         </Router>

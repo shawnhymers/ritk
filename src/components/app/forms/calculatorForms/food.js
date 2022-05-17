@@ -42,7 +42,7 @@ const FoodForm = props =>{
     if (!isNaN(parseInt(e.target.value))) {
       console.log('updating food quantity'+e.target.value)
       setDietQuantity(parseInt(e.target.value))
-      let carbonFootprint = parseInt(e.target.value)*selectedFood.ghg_ratio*selectedFood.serving;
+      let carbonFootprint = parseInt(e.target.value)*selectedDiet.ghg_ratio*selectedDiet.serving;
       setCarbonFootprint(carbonFootprint)
     }
     else if(e.target.value==='') {
@@ -93,6 +93,7 @@ const FoodForm = props =>{
     if (carbonFootprint>0) {
       if (isAdvanced) {
         let data ={ type:'food',
+                    subType:'Food Item',
                     quantity:foodQuantity,
                     food: selectedDiet,
                     carbonFootprint: carbonFootprint
@@ -102,6 +103,7 @@ const FoodForm = props =>{
       }
       else {
         let data ={ type:'food',
+                    subtype:'Diet Type',
                     quantity:dietQuantity,
                     food:selectedFood,
                     carbonFootprint: carbonFootprint

@@ -18,26 +18,47 @@ class AppMain extends Component {
 
       blogSearch :'',
       blogs:[
-             {name:'Vancouver Food Guide',
-              pic:'/vancouverFood.jpg',
-              tags:['food', 'bc','','','','','','','',''],
-              link:'/VancouverFoodGuide'},
+            {name:'Vancouver Food Guide',
+             pic:'/vancouverFood.jpg',
+             tags:['food', 'bc','','','','','','','',''],
+             link:'/VancouverFoodGuide'},
 
-              {name:'Whistler Food Guide',
-               pic:'/whistlerFood.jpg',
-               tags:['food', 'bc','','','','','','','',''],
-               link:'/WhistlerFoodGuide'},
+            {name:'Whistler Food Guide',
+             pic:'/whistlerFood.jpg',
+             tags:['food', 'bc','','','','','','','',''],
+             link:'/WhistlerFoodGuide'},
 
-              {name:'Whistler Activity Guide',
-               pic:'/whistlerActivity.jpg',
-               tags:['activity', 'bc','','','','','','','',''],
-               link:'/WhistlerActivityGuide'},
+            {name:'Whistler Activity Guide',
+             pic:'/whistlerActivity.jpg',
+             tags:['activity', 'bc','','','','','','','',''],
+             link:'/WhistlerActivityGuide'},
 
-               {name:'Vancouver Activity Guide',
-                pic:'/vancouverActivity.jpg',
-                tags:['activity', 'notbc','','','','','','','',''],
-                link:'/VancouverActivityGuide'}
-             ],
+            {name:'Carbon Cost of Latam',
+             pic:'/CostaRicaGallery/costarica15.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/VancouverActivityGuide'},
+
+            {name:'Carbon Cost of Flying',
+             pic:'/planeWing.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/VancouverActivityGuide'},
+
+            {name:'Carbon Cost of Colombia',
+             pic:'/MedellinGallery/medellin11.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/VancouverActivityGuide'},
+
+            {name:'Carbon Cost of Ecuador',
+             pic:'/QuitoGallery/quito26.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/VancouverActivityGuide'},
+
+            {name:'Carbon Cost of Our Diet',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/VancouverActivityGuide'},
+              ],
+
       galleries:[
 
             {name:'Granada, Nicaragua',
@@ -64,17 +85,33 @@ class AppMain extends Component {
                 link:'/cartagena',
                 key:'4'},
 
-                {name:'Costa Rica',
-                 pic:'/galleryTest3.jpg',
+                {name:'Medellin',
+                 pic:'/MedellinGallery/medellin12.jpg',
                  tags:['activity', 'bc','','','','','','','',''],
-                 link:'/Costarica',
+                 link:'/medellin',
                  key:'5'},
 
-                 {name:'Another Thing',
-                  pic:'/galleryTest1.jpg',
+                 {name:'Quindio',
+                  pic:'/QuindioGallery/Quindio18.jpg',
                   tags:['activity', 'notbc','','','','','','','',''],
-                  link:'/anotherGallery',
-                  key:'6'}
+                  link:'/quindo',
+                  key:'6'},
+
+                  {name:'Guatape',
+                   pic:'/GuatapeGallery/Guatape9.jpg',
+                   tags:['activity', 'notbc','','','','','','','',''],
+                   link:'/guatape',
+                   key:'7'},
+                   {name:'Quito',
+                    pic:'/QuitoGallery/quito17.jpg',
+                    tags:['activity', 'notbc','','','','','','','',''],
+                    link:'/quito',
+                    key:'8'},
+                    {name:'Otavalo',
+                     pic:'/OtavaloGallery/otavalo2.jpg',
+                     tags:['activity', 'notbc','','','','','','','',''],
+                     link:'/otavalo',
+                     key:'9'}
              ],
       previewGalleries:[
         {name:'Costa Rica',
@@ -112,9 +149,6 @@ class AppMain extends Component {
   };
 
   componentDidMount(){
-    console.log('desktop App Mounted')
-    console.log(this.props)
-
     if (this.props.view !== undefined) {
       this.setState({view:this.props.view})
     }
@@ -124,7 +158,6 @@ class AppMain extends Component {
   }
 
   useLink =(link)=>{
-    console.log('using this link...'+link)
     this.setState({view:'blog',blogSearch:link,urlOverride:true})
 
   }
@@ -133,7 +166,6 @@ class AppMain extends Component {
     console.log('triggering the redirect view reset')
   }
   updateView=(view)=>{
-    console.log('updating app view')
     this.setState({view:view,urlOverride:true})
   }
 
@@ -195,7 +227,11 @@ class AppMain extends Component {
                     totalTransportCost = {this.props.totalTransportCost}
                     totalFoodCost = {this.props.totalFoodCost}
                     totalAccomodationCost = {this.props.totalAccomodationCost}
-                    isMobile={this.props.isMobile}/>
+                    isMobile={this.props.isMobile}
+                    flightList={this.props.flightList}
+                    transportList={this.props.transportList}
+                    foodList={this.props.foodList}
+                    hotelList={this.props.hotelList}/>
 
       </>
       :null}

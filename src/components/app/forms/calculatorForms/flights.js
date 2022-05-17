@@ -37,17 +37,14 @@ const FlightForm = props => {
 
   // Effects
   useEffect(() => {
-   console.log('Do something after distance has changed');
    calculateFlightFootprint(distance)
  });
    useEffect(() => {
-    console.log('Do something after city has changed');
     updateDistance()
   });
 
   // Functions
   function updateDistance(){
-    console.log('updating flight distance')
     // Getting co-ordinates as radians
     let fromLat = fromCity.lat*(Math.PI/180)
     let fromLong = fromCity.long*(Math.PI/180)
@@ -233,7 +230,6 @@ const FlightForm = props => {
               flightType: flightType,
               type :'flight'}
 
-    console.log(data.toAirport)
     if (data.toAirport!==''&&data.fromAirport!=='' && data.carbonFootprint>0) {
       props.addCarbonCostItem(data)
       resetState()
