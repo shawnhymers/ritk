@@ -29,13 +29,13 @@ return(
   <>
    <div style={{overflowX:'hidden'}}>
      <GalleryHeader isMobile={isMobile}/>
-     <GalleryBody header ={{src:'CartagenaGallery/cartagena13.jpg', label:'Granada'}}
+     <GalleryBody header ={{src:'CartagenaGallery/cartagena13.jpg', label:'Cartagena'}}
                   blurb ={"Cartagena Blurb"}
                   updated={'December 2021'}
                   isMobile={isMobile}
                   contentTest ={[
                                 {type:'header',text:"Cartagena Title"},
-                                {type:'horizontalImage',src:'CartagenaGallery/cartagena1.jpg'},
+                                {type:'horizontalImage',src:'CartagenaGallery/cartagena13.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena9.jpg',src2:'CartagenaGallery/cartagena11.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena10.jpg',src2:'CartagenaGallery/cartagena15.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena14.jpg',src2:'CartagenaGallery/cartagena12.jpg'},

@@ -12,41 +12,41 @@ return(
   <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
     <Col xs={12} sm={12} md={5} lg={5} xl={5} className ='centered-children'>
       <Container>
-        <Row  style ={{paddingTop:'2em'}}>
+        <Row  style ={{paddingTop:'2em'}} >
           <Col xs={12} sm={12} md={12} lg={12} xl={12} className ='centered-children'>
             <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
           </Col>
         </Row>
-        <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
-                className = 'centered-children'
-                target="_blank" >
-            <BsInstagram size ='1.5em'
+        <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}className ='horizontal-centered-children '>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
+                  className = 'centered-children'
+                  target="_blank" >
+              <BsInstagram size ='1.5em'
+                           style ={{cursor:'pointer'}}
+                           color='#595456'/>
+            </Link>
+          </Col>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <Link to={{pathname:'https://www.tiktok.com/@roamingintheknow'}}
+                  className = 'centered-children'
+                  target="_blank" >
+              <SiTiktok size ='1.5em'
+                        style ={{cursor:'pointer'}}
+                        color='#595456'/>
+            </Link>
+          </Col>
+          <Col style ={{maxWidth:'2.6em'}}>
+            <Link to={{pathname:'https://www.youtube.com/'}}
+                  className = 'centered-children'
+                  target="_blank">
+              <BsYoutube size ='1.5em'
                          style ={{cursor:'pointer'}}
-                         color='black'/>
-          </Link>
-        </Col>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <Link to={{pathname:'https://www.tiktok.com/@roamingintheknow'}}
-                className = 'centered-children'
-                target="_blank" >
-            <SiTiktok size ='1.5em'
-                      style ={{cursor:'pointer'}}
-                      color='black'/>
-          </Link>
-        </Col>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <Link to={{pathname:'https://www.youtube.com/'}}
-                className = 'centered-children'
-                target="_blank">
-            <BsYoutube size ='1.5em'
-                       style ={{cursor:'pointer'}}
-                       color='black'/>
-          </Link>
-        </Col>
+                         color='#595456'/>
+            </Link>
+          </Col>
           <Col style ={{maxWidth:'10em'}}>
-             <p className ='centered-text roaming-text-sm'>@roamingintheknow</p>
+             <p className ='centered-text roaming-text-sm charcoal' >@roamingintheknow</p>
           </Col>
         </Row>
       </Container>
