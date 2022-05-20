@@ -103,7 +103,7 @@ const BusForm = props => {
   }
 
   function resetState(){
-    setMilage('7')
+    setMilage(40)
     setDistance('')
     setCarbonFootprint(0)
     setDrivingType('City')

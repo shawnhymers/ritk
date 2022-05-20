@@ -36,27 +36,42 @@ class AppMain extends Component {
             {name:'Carbon Cost of Latam',
              pic:'/CostaRicaGallery/costarica15.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/VancouverActivityGuide'},
+             link:'/CarbonCostOfLatam'},
 
             {name:'Carbon Cost of Flying',
              pic:'/planeWing.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/VancouverActivityGuide'},
+             link:'/CarbonCostOfFlying'},
 
             {name:'Carbon Cost of Colombia',
              pic:'/MedellinGallery/medellin11.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/VancouverActivityGuide'},
+             link:'/CarbonCostOfColombia'},
 
             {name:'Carbon Cost of Ecuador',
              pic:'/QuitoGallery/quito26.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/VancouverActivityGuide'},
+             link:'/CarbonCostOfEcuador'},
 
             {name:'Carbon Cost of Our Diet',
              pic:'/whistlerFood.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/VancouverActivityGuide'},
+             link:'/CarbonCostOfDiet'},
+
+            {name:'In The Know Medellin',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/InTheKnowMedellin'},
+
+            {name:'In The Know Quito',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/InTheKnowQuito'},
+
+            {name:'In The Know Guatape',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/InTHeKnowGuatape'},
               ],
 
       galleries:[

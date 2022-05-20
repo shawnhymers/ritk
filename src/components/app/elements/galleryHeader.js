@@ -63,7 +63,9 @@ return(
     </Link>
   </Col>
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
-      <p className = 'balloon-text medium-link-text auto-margins'>Galleries</p>
+    <Link to='home/gallery' className = 'centered-children'style = {{textDecoration:'none'}} >
+      <p className = 'balloon-text medium-link-text auto-margins roaming-black-text'>Galleries</p>
+    </Link>
   </Col>
 </Row>
 </>}

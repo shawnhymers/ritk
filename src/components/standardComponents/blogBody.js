@@ -11,6 +11,8 @@ const BlogSegment = props =>{
     {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2} isMobile={props.isMobile}/>:null}
     {props.content.type === 'horizontalImage'? <HorizontalBlogImage src ={props.content.src}/> :null}
     {props.content.type === 'verticalImage'? <VerticalBlogImage src = {props.content.src}/>:null}
+    {props.content.type === 'footprintLine'? <FootprintLine unit={props.content.unit}footprint={props.content.footprint}/>:null}
+    {props.content.type === 'footprintComparison'? <FootprintComparison footprintPerDay={props.content.footprintPerDay}/>:null}
     </>
   )
 }
@@ -195,6 +197,34 @@ const VerticalBlogImage = props =>{
   )
 }
 
+const FootprintLine =props=>{
+  return(
+    <>
+    <Row className =''>
+      <Col>
+        <p className =' roaming-text blog-body'>{props.footprint+' '+props.unit}</p>
+      </Col>
+    </Row>
+    </>
+  )
+}
+
+const FootprintComparison=props=>{
+
+  return(
+    <>
+      <Row>
+      <Col>
+        <p className ={'centered-text roaming-text medium-text '+(parseInt(props.footprintPerDay/41.5*100)<=100? " roaming-green-text":" roaming-red-text")}>{parseInt(props.footprintPerDay/41.5*100)+'% The average Canadian footprint'}</p>
+      </Col>
+      <Col>
+        <p className ={'centered-text roaming-text  medium-text'+(parseInt(props.footprintPerDay/13*100)<=100? " roaming-green-text":" roaming-red-text")}>{parseInt(props.footprintPerDay/13*100)+'% The global average footprint'}</p>
+      </Col>
+      </Row>
+    </>
+  )
+}
+
 const DipTych = props =>{
   function dummy(){
     return(false)
@@ -243,3 +273,8 @@ const DipTych = props =>{
 }
 
 export default BlogBody;
+
+
+// <Col>
+//   <p className ='centered-text roaming-text medium-link-text'>{props.distance+' KM'}</p>
+// </Col>

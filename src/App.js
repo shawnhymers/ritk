@@ -15,6 +15,15 @@ import WhistlerFoodGuide from './components/app/blogs/whistlerFoodGuide';
 import WhistlerActivityGuide from './components/app/blogs/whistlerActivityGuide';
 import VancouverFoodGuide from './components/app/blogs/vancouverFoodGuide';
 import VancouverActivityGuide from './components/app/blogs/vancouverActivityGuide';
+import CarbonCostOfLatam from './components/app/blogs/carbonCostOfLatam';
+import CarbonCostOfFlying from './components/app/blogs/carbonCostOfFlying';
+import CarbonCostOfColombia from './components/app/blogs/carbonCostOfColombia';
+import CarbonCostOfEcuador from './components/app/blogs/carbonCostOfEcuador';
+import CarbonCostOfDiet from  './components/app/blogs/carbonCostOfDiet';
+
+import InTheKnowQuito from './components/app/blogs/inTheKnowQuito'
+import InTheKnowGuatape from './components/app/blogs/inTheKnowGuatape'
+import InTheKnowMedellin from './components/app/blogs/inTheKnowMedellin'
 
 import CostaRica from './components/app/galleries/costaRica'
 import Granada from './components/app/galleries/granada'
@@ -41,6 +50,16 @@ function App() {
             <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
             <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
             <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
+
+            <Route exact path="/CarbonCostOfLatam" component={CarbonCostOfLatam} />
+            <Route exact path="/CarbonCostOfColombia" component={CarbonCostOfColombia} />
+            <Route exact path="/CarbonCostOfDiet" component={CarbonCostOfDiet} />
+            <Route exact path="/CarbonCostOfFlying" component={CarbonCostOfFlying} />
+            <Route exact path="/CarbonCostOfEcuador" component={CarbonCostOfEcuador} />
+
+            <Route exact path="/InTheKnowMedellin" component={InTheKnowMedellin} />
+            <Route exact path="/InTheKnowQuito" component={InTheKnowQuito} />
+            <Route exact path="/InTheKnowGuatape" component={InTheKnowGuatape} />
 
             <Route exact path="/CostaRica" component={CostaRica} />
             <Route exact path="/Granada" component={Granada} />
