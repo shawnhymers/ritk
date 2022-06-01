@@ -34,10 +34,10 @@ return(
               blurb ={"Here is a breakdown of our carbon footprint of 51 days of travelling Latin America."}
               updated={'May 2022'}
               isMobile={isMobile}
-              contentTest ={[{type:'header',text:"TLDR"},
+              contentTest ={[ {type:'header',text:"Carbon Footprint For LATAM"},
                               {type:'horizontalImage',src:'CarbonCostCharts/LATAMCost.png'},
-                              {type:'listItem',text:"Total Footprint "},
-                                {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2'},
+                              {type:'listItem',text:"Total Footprint ",centered:true},
+                                {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2',centered:true},
                               {type:'footprintComparison',footprintPerDay:'24.9'},
                             {type:'paragraph',text:'Overall Central America was a huge win for us. It was the first leg out of adventure, and we were still learning how to travel safely and efficiently. A huge hit to our carbon budget was our flights in. Flying all the way from Canada to Nicaragua was over half of our carbon footprint for the entire 51 days. This is a great example of how longer trips, if you have the privilege of taking the time, are much more environmentally friendly. A big win for us was the amount of Vegan food we found all throughout Central America. Although it’s not the most vegan friendly part of the world, we were able to find delicious vegan food for the entirety of our trip which really helped us offset those huge flights!'},
 
@@ -75,15 +75,17 @@ return(
                              {type:'footprintLine',footprint:'107',unit:'KG Co2'},
 
                              {type:'header',text:"Accomodation"},
-                             {type:'diptych', src1:'ometepeGallery/ometepe11.jpg',src2:'ometepeGallery/ometepe12.jpg'},
+                             {type:'listItem',text:"50 Nights-- Mix of Small Hostels and Eco Lodges"},
                              {type:'footprintLine',footprint:'306.1',unit:'KG Co2'},
 
-                             {type:'header',text:"Additional Costs of Day Trips / Ubers / Public Transport"},
-                             {type:'footprintLine',footprint:'19',unit:'KG Co2'},
+                             {type:'header',text:"Additional Costs"},
+                             {type:'listItem',text:"Day Trips / Ubers / Public Transport"},
+                            {type:'footprintLine',footprint:'19',unit:'KG Co2'},
 
                              {type:'header',text:"Overview"},
+                             {type:'horizontalImage',src:'CarbonCostCharts/LATAMCost.png'},
                              {type:'listItem',text:"Total Footprint "},
-                             {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2'},
+                               {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2',centered:true},
                              {type:'footprintComparison',footprintPerDay:'24.9'},
 
 

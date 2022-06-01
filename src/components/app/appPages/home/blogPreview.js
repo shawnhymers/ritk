@@ -24,7 +24,7 @@ return(
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Whistler Activity Guide</p>
+          <p className ='centered-text roaming-text-sm'>Whistler Activity Guide</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
@@ -38,7 +38,7 @@ return(
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Whistler Food Guide</p>
+          <p className ='centered-text roaming-text-sm'>Whistler Food Guide</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
@@ -52,7 +52,7 @@ return(
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text'>Medellin Food Guide</p>
+          <p className ='centered-text roaming-text-sm'>Medellin Food Guide</p>
         </Row>
       </Col>
     </Row>

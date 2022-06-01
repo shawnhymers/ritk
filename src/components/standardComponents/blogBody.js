@@ -7,11 +7,11 @@ const BlogSegment = props =>{
     <>
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
-    {props.content.type ==='listItem'?<BlogListItem text ={props.content.text}/>:null}
+    {props.content.type ==='listItem'?<BlogListItem text ={props.content.text} centered={props.content.centered}/>:null}
     {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2} isMobile={props.isMobile}/>:null}
     {props.content.type === 'horizontalImage'? <HorizontalBlogImage src ={props.content.src}/> :null}
     {props.content.type === 'verticalImage'? <VerticalBlogImage src = {props.content.src}/>:null}
-    {props.content.type === 'footprintLine'? <FootprintLine unit={props.content.unit}footprint={props.content.footprint}/>:null}
+    {props.content.type === 'footprintLine'? <FootprintLine unit={props.content.unit}footprint={props.content.footprint} centered={props.content.centered}/>:null}
     {props.content.type === 'footprintComparison'? <FootprintComparison footprintPerDay={props.content.footprintPerDay}/>:null}
     </>
   )
@@ -200,8 +200,8 @@ const VerticalBlogImage = props =>{
 const FootprintLine =props=>{
   return(
     <>
-    <Row className =''>
-      <Col>
+    <Row >
+      <Col className ={(props.centered? "centered-children ":" ")}>
         <p className =' roaming-text blog-body'>{props.footprint+' '+props.unit}</p>
       </Col>
     </Row>

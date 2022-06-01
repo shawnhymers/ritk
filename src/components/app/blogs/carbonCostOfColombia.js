@@ -37,7 +37,7 @@ return(
               contentTest ={[{type:'header',text:"Carbon Footprint For Colombia"},
                               {type:'horizontalImage',src:'CarbonCostCharts/colombiaCost.png'},
                               {type:'listItem',text:"Total Footprint "},
-                                {type:'footprintLine',footprint:'713.2',unit:'KG Co2'},
+                                {type:'footprintLine',footprint:'713.2',unit:'KG Co2',centered:true},
                               {type:'footprintComparison',footprintPerDay:'18.3'},
                             {type:'paragraph',text:'Colombia was even easier than our time in Central America when it comes to our carbon footprint. Firstly, we headed to Colombia from Panama City which is a hop skip and a jump compared to if we had returned home and then flew in again from Canada. This is another one of our core take aways for how to reduce your carbon footprint: traveling sequentially, i.e. checking out adjacent countries instead of zig zagging around the globe. Secondly, the vegan food in Colombia (excluding Cartagena) was INCREDIBLE. We had our pick of fully vegan restaurants, and others made vegan options very easily available. We even found tofu and vegan cheese at the supermarkets in Medellin and Bogota.'},
                             {type:'paragraph',text:'Unfortunately, we ended up taking 3 different flights in just 39 days. This was our biggest failure as sustainable travelers during this portion of our trip. The first flight was somewhat unavoidable. Between Panama and Colombia there is the Darien Gap, which is a remote, road-less swath of jungle that is impossible to cross by land. The only non-flight option was a 5-day boat trip which included 3 days on the open ocean. For those looking for an environmentally friendly transportation option it looks like quite the adventure. We weren’t sure if we were up for such an adventure, and our work schedules didn’t line up with the 5 days on the ocean, so we opted for a short flight. '},
@@ -71,16 +71,18 @@ return(
 
 
                              {type:'header',text:"Accomodation"},
-                             {type:'listItem',text:"38 Nights"},
+                             {type:'listItem',text:"38 Nights -- Private Rooms at Small Hostels"},
                              {type:'footprintLine',footprint:'251.5',unit:'KG Co2'},
 
-
-
+                             {type:'header',text:"Additional Costs"},
+                             {type:'listItem',text:"Day Trips / Ubers / Public Transport"},
+                            {type:'footprintLine',footprint:'19',unit:'KG Co2'},
 
                              {type:'header',text:"Overview"},
-                             {type:'listItem',text:"Total Footprint "},
+
                              {type:'horizontalImage',src:'CarbonCostCharts/colombiaCost.png'},
-                               {type:'footprintLine',footprint:'713.2',unit:'KG Co2'},
+                             {type:'listItem',text:"Total Footprint "},
+                               {type:'footprintLine',footprint:'713.2',unit:'KG Co2', centered:true},
                              {type:'footprintComparison',footprintPerDay:'18.3'},
 
                            ]}/>
