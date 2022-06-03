@@ -18,6 +18,22 @@ class AppMain extends Component {
 
       blogSearch :'',
       blogs:[
+
+            {name:'In The Know Medellin',
+             pic:'/MedellinGallery/medellin11.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/InTheKnowMedellin'},
+
+             {name:'Carbon Cost of Our Diet',
+              pic:'/whistlerFood.jpg',
+              tags:['activity', 'notbc','','','','','','','',''],
+              link:'/CarbonCostOfDiet'},
+
+              {name:'Whistler Activity Guide',
+               pic:'/whistlerActivity.jpg',
+               tags:['activity', 'bc','','','','','','','',''],
+               link:'/WhistlerActivityGuide'},
+
             {name:'Vancouver Food Guide',
              pic:'/vancouverFood.jpg',
              tags:['food', 'bc','','','','','','','',''],
@@ -28,10 +44,7 @@ class AppMain extends Component {
              tags:['food', 'bc','','','','','','','',''],
              link:'/WhistlerFoodGuide'},
 
-            {name:'Whistler Activity Guide',
-             pic:'/whistlerActivity.jpg',
-             tags:['activity', 'bc','','','','','','','',''],
-             link:'/WhistlerActivityGuide'},
+
 
             {name:'Carbon Cost of Latam',
              pic:'/CostaRicaGallery/costarica15.jpg',
@@ -53,23 +66,17 @@ class AppMain extends Component {
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
-            {name:'Carbon Cost of Our Diet',
-             pic:'/whistlerFood.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfDiet'},
 
-            {name:'In The Know Medellin',
-             pic:'/whistlerFood.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/InTheKnowMedellin'},
+
+
 
             {name:'In The Know Quito',
-             pic:'/whistlerFood.jpg',
+             pic:'/QuitoGallery/quito17.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
 
             {name:'In The Know Guatape',
-             pic:'/whistlerFood.jpg',
+             pic:'/GuatapeGallery/guatape1.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/InTHeKnowGuatape'},
               ],

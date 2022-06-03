@@ -1,6 +1,7 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
 import {  MdFiberManualRecord } from "react-icons/md";
+import Footer from "../app/appPages/home/footer"
 
 const BlogSegment = props =>{
   return(
@@ -21,7 +22,7 @@ const BlogBody = props => {
 
 return(
   <>
-    <Container className ='full-width ' style ={{margin:'0vh',padding:'0vh',overflofX:'hidden'}}>
+    <Container className ='full-width roaming-white' style ={{margin:'0vh',padding:'0vh',overflofX:'hidden'}}>
       <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>
@@ -127,7 +128,9 @@ return(
           &nbsp;
         </Col>
       </Row>
+
     </Container>
+      <Footer/>
   </>
 )}
 

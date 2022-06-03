@@ -71,6 +71,11 @@
   font-size: calc((1.8 - 1) * 0.9vw + 0.9rem);
 
 }
+.roaming-text-xtra-sm{
+  font-family: roamingFont;
+  font-size: calc((1.8 - 1) * 0.5vw + 0.6rem);
+
+}
 .roaming-black-text{
   color: #595456;
 }
@@ -164,7 +169,7 @@
   font-weight: 500;
   text-transform: none;
   line-height: 1.4em;
-  color: #B97F51; 
+  color: #B97F51;
   font-size: calc((3.4 - 1) * 0.9vw + 0.7rem);
 }
 

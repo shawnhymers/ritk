@@ -2,6 +2,7 @@ import React from 'react';
 import {Row,Col,Button} from 'react-bootstrap';
 import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
+import { MdCopyright } from "react-icons/md";
 import  { useState,useRef } from 'react';
 import LargeModal from "../../../standardComponents/largeModal"
 import { sendForm } from 'emailjs-com';
@@ -48,13 +49,11 @@ const Footer = props => {
 
 return(
   <>
-  <Row>
-    <Col xs={12} sm={12} md={8} lg={8} xl={8}>
-      <Row className ='form-line nice-input-wrapper'>
-        <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-          &nbsp;
-        </Col>
-        <Col xs={6} sm={6} md={7} lg={7} xl={7}>
+  <Row className='vertical-padding-sm'>
+    <Col className ='vertical-centered-children '>
+      <Row className ='form-line nice-input-wrapper fill-width'>
+
+        <Col xs={6} sm={6} md={8} lg={8} xl={8}>
           <Row>
             <input type="text"
                    id="userEmail"
@@ -67,34 +66,50 @@ return(
             </label>
           </Row>
         </Col>
-          <Col xs={4} sm={4} md={3} lg={3} xl={3}>
+          <Col xs={6} sm={6} md={4} lg={4} xl={4}>
           <Button value ="Contact"
                   variant='custom'
-                  className='roaming-text-sm'
+                  className='roaming-text-xtra-sm'
                   onClick = {toggleContactModal}>Contact Us</Button>
         </Col>
-        <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-          &nbsp;
-        </Col>
+
       </Row>
     </Col>
-    <Col xs={12} sm={12} md={4} lg={4} xl={4}>
-      <Row  style ={{paddingTop:'2em',paddingBottom:'2em'}} className ='centered-children'>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+    <Col>
+      <Row className =' centered-children vertical-padding-sm'>
+        <Col xs={0} sm={0} md={6} lg={6} xl={6}>
+          &nbsp;
         </Col>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className ='centered-children'>
+          <Row>
+            <Col style ={{maxWidth:'2.6em'}}>
+              <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+            </Col>
+            <Col style ={{maxWidth:'2.6em'}}>
+              <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+            </Col>
+            <Col style ={{maxWidth:'2.6em'}}>
+              <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+            </Col>
+            <Col style ={{maxWidth:'10em'}}>
+               <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
+            </Col>
+          </Row>
         </Col>
-        <Col style ={{maxWidth:'2.6em'}}>
-          <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+      </Row>
+      <Row className ='centered-children'>
+        <Col xs={0} sm={0} md={6} lg={6} xl={6}>
+          &nbsp;
         </Col>
-        <Col style ={{maxWidth:'10em'}}>
-           <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className ='centered-children'>
+          <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
         </Col>
       </Row>
     </Col>
   </Row>
+
+
+
 
   {showContactModal?
     <>
@@ -135,3 +150,65 @@ return(
 </>)}
 
 export default Footer;
+
+//
+//
+// <Row>
+//   <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+//     <Row className ='form-line nice-input-wrapper'>
+//       <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+//         &nbsp;
+//       </Col>
+//       <Col xs={6} sm={6} md={5} lg={5} xl={5}>
+//         <Row>
+//           <input type="text"
+//                  id="userEmail"
+//                  name="userEmail"
+//                  value = {userEmail}
+//                  placeholder ='Your Email:'
+//                  onChange = {updateEmail}/>
+//           <label htmlFor="userEmail">
+//             Your Email:
+//           </label>
+//         </Row>
+//       </Col>
+//         <Col xs={4} sm={4} md={3} lg={3} xl={3}>
+//         <Button value ="Contact"
+//                 variant='custom'
+//                 className='roaming-text-sm'
+//                 onClick = {toggleContactModal}>Contact Us</Button>
+//       </Col>
+//       <Col xs={1} sm={1} md={3} lg={3} xl={3}>
+//         &nbsp;
+//       </Col>
+//     </Row>
+//   </Col>
+//   <Col xs={12} sm={12} md={4} lg={4} xl={4}>
+//     <Row  style ={{paddingTop:'2em',paddingBottom:'2em'}} className ='centered-children'>
+//       <Col style ={{maxWidth:'2.6em'}}>
+//         <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+//       </Col>
+//       <Col style ={{maxWidth:'2.6em'}}>
+//         <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+//       </Col>
+//       <Col style ={{maxWidth:'2.6em'}}>
+//         <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+//       </Col>
+//       <Col style ={{maxWidth:'10em'}}>
+//          <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
+//       </Col>
+//     </Row>
+//   </Col>
+// </Row>
+// <Row>
+//
+// </Row>
+// <Row style={{paddingBottom:'1em'}}>
+//   <Col xs={0} sm={0} md={6} lg={8} xl={8}>
+//     &nbsp;
+//   </Col>
+//   <Col xs={12} sm={12} md={6} lg={4} xl={4} className ='centered-children'>
+//
+//     <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
+//   </Col>
+// </Row>

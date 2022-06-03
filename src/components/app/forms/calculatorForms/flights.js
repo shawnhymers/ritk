@@ -68,6 +68,8 @@ const FlightForm = props => {
     return(distance)
   }
   function calculateFlightFootprint(distance){
+    console.log('distance is...')
+    console.log(distance)
     // Parameters that are the same for short or long
    let emmisionFactor = 3.15;
    let passengerLoadFactor = 0.82;
