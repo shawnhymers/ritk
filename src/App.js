@@ -20,6 +20,7 @@ import CarbonCostOfFlying from './components/app/blogs/carbonCostOfFlying';
 import CarbonCostOfColombia from './components/app/blogs/carbonCostOfColombia';
 import CarbonCostOfEcuador from './components/app/blogs/carbonCostOfEcuador';
 import CarbonCostOfDiet from  './components/app/blogs/carbonCostOfDiet';
+import BanosActivityGuide from './components/app/blogs/banosActivityGuide';
 
 import InTheKnowQuito from './components/app/blogs/inTheKnowQuito'
 import InTheKnowGuatape from './components/app/blogs/inTheKnowGuatape'
@@ -50,6 +51,7 @@ function App() {
             <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
             <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
             <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
+            <Route exact path="/BanosActivityGuide" component={BanosActivityGuide} />
 
             <Route exact path="/CarbonCostOfLatam" component={CarbonCostOfLatam} />
             <Route exact path="/CarbonCostOfColombia" component={CarbonCostOfColombia} />

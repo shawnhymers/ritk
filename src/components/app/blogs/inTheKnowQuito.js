@@ -41,11 +41,26 @@ return(
 
                               {type:'header',text:"What To Do"},
                               {type:'listItem',text:"1) Visit The Old Town"},
-                              {type:'listItem',text:"2) Do a Day Trip to Otavalo Market,"},
+                              {type:'paragraph',text:"Quito has the most well-preserved old towns in South America and is now a UNESCO world heritage site. The old town is huge and there is a lot to see. From the largest neo-gothic basilica in the Americas to one of the highest statues in South America. "},
+                              {type:'horizontalImage',src:'/QuitoGallery/quito18.jpg'},
+
+                              {type:'listItem',text:"2) Do a Day Trip to Otavalo Market"},
+                              {type:'paragraph',text:"You could spend all day in South America’s largest indigenous craft festival. The market stretches over many city blocks and is packed full of incredible handmade items made of different textiles. Keep in mind that bartering is part of the experience, and the vendors are very skilled at going back and forth on the price."},
+                              {type:'diptych',src1:'/OtavaloGallery/Otavalo21.jpg',src2:'/OtavaloGallery/Otavalo22.jpg'},
+
                               {type:'listItem',text:"3) Visit The Equator"},
+                              {type:'paragraph',text:"There are several sites along the equator to choose to visit, the one we visited was in Cayambe and is technically more accurate than the famous one closer to Quito. If you have the chance, there are local guides that can explain how the indigenous people knew they were at the centre of the world how unique the site is globally. "},
+                              {type:'horizontalImage',src:'/QuitoGallery/quito30.jpg'},
+
                               {type:'listItem',text:"4) Walk Around La Floresta Neighbourhood"},
+                              {type:'paragraph',text:"The La Floresta Neighbourhood is a hip little area with all the cute coffee shops you could ask for. We took our laptops and had a few fun work dates there. Great place for a coffee, some work, or even catch a movie at Ochoymedio."},
+
                               {type:'listItem',text:"5) Climb Cotopaxi"},
+                              {type:'paragraph',text:"Cotopaxi is one the highest active volcanoes in the world. The hike we did started at around 4,000 m elevation in the parking lot and then we went up to around 5,100 m to visit the glacier. Even without the added challenge of the elevation, it is a steep and unforgiving hike, so make sure you’ve acclimated to the elevation and remember to pack plenty of water."},
+                              {type:'horizontalImage',src:'/cotopaxi/cotopaxi1.jpg'},
+
                               {type:'listItem',text:"6) Ride The TelefériQo Cable Car"},
+                              {type:'paragraph',text:"This is one of the highest aerial lifts in the world. We never got around to doing this one, but I really wish we did! "},
 
                               {type:'header',text:"Where To Stay"},
                               {type:'paragraph',text:'There are two neighbourhoods you’ll likely stay in if you’re visiting: La Floresta and Old Town, and you’ll be happy either way. It depends on if you want to better know the city’s past or present.'},

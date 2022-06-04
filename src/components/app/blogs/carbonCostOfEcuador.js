@@ -30,15 +30,21 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
-    <BlogBody header ={{src:'QuitoGallery/quito26.jpg', label:'Carbon Cost of Equador'}}
-              blurb ={"Here is a breakdown of our carbon footprint of 21 days of travelling Equador."}
+    <BlogBody header ={{src:'QuitoGallery/quito26.jpg', label:'Carbon Cost of Ecuador'}}
+              blurb ={"Here is a breakdown of our carbon footprint of 21 days of travelling Ecuador."}
               updated={'May 2022'}
               isMobile={isMobile}
-              contentTest ={[{type:'header',text:"Carbon Footprint For Equador"},
+              contentTest ={[{type:'header',text:"Carbon Footprint For Ecuador"},
                               {type:'horizontalImage',src:'CarbonCostCharts/equadorCost.png'},
                               {type:'listItem',text:"Total Footprint "},
                                 {type:'footprintLine',footprint:'354',unit:'KG Co2',centered:true},
                               {type:'footprintComparison',footprintPerDay:'16.9'},
+
+                              {type:'paragraph',text:"Ecuador is a country that makes it easier to have a reduced carbon footprint. With 79% of its power coming from hydroelectricity, a yearlong growing season that allows for local production of many fruits and vegetables, vegan food options in every city, and a country small enough that bus travel is very doable, this has been one of the easiest countries to keep our carbon footprint equivalent or less than it would be back home. Embracing the local way of life, eating plant-based, and using shared transportation is the easiest way to be carbon conscious in Ecuador."},
+                              {type:'paragraph',text:"Our biggest carbon cost was our flight to Quito from Colombia. We were rushing from one work commitment in Colombia to another in Ecuador, and there were several travel advisories warning to avoid the land border at the time. "},
+                              {type:'paragraph',text:"Once in the country we were able to get around strictly via bus. We went from Quito to Tena, to Banos, to Cuenca. Each destination was well worth a few days exploring and breaking up the journey into so many stops meant that each bus was pretty short. "},
+                              {type:'paragraph',text:"We found eating plant based was simple. In the major cities the grocery stores were stocked with plant-based alternatives meats and cheeses, and tofu was pretty easy to find. Also, the local markets throughout the country were always happy to make us a simple plate of rice, beans, potatoes, plantains, and veggies. Adding a little Ajii sauce it was amazing!"},
+                              {type:'paragraph',text:"So far Ecuador has been our smallest footprints to date with an average of just 16.9 KG a day. Our target while travelling has been 41 KG a day, which is the Canadian average, so we were thrilled to come in under half of our target."},
 
 
                              {type:'header',text:"Flights"},

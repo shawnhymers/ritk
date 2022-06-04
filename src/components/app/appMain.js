@@ -67,7 +67,11 @@ class AppMain extends Component {
              link:'/CarbonCostOfEcuador'},
 
 
-
+             {name:'Banos Activity Guide',
+              pic: '/banos/banos5.jpg',
+              tags:['activity', 'notbc','','','','','','','',''],
+              link:'/BanosActivityGuide'
+            },
 
 
             {name:'In The Know Quito',
