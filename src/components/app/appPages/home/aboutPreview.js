@@ -17,7 +17,7 @@ return(
             <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
           </Col>
         </Row>
-        <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}>
+        <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}className ='horizontal-centered-children '>
           <Col style ={{maxWidth:'2.6em'}}>
             <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
                   className = 'centered-children'

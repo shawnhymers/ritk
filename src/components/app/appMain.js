@@ -21,69 +21,74 @@ class AppMain extends Component {
 
             {name:'In The Know Medellin',
              pic:'/MedellinGallery/medellin11.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
              {name:'Carbon Cost of Our Diet',
               pic:'/whistlerFood.jpg',
-              tags:['activity', 'notbc','','','','','','','',''],
+              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
               link:'/CarbonCostOfDiet'},
 
               {name:'Whistler Activity Guide',
                pic:'/whistlerActivity.jpg',
-               tags:['activity', 'bc','','','','','','','',''],
+               tags:['activity guide', 'bc','','','','','','','',''],
                link:'/WhistlerActivityGuide'},
 
             {name:'Vancouver Food Guide',
              pic:'/vancouverFood.jpg',
-             tags:['food', 'bc','','','','','','','',''],
+             tags:['food guide', 'bc','','','','','','','',''],
              link:'/VancouverFoodGuide'},
 
             {name:'Whistler Food Guide',
              pic:'/whistlerFood.jpg',
-             tags:['food', 'bc','','','','','','','',''],
+             tags:['food guide', 'bc','','','','','','','',''],
              link:'/WhistlerFoodGuide'},
 
 
 
             {name:'Carbon Cost of Latam',
              pic:'/CostaRicaGallery/costarica15.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
             {name:'Carbon Cost of Flying',
              pic:'/planeWing.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfFlying'},
 
             {name:'Carbon Cost of Colombia',
              pic:'/MedellinGallery/medellin11.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfColombia'},
 
             {name:'Carbon Cost of Ecuador',
              pic:'/QuitoGallery/quito26.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
 
              {name:'Banos Activity Guide',
               pic: '/banos/banos5.jpg',
-              tags:['activity', 'notbc','','','','','','','',''],
+              tags:['activity guide', 'notbc','','','','','','','',''],
               link:'/BanosActivityGuide'
             },
 
 
             {name:'In The Know Quito',
              pic:'/QuitoGallery/quito17.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
 
             {name:'In The Know Guatape',
              pic:'/GuatapeGallery/guatape1.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTHeKnowGuatape'},
-              ],
+
+              {name:'Medellin Food Guide',
+               pic:'/GuatapeGallery/guatape1.jpg',
+               tags:['food guide', 'notbc','','','','','','','',''],
+               link:'/MedellinFoodGuide'},
+                ],
 
       galleries:[
 

@@ -1,6 +1,6 @@
 import  {  Component } from "react";
 import React from "react";
-import {  Row, Col} from 'react-bootstrap';
+import {  Row, Col,Container} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import HelpIcon from "../../standardComponents/helpIcon"
 
@@ -100,41 +100,46 @@ class Blog extends Component {
 
   }
   tagInput = (e)=>{
-    this.setState({searchValue:e.target.value},()=>{this.tagSearch(e)})
+    this.setState({searchValue:e.target.value},()=>{this.tagSearch(e.target.value)})
   }
-  tagSearch =(e)=>{
+  suggestedTagInput=(input)=>{
+    console.log(input)
+    this.setState({searchValue:input},()=>{this.tagSearch(input)})
+  }
+  tagSearch =(value)=>{
     console.log('searching by tag')
+    console.log(value)
     let tempBlogs = []
 
     for (var i = 0; i < this.props.blogs.length; i++) {
-      if (this.props.blogs[i].tags[0].includes(e.target.value.toLowerCase())) {
+      if (this.props.blogs[i].tags[0].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[1].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[1].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[2].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[2].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[3].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[3].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[4].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[4].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[5].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[5].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[6].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[6].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[7].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[7].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[8].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[8].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
-      else if (this.props.blogs[i].tags[9].includes(e.target.value.toLowerCase())) {
+      else if (this.props.blogs[i].tags[9].includes(value.toLowerCase())) {
         tempBlogs.push(this.props.blogs[i])
       }
     }
@@ -228,11 +233,53 @@ class Blog extends Component {
       </Row>
       {this.state.emptySearch?
         <>
-          <Row className ='roaming-white' style ={{minHeight:'100vh'}}>
-            <p>Whoops! We don't have a blog about that yet.</p>
-            <p>Try some of these popular tags:</p>
-            <p>Food, Colombia, Accomodation</p>
-          </Row>
+          <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
+            <Row className ='roaming-white'>
+              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                &nbsp;
+              </Col>
+              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                <img style ={{width:'100%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
+              </Col>
+              <Col xs={3} sm={3} md={3} lg={3} xl={3} className='centered-children'>
+                <div class="box3 sb14"><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+              </Col>
+              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                &nbsp;
+              </Col>
+            </Row>
+            <Row className ='roaming-white centered-children vertical-padding-sm' >
+              <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
+            </Row>
+            <Row>
+              <Col>
+                &nbsp;
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
+                </div>
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
+                </div>
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
+                </div>
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
+                </div>
+              </Col>
+              <Col>
+                &nbsp;
+              </Col>
+            </Row>
+          </Container>
         </>
 
       :null}

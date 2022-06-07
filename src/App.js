@@ -8,6 +8,7 @@ import './styles/images.css';
 import './styles/layout.css';
 import './styles/text.css';
 import './styles/effects.css';
+import './styles/speechBubbles.css'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from './components/main.js';
 
@@ -21,6 +22,7 @@ import CarbonCostOfColombia from './components/app/blogs/carbonCostOfColombia';
 import CarbonCostOfEcuador from './components/app/blogs/carbonCostOfEcuador';
 import CarbonCostOfDiet from  './components/app/blogs/carbonCostOfDiet';
 import BanosActivityGuide from './components/app/blogs/banosActivityGuide';
+import MedellinFoodGuide from "./components/app/blogs/medellinFoodGuide"
 
 import InTheKnowQuito from './components/app/blogs/inTheKnowQuito'
 import InTheKnowGuatape from './components/app/blogs/inTheKnowGuatape'
@@ -48,8 +50,10 @@ function App() {
             <Route exact path="/home/:redirectView" component={Main} />
 
             <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
-            <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
             <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
+            <Route exact path="/MedellinFoodGuide" component={MedellinFoodGuide} />
+
+            <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
             <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
             <Route exact path="/BanosActivityGuide" component={BanosActivityGuide} />
 
