@@ -47,10 +47,12 @@ return(
                              {type:'header',text:"What To Do"},
                              {type:'listItem',text:'1) Climb El Peñol Rock'},
                              {type:'paragraph',text:"El Penol Rock is a 65-million-year-old massive stone monolith that stands 200 meters above the valley below. It is an incredible sight to be seen from a distance, but it also provides amazing views from the top. You can climb the 708 steps built into the side of the cliff and come up to the viewing area, which is complete with gift shops, bars, and food stands. If you can plan your trip so you can experience sunset from the lookout, we highly recommend it."},
+                             {type:'diptych',src1:'/GuatapeGallery/Guatape28.jpg',src2:'/GuatapeGallery/Guatape31.jpg'},
+
 
                              {type:'listItem',text:'2) Rent a Scooter'},
                              {type:'paragraph',text:"The typical way to get El Penol rock is via one of the local rickshaw drivers. A scooter provides a second more scenic option. On a scooter you can take the long side of the ring road that connects the rock and the town of Guatape. It is a beautiful ride, and you get to see El Penol from every angle before you arrive. We rented a scooter from the hostel we were staying at and the whole rental and filling it back up with gas was less than $15."},
-                             {type:'verticalImage',src:'/GuatapeGallery/Guatape7.jpg'},
+                             {type:'horizontalImage',src:'/GuatapeGallery/Guatape29.jpg'},
 
                              {type:'listItem',text:'3) Rent a Kayak'},
                              {type:'paragraph',text:"Guatape is surrounded by a beautiful system of lakes. Although we didn’t have the weather for it when we were there, there are many companies that offer watercraft rentals. You can rent anything from a kayak to a jet ski. There is an unbelievable amount of water to explore, at whatever your preferred speed is."},
