@@ -72,7 +72,6 @@ return(
                              {type:'paragraph',text:"Medellin was one of the best food destinations we’ve found in Latin America. There are loads and vegan/vegetarian restaurants to check out. You can see some of our top pics here."},
                              {type:'listItem',text:"3) Buy produce from a local market."},
                              {type:'paragraph',text:"There are local markets all over the city. They are very safe, cheap, and fun to explore even if you’re not in the mood to shop."},
-                             {type:'horizontalImage',src:'/MedellinGallery/Medellin5.jpg'},
 
                            ]}/>
   </div>

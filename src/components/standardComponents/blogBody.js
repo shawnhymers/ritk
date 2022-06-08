@@ -2,11 +2,21 @@ import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
 import {  MdFiberManualRecord } from "react-icons/md";
 import Footer from "../app/appPages/home/footer"
+import { Link } from "react-router-dom";
 
 const BlogSegment = props =>{
   return(
     <>
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
+    {props.content.type ==='linkParagraph'? <Row className ='vertical-margin-md' >
+                                              <p className ='blog-body' style={{display:'inline'}}>
+                                                {props.content.content.map((content, i)=>{
+                                                  return <LinkParagraphSegment content ={content}
+                                                                               isMobile={props.isMobile}
+                                                                               key={content.type+i}/>})}
+                                              </p>
+                                            </Row>
+                                      :null}
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
     {props.content.type ==='listItem'?<BlogListItem text ={props.content.text} centered={props.content.centered}/>:null}
     {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2} isMobile={props.isMobile}/>:null}
@@ -142,6 +152,22 @@ const BlogParagraph = props =>{
       <Row className ='vertical-margin-md' >
         <p className ='blog-body'>{props.text}</p>
       </Row>
+    </>
+  )
+}
+const LinkParagraphSegment = props=>{
+  return(
+    <>
+    {props.content.type==='text'?
+      <span>{props.content.text}</span>
+    :null
+    }
+    {props.content.type ==='link'?
+
+      <span><Link to={props.content.link}>{props.content.text}</Link></span>
+
+    :null}
+
     </>
   )
 }

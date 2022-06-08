@@ -67,7 +67,8 @@ return(
                              {type:'listItem',text:'2) Restaurante Vegano Zona Prosalud'},
                              {type:'paragraph',text:"Centrally located, with a well-priced meal of the day and expansive menu. We barely scratched the surface of their large menu but were very impressed with the meal we had."},
 
-                             {type:'paragraph',text:'Curious what it looks like through our eyes? See our photo gallery here. '}
+                             {type:'linkParagraph',content:[{type:'text',text:'Curious what it looks like through our eyes? See our photo gallery'},
+                                                            {type:'link',text:' here.',link:"/guatape"}]}
 
                            ]}/>
   </div>
