@@ -188,7 +188,54 @@ class Blog extends Component {
                                    index = {i}
                                    key={blog.name+i}/>})}
       </Row>
+      {this.state.emptySearch?
+        <>
+          <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
+            <Row className ='roaming-white'>
+              <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                &nbsp;
+              </Col>
+              <Col xs={5} sm={5} md={5} lg={5} xl={5}>
+                <img style ={{width:'120%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
+              </Col>
+              <Col xs={5} sm={5} md={5} lg={5} xl={5} className='centered-children'>
+                <div class="box3 sb14"><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+              </Col>
+              <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                &nbsp;
+              </Col>
+            </Row>
+            <Row className ='roaming-white centered-children vertical-padding-sm' >
+              <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
+            </Row>
+            <Row>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
+                </div>
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
+                </div>
+              </Col>
+            </Row>
+            <Row className='vertical-padding-sm'>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
+                </div>
+              </Col>
+              <Col className ='centered-children'>
+                <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
+                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </>
 
+      :null}
     </>
     :
     <>
