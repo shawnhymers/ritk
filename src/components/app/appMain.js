@@ -20,7 +20,7 @@ class AppMain extends Component {
       blogs:[
 
             {name:'In The Know Medellin',
-             pic:'/MedellinGallery/medellin11.jpg',
+             pic:'/MedellinGallery/Medellin11.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
@@ -57,7 +57,7 @@ class AppMain extends Component {
              link:'/CarbonCostOfFlying'},
 
             {name:'Carbon Cost of Colombia',
-             pic:'/MedellinGallery/medellin11.jpg',
+             pic:'/MedellinGallery/Medellin11.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfColombia'},
 

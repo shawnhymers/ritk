@@ -32,7 +32,7 @@ return(
     <LinksPreview useLink={props.useLink}/>
     <BlogPreview/>
     <GalleryPreview galleryImages={props.galleryPreviews}/>
-    <Footer/>
+    <Footer isMobile={props.isMobile}/>
   </>
 )
 }
