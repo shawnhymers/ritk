@@ -199,7 +199,7 @@ class Blog extends Component {
                 <img style ={{width:'120%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
               </Col>
               <Col xs={5} sm={5} md={5} lg={5} xl={5} className='centered-children'>
-                <div class="box3 sb14"><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                <div class="box3 sb14" style={{marginTop: '10vh'}}><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
               </Col>
               <Col xs={1} sm={1} md={1} lg={1} xl={1}>
                 &nbsp;
@@ -289,7 +289,7 @@ class Blog extends Component {
                 <img style ={{width:'100%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
               </Col>
               <Col xs={3} sm={3} md={3} lg={3} xl={3} className='centered-children'>
-                <div class="box3 sb14"><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                <div class="box3 sb14"style={{marginTop: '20vh'}}><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
               </Col>
               <Col xs={3} sm={3} md={3} lg={3} xl={3}>
                 &nbsp;

@@ -49,6 +49,56 @@ const Footer = props => {
 
 return(
   <>
+
+  {props.isMobile?
+    <>
+    <Row className ='form-line nice-input-wrapper fill-width'>
+      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+        <Row>
+          <input type="text"
+                 id="userEmail"
+                 name="userEmail"
+                 value = {userEmail}
+                 placeholder ='Your Email:'
+                 onChange = {updateEmail}/>
+          <label htmlFor="userEmail">
+            Your Email:
+          </label>
+        </Row>
+      </Col>
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <Button value ="Contact"
+                variant='custom'
+                className='roaming-text-xtra-sm'
+                onClick = {toggleContactModal}>Contact Us</Button>
+      </Col>
+
+    </Row>
+    <Row className ='vertical-padding-sm'>
+      <Col style ={{maxWidth:'15vw'}}>
+        &nbsp;
+      </Col>
+      <Col style ={{maxWidth:'15vw'}}>
+        <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+      </Col>
+      <Col style ={{maxWidth:'15vw'}}>
+        <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+      </Col>
+      <Col style ={{maxWidth:'15vw'}}>
+        <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+      </Col>
+      <Col style ={{maxWidth:'40vw'}}>
+         <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
+      </Col>
+    </Row>
+    <Row >
+    <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
+
+    </Row>
+    </>
+  :
+  <>
+
   <Row className='vertical-padding-sm'>
     <Col className ='vertical-centered-children '>
       <Row className ='form-line nice-input-wrapper fill-width'>
@@ -107,6 +157,11 @@ return(
       </Row>
     </Col>
   </Row>
+
+
+    </>
+  }
+
 
 
 

@@ -140,7 +140,7 @@ return(
       </Row>
 
     </Container>
-      <Footer/>
+      <Footer isMobile={props.isMobile}/>
   </>
 )}
 
