@@ -29,24 +29,24 @@ return(
   <>
     <div style={{overflowX:'hidden'}}>
       <GalleryHeader isMobile={isMobile}/>
-      <GalleryBody header ={{src:'MedellinGallery/medellin11.jpg', label:'Medellin'}}
+      <GalleryBody header ={{src:'MedellinGallery/Medellin11.jpg', label:'Medellin'}}
                 blurb ={"Medellin Blurb"}
                 updated={'December 2021'}
                 isMobile={isMobile}
                 contentTest ={[
                                {type:'header',text:"Medellin Title"},
-                               {type:'horizontalImage',src:'MedellinGallery/medellin11.jpg'},
-                               {type:'diptych',src1:'MedellinGallery/medellin7.jpg',src2:'MedellinGallery/medellin6.jpg'},
-                               {type:'diptych',src1:'MedellinGallery/medellin2.jpg',src2:'MedellinGallery/medellin8.jpg'},
-                               {type:'horizontalImage',src:'MedellinGallery/medellin5.jpg'},
-                               {type:'horizontalImage',src:'MedellinGallery/medellin10.jpg'},
-                               {type:'horizontalImage',src:'MedellinGallery/medellin14.jpg'},
-                               {type:'diptych',src1:'MedellinGallery/medellin21.jpg',src2:'MedellinGallery/medellin19.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin11.jpg'},
+                               {type:'diptych',src1:'MedellinGallery/Medellin7.jpg',src2:'MedellinGallery/Medellin6.jpg'},
+                               {type:'diptych',src1:'MedellinGallery/Medellin2.jpg',src2:'MedellinGallery/Medellin8.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin5.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin10.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin14.jpg'},
+                               {type:'diptych',src1:'MedellinGallery/Medellin21.jpg',src2:'MedellinGallery/Medellin19.jpg'},
 
 
-                               {type:'horizontalImage',src:'MedellinGallery/medellin15.jpg'},
-                               {type:'diptych',src1:'MedellinGallery/medellin18.jpg',src2:'MedellinGallery/medellin17.jpg'},
-                               {type:'horizontalImage',src:'MedellinGallery/medellin20.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin15.jpg'},
+                               {type:'diptych',src1:'MedellinGallery/Medellin18.jpg',src2:'MedellinGallery/Medellin17.jpg'},
+                               {type:'horizontalImage',src:'MedellinGallery/Medellin20.jpg'},
 
                              ]}/>
     </div>

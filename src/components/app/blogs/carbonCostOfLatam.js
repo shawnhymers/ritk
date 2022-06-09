@@ -30,7 +30,7 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
-    <BlogBody header ={{src:'ometepeGallery/ometepe10.jpg', label:'Carbon Cost of LATAM'}}
+    <BlogBody header ={{src:'OmetepeGallery/ometepe10.jpg', label:'Carbon Cost of LATAM'}}
               blurb ={"Here is a breakdown of our carbon footprint of 51 days of travelling Latin America."}
               updated={'May 2022'}
               isMobile={isMobile}

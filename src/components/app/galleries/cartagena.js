@@ -33,7 +33,7 @@ return(
                   blurb ={"Cartagena Blurb"}
                   updated={'December 2021'}
                   isMobile={isMobile}
-                  contentTest ={[
+                  contentTest ={[ 
                                 {type:'header',text:"Cartagena Title"},
                                 {type:'horizontalImage',src:'CartagenaGallery/cartagena13.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena9.jpg',src2:'CartagenaGallery/cartagena11.jpg'},

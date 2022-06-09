@@ -29,20 +29,20 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <GalleryHeader isMobile={isMobile}/>
-    <GalleryBody header ={{src:'QuitoGallery/quito15.jpg', label:'Quito'}}
+    <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
               blurb ={"Quito Blurb"}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
                             {type:'header',text:"Quito Title"},
-                            {type:'diptych',src1:'QuitoGallery/quito27.jpg',src2:'QuitoGallery/quito6.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/quito11.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/quito13.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/quito26.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/quito24.jpg',src2:'QuitoGallery/quito22.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/quito3.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/quito1.jpg',src2:'QuitoGallery/quito2.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/quito4.jpg'},
+                            {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
+                            {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
+                            {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},
+                            {type:'horizontalImage',src:'QuitoGallery/Quito26.jpg'},
+                            {type:'diptych',src1:'QuitoGallery/Quito24.jpg',src2:'QuitoGallery/Quito22.jpg'},
+                            {type:'horizontalImage',src:'QuitoGallery/Quito3.jpg'},
+                            {type:'diptych',src1:'QuitoGallery/Quito1.jpg',src2:'QuitoGallery/Quito2.jpg'},
+                            {type:'horizontalImage',src:'QuitoGallery/Quito4.jpg'},
 
 
                            ]}/>

@@ -30,7 +30,7 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
-    <BlogBody header ={{src:'GuatapeGallery/guatape9.jpg', label:'In The Know : Guatape'}}
+    <BlogBody header ={{src:'GuatapeGallery/Guatape9.jpg', label:'In The Know : Guatape'}}
               blurb ={"Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty."}
               updated={'May 2022'}
               isMobile={isMobile}

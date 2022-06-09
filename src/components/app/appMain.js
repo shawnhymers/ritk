@@ -44,10 +44,8 @@ class AppMain extends Component {
              tags:['food guide', 'bc','','','','','','','',''],
              link:'/WhistlerFoodGuide'},
 
-
-
             {name:'Carbon Cost of Latam',
-             pic:'/CostaRicaGallery/costarica15.jpg',
+             pic:'/CostaRicaGallery/costaRica15.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
@@ -62,7 +60,7 @@ class AppMain extends Component {
              link:'/CarbonCostOfColombia'},
 
             {name:'Carbon Cost of Ecuador',
-             pic:'/QuitoGallery/quito26.jpg',
+             pic:'/QuitoGallery/Quito26.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
@@ -75,17 +73,17 @@ class AppMain extends Component {
 
 
             {name:'In The Know Quito',
-             pic:'/QuitoGallery/quito17.jpg',
+             pic:'/QuitoGallery/Quito17.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
 
             {name:'In The Know Guatape',
-             pic:'/GuatapeGallery/guatape1.jpg',
+             pic:'/GuatapeGallery/Guatape1.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTHeKnowGuatape'},
 
               {name:'Medellin Food Guide',
-               pic:'/GuatapeGallery/guatape1.jpg',
+               pic:'/GuatapeGallery/Guatape1.jpg',
                tags:['food guide', 'notbc','','','','','','','',''],
                link:'/MedellinFoodGuide'},
                 ],
@@ -117,7 +115,7 @@ class AppMain extends Component {
                 key:'4'},
 
                 {name:'Medellin',
-                 pic:'/MedellinGallery/medellin12.jpg',
+                 pic:'/MedellinGallery/Medellin12.jpg',
                  tags:['activity', 'bc','','','','','','','',''],
                  link:'/medellin',
                  key:'5'},
@@ -134,7 +132,7 @@ class AppMain extends Component {
                    link:'/guatape',
                    key:'7'},
                    {name:'Quito',
-                    pic:'/QuitoGallery/quito17.jpg',
+                    pic:'/QuitoGallery/Quito17.jpg',
                     tags:['activity', 'notbc','','','','','','','',''],
                     link:'/quito',
                     key:'8'},

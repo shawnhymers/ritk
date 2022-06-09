@@ -29,31 +29,31 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <GalleryHeader isMobile={isMobile}/>
-    <GalleryBody header ={{src:'QuindioGallery/quindio22.jpg', label:'Quindio'}}
+    <GalleryBody header ={{src:'QuindioGallery/Quindio22.jpg', label:'Quindio'}}
               blurb ={"Quindo Blurb"}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
                             {type:'header',text:"Quindio Title"},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio22.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio26.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio20.jpg'},
-                            {type:'diptych',src1:'QuindioGallery/quindio24.jpg',src2:'QuindioGallery/quindio23.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio8.jpg'},
-                            {type:'diptych',src1:'QuindioGallery/quindio1.jpg',src2:'QuindioGallery/quindio7.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio10.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio9.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio22.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio26.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio20.jpg'},
+                            {type:'diptych',src1:'QuindioGallery/Quindio24.jpg',src2:'QuindioGallery/Quindio23.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio8.jpg'},
+                            {type:'diptych',src1:'QuindioGallery/Quindio1.jpg',src2:'QuindioGallery/Quindio7.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio10.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio9.jpg'},
 
 
 
-                            {type:'horizontalImage',src:'QuindioGallery/quindio11.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio12.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio13.jpg'},
-                            {type:'horizontalImage',src:'QuindioGallery/quindio2.jpg'},
-                            {type:'diptych',src1:'QuindioGallery/quindio16.jpg',src2:'QuindioGallery/quindio15.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio11.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio12.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio13.jpg'},
+                            {type:'horizontalImage',src:'QuindioGallery/Quindio2.jpg'},
+                            {type:'diptych',src1:'QuindioGallery/Quindio16.jpg',src2:'QuindioGallery/Quindio15.jpg'},
 
-                             {type:'horizontalImage',src:'QuindioGallery/quindio3.jpg'},
-                             {type:'diptych',src1:'QuindioGallery/quindio5.jpg',src2:'QuindioGallery/quindio17.jpg'},
+                             {type:'horizontalImage',src:'QuindioGallery/Quindio3.jpg'},
+                             {type:'diptych',src1:'QuindioGallery/Quindio5.jpg',src2:'QuindioGallery/Quindio17.jpg'},
                            ]}/>
   </div>
 

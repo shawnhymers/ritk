@@ -30,7 +30,7 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
-    <BlogBody header ={{src:'MedellinGallery/medellin11.jpg', label:'In The Know : Medellin'}}
+    <BlogBody header ={{src:'MedellinGallery/Medellin11.jpg', label:'In The Know : Medellin'}}
               blurb ={"Medellín is a city with a very complicated history. Most people only know of it through a certain Netflix show and believe it’s still a dangerous place that you shouldn’t visit. "}
               updated={'May 2022'}
               isMobile={isMobile}
@@ -45,7 +45,7 @@ return(
                              {type:'header',text:'What to do:'},
                              {type:'listItem',text:"1) Visit Comuna 13"},
                              {type:'paragraph',text:"What used to be the most dangerous neighbourhood on earth, is now a vibrant, colorful, and innovative home to some of the world’s most resilient people. We toured the comuna with a company called Zippy Tours. There are many companies that offer tours, but we suggest finding one with a guide who lives in the neighbourhood. "},
-                             {type:'diptych', src1:'MedellinGallery/medellin6.jpg',src2:'MedellinGallery/medellin8.jpg'},
+                             {type:'diptych', src1:'MedellinGallery/Medellin6.jpg',src2:'MedellinGallery/Medellin8.jpg'},
                              {type:'listItem',text:"2) Downtown Walking Tour"},
                              {type:'paragraph',text:"A guided tour of the downtown is a great way to learn more about the city’s complicated past and explore busy areas safely. We did a tour with Real City Tours and had a great time. There is a famous criminal from Medellin with a very popular show on Netflix, and although his life story is woven into the history of the city, we learned very quickly that it is a huge taboo to speak his name out loud."},
                              {type:'listItem',text:"3) Visit the Antioquia Museum"},

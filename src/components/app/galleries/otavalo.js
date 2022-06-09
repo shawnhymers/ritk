@@ -34,17 +34,17 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Quindio Title"},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo15.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/otavalo14.jpg',src2:'OtavaloGallery/otavalo24.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/otavalo23.jpg',src2:'OtavaloGallery/otavalo20.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo18.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo17.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo1.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/otavalo2.jpg',src2:'OtavaloGallery/otavalo5.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo6.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/otavalo8.jpg',src2:'OtavaloGallery/otavalo9.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/otavalo7.jpg'},
+                            {type:'header',text:"Otavalo Title"},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo15.jpg'},
+                            {type:'diptych',src1:'OtavaloGallery/Otavalo14.jpg',src2:'OtavaloGallery/Otavalo24.jpg'},
+                            {type:'diptych',src1:'OtavaloGallery/Otavalo23.jpg',src2:'OtavaloGallery/Otavalo20.jpg'},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo18.jpg'},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo17.jpg'},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo1.jpg'},
+                            {type:'diptych',src1:'OtavaloGallery/Otavalo2.jpg',src2:'OtavaloGallery/Otavalo5.jpg'},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo6.jpg'},
+                            {type:'diptych',src1:'OtavaloGallery/Otavalo8.jpg',src2:'OtavaloGallery/Otavalo9.jpg'},
+                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo7.jpg'},
 
 
                            ]}/>
