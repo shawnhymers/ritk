@@ -86,7 +86,7 @@ const TrainForm = props => {
   function addTrain(){
 
     if (carbonFootprint>0) {
-      let data ={country:selectedGridRegion,
+      let data ={country:selectedGridRegion.country,
                  distance: distance,
                  engineType:engineType,
                  carbonFootprint:carbonFootprint,

@@ -322,14 +322,26 @@ const Overview= props =>{
           <p className='roaming-text-sm '>Distance (KM)</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>Footprint (KG)</p>
+          <p className='roaming-text-sm '>Footprint (KG)</p>
         </Col>
       </Row>
       {props.flightList.map((flight, i)=>{
                     return <FlightList flight ={flight}
                                         isMobile={props.isMobile}
                                         key={i}/>})}
-                                        </>:null}
+
+      <Row>
+        <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+          &nbsp;
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+          <p className='roaming-text-sm '>
+          {'Total: '+(props.totalFlightCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+          </p>
+        </Col>
+      </Row>
+      </>:null}
+
 
     {itemType==='transport'?
   <>
@@ -350,11 +362,21 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.transportList.map((transport, i)=>{
-                return <TransportList transport ={transport}
+  {props.carList.map((transport, i)=>{
+                return <CarList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
 
+  <Row>
+    <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+      &nbsp;
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+      <p className='roaming-text-sm '>
+      {'Total: '+(props.totalCarCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      </p>
+    </Col>
+  </Row>
 
   <Row>
     <p className='roaming-text-md '>Bus</p>
@@ -373,12 +395,22 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.transportList.map((transport, i)=>{
-                return <TransportList transport ={transport}
+  {props.busList.map((transport, i)=>{
+                return <BusList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
 
 
+  <Row>
+    <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+      &nbsp;
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+      <p className='roaming-text-sm '>
+      {'Total: '+(props.totalBusCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      </p>
+    </Col>
+  </Row>
   <Row>
     <p className='roaming-text-md '>Train</p>
   </Row>
@@ -396,10 +428,20 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.transportList.map((transport, i)=>{
-                return <TransportList transport ={transport}
+  {props.trainList.map((transport, i)=>{
+                return <TrainList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
+  <Row>
+    <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+      &nbsp;
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+      <p className='roaming-text-sm '>
+      {'Total: '+(props.totalTrainCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      </p>
+    </Col>
+  </Row>
   </>:null}
   {itemType==='food'?
 <>
@@ -419,11 +461,11 @@ const Overview= props =>{
   </Col>
 </Row>
 {props.foodList.map((food, i)=>{
-              return <FoodList food ={food}
+              return <DietList food ={food}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
 <Row>
-  <p className='roaming-text-md small-top-border '>Food</p>
+  <p className='roaming-text-md  '>Food</p>
 </Row>
 <Row className='small-bottom-border vertical-margin-sm '>
 
@@ -463,6 +505,17 @@ const Overview= props =>{
               return <HotelList hotel ={hotel}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
+<Row>
+  <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+    &nbsp;
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+    <p className='roaming-text-sm '>
+    {'Total: '+(props.totalAccomodationCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+    </p>
+  </Col>
+</Row>
+
 </>:null}
 
     </Container>
@@ -509,18 +562,20 @@ const FlightList = props=>{
   )
 }
 
-const TransportList =props=>{
+const TrainList =props=>{
 
   return(
     <>
 
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>  {props.transport.subType}</p>
-
+          <p className='roaming-text-sm '>  {props.transport.country}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm '>  {props.transport.engineType}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
@@ -530,9 +585,75 @@ const TransportList =props=>{
     </>
   )
 }
+const CarList =props=>{
 
+  return(
+    <>
+
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{props.transport.vehicle}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{props.transport.drivingType}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+        </Col>
+      </Row>
+    </>
+  )
+}
+const BusList =props=>{
+
+  return(
+    <>
+
+      <Row className =''>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{props.transport.fullness}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{props.transport.drivingType}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+        </Col>
+      </Row>
+    </>
+  )
+}
 
 const FoodList =props=>{
+
+  return(
+    <>
+      <Row className =''>
+
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>{props.food.food.servingDescr}</p>
+
+        </Col>
+          <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>  {props.food.quantity}</p>
+
+        </Col>
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+</p>
+        </Col>
+      </Row>
+    </>
+  )
+}
+
+const DietList =props=>{
 
   return(
     <>

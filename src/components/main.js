@@ -16,11 +16,18 @@ class Main extends Component {
       totalCarbonCost:0,
       totalFlightCost:0,
       totalTransportCost:0,
+      totalCarCost:0,
+      totalBusCost:0,
+      totalTrainCost:0,
       totalFoodCost:0,
       totalAccomodationCost:0,
       flight:[],
       transport:[],
+      car:[],
+      bus:[],
+      train:[],
       food:[],
+      diet:[],
       accomodation:[]
 
     };
@@ -60,11 +67,30 @@ class Main extends Component {
                      outcomeMessage:'Added succesfully!'})
     }
     else if (data.type ==='transport') {
-      this.addToList(data.type,data)
-      this.setState({totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
-                     showOutcomeMessage:true,
-                     outcomeMessageType:'positive',
-                     outcomeMessage:'Added succesfully!'})
+      this.addToList(data.subType,data)
+
+      if (data.subType==='car') {
+        this.setState({totalCarCost:this.state.totalCarCost+data.carbonFootprint,
+                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+                       showOutcomeMessage:true,
+                       outcomeMessageType:'positive',
+                       outcomeMessage:'Added succesfully!'})
+      }
+      else if (data.subType==='bus') {
+        this.setState({totalBusCost:this.state.totalBusCost+data.carbonFootprint,
+                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+                       showOutcomeMessage:true,
+                       outcomeMessageType:'positive',
+                       outcomeMessage:'Added succesfully!'})
+      }
+      else if (data.subType==='train') {
+        this.setState({totalTrainCost:this.state.totalTrainCost+data.carbonFootprint,
+                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+                       showOutcomeMessage:true,
+                       outcomeMessageType:'positive',
+                       outcomeMessage:'Added succesfully!'})
+      }
+
     }
     else if (data.type ==='food') {
       this.addToList(data.type,data)
@@ -109,11 +135,17 @@ class Main extends Component {
                  addCarbonCostItem ={this.addCarbonCostItem}
                  totalCarbonCost = {this.state.totalCarbonCost}
                  totalFlightCost = {this.state.totalFlightCost}
-                 totalTransportCost ={this.state.totalTransportCost}
+                 totalTransportCost={this.state.totalTransportCost}
+                 totalCarCost ={this.state.totalCarCost}
+                 totalBusCost={this.state.totalBusCost}
+                 totalTrainCost ={this.state.totalTrainCost}
                  totalFoodCost ={this.state.totalFoodCost}
                  totalAccomodationCost = {this.state.totalAccomodationCost}
                  flightList ={this.state.flight}
                  transportList ={this.state.transport}
+                 carList={this.state.car}
+                 busList={this.state.bus}
+                 trainList={this.state.train}
                  foodList={this.state.food}
                  hotelList={this.state.accomodation}/>
 

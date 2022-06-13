@@ -94,17 +94,17 @@ const FoodForm = props =>{
         let data ={ type:'food',
                     subType:'Food Item',
                     quantity:foodQuantity,
-                    food: selectedDiet,
+                    food: selectedFood,
                     carbonFootprint: carbonFootprint
         }
 
         props.addCarbonCostItem(data)
       }
       else {
-        let data ={ type:'food',
+        let data ={ type:'diet',
                     subtype:'Diet Type',
                     quantity:dietQuantity,
-                    food:selectedFood,
+                    food:selectedDiet,
                     carbonFootprint: carbonFootprint
         }
 

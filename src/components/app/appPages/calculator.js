@@ -235,11 +235,17 @@ return(
       <Row  className ='centered-children roaming-white' style ={{paddingBottom:'9em'}}>
         <Overview totalCarbonCost = {props.totalCarbonCost}
                   totalFlightCost = {props.totalFlightCost}
-                  totalTransportCost ={props.totalTransportCost}
+                  totalTransportCost={props.totalTransportCost}
+                  totalCarCost={props.totalCarCost}
+                  totalBusCost={props.totalBusCost}
+                  totalTrainCost={props.totalTrainCost}
                   totalFoodCost ={props.totalFoodCost}
                   totalAccomodationCost = {props.totalAccomodationCost}
                   flightList={props.flightList}
                   transportList={props.transportList}
+                  carList={props.carList}
+                  busList={props.busList}
+                  trainList={props.trainList}
                   foodList={props.foodList}
                   hotelList={props.hotelList}/>
       </Row>

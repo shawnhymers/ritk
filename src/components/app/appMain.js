@@ -252,13 +252,19 @@ class AppMain extends Component {
         <Calculator changeView ={this.props.updatePageView}
                     addCarbonCostItem ={this.props.addCarbonCostItem}
                     totalCarbonCost={this.props.totalCarbonCost}
+                    totalTransportCost={this.props.totalTransportCost}
                     totalFlightCost = {this.props.totalFlightCost}
-                    totalTransportCost = {this.props.totalTransportCost}
+                    totalCarCost={this.props.totalCarCost}
+                    totalBusCost={this.props.totalBusCost}
+                    totalTrainCost={this.props.totalTrainCost}
                     totalFoodCost = {this.props.totalFoodCost}
                     totalAccomodationCost = {this.props.totalAccomodationCost}
                     isMobile={this.props.isMobile}
                     flightList={this.props.flightList}
                     transportList={this.props.transportList}
+                    carList={this.props.carList}
+                    busList={this.props.busList}
+                    trainList={this.props.trainList}
                     foodList={this.props.foodList}
                     hotelList={this.props.hotelList}/>
 

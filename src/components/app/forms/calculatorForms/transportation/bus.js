@@ -87,6 +87,7 @@ const BusForm = props => {
       let data = {distance:distance,
                   carbonFootprint:carbonFootprint,
                   drivingType:drivingType,
+                  fullness:fullness,
                   type:'transport',
                   subType:'bus'}
 
