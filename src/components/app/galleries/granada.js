@@ -31,7 +31,7 @@ return(
   <GalleryHeader isMobile={isMobile}/>
   <GalleryBody header ={{src:'GranadaGallery/granada10.jpg', label:'Granada'}}
             blurb ={"Granada Blurb"}
-            updated={'December 2021'}
+            updated={'February 2022'}
             isMobile={isMobile}
             contentTest ={[
                            {type:'header',text:"Granada Title"},

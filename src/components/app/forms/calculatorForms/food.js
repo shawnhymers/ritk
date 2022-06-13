@@ -11,8 +11,7 @@ import HelpIcon from "../../../standardComponents/helpIcon"
 
 const FoodForm = props =>{
 
-  // const [type, setType] = useState('average');
-  const [testState,setTestState]=useState('test')
+
   const [foodQuantity, setFoodQuantity]=useState('')
   function updateFoodQuantity(e){
     console.log('updating food quantity test')
@@ -178,9 +177,7 @@ const FoodForm = props =>{
 
           {isAdvanced?
           <>
-            <Row>
-              {testState}
-            </Row>
+
               <Row className ='form-line'>
                 <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                   <Row>

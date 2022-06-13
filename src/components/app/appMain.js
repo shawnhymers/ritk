@@ -137,7 +137,7 @@ class AppMain extends Component {
                     link:'/quito',
                     key:'8'},
                     {name:'Otavalo',
-                     pic:'/OtavaloGallery/otavalo2.jpg',
+                     pic:'/OtavaloGallery/Otavalo2.jpg',
                      tags:['activity', 'notbc','','','','','','','',''],
                      link:'/otavalo',
                      key:'9'}

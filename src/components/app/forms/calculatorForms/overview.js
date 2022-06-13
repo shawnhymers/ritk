@@ -29,6 +29,9 @@ const Overview= props =>{
   const [regionOptions, setRegionOptions] = useState(regionFootprintData);
   const [selectedRegion, setSelectedRegion] =useState({})
 
+  const [itemType, setItemType]=useState('flight')
+
+
 
   function updateCompareType(e){
     if (e.target.value!==compareType) {
@@ -187,7 +190,7 @@ const Overview= props =>{
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
             {selectedCountry.Country ===undefined?
               <Row>
-                <p>Select a country to compare your trip to.</p>
+                <p className='centered-text roaming-text medium-link-text'>Select a country to compare your trip to.</p>
               </Row>
             :
               <Row>
@@ -224,10 +227,16 @@ const Overview= props =>{
             </Row>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+
+          {selectedRegion.Entity ===undefined?
+            <Row>
+              <p className='centered-text roaming-text medium-link-text'>Select a region to compare your trip to.</p>
+            </Row>
+          :
             <Row>
               <CarbonTotal footprint={selectedRegion.Footprint*1000}
                            label={'The annual average of '+ selectedRegion.Entity+ ' (KG/Person)'} />
-            </Row>
+            </Row>}
           </Col>
         </Row>
 
@@ -245,97 +254,220 @@ const Overview= props =>{
 
 
     <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
-      <Row>
-        <p>Flights:</p>
-      </Row>
-      <Row>
+    <Row>
+      <Col onClick={()=>setItemType('flight')}>
+        <Row className ='centered-children'>
+          <img src ='/plane.png'
+               alt ='food'
+               size ={'2em'}
+               className ={'mobile-calculator-icon '}/>
+        </Row>
+        <Row className ='centered-children'>
+        <p className = {'centered-text '
+                       +(itemType==='flight'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       Flights</p>
+        </Row>
+      </Col>
+      <Col onClick={()=>setItemType('transport')}>
+        <Row className ='centered-children'>
+          <img src ='/train.png'
+               alt ='food'
+               size ={'2em'}
+               className ={'mobile-calculator-icon '}/>
+        </Row>
+        <Row className ='centered-children'>
+        <p className = {'centered-text '
+                       +(itemType==='transport'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       Transport</p>
+        </Row>
+      </Col>
+      <Col onClick={()=>setItemType('food')}>
+        <Row className ='centered-children'>
+          <img src ='/avacado.png'
+               alt ='food'
+               size ={'2em'}
+               className ={'mobile-calculator-icon '}/>
+        </Row>
+        <Row className ='centered-children'>
+        <p className = {'centered-text '
+                       +(itemType==='food'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       Food</p>
+        </Row>
+      </Col>
+      <Col onClick={()=>setItemType('accomodation')}>
+        <Row className ='centered-children'>
+          <img src ='/tent.png'
+               alt ='food'
+               size ={'2em'}
+               className ={'mobile-calculator-icon '}/>
+        </Row>
+        <Row className ='centered-children'>
+        <p className = {'centered-text '
+                       +(itemType==='accomodation'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       Accomodation</p>
+        </Row>
+      </Col>
+    </Row>
+
+    {itemType==='flight'?
+    <>
+      <Row className='small-bottom-border vertical-margin-sm '>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>From</p>
+          <p className='roaming-text-sm '>From</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>To</p>
+          <p className='roaming-text-sm '>To</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Distance (KM)</p>
+          <p className='roaming-text-sm '>Distance (KM)</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Footprint (KG)</p>
+        <p className='roaming-text-sm '>Footprint (KG)</p>
         </Col>
       </Row>
       {props.flightList.map((flight, i)=>{
                     return <FlightList flight ={flight}
                                         isMobile={props.isMobile}
                                         key={i}/>})}
+                                        </>:null}
+
+    {itemType==='transport'?
+  <>
+  <Row>
+    <p className='roaming-text-md '>Car</p>
+  </Row>
+  <Row className='small-bottom-border vertical-margin-sm '>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Car Type</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Driving Type</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Distance (KM)</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Footprint (KG)</p>
+    </Col>
+  </Row>
+  {props.transportList.map((transport, i)=>{
+                return <TransportList transport ={transport}
+                                    isMobile={props.isMobile}
+                                    key={i}/>})}
+
+
+  <Row>
+    <p className='roaming-text-md '>Bus</p>
+  </Row>
+  <Row className='small-bottom-border vertical-margin-sm '>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Bus Fullness</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Driving Type</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Distance (KM)</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Footprint (KG)</p>
+    </Col>
+  </Row>
+  {props.transportList.map((transport, i)=>{
+                return <TransportList transport ={transport}
+                                    isMobile={props.isMobile}
+                                    key={i}/>})}
+
+
+  <Row>
+    <p className='roaming-text-md '>Train</p>
+  </Row>
+  <Row className='small-bottom-border vertical-margin-sm '>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Country</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Engine Type</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Distance (KM)</p>
+    </Col>
+    <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <p className='roaming-text-sm '>Footprint (KG)</p>
+    </Col>
+  </Row>
+  {props.transportList.map((transport, i)=>{
+                return <TransportList transport ={transport}
+                                    isMobile={props.isMobile}
+                                    key={i}/>})}
+  </>:null}
+  {itemType==='food'?
+<>
+  <Row>
+    <p className='roaming-text-md '>Diet</p>
+  </Row>
+  <Row className='small-bottom-border vertical-margin-sm '>
+
+  <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+    <p className='roaming-text-sm '>Diet Type</p>
+  </Col>
+  <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+    <p className='roaming-text-sm '>Days</p>
+  </Col>
+  <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+    <p className='roaming-text-sm '>Footprint (KG)</p>
+  </Col>
+</Row>
+{props.foodList.map((food, i)=>{
+              return <FoodList food ={food}
+                                  isMobile={props.isMobile}
+                                  key={i}/>})}
+<Row>
+  <p className='roaming-text-md small-top-border '>Food</p>
+</Row>
+<Row className='small-bottom-border vertical-margin-sm '>
+
+<Col xs={4} sm={4} md={4} lg={4} xl={4}>
+  <p className='roaming-text-sm '>Food</p>
+</Col>
+<Col xs={4} sm={4} md={4} lg={4} xl={4}>
+  <p className='roaming-text-sm '>Number of Servings</p>
+</Col>
+<Col xs={4} sm={4} md={4} lg={4} xl={4}>
+  <p className='roaming-text-sm '>Footprint (KG)</p>
+</Col>
+</Row>
+{props.foodList.map((food, i)=>{
+            return <FoodList food ={food}
+                                isMobile={props.isMobile}
+                                key={i}/>})}
+</>:null}
+{itemType==='accomodation'?
+<>
+
+  <Row className='small-bottom-border vertical-margin-sm '>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+    <p className='roaming-text-sm '>Name</p>
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+    <p className='roaming-text-sm '>Number of Nights</p>
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+    <p className='roaming-text-sm '>Number of Guests</p>
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+    <p className='roaming-text-sm '>Footprint (KG)</p>
+  </Col>
+</Row>
+{props.hotelList.map((hotel, i)=>{
+              return <HotelList hotel ={hotel}
+                                  isMobile={props.isMobile}
+                                  key={i}/>})}
+</>:null}
+
     </Container>
 
-    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
-      <Row>
-        <p>Transportation:</p>
-      </Row>
-      <Row>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          <p>Type</p>
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          <p>Distance (KM)</p>
-        </Col>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-          <p>Footprint (KG)</p>
-        </Col>
-      </Row>
-      {props.transportList.map((transport, i)=>{
-                    return <TransportList transport ={transport}
-                                        isMobile={props.isMobile}
-                                        key={i}/>})}
-    </Container>
 
-    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
-      <Row>
-        <p>Food:</p>
-      </Row>
-      <Row>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Type</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Food/Diet</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Quantity</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Footprint (KG)</p>
-        </Col>
-      </Row>
-      {props.foodList.map((food, i)=>{
-                    return <FoodList food ={food}
-                                        isMobile={props.isMobile}
-                                        key={i}/>})}
-    </Container>
-
-    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
-      <Row>
-        <p>Accomodation</p>
-      </Row>
-      <Row>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Name</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Number of Nights</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Number of Guests</p>
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p>Footprint (KG)</p>
-        </Col>
-      </Row>
-      {props.hotelList.map((hotel, i)=>{
-                    return <HotelList hotel ={hotel}
-                                        isMobile={props.isMobile}
-                                        key={i}/>})}
-    </Container>
 
     </>
   )
@@ -346,18 +478,31 @@ const FlightList = props=>{
 
   return(
     <>
-      <Row className =''>
+      <Row className =' '>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.flight.fromAirport.City}
+          <p className='roaming-text-sm '>{props.flight.fromAirport.City}</p>
+
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.flight.toAirport.City}
+          <p className='roaming-text-sm '>{props.flight.toAirport.City}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+
+          {props.flight.flightType==='Round Trip'?
+          <p className='roaming-text-sm '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (RT)'}
+          </p>
+          :
+          <p className='roaming-text-sm '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (OW)'}
+          </p>
+          }
+
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.flight.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+
+
+        <p className='roaming-text-sm '>{(props.flight.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+
+
         </Col>
       </Row>
     </>
@@ -368,17 +513,18 @@ const TransportList =props=>{
 
   return(
     <>
+
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.transport.subType}
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm '>  {props.transport.subType}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm '>          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
 
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+          <p className='roaming-text-sm '>          {(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
       </Row>
     </>
@@ -391,17 +537,18 @@ const FoodList =props=>{
   return(
     <>
       <Row className =''>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.food.subtype}
+
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>{props.food.food.servingDescr}</p>
+
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.food.food.servingDescr}
+          <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>  {props.food.quantity}</p>
+
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.food.quantity}
-        </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+        <p className='roaming-text-sm '>          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+</p>
         </Col>
       </Row>
     </>
@@ -414,16 +561,19 @@ const HotelList =props=>{
     <>
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.hotel.hotelName}
+        <p className='roaming-text-sm '>{props.hotel.hotelName}</p>
+
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.hotel.numberOfNights}
+        <p className='roaming-text-sm '>  {props.hotel.numberOfNights}</p>
+
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {props.hotel.numberOfGuests}
+        <p className='roaming-text-sm '>          {props.hotel.numberOfGuests}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          {(props.hotel.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm '>          {(props.hotel.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+</p>
         </Col>
       </Row>
     </>

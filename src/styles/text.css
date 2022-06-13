@@ -66,6 +66,11 @@
 .roaming-text{
   font-family: roamingFont;
 }
+.roaming-text-md{
+  font-family: roamingFont;
+  font-size: calc((1.8 - 1) * 1.2vw + 1.1rem);
+
+}
 .roaming-text-sm{
   font-family: roamingFont;
   font-size: calc((1.8 - 1) * 0.9vw + 0.9rem);
