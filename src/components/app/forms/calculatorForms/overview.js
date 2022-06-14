@@ -253,7 +253,7 @@ const Overview= props =>{
     </Container>
 
 
-    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh',paddingTop:'0.7rem'}}>
     <Row>
       <Col onClick={()=>setItemType('flight')}>
         <Row className ='centered-children'>
@@ -460,10 +460,21 @@ const Overview= props =>{
     <p className='roaming-text-sm '>Footprint (KG)</p>
   </Col>
 </Row>
-{props.foodList.map((food, i)=>{
-              return <DietList food ={food}
+{props.dietList.map((diet, i)=>{
+              return <DietList diet ={diet}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
+<Row>
+  <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+    &nbsp;
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+    <p className='roaming-text-sm '>
+    {'Total: '+(props.totalDietCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+    </p>
+  </Col>
+</Row>
+
 <Row>
   <p className='roaming-text-md  '>Food</p>
 </Row>
@@ -483,6 +494,17 @@ const Overview= props =>{
             return <FoodList food ={food}
                                 isMobile={props.isMobile}
                                 key={i}/>})}
+<Row>
+  <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+    &nbsp;
+  </Col>
+  <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+    <p className='roaming-text-sm '>
+    {'Total: '+(props.totalFoodCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+    </p>
+  </Col>
+</Row>
+
 </>:null}
 {itemType==='accomodation'?
 <>
@@ -637,11 +659,11 @@ const FoodList =props=>{
       <Row className =''>
 
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>{props.food.food.servingDescr}</p>
+        <p className='roaming-text-sm '>{props.food.food.food}</p>
 
         </Col>
           <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>  {props.food.quantity}</p>
+        <p className='roaming-text-sm '>  {props.food.quantity +' x ('+props.food.food.servingDescr+')'}</p>
 
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
@@ -660,15 +682,15 @@ const DietList =props=>{
       <Row className =''>
 
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>{props.food.food.servingDescr}</p>
+        <p className='roaming-text-sm '>{props.diet.dietType.food}</p>
 
         </Col>
           <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>  {props.food.quantity}</p>
+        <p className='roaming-text-sm '>  {props.diet.quantity}</p>
 
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm '>          {(props.diet.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
 </p>
         </Col>
       </Row>

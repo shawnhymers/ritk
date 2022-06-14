@@ -240,6 +240,7 @@ return(
                   totalBusCost={props.totalBusCost}
                   totalTrainCost={props.totalTrainCost}
                   totalFoodCost ={props.totalFoodCost}
+                  totalDietCost={props.totalDietCost}
                   totalAccomodationCost = {props.totalAccomodationCost}
                   flightList={props.flightList}
                   transportList={props.transportList}
@@ -247,6 +248,7 @@ return(
                   busList={props.busList}
                   trainList={props.trainList}
                   foodList={props.foodList}
+                  dietList={props.dietList}
                   hotelList={props.hotelList}/>
       </Row>
     </>:null}

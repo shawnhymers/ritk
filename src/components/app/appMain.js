@@ -258,6 +258,7 @@ class AppMain extends Component {
                     totalBusCost={this.props.totalBusCost}
                     totalTrainCost={this.props.totalTrainCost}
                     totalFoodCost = {this.props.totalFoodCost}
+                    totalDietCost={this.props.totalDietCost}
                     totalAccomodationCost = {this.props.totalAccomodationCost}
                     isMobile={this.props.isMobile}
                     flightList={this.props.flightList}
@@ -266,6 +267,7 @@ class AppMain extends Component {
                     busList={this.props.busList}
                     trainList={this.props.trainList}
                     foodList={this.props.foodList}
+                    dietList={this.props.dietList}
                     hotelList={this.props.hotelList}/>
 
       </>

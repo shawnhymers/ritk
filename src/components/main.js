@@ -20,6 +20,7 @@ class Main extends Component {
       totalBusCost:0,
       totalTrainCost:0,
       totalFoodCost:0,
+      totalDietCost:0,
       totalAccomodationCost:0,
       flight:[],
       transport:[],
@@ -99,6 +100,14 @@ class Main extends Component {
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
+    else if (data.type ==='diet') {
+      console.log('saving a diet line in main.js')
+      this.addToList(data.type,data)
+      this.setState({totalDietCost:this.state.totalDietCost+data.carbonFootprint,
+                     showOutcomeMessage:true,
+                     outcomeMessageType:'positive',
+                     outcomeMessage:'Added succesfully!'})
+    }
     else if (data.type ==='accomodation') {
       this.addToList(data.type,data)
       this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
@@ -140,6 +149,7 @@ class Main extends Component {
                  totalBusCost={this.state.totalBusCost}
                  totalTrainCost ={this.state.totalTrainCost}
                  totalFoodCost ={this.state.totalFoodCost}
+                 totalDietCost={this.state.totalDietCost}
                  totalAccomodationCost = {this.state.totalAccomodationCost}
                  flightList ={this.state.flight}
                  transportList ={this.state.transport}
@@ -147,6 +157,7 @@ class Main extends Component {
                  busList={this.state.bus}
                  trainList={this.state.train}
                  foodList={this.state.food}
+                 dietList={this.state.diet}
                  hotelList={this.state.accomodation}/>
 
     </>

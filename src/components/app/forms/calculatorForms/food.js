@@ -104,7 +104,7 @@ const FoodForm = props =>{
         let data ={ type:'diet',
                     subtype:'Diet Type',
                     quantity:dietQuantity,
-                    food:selectedDiet,
+                    dietType:selectedDiet,
                     carbonFootprint: carbonFootprint
         }
 
