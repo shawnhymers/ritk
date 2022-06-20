@@ -1,10 +1,10 @@
 import  {  Component } from "react";
 import React from "react";
-import DesktopHeader from "./elements/desktopHeader";
-import MobileHeader from "./elements/mobileHeader";
+import DesktopHeader from "../elements/desktopHeader";
+import MobileHeader from "../elements/mobileHeader";
 import HomePage from "./appPages/home/main"
 import About from "./appPages/about";
-import Calculator from "./appPages/calculator";
+// import Calculator from "./appPages/calculator";
 import Blog from "./appPages/blog";
 
 class AppMain extends Component {
@@ -246,32 +246,7 @@ class AppMain extends Component {
       </>
       :null}
 
-      {this.state.view === 'calculator'|| (this.props.urlView==='calculator' && this.state.urlOverride===false)?
-      <>
 
-        <Calculator changeView ={this.props.updatePageView}
-                    addCarbonCostItem ={this.props.addCarbonCostItem}
-                    totalCarbonCost={this.props.totalCarbonCost}
-                    totalTransportCost={this.props.totalTransportCost}
-                    totalFlightCost = {this.props.totalFlightCost}
-                    totalCarCost={this.props.totalCarCost}
-                    totalBusCost={this.props.totalBusCost}
-                    totalTrainCost={this.props.totalTrainCost}
-                    totalFoodCost = {this.props.totalFoodCost}
-                    totalDietCost={this.props.totalDietCost}
-                    totalAccomodationCost = {this.props.totalAccomodationCost}
-                    isMobile={this.props.isMobile}
-                    flightList={this.props.flightList}
-                    transportList={this.props.transportList}
-                    carList={this.props.carList}
-                    busList={this.props.busList}
-                    trainList={this.props.trainList}
-                    foodList={this.props.foodList}
-                    dietList={this.props.dietList}
-                    hotelList={this.props.hotelList}/>
-
-      </>
-      :null}
       {this.state.view === 'gallery' || (this.props.urlView==='gallery' && this.state.urlOverride===false)?
       <>
         <div className ='roaming-white'>
@@ -289,3 +264,32 @@ class AppMain extends Component {
     </>
 )}};
 export default AppMain;
+
+
+//
+// {this.state.view === 'calculator'|| (this.props.urlView==='calculator' && this.state.urlOverride===false)?
+// <>
+//
+//   <Calculator changeView ={this.props.updatePageView}
+//               addCarbonCostItem ={this.props.addCarbonCostItem}
+//               totalCarbonCost={this.props.totalCarbonCost}
+//               totalTransportCost={this.props.totalTransportCost}
+//               totalFlightCost = {this.props.totalFlightCost}
+//               totalCarCost={this.props.totalCarCost}
+//               totalBusCost={this.props.totalBusCost}
+//               totalTrainCost={this.props.totalTrainCost}
+//               totalFoodCost = {this.props.totalFoodCost}
+//               totalDietCost={this.props.totalDietCost}
+//               totalAccomodationCost = {this.props.totalAccomodationCost}
+//               isMobile={this.props.isMobile}
+//               flightList={this.props.flightList}
+//               transportList={this.props.transportList}
+//               carList={this.props.carList}
+//               busList={this.props.busList}
+//               trainList={this.props.trainList}
+//               foodList={this.props.foodList}
+//               dietList={this.props.dietList}
+//               hotelList={this.props.hotelList}/>
+//
+// </>
+// :null}
