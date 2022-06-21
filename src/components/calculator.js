@@ -13,7 +13,9 @@ import  { useState } from 'react';
 import CarbonTotal from "./elements/carbonTotal"
 import DesktopHeader from "./elements/desktopHeader";
 import MobileHeader from "./elements/mobileHeader";
-import Footer from "./app/appPages/home/footer"
+import Footer from "./standardComponents/footer"
+import { Prompt } from 'react-router'
+import OutcomeMessage from"./standardComponents/outcomeMessage"
 
 class CalculatorPage extends Component {
   // Setting up initial state
@@ -21,6 +23,7 @@ class CalculatorPage extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      shouldBlockNavigation:false,
       showOutcomeMessage:false,
       outcomeMessageType:'positive',
       flightFormData:{},
@@ -48,8 +51,17 @@ class CalculatorPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+    window.scrollTo(0, 0);
     this.updateDimensions();
   }
+
+  componentDidUpdate () {
+  if (this.state.shouldBlockNavigation) {
+    window.onbeforeunload = () => true
+  } else {
+    window.onbeforeunload = undefined
+  }
+}
 
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
@@ -75,8 +87,10 @@ class CalculatorPage extends Component {
       this.addToList(data.type,data)
       this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint,
                      showOutcomeMessage:true,
+                     shouldBlockNavigation:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
+
     }
     else if (data.type ==='transport') {
       this.addToList(data.subType,data)
@@ -85,6 +99,7 @@ class CalculatorPage extends Component {
         this.setState({totalCarCost:this.state.totalCarCost+data.carbonFootprint,
                        totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
                        showOutcomeMessage:true,
+                       shouldBlockNavigation:true,
                        outcomeMessageType:'positive',
                        outcomeMessage:'Added succesfully!'})
       }
@@ -92,6 +107,7 @@ class CalculatorPage extends Component {
         this.setState({totalBusCost:this.state.totalBusCost+data.carbonFootprint,
                        totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
                        showOutcomeMessage:true,
+                       shouldBlockNavigation:true,
                        outcomeMessageType:'positive',
                        outcomeMessage:'Added succesfully!'})
       }
@@ -99,6 +115,7 @@ class CalculatorPage extends Component {
         this.setState({totalTrainCost:this.state.totalTrainCost+data.carbonFootprint,
                        totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
                        showOutcomeMessage:true,
+                       shouldBlockNavigation:true,
                        outcomeMessageType:'positive',
                        outcomeMessage:'Added succesfully!'})
       }
@@ -108,6 +125,7 @@ class CalculatorPage extends Component {
       this.addToList(data.type,data)
       this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
                      showOutcomeMessage:true,
+                     shouldBlockNavigation:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
@@ -116,6 +134,7 @@ class CalculatorPage extends Component {
       this.addToList(data.type,data)
       this.setState({totalDietCost:this.state.totalDietCost+data.carbonFootprint,
                      showOutcomeMessage:true,
+                     shouldBlockNavigation:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
@@ -123,6 +142,7 @@ class CalculatorPage extends Component {
       this.addToList(data.type,data)
       this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
                      showOutcomeMessage:true,
+                     shouldBlockNavigation:true,
                      outcomeMessageType:'positive',
                      outcomeMessage:'Added succesfully!'})
     }
@@ -148,6 +168,16 @@ class CalculatorPage extends Component {
   return(
     <>
 
+    <Prompt
+      when={this.state.shouldBlockNavigation}
+      message='Leaving will discard your changes, are you sure you want to leave?'
+    />
+    {this.state.showOutcomeMessage?
+      <OutcomeMessage isMobile ={this.state.isMobile}
+                      outcomeMessageType = {this.state.outcomeMessageType}
+                      closeMessage ={this.closeMessage}
+                      message ={this.state.outcomeMessage}/>
+    :null}
     {this.state.isMobile?
         <MobileHeader changeView ={this.updateView}
                        page ={this.state.view}/>

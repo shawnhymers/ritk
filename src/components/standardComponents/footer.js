@@ -4,7 +4,7 @@ import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
 import { MdCopyright } from "react-icons/md";
 import  { useState,useRef } from 'react';
-import LargeModal from "../../../standardComponents/largeModal"
+import LargeModal from "./largeModal"
 import { sendForm } from 'emailjs-com';
 
 const Footer = props => {

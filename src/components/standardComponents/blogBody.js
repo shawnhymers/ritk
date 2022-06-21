@@ -1,7 +1,7 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
 import {  MdFiberManualRecord } from "react-icons/md";
-import Footer from "../app/appPages/home/footer"
+import Footer from "./footer"
 import { Link } from "react-router-dom";
 
 const BlogSegment = props =>{

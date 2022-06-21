@@ -59,6 +59,7 @@ function App() {
             <Route exact path="/calculator" component={CalculatorPage} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/blog" component={BlogPage} />
+            <Route exact path="/blog/:searchTerm" component={BlogPage} />
             <Route exact path="/gallery" component={GalleryPage} />
 
 

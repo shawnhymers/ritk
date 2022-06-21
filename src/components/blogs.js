@@ -8,7 +8,7 @@ import MobileHeader from "./elements/mobileHeader";
 import LeftCol from  './standardComponents/blogComponents/leftCol'
 import RightCol from './standardComponents/blogComponents/rightCol'
 import BlogRow from  './standardComponents/blogComponents/blogRow'
-import Footer from "./app/appPages/home/footer"
+import Footer from "./standardComponents/footer"
 
 class BlogPage extends Component {
   // Setting up initial state
@@ -89,26 +89,91 @@ class BlogPage extends Component {
                tags:['food guide', 'notbc','','','','','','','',''],
                link:'/MedellinFoodGuide'},
                 ],
+      // TEMP:
+      shownBlogs:[
+
+            {name:'In The Know Medellin',
+             pic:'/MedellinGallery/Medellin11.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/InTheKnowMedellin'},
+
+             {name:'Carbon Cost of Our Diet',
+              pic:'/whistlerFood.jpg',
+              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+              link:'/CarbonCostOfDiet'},
+
+              {name:'Whistler Activity Guide',
+               pic:'/whistlerActivity.jpg',
+               tags:['activity guide', 'bc','','','','','','','',''],
+               link:'/WhistlerActivityGuide'},
+
+            {name:'Vancouver Food Guide',
+             pic:'/vancouverFood.jpg',
+             tags:['food guide', 'bc','','','','','','','',''],
+             link:'/VancouverFoodGuide'},
+
+            {name:'Whistler Food Guide',
+             pic:'/whistlerFood.jpg',
+             tags:['food guide', 'bc','','','','','','','',''],
+             link:'/WhistlerFoodGuide'},
+
+            {name:'Carbon Cost of Latam',
+             pic:'/CostaRicaGallery/costaRica15.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfLatam'},
+
+            {name:'Carbon Cost of Flying',
+             pic:'/planeWing.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfFlying'},
+
+            {name:'Carbon Cost of Colombia',
+             pic:'/MedellinGallery/Medellin11.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfColombia'},
+
+            {name:'Carbon Cost of Ecuador',
+             pic:'/QuitoGallery/Quito26.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfEcuador'},
+
+
+             {name:'Banos Activity Guide',
+              pic: '/banos/banos5.jpg',
+              tags:['activity guide', 'notbc','','','','','','','',''],
+              link:'/BanosActivityGuide'
+            },
+
+
+            {name:'In The Know Quito',
+             pic:'/QuitoGallery/Quito17.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/InTheKnowQuito'},
+
+            {name:'In The Know Guatape',
+             pic:'/GuatapeGallery/Guatape1.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/InTHeKnowGuatape'},
+
+              {name:'Medellin Food Guide',
+               pic:'/MedellinGallery/Medellin15.jpg', 
+               tags:['food guide', 'notbc','','','','','','','',''],
+               link:'/MedellinFoodGuide'},
+                ],
     };
   };
 
   componentDidMount(){
     console.log('blog mounted')
-    window.scrollTo(-10, 0);
-    this.setState({blogs:this.state.blogs,searchValue:this.state.blogSearch})
-    let tempBlogs = []
 
-    for (var i = 0; i < this.state.blogs.length; i++) {
-      if (this.state.blogs[i].tags.includes(this.state.blogSearch.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
+    window.scrollTo(0, 0);
+    if (this.props.match.params.searchTerm!== undefined) {
+      this.setState({blogs:this.state.blogs,searchValue:this.props.match.params.searchTerm})
+      this.tagSearch(this.props.match.params.searchTerm)
     }
-    if (tempBlogs.length>0) {
-      this.setState({blogs:tempBlogs})
-    }
-    else {
-      this.setState({blogs:tempBlogs,emptySearch:true})
-    }
+
+
+
 
   }
   tagInput = (e)=>{
@@ -121,47 +186,58 @@ class BlogPage extends Component {
   tagSearch =(value)=>{
     console.log('searching by tag')
     console.log(value)
-    let tempBlogs = []
 
-    for (var i = 0; i < this.state.blogs.length; i++) {
-      if (this.state.blogs[i].tags[0].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[1].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[2].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[3].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[4].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[5].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[6].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[7].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[8].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-      else if (this.state.blogs[i].tags[9].includes(value.toLowerCase())) {
-        tempBlogs.push(this.state.blogs[i])
-      }
-    }
-
-    if (tempBlogs.length===0) {
-      this.setState({emptySearch:true,blogs:tempBlogs})
+    if (value==='') {
+        this.setState({emptySearch:false,shownBlogs:this.state.blogs})
     }
     else {
-      this.setState({emptySearch:false,blogs:tempBlogs})
+      let tempBlogs = []
+
+      console.log('number of iterations in loop')
+      console.log(this.state.blogs.length)
+      for (var i = 0; i < this.state.blogs.length; i++) {
+        if (this.state.blogs[i].tags[0].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[1].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[2].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[3].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[4].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[5].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[6].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[7].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[8].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+        else if (this.state.blogs[i].tags[9].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+      }
+      console.log('number of blogs found')
+      console.log(tempBlogs.length)
+      if (tempBlogs.length===0) {
+        this.setState({emptySearch:true,shownBlogs:tempBlogs})
+      }
+      else {
+        this.setState({emptySearch:false,shownBlogs:tempBlogs})
+      }
     }
+
+
 
 
   }
@@ -205,7 +281,7 @@ class BlogPage extends Component {
         </Col>
       </Row>
       <Row className ='centered-children'>
-          {this.state.blogs.map((blog, i)=>{
+          {this.state.shownBlogs.map((blog, i)=>{
                   return <BlogRow blog ={blog}
                                    index = {i}
                                    key={blog.name+i}/>})}
@@ -221,7 +297,7 @@ class BlogPage extends Component {
                 <img style ={{width:'120%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
               </Col>
               <Col xs={5} sm={5} md={5} lg={5} xl={5} className='centered-children'>
-                <div class="box3 sb14" style={{marginTop: '10vh'}}><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                <div style={{marginTop: '10vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
               </Col>
               <Col xs={1} sm={1} md={1} lg={1} xl={1}>
                 &nbsp;
@@ -286,14 +362,14 @@ class BlogPage extends Component {
       </Row>
       <Row>
         <Col>
-          {this.state.blogs.map((blog, i)=>{
+          {this.state.shownBlogs.map((blog, i)=>{
                   return <LeftCol blog ={blog}
                                   index = {i}
                                   key={blog.name+i}/>
                                    })}
         </Col>
         <Col>
-          {this.state.blogs.map((blog, i)=>{
+          {this.state.shownBlogs.map((blog, i)=>{
                   return <RightCol blog ={blog}
                                    index ={i}
                                    key={blog.name+i}/>
@@ -311,7 +387,7 @@ class BlogPage extends Component {
                 <img style ={{width:'100%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
               </Col>
               <Col xs={3} sm={3} md={3} lg={3} xl={3} className='centered-children'>
-                <div class="box3 sb14"style={{marginTop: '20vh'}}><p className ='roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                <div style={{marginTop: '20vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
               </Col>
               <Col xs={3} sm={3} md={3} lg={3} xl={3}>
                 &nbsp;

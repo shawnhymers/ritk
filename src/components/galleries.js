@@ -9,7 +9,7 @@ import MobileHeader from "./elements/mobileHeader";
 import LeftCol from  './standardComponents/blogComponents/leftCol'
 import RightCol from './standardComponents/blogComponents/rightCol'
 import BlogRow from  './standardComponents/blogComponents/blogRow'
-import Footer from "./app/appPages/home/footer"
+import Footer from "./standardComponents/footer"
 
 class GalleryPage extends Component {
 
@@ -80,6 +80,7 @@ class GalleryPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+    window.scrollTo(0, 0);
     this.updateDimensions();
   }
 

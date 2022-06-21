@@ -30,7 +30,7 @@ return(
   <>
   <div style={{overflowX:'hidden'}}>
     <BlogHeader isMobile={isMobile}/>
-    <BlogBody header ={{src:'vancouverFood.jpg', label:'Medellin Food Guide'}}
+    <BlogBody header ={{src:'MedellinGallery/Medellin15.jpg', label:'Medellin Food Guide'}}
               blurb ={"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}
               updated={'June 2022'}
               isMobile={isMobile}

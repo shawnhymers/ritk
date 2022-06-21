@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import DesktopHeader from "./elements/desktopHeader";
 import MobileHeader from "./elements/mobileHeader";
 import  {  Component } from "react";
-import Footer from "./app/appPages/home/footer"
+import Footer from "./standardComponents/footer"
 
 class AboutPage extends Component {
 
@@ -23,6 +23,7 @@ class AboutPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+    window.scrollTo(0, 0);
     this.updateDimensions();
   }
 
