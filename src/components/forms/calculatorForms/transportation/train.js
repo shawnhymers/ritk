@@ -2,15 +2,14 @@ import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
 import {useState} from "react";
 import gridData from "../../../data/gridData"
-import SearchDrop from '../../../standardComponents/searchDrop';
-import Radio from '@material-ui/core/Radio';
+import SearchDrop from '../../../sharedComponents/formComponents/searchDrop';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import CarbonTotal from "../../../elements/carbonTotal"
-import HelpIcon from "../../../standardComponents/helpIcon"
-import GreenRadio from "../../../standardComponents/greenRadio"
+import CarbonTotal from "../../../sharedComponents/carbonTotal"
+import HelpIcon from "../../../sharedComponents/helpIcon"
+import GreenRadio from "../../../sharedComponents/formComponents/greenRadio"
 
 
 const TrainForm = props => {

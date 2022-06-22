@@ -1,6 +1,7 @@
 import React from 'react';
-import GalleryHeader from "../elements/galleryHeader";
-import GalleryBody from "../standardComponents/galleryBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
 const Ometepe = props => {
@@ -28,7 +29,11 @@ const Ometepe = props => {
 return(
   <>
     <div style={{overflowX:'hidden'}}>
-  <GalleryHeader isMobile={isMobile}/>
+    {isMobile?
+        <MobileHeader page ={'gallery'}/>
+    :
+        <DesktopHeader page ={'gallery'}/>
+    }
   <GalleryBody header ={{src:'OmetepeGallery/ometepe7.jpg', label:'Ometepe Island'}}
             blurb ={[{type:'text',text:"Ometepe Island, Nicaragua is an island in lake Nicaragua famous for being the largest on fresh water in the world and for its two volcanoes: Concepcion and Maderas. We stayed for 5 nights at 3 different accommodations (which was two too many!). Most people only spend a night or two on the island and that is probably enough. The island is stunning and many people find their time there to be spiritually significant. We were still adjusting to life on the road and Central America, so the rougher accommodations, bugs, and scorpions definitely subtracted from our spiritual experience. "}]}
             updated={'December 2021'}

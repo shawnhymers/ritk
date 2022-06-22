@@ -1,14 +1,13 @@
 import  {  Component } from "react";
 import React from "react";
 import {  Row, Col,Container} from 'react-bootstrap';
-import { Link } from "react-router-dom";
-import HelpIcon from "./standardComponents/helpIcon"
-import DesktopHeader from "./elements/desktopHeader";
-import MobileHeader from "./elements/mobileHeader";
-import LeftCol from  './standardComponents/blogComponents/leftCol'
-import RightCol from './standardComponents/blogComponents/rightCol'
-import BlogRow from  './standardComponents/blogComponents/blogRow'
-import Footer from "./standardComponents/footer"
+import HelpIcon from "./sharedComponents/helpIcon"
+import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import LeftCol from  './sharedComponents/blogComponents/leftCol'
+import RightCol from './sharedComponents/blogComponents/rightCol'
+import BlogRow from  './sharedComponents/blogComponents/blogRow'
+import Footer from "./sharedComponents/footer"
 
 class BlogPage extends Component {
   // Setting up initial state
@@ -223,17 +222,14 @@ class BlogPage extends Component {
 
   return(
     <>
+    <div style ={{overflowX:'hidden'}} >
     {this.state.isMobile?
-        <MobileHeader changeView ={this.updateView}
-                       page ={'blog'}/>
+        <MobileHeader page ={'blog'}/>
     :
-        <DesktopHeader changeView ={this.updateView}
-                       page ={'blog'}/>
+        <DesktopHeader page ={'blog'}/>
     }
-
-
-    <div style ={{overflowX:'hidden'}} className='roaming-white'>
-    {this.state.isMobile?
+    <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
+      {this.state.isMobile?
     <>
 
       <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
@@ -405,7 +401,9 @@ class BlogPage extends Component {
       :null}
     </>
 }
+    </Row>
     </div>
+
 <Footer isMobile={this.state.isMobile}/>
 
 

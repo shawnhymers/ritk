@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 const WhistlerFoodGuide = props => {
@@ -28,7 +29,11 @@ const WhistlerFoodGuide = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-  <BlogHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'blog'}/>
+  :
+      <DesktopHeader page ={'blog'}/>
+  }
   <BlogBody header ={{src:'WhistlerFoodGuide/whistlerFood5.jpg', label:'Whistler Food Guide'}}
             blurb ={"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}
             updated={'December 2021'}

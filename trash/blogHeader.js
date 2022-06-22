@@ -41,7 +41,7 @@ return(
 
 <>
 
-<Row style ={{paddingTop:'0vh'}}>
+<Row>
 
   <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
     <Link to='/about'  className = 'centered-children'style = {{textDecoration:'none'}} >
@@ -54,7 +54,7 @@ return(
     </Link>
   </Col>
   <Col xs={4} sm={4} md={4} lg={4} xl={4} className ='centered-children' style = {{maxHeight:'4em'}}>
-    <Link to='/home'  className = 'home-logo'style = {{textDecoration:'none'}} >
+    <Link to='/home'  className = 'centered-children 'style = {{textDecoration:'none',marginTop:'4em',paddingTop:'0vh'}} >
       <img  src = "/logo1.png" alt = 'logo 2' className = 'home-logo'/>
     </Link>
   </Col>

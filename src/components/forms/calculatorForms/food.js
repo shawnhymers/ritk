@@ -2,12 +2,12 @@
 import { Container, Row, Col, Button,Form} from 'react-bootstrap';
 // import FoodList from "../lists/foodList"
 import {useState} from "react";
-import Dropdown from '../../standardComponents/dropdown';
+import Dropdown from '../../sharedComponents/formComponents/dropdown';
 import foodData from "../../data/foodData"
 import dietData from "../../data/dietData"
-import CarbonTotal from "../../elements/carbonTotal"
+import CarbonTotal from "../../sharedComponents/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
-import HelpIcon from "../../standardComponents/helpIcon"
+import HelpIcon from "../../sharedComponents/helpIcon"
 
 const FoodForm = props =>{
 

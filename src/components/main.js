@@ -1,14 +1,13 @@
 import  {  Component } from "react";
 import React from "react";
-import OutcomeMessage from"./standardComponents/outcomeMessage"
-import AboutPreview from "./standardComponents/aboutPreview";
-import BlogPreview from "./standardComponents/blogPreview";
-import LinksPreview from "./standardComponents/linksPreview";
-import GalleryPreview from "./standardComponents/galleryPreview"
-import Footer from "./standardComponents/footer"
-import { Container,Row,Col} from 'react-bootstrap';
-import DesktopHeader from "./elements/desktopHeader";
-import MobileHeader from "./elements/mobileHeader";
+import AboutPreview from "./sharedComponents/previewComponents/aboutPreview";
+import BlogPreview from "./sharedComponents/previewComponents/blogPreview";
+import LinksPreview from "./sharedComponents/previewComponents/linksPreview";
+import GalleryPreview from "./sharedComponents/previewComponents/galleryPreview"
+import Footer from "./sharedComponents/footer"
+import { Row} from 'react-bootstrap';
+import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
 
 class Main extends Component {
   // Setting up initial state

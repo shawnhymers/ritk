@@ -2,15 +2,14 @@ import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
 import  { useState,useEffect } from 'react';
 import airportData from "../../data/airportData"
-import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import SearchDrop from '../../standardComponents/searchDrop';
-import HelpIcon from "../../standardComponents/helpIcon"
-import CarbonTotal from '../../elements/carbonTotal'
-import GreenRadio from "../../standardComponents/greenRadio"
+import SearchDrop from '../../sharedComponents/formComponents/searchDrop';
+import HelpIcon from "../../sharedComponents/helpIcon"
+import CarbonTotal from '../../sharedComponents/carbonTotal'
+import GreenRadio from "../../sharedComponents/formComponents/greenRadio"
 
 const FlightForm = props => {
 

@@ -1,6 +1,5 @@
-import  {  Component } from "react";
 import React from "react";
-import {  Row, Col,Container} from 'react-bootstrap';
+import {  Row} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 const BlogRow = props =>{
@@ -8,7 +7,7 @@ const BlogRow = props =>{
     return(
       <>
         <Row className ='centered-children'>
-          <Link to={props.blog.link} className = 'centered-children' className ='centered-children'>
+          <Link to={props.blog.link} className = 'centered-children' >
             <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>

@@ -1,19 +1,17 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import {useState} from "react";
-import CarbonTotal from "../../elements/carbonTotal"
+import CarbonTotal from "../../sharedComponents/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
 import countryFootprintData from "../../data/countryFootprintData"
 import regionFootprintData from "../../data/regionFootprintData"
-import Radio from '@material-ui/core/Radio';
+
+import SearchDrop from '../../sharedComponents/formComponents/searchDrop';
+import GreenRadio from '../../sharedComponents/formComponents/greenRadio'
+
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import SearchDrop from '../../standardComponents/searchDrop';
-import GreenRadio from '../../standardComponents/greenRadio'
-import YellowRadio from '../../standardComponents/yellowRadio'
-
-
 
 
 const Overview= props =>{

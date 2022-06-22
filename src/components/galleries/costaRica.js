@@ -1,6 +1,7 @@
 import React from 'react';
-import GalleryHeader from "../elements/galleryHeader";
-import GalleryBody from "../standardComponents/galleryBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
 const CostaRica = props => {
@@ -28,7 +29,11 @@ const CostaRica = props => {
 return(
   <>
    <div style={{overflowX:'hidden'}}>
-     <GalleryHeader isMobile={isMobile}/>
+   {isMobile?
+       <MobileHeader page ={'gallery'}/>
+   :
+       <DesktopHeader page ={'gallery'}/>
+   }
      <GalleryBody header ={{src:'CostaRicaGallery/costaRica9.jpg', label:'Costa Rica'}}
                blurb ={[{type:'text',text:"Costa Rica is one of the most popular Central American vacation destinations, known for its beaches, jungles, diverse wildlife, and volcanoes. We were in Costa Rica for just over three weeks traveling between La Fortuna, Monteverde, and Manuel Antonio. We swam in some of the warmest bodies of water at some of the nicest beaches we’ve ever been to, hiked through a cloud forest, and saw about 100 waterfalls. It was beautiful, safe, and accessible. The only downside was, due to popularity, everything was quite busy and expensive."}]}
                updated={'February 2022'}

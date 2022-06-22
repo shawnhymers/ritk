@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container,Row} from 'react-bootstrap';
-import BlogHeader from "../elements/blogHeader";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
 import  { useState,useEffect } from 'react';
 
 const VancouverActivityGuide = props => {
@@ -29,7 +30,11 @@ return(
   <>
     <div style ={{overflowX:'hidden'}}>
     <Container>
-      <BlogHeader isMobile={isMobile}/>
+    {isMobile?
+        <MobileHeader page ={'blog'}/>
+    :
+        <DesktopHeader page ={'blog'}/>
+    }
       <Row>
         <p>Vancouver Activity Guide</p>
       </Row>

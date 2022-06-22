@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 const CarbonCostOfColombia = props => {
@@ -29,7 +30,11 @@ const CarbonCostOfColombia = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <BlogHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'blog'}/>
+  :
+      <DesktopHeader page ={'blog'}/>
+  }
     <BlogBody header ={{src:'MedellinGallery/Medellin11.jpg', label:'Carbon Cost of Colombia'}}
               blurb ={"Here is a breakdown of our carbon footprint of 39 days of travelling Colombia."}
               updated={'May 2022'}

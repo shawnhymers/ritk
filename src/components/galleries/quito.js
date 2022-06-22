@@ -1,6 +1,7 @@
 import React from 'react';
-import GalleryHeader from "../elements/galleryHeader";
-import GalleryBody from "../standardComponents/galleryBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
 const Quito = props => {
@@ -28,7 +29,11 @@ const Quito = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <GalleryHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'gallery'}/>
+  :
+      <DesktopHeader page ={'gallery'}/>
+  }
     <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
               blurb ={[{type:'text',text:"Quito, Ecuador is the country's capital and is actually built on top of an ancient Incan city. You can clearly see Incan stones making up the foundations of many of the buildings in the old town. We were there for about a week and did several day trips from the city. The old town was amazing and the day trips you can do from the city are incredible. Be warned though, the city sits at almost 3,000 M above sea level, so before you fully acclimate make sure you take it slow and stay hydrated. You can read more about our experience "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}

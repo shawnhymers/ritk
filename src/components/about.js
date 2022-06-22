@@ -3,10 +3,10 @@ import { Container,Row,Col} from 'react-bootstrap';
 import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
 import { Link } from "react-router-dom";
-import DesktopHeader from "./elements/desktopHeader";
-import MobileHeader from "./elements/mobileHeader";
+import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
 import  {  Component } from "react";
-import Footer from "./standardComponents/footer"
+import Footer from "./sharedComponents/footer"
 
 class AboutPage extends Component {
 

@@ -148,7 +148,7 @@
   text-transform: none;
   line-height: 1.4em;
   font-size: calc((1.8 - 1) * 0.9vw + 1rem);
-  color: black!important;
+  color: #595456!important;
 }
 .medium-text{
   font-weight: 500;

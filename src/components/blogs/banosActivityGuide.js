@@ -1,7 +1,8 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
 
 const BanosActivityGuide = props => {
 
@@ -29,7 +30,11 @@ const BanosActivityGuide = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <BlogHeader isMobile={isMobile}/>
+    {isMobile?
+        <MobileHeader page ={'blog'}/>
+    :
+        <DesktopHeader page ={'blog'}/>
+    }
     <BlogBody header ={{src:'banos/banos20.jpg', label:'Banos Activity Guide'}}
               blurb ={"Most travelers assume all the adventure Ecuador has to offer is to be had in the Galapagos, but that’s far from the truth. "}
               updated={'May 2022'}

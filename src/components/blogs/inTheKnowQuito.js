@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 const InTheKnowQuito = props => {
@@ -29,7 +30,11 @@ const InTheKnowQuito = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <BlogHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'blog'}/>
+  :
+      <DesktopHeader page ={'blog'}/>
+  }
     <BlogBody header ={{src:'QuitoGallery/Quito15.jpg', label:'In The Know : Quito'}}
               blurb ={"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}
               updated={'May 2022'}

@@ -1,14 +1,13 @@
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import  { useState } from 'react';
-import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import CarbonTotal from "../../elements/carbonTotal"
+import CarbonTotal from "../../sharedComponents/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
-import HelpIcon from "../../standardComponents/helpIcon"
-import GreenRadio from "../../standardComponents/greenRadio"
+import HelpIcon from "../../sharedComponents/helpIcon"
+import GreenRadio from "../../sharedComponents/formComponents/greenRadio"
 
 const Accomodation = props =>{
 

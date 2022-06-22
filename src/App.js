@@ -44,6 +44,8 @@ import Medellin from './components/galleries/medellin'
 import Quito from './components/galleries/quito'
 import Otavalo from './components/galleries/otavalo'
 
+import Arequipa from './components/galleries/arequipa'
+
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
 
@@ -92,9 +94,9 @@ function App() {
             <Route exact path="/Quindo" component={Quindio} />
             <Route exact path="/Guatape" component={Guatape} />
             <Route exact path="/Medellin" component={Medellin} />
-
             <Route exact path="/Quito" component={Quito} />
             <Route exact path="/Otavalo" component={Otavalo} />
+            <Route exact path="/Arequipa" component={Arequipa} />
 
           </ScrollToTop>
         </Router>

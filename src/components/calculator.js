@@ -1,21 +1,18 @@
 import React from 'react';
 import  {  Component } from "react";
-import { Container,Row,Col} from 'react-bootstrap';
-import {SiTiktok} from "react-icons/si";
-import {BsInstagram, BsYoutube} from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Row,Col} from 'react-bootstrap';
 import FlightForm from "./forms/calculatorForms/flights"
 import TransportForm from "./forms/calculatorForms/transportation/main"
 import FoodForm from "./forms/calculatorForms/food"
 import AccomodationForm from "./forms/calculatorForms/accomodation"
 import Overview from "./forms/calculatorForms/overview"
 import  { useState } from 'react';
-import CarbonTotal from "./elements/carbonTotal"
-import DesktopHeader from "./elements/desktopHeader";
-import MobileHeader from "./elements/mobileHeader";
-import Footer from "./standardComponents/footer"
+import CarbonTotal from "./sharedComponents/carbonTotal"
+import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import Footer from "./sharedComponents/footer"
 import { Prompt } from 'react-router'
-import OutcomeMessage from"./standardComponents/outcomeMessage"
+import OutcomeMessage from"./sharedComponents/outcomeMessage"
 
 class CalculatorPage extends Component {
   // Setting up initial state

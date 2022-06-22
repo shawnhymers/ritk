@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 const MedellinFoodGuide = props => {
@@ -29,7 +30,11 @@ const MedellinFoodGuide = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <BlogHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'blog'}/>
+  :
+      <DesktopHeader page ={'blog'}/>
+  }
     <BlogBody header ={{src:'MedellinGallery/Medellin15.jpg', label:'Medellin Food Guide'}}
               blurb ={"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}
               updated={'June 2022'}

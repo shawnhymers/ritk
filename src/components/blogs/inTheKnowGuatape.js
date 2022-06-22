@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogHeader from "../elements/blogHeader";
-import BlogBody from "../standardComponents/blogBody";
+import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 const InTheKnowGuatape = props => {
@@ -29,7 +30,11 @@ const InTheKnowGuatape = props => {
 return(
   <>
   <div style={{overflowX:'hidden'}}>
-    <BlogHeader isMobile={isMobile}/>
+  {isMobile?
+      <MobileHeader page ={'blog'}/>
+  :
+      <DesktopHeader page ={'blog'}/>
+  }
     <BlogBody header ={{src:'GuatapeGallery/Guatape9.jpg', label:'In The Know : Guatape'}}
               blurb ={"Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty."}
               updated={'May 2022'}
