@@ -30,7 +30,7 @@ return(
   <div style={{overflowX:'hidden'}}>
     <GalleryHeader isMobile={isMobile}/>
     <GalleryBody header ={{src:'QuindioGallery/Quindio22.jpg', label:'Quindio'}}
-              blurb ={"Quindo Blurb"}
+              blurb ={[{type:'text',text:"Quindo, Colombia is a part of the “Coffee Triangle”, a part of the Colombian Paisa region in the rural area of Colombia famous for its moderate weather and impressive coffee plantations. It is also home to the famous Valle de Cocora, which is one of the beautiful places we’ve seen to date. We stayed near Filandia for a bit over a week and the entire time we felt like we were in a dream. The lush green rolling hills and countryside calmness was a lovely juxtaposition to our time in the busy Colombian cities."}]}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[

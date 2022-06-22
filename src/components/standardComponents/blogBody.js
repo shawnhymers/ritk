@@ -46,7 +46,10 @@ return(
           &nbsp;
         </Col>
         <Col xs={8} sm={8} md={6} lg={6} xl={6} >
+
           <p className ='blog-body centered-text center-justified-text vertical-padding-sm' align='center'>{props.blurb}</p>
+          
+
         </Col>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;

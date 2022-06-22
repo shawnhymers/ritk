@@ -26,15 +26,15 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
-             {name:'Carbon Cost of Our Diet',
-              pic:'/whistlerFood.jpg',
-              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
-              link:'/CarbonCostOfDiet'},
+            {name:'Carbon Cost of Our Diet',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+             link:'/CarbonCostOfDiet'},
 
-              {name:'Whistler Activity Guide',
-               pic:'/whistlerActivity.jpg',
-               tags:['activity guide', 'bc','','','','','','','',''],
-               link:'/WhistlerActivityGuide'},
+            {name:'Whistler Activity Guide',
+             pic:'/whistlerActivity.jpg',
+             tags:['activity guide', 'bc','','','','','','','',''],
+             link:'/WhistlerActivityGuide'},
 
             {name:'Vancouver Food Guide',
              pic:'/vancouverFood.jpg',
@@ -66,13 +66,10 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
-
-             {name:'Banos Activity Guide',
-              pic: '/banos/banos5.jpg',
-              tags:['activity guide', 'notbc','','','','','','','',''],
-              link:'/BanosActivityGuide'
-            },
-
+            {name:'Banos Activity Guide',
+             pic: '/banos/banos5.jpg',
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/BanosActivityGuide'},
 
             {name:'In The Know Quito',
              pic:'/QuitoGallery/Quito17.jpg',
@@ -82,14 +79,14 @@ class BlogPage extends Component {
             {name:'In The Know Guatape',
              pic:'/GuatapeGallery/Guatape1.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTHeKnowGuatape'},
+             link:'/InTheKnowGuatape'},
 
-              {name:'Medellin Food Guide',
-               pic:'/GuatapeGallery/Guatape1.jpg',
-               tags:['food guide', 'notbc','','','','','','','',''],
-               link:'/MedellinFoodGuide'},
+            {name:'Medellin Food Guide',
+             pic:'/GuatapeGallery/Guatape1.jpg',
+             tags:['food guide', 'notbc','','','','','','','',''],
+             link:'/MedellinFoodGuide'},
                 ],
-      // TEMP:
+
       shownBlogs:[
 
             {name:'In The Know Medellin',
@@ -97,15 +94,15 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
-             {name:'Carbon Cost of Our Diet',
-              pic:'/whistlerFood.jpg',
-              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
-              link:'/CarbonCostOfDiet'},
+            {name:'Carbon Cost of Our Diet',
+             pic:'/whistlerFood.jpg',
+             tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+             link:'/CarbonCostOfDiet'},
 
-              {name:'Whistler Activity Guide',
-               pic:'/whistlerActivity.jpg',
-               tags:['activity guide', 'bc','','','','','','','',''],
-               link:'/WhistlerActivityGuide'},
+            {name:'Whistler Activity Guide',
+             pic:'/whistlerActivity.jpg',
+             tags:['activity guide', 'bc','','','','','','','',''],
+             link:'/WhistlerActivityGuide'},
 
             {name:'Vancouver Food Guide',
              pic:'/vancouverFood.jpg',
@@ -137,44 +134,35 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
-
-             {name:'Banos Activity Guide',
-              pic: '/banos/banos5.jpg',
-              tags:['activity guide', 'notbc','','','','','','','',''],
-              link:'/BanosActivityGuide'
-            },
-
-
             {name:'In The Know Quito',
              pic:'/QuitoGallery/Quito17.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
 
+            {name:'Banos Activity Guide',
+             pic: '/banos/banos5.jpg',
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/BanosActivityGuide'},
+
+            {name:'Medellin Food Guide',
+             pic:'/MedellinGallery/Medellin15.jpg',
+             tags:['food guide', 'notbc','','','','','','','',''],
+             link:'/MedellinFoodGuide'},
+
             {name:'In The Know Guatape',
              pic:'/GuatapeGallery/Guatape1.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTHeKnowGuatape'},
-
-              {name:'Medellin Food Guide',
-               pic:'/MedellinGallery/Medellin15.jpg', 
-               tags:['food guide', 'notbc','','','','','','','',''],
-               link:'/MedellinFoodGuide'},
-                ],
+             link:'/InTheKnowGuatape'},
+           ],
     };
   };
 
   componentDidMount(){
-    console.log('blog mounted')
-
     window.scrollTo(0, 0);
     if (this.props.match.params.searchTerm!== undefined) {
       this.setState({blogs:this.state.blogs,searchValue:this.props.match.params.searchTerm})
       this.tagSearch(this.props.match.params.searchTerm)
     }
-
-
-
-
   }
   tagInput = (e)=>{
     this.setState({searchValue:e.target.value},()=>{this.tagSearch(e.target.value)})
@@ -184,17 +172,11 @@ class BlogPage extends Component {
     this.setState({searchValue:input},()=>{this.tagSearch(input)})
   }
   tagSearch =(value)=>{
-    console.log('searching by tag')
-    console.log(value)
-
     if (value==='') {
         this.setState({emptySearch:false,shownBlogs:this.state.blogs})
     }
     else {
       let tempBlogs = []
-
-      console.log('number of iterations in loop')
-      console.log(this.state.blogs.length)
       for (var i = 0; i < this.state.blogs.length; i++) {
         if (this.state.blogs[i].tags[0].includes(value.toLowerCase())) {
           tempBlogs.push(this.state.blogs[i])
@@ -227,8 +209,6 @@ class BlogPage extends Component {
           tempBlogs.push(this.state.blogs[i])
         }
       }
-      console.log('number of blogs found')
-      console.log(tempBlogs.length)
       if (tempBlogs.length===0) {
         this.setState({emptySearch:true,shownBlogs:tempBlogs})
       }
@@ -236,12 +216,7 @@ class BlogPage extends Component {
         this.setState({emptySearch:false,shownBlogs:tempBlogs})
       }
     }
-
-
-
-
   }
-
 
   render() {
 

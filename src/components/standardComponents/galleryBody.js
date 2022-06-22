@@ -1,5 +1,6 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import {  MdFiberManualRecord } from "react-icons/md";
 
@@ -34,7 +35,16 @@ return(
           &nbsp;
         </Col>
         <Col xs={8} sm={8} md={6} lg={6} xl={6} >
-          <p className ='blog-body centered-text center-justified-text vertical-padding-sm' align='center'>{props.blurb}</p>
+          <Row>
+            <p className ='blog-body centered-text center-justified-text vertical-padding-md'
+               align='center'
+               style={{display:'inline'}}>
+                {props.blurb.map((blurb, i)=>{
+                  return <LinkBlurbSegment blurb={blurb}
+                                           isMobile={props.isMobile}
+                                           key={blurb.type+i}/>})}
+            </p>
+          </Row>
         </Col>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
@@ -148,6 +158,19 @@ const BlogHeader = props =>{
       <Row className ='vertical-margin-sm'>
         <p className ='blog-h1'>{props.text}</p>
       </Row>
+    </>
+  )
+}
+const LinkBlurbSegment = props=>{
+  return(
+    <>
+    {props.blurb.type==='text'?
+      <span>{props.blurb.text}</span>
+    :null
+    }
+    {props.blurb.type ==='link'?
+      <span><Link to={props.blurb.link}>{props.blurb.text}</Link></span>
+    :null}
     </>
   )
 }

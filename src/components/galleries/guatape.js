@@ -30,8 +30,9 @@ return(
     <div style={{overflowX:'hidden'}}>
       <GalleryHeader isMobile={isMobile}/>
       <GalleryBody header ={{src:'GuatapeGallery/Guatape9.jpg', label:'Guatape'}}
-                blurb ={"Guatape Blurb"}
-                updated={'December 2021'}
+                blurb ={[{type:'text',text:"Guatape, Colombia is a small Andean resort town a few hours away from Medelín, and is home to Piedra del Peñol, a giant granite rock towering 220 meters high. We stayed there for just one night, which is probably all you need. The town is very much built around tourism, but we felt like it retained a lot more of its charm than other similarly touristy towns. You can read more about our experience"},
+                         {type:'link',text:' here.',link:"/InTheKnowGuatape"}]}
+                updated={'April 2022'}
                 isMobile={isMobile}
                 contentTest ={[
                                {type:'header',text:"Guatape Title"},

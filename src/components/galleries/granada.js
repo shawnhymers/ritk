@@ -30,7 +30,7 @@ return(
     <div style={{overflowX:'hidden'}}>
   <GalleryHeader isMobile={isMobile}/>
   <GalleryBody header ={{src:'GranadaGallery/granada10.jpg', label:'Granada'}}
-            blurb ={"Granada Blurb"}
+            blurb ={[{type:'text',text:"Granada, Nicaragua is a beautiful colonial city on the coast of lake Nicaragua and is the oldest colonial city in Latin America. We were in Granada for around a week and since it was our first destination in Central America we were a bit intimidated but definitely charmed by the vibrant colonial city."}]}
             updated={'February 2022'}
             isMobile={isMobile}
             contentTest ={[
