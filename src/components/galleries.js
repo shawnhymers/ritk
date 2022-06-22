@@ -75,7 +75,31 @@ class GalleryPage extends Component {
              pic:'/OtavaloGallery/Otavalo2.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/arequipa',
-             key:'10'}],
+             key:'10'},
+
+            {name:'Cusco',
+             pic:'/OtavaloGallery/Otavalo2.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/cusco',
+             key:'11'},
+
+            {name:'Huacachina',
+             pic:'/OtavaloGallery/Otavalo2.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/huacachina',
+             key:'12'},
+
+            {name:'Sacred Valley',
+             pic:'/OtavaloGallery/Otavalo2.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/sacredValley',
+             key:'13'},
+           // TEMP:
+            {name:'Panama City',
+             pic:'/OtavaloGallery/Otavalo2.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/panamaCity',
+             key:'14'}],
     };
     this.updateDimensions = this.updateDimensions.bind(this);
   };

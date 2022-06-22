@@ -45,6 +45,10 @@ import Quito from './components/galleries/quito'
 import Otavalo from './components/galleries/otavalo'
 
 import Arequipa from './components/galleries/arequipa'
+import Cusco from './components/galleries/cusco'
+import Huacachina from './components/galleries/huacachina'
+import SacredValley from './components/galleries/sacredValley'
+import PanamaCity from './components/galleries/panamaCity'
 
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
@@ -98,6 +102,10 @@ function App() {
             <Route exact path="/Otavalo" component={Otavalo} />
             <Route exact path="/Arequipa" component={Arequipa} />
 
+            <Route exact path="/Cusco" component={Cusco} />
+            <Route exact path="/Huacachina" component={Huacachina} />
+            <Route exact path="/SacredValley" component={SacredValley} />
+            <Route exact path="/PanamaCity" component={PanamaCity} />
           </ScrollToTop>
         </Router>
 
