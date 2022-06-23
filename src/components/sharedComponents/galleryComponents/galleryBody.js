@@ -21,7 +21,7 @@ const GalleryBody = props => {
 
 return(
   <>
-    <Container className ='full-width ' style ={{margin:'0vh',padding:'0vh'}}>
+    <Container className ='full-width roaming-white' style ={{margin:'0vh',padding:'0vh'}}>
       <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>
@@ -135,6 +135,9 @@ return(
         <Col xs={1} sm={1} md={2} lg={2} xl={2}>
           &nbsp;
         </Col>
+      </Row>
+      <Row style={{height:'3em'}}>
+        &nbsp;
       </Row>
     </Container>
     <Footer isMobile={props.isMobile}/>

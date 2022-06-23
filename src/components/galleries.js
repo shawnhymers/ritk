@@ -84,7 +84,7 @@ class GalleryPage extends Component {
              key:'11'},
 
             {name:'Huacachina',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/HuacachinaGallery/huacachina12.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huacachina',
              key:'12'},
