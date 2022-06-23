@@ -35,8 +35,8 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:'/PanamaGallery/panama9.jpg', label:'Panama City'}}
-              blurb ={[{type:'text',text:"Panama blurb "},
-                       {type:'link',text:'here',link:'/InTheKnowQuito'}]}
+              blurb ={[{type:'text',text:"Panama City, Panama is a huge and modern city that is the country's capital. Although the city spreads over a huge area, the small, cobblestoned historic district is where most tourists find themselves spending most of their time. We were only in the city for 6 nights as an extended layover during our flight from Costa Rica to Colombia. The historic district was nice and the canal was awesome in the truest sense of the word, but overall we found the vibe to be a bit standoffish and we never felt too comfortable. Of course, we were visiting recently after the city was coming out of a very strict pandemic lockdown, so businesses and people’s mental health were not at their best, which may have contributed to the uneasy vibe we were picking up."},
+                       {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[

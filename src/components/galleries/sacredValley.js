@@ -35,8 +35,8 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:'SacredValleyGallery/sacredValley17.jpg', label:'Sacred Valley'}}
-              blurb ={[{type:'text',text:"Arequipa blurb "},
-                       {type:'link',text:'here',link:'/InTheKnowQuito'}]}
+              blurb ={[{type:'text',text:"The Sacred Valley is a famous region in Peru’s Andean highlands that stretches over 60 square kilometers. Its fertile land once formed the center of Incan civilization. Today, the Sacred Valley is known for small villages, Incan ruins, and of course the main attraction: Machu Picchu. We visited the Sacred Valley as a part of a group tour and were amazed with what we saw. Visiting Machu Picchu and the other Incan sites was a really special experience, and even during the bus and train rides between locations we were surrounded by incredible mountains and rugged scenery along the way."},
+                       {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
