@@ -96,7 +96,7 @@ class GalleryPage extends Component {
              key:'13'},
 
             {name:'Panama City',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/PanamaGallery/panama9.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/panamaCity',
              key:'14'}],

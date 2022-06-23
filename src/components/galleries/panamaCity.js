@@ -34,21 +34,36 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
-              blurb ={[{type:'text',text:"Arequipa blurb "},
+    <GalleryBody header ={{src:'/PanamaGallery/panama9.jpg', label:'Panama City'}}
+              blurb ={[{type:'text',text:"Panama blurb "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Arequipa"},
-                            {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito26.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito24.jpg',src2:'QuitoGallery/Quito22.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito3.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito1.jpg',src2:'QuitoGallery/Quito2.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito4.jpg'},
+                            {type:'header',text:"Panama City"},
+
+                            {type:'horizontalImage',src:'/PanamaGallery/panama1.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama14.jpg',src2:'/PanamaGallery/panama15.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama2.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama7.jpg',src2:'/PanamaGallery/panama8.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama12.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama13.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama5.jpg',src2:'/PanamaGallery/panama6.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama18.jpg',src2:'/PanamaGallery/panama19.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama16.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama20.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama10.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama24.jpg',src2:'/PanamaGallery/panama23.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama21.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama25.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama26.jpg',src2:'/PanamaGallery/panama28.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama27.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama33.jpg',src2:'/PanamaGallery/panama30.jpg'},
+                            {type:'diptych',src1:'/PanamaGallery/panama31.jpg',src2:'/PanamaGallery/panama32.jpg'},
+                            {type:'horizontalImage',src:'/PanamaGallery/panama34.jpg'},
+
+
+
 
 
                            ]}/>
