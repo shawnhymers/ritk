@@ -34,21 +34,33 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
+    <GalleryBody header ={{src:'SacredValleyGallery/sacredValley17.jpg', label:'Sacred Valley'}}
               blurb ={[{type:'text',text:"Arequipa blurb "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Arequipa"},
-                            {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito26.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito24.jpg',src2:'QuitoGallery/Quito22.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito3.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito1.jpg',src2:'QuitoGallery/Quito2.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito4.jpg'},
+                            {type:'header',text:"Sacred Valley"},
+
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley8.jpg',src2:'SacredValleyGallery/sacredValley13.jpg'},
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley2.jpg',src2:'SacredValleyGallery/sacredValley10.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley7.jpg'},
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley6.jpg',src2:'SacredValleyGallery/sacredValley5.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley12.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley23.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley1.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley24.jpg'},
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley27.jpg',src2:'SacredValleyGallery/sacredValley25.jpg'},
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley28.jpg',src2:'SacredValleyGallery/sacredValley29.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley26.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley21.jpg'},
+
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley22.jpg',src2:'SacredValleyGallery/sacredValley14.jpg'},
+                            {type:'diptych',src1:'SacredValleyGallery/sacredValley20.jpg',src2:'SacredValleyGallery/sacredValley19.jpg'},
+                            {type:'horizontalImage',src:'SacredValleyGallery/sacredValley18.jpg'},
+
+
+
 
 
                            ]}/>

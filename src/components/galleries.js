@@ -90,11 +90,11 @@ class GalleryPage extends Component {
              key:'12'},
 
             {name:'Sacred Valley',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/SacredValleyGallery/sacredValley14.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/sacredValley',
              key:'13'},
-           // TEMP:
+
             {name:'Panama City',
              pic:'/OtavaloGallery/Otavalo2.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
