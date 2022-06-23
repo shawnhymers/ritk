@@ -78,7 +78,7 @@ class GalleryPage extends Component {
              key:'10'},
 
             {name:'Cusco',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/CuscoGallery/cusco11.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/cusco',
              key:'11'},

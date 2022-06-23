@@ -34,21 +34,23 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
-              blurb ={[{type:'text',text:"Arequipa blurb "},
+    <GalleryBody header ={{src:'CuscoGallery/cusco10.jpg', label:'Cusco'}}
+              blurb ={[{type:'text',text:"Cusco blurb "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Arequipa"},
-                            {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito26.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito24.jpg',src2:'QuitoGallery/Quito22.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito3.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito1.jpg',src2:'QuitoGallery/Quito2.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito4.jpg'},
+                            {type:'header',text:"Cusco"},
+
+                            {type:'diptych',src1:'CuscoGallery/cusco20.jpg',src2:'CuscoGallery/cusco19.jpg'},
+                            {type:'diptych',src1:'CuscoGallery/cusco4.jpg',src2:'CuscoGallery/cusco16.jpg'},
+                            {type:'horizontalImage',src:'CuscoGallery/cusco7.jpg'},
+
+                            {type:'horizontalImage',src:'CuscoGallery/cusco14.jpg'},
+                            {type:'diptych',src1:'CuscoGallery/cusco2.jpg',src2:'CuscoGallery/cusco6.jpg'},
+                            {type:'diptych',src1:'CuscoGallery/cusco9.jpg',src2:'CuscoGallery/cusco8.jpg'},
+                            {type:'diptych',src1:'CuscoGallery/cusco15.jpg',src2:'CuscoGallery/cusco1.jpg'},
+                            {type:'horizontalImage',src:'CuscoGallery/cusco18.jpg'},
 
 
                            ]}/>
