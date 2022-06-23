@@ -1,7 +1,7 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import Footer from "../footer"
 import {  MdFiberManualRecord } from "react-icons/md";
 
 const BlogSegment = props =>{
@@ -137,6 +137,7 @@ return(
         </Col>
       </Row>
     </Container>
+    <Footer isMobile={props.isMobile}/>
   </>
 )}
 

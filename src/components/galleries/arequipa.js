@@ -34,21 +34,38 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'QuitoGallery/Quito15.jpg', label:'Quito'}}
+    <GalleryBody header ={{src:'ArequipaGallery/Arequipa6.jpg', label:'Arequipa'}}
               blurb ={[{type:'text',text:"Arequipa blurb "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
                             {type:'header',text:"Arequipa"},
-                            {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito26.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito24.jpg',src2:'QuitoGallery/Quito22.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito3.jpg'},
-                            {type:'diptych',src1:'QuitoGallery/Quito1.jpg',src2:'QuitoGallery/Quito2.jpg'},
-                            {type:'horizontalImage',src:'QuitoGallery/Quito4.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa12.jpg',src2:'ArequipaGallery/Arequipa11.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa18.jpg',src2:'ArequipaGallery/Arequipa17.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa21.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa7.jpg',src2:'ArequipaGallery/Arequipa16.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa15.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa22.jpg',src2:'ArequipaGallery/Arequipa14.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa35.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa34.jpg',src2:'ArequipaGallery/Arequipa36.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa23.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa37.jpg',src2:'ArequipaGallery/Arequipa24.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa30.jpg'},
+
+                            {type:'diptych',src1:'ArequipaGallery/Arequipa28.jpg',src2:'ArequipaGallery/Arequipa26.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa29.jpg'},
+
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa25.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa31.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa32.jpg'},
+
+
 
 
                            ]}/>

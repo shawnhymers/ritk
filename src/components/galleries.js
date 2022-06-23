@@ -72,7 +72,7 @@ class GalleryPage extends Component {
              key:'9'},
 
             {name:'Arequipa',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/ArequipaGallery/arequipa1.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/arequipa',
              key:'10'},
