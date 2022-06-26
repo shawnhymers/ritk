@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Cusco"},
+                
 
                             {type:'diptych',src1:'CuscoGallery/cusco20.jpg',src2:'CuscoGallery/cusco19.jpg'},
                             {type:'diptych',src1:'CuscoGallery/cusco4.jpg',src2:'CuscoGallery/cusco16.jpg'},

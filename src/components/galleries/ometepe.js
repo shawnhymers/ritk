@@ -39,7 +39,7 @@ return(
             updated={'December 2021'}
             isMobile={isMobile}
             contentTest ={[
-                           {type:'header',text:"Ometepe Title"},
+                
                            {type:'horizontalImage',src:'OmetepeGallery/ometepe13.jpg'},
                            {type:'diptych',src1:'OmetepeGallery/ometepe11.jpg',src2:'OmetepeGallery/ometepe12.jpg'},
                            {type:'horizontalImage',src:'OmetepeGallery/ometepe5.jpg'},

@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Panama City"},
+                
 
                             {type:'horizontalImage',src:'/PanamaGallery/panama1.jpg'},
                             {type:'diptych',src1:'/PanamaGallery/panama14.jpg',src2:'/PanamaGallery/panama15.jpg'},

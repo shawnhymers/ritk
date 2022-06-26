@@ -39,7 +39,7 @@ return(
             updated={'February 2022'}
             isMobile={isMobile}
             contentTest ={[
-                           {type:'header',text:"Granada Title"},
+                  
                            {type:'horizontalImage',src:'GranadaGallery/granada6.jpg'},
                            {type:'diptych',src1:'GranadaGallery/granada4.jpg',src2:'GranadaGallery/granada5.jpg'},
                            {type:'horizontalImage',src:'GranadaGallery/granada3.jpg'},

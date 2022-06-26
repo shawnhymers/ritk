@@ -68,10 +68,7 @@ return(
             <Col>
               &nbsp;
             </Col>
-            <Col className ='centered-children'
-                 xs={2} sm={2} md={2} lg={2} xl={2}>
-              <MdFiberManualRecord size ='2em' color ="#E7E2CD"/>
-            </Col>
+
             <Col className ='centered-children'
                  xs={2} sm={2} md={2} lg={2} xl={2}>
               <MdFiberManualRecord size ='2em' color ="#E2B54B"/>
@@ -101,9 +98,7 @@ return(
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
               <Row className = 'vertical-padding-sm'>
-                <Col className ='centered-children'>
-                  <MdFiberManualRecord size ='2em' color ="#E7E2CD"/>
-                </Col>
+  
                 <Col className ='centered-children'>
                   <MdFiberManualRecord size ='2em' color ="#E2B54B"/>
                 </Col>

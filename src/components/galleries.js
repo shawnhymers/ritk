@@ -17,7 +17,7 @@ class GalleryPage extends Component {
       showOutcomeMessage:false,
       galleries:[
             {name:'Huacachina',
-             pic:'/HuacachinaGallery/huacachina12.jpg',
+             pic:'/HuacachinaGallery/huacachina18.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huacachina',
              key:'12'},
@@ -35,13 +35,13 @@ class GalleryPage extends Component {
              key:'13'},
 
             {name:'Cusco',
-             pic:'/CuscoGallery/cusco11.jpg',
+             pic:'/CuscoGallery/cusco23.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/cusco',
              key:'11'},
 
             {name:'Otavalo',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+             pic:'/OtavaloGallery/Otavalo17.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/otavalo',
              key:'9'},
@@ -53,7 +53,7 @@ class GalleryPage extends Component {
              key:'8'},
 
             {name:'Quindio',
-             pic:'/QuindioGallery/Quindio18.jpg',
+             pic:'/QuindioGallery/Quindio24.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/quindo',
              key:'6'},
@@ -65,13 +65,13 @@ class GalleryPage extends Component {
              key:'7'},
 
             {name:'Medellin',
-             pic:'/MedellinGallery/Medellin12.jpg',
+             pic:'/MedellinGallery/Medellin13.jpg',
              tags:['activity', 'bc','','','','','','','',''],
              link:'/medellin',
              key:'5'},
 
             {name:'Cartagena',
-             pic:'/CartagenaGallery/cartagena1.jpg',
+             pic:'/CartagenaGallery/cartagena13.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/cartagena',
              key:'4'},
@@ -83,19 +83,19 @@ class GalleryPage extends Component {
              key:'14'},
 
             {name:'Costa Rica',
-             pic:'/CostaRicaGallery/costaRica1.jpg',
+             pic:'/CostaRicaGallery/costaRica8.jpg',
              tags:['activity', 'bc','','','','','','','',''],
              link:'/Costarica',
              key:'3'},
 
             {name:'Ometepe Island',
-             pic:'/OmetepeGallery/ometepe8.jpg',
+             pic:'/OmetepeGallery/ometepe13.jpg',
              tags:['food', 'bc','','','','','','','',''],
              link:'/Ometepe',
              key:'1'},
 
-            {name:'Granada, Nicaragua',
-             pic:'/GranadaGallery/granada10.jpg',
+            {name:'Granada',
+             pic:'/GranadaGallery/granada4.jpg',
              tags:['food', 'bc','','','','','','','',''],
              link:'/Granada',
              key:'2'}

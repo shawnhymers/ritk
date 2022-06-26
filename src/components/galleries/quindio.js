@@ -39,7 +39,7 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Quindio Title"},
+                        
                             {type:'horizontalImage',src:'QuindioGallery/Quindio22.jpg'},
                             {type:'horizontalImage',src:'QuindioGallery/Quindio26.jpg'},
                             {type:'horizontalImage',src:'QuindioGallery/Quindio20.jpg'},

@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Sacred Valley"},
+              
 
                             {type:'diptych',src1:'SacredValleyGallery/sacredValley8.jpg',src2:'SacredValleyGallery/sacredValley13.jpg'},
                             {type:'diptych',src1:'SacredValleyGallery/sacredValley2.jpg',src2:'SacredValleyGallery/sacredValley10.jpg'},

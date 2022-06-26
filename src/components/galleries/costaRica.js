@@ -40,7 +40,7 @@ return(
                updated={'February 2022'}
                isMobile={isMobile}
                contentTest ={[
-                              {type:'header',text:"Costa Rica Title"},
+                          
                               {type:'diptych',src1:'CostaRicaGallery/costaRica8.jpg',src2:'CostaRicaGallery/costaRica35.jpg'},
                               {type:'diptych',src1:'CostaRicaGallery/costaRica34.jpg',src2:'CostaRicaGallery/costaRica33.jpg'},
                               {type:'horizontalImage',src:'CostaRicaGallery/costaRica27.jpg'},

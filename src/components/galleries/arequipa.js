@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Arequipa"},
+              
 
                             {type:'diptych',src1:'ArequipaGallery/Arequipa12.jpg',src2:'ArequipaGallery/Arequipa11.jpg'},
                             {type:'diptych',src1:'ArequipaGallery/Arequipa18.jpg',src2:'ArequipaGallery/Arequipa17.jpg'},

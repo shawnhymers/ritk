@@ -39,7 +39,7 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Otavalo Title"},
+                        
                             {type:'horizontalImage',src:'OtavaloGallery/Otavalo15.jpg'},
                             {type:'diptych',src1:'OtavaloGallery/Otavalo14.jpg',src2:'OtavaloGallery/Otavalo24.jpg'},
                             {type:'diptych',src1:'OtavaloGallery/Otavalo23.jpg',src2:'OtavaloGallery/Otavalo20.jpg'},

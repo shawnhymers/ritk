@@ -39,7 +39,7 @@ return(
                   updated={'March 2022'}
                   isMobile={isMobile}
                   contentTest ={[
-                                {type:'header',text:"Cartagena Title"},
+                        
                                 {type:'horizontalImage',src:'CartagenaGallery/cartagena13.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena9.jpg',src2:'CartagenaGallery/cartagena11.jpg'},
                                 {type:'diptych',src1:'CartagenaGallery/cartagena10.jpg',src2:'CartagenaGallery/cartagena15.jpg'},

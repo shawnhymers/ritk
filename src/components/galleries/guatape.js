@@ -40,7 +40,7 @@ return(
                 updated={'April 2022'}
                 isMobile={isMobile}
                 contentTest ={[
-                               {type:'header',text:"Guatape Title"},
+                          
                                {type:'horizontalImage',src:'GuatapeGallery/Guatape1.jpg'},
                                {type:'diptych',src1:'GuatapeGallery/Guatape18.jpg',src2:'GuatapeGallery/Guatape22.jpg'},
                                {type:'horizontalImage',src:'GuatapeGallery/Guatape13.jpg'},

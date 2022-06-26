@@ -40,7 +40,7 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Quito Title"},
+                
                             {type:'diptych',src1:'QuitoGallery/Quito27.jpg',src2:'QuitoGallery/Quito6.jpg'},
                             {type:'horizontalImage',src:'QuitoGallery/Quito11.jpg'},
                             {type:'horizontalImage',src:'QuitoGallery/Quito13.jpg'},

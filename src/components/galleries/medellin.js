@@ -40,7 +40,7 @@ return(
                 updated={'December 2021'}
                 isMobile={isMobile}
                 contentTest ={[
-                               {type:'header',text:"Medellin Title"},
+                        
                                {type:'horizontalImage',src:'MedellinGallery/Medellin11.jpg'},
                                {type:'diptych',src1:'MedellinGallery/Medellin7.jpg',src2:'MedellinGallery/Medellin6.jpg'},
                                {type:'diptych',src1:'MedellinGallery/Medellin2.jpg',src2:'MedellinGallery/Medellin8.jpg'},

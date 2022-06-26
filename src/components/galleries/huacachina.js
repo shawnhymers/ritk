@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-                            {type:'header',text:"Huacachina"},
+        
                             {type:'diptych',src1:'HuacachinaGallery/huacachina15.jpg',src2:'HuacachinaGallery/huacachina14.jpg'},
                             {type:'horizontalImage',src:'HuacachinaGallery/huacachina22.jpg'},
                             {type:'diptych',src1:'HuacachinaGallery/huacachina5.jpg',src2:'HuacachinaGallery/huacachina2.jpg'},
