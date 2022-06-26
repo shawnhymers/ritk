@@ -34,7 +34,7 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'HuacachinaGallery/huacachina23.jpg', label:'Huacachina'}}
+    <GalleryBody header ={{src:'HuacachinaGallery/huacachina23.jpg', label:'Huacachina', subLabel:'Photo Gallery'}}
               blurb ={[{type:'text',text:"Huacachina is a tiny village built around a desert oasis just outside of the city of Ica, Peru. The lagoon originally was a natural feature created by seepage from an underwater aquifer. Unfortunately, due to well-drilling, the naturally occurring water is decreasing and now the tourist site is being artificially supported. Regardless, it is a very magical place. We stayed for 2 nights which we thought was a great amount of time. Some people come for just a day trip but we think it is worth the extra time to experience everything Huacachina has to offer, such as sunrise/sunset on the dunes, sand boarding, and ripping around on the dune buggies. We had a blast the whole time and kept being blown away by the beauty of the oasis and surrounding desert. "},
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}

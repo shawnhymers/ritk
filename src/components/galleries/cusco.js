@@ -34,7 +34,7 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'CuscoGallery/cusco10.jpg', label:'Cusco'}}
+    <GalleryBody header ={{src:'CuscoGallery/cusco10.jpg', label:'Cusco', subLabel:'Photo Gallery'}}
               blurb ={[{type:'text',text:"Cusco, Peru is a city in the Peruvian Andes that was once famously the capital of the Incan empire. The Incan influence is clear when walking through the narrow cobblestone streets and seeing the Incan stone as building foundations. We were in Cusco for around 2 weeks and had a mixed bag experience. The elevation and the cold wore us out a little, but the charm of the old city and the amazing food to be had made up for it. Aside from beautiful architecture, there isn’t too much to see in the city itself, but there are loads of day tours to do that start from Cusco. To learn more about what we got up to in our time there check out"},
                        {type:'link',text:' our blog about it',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}

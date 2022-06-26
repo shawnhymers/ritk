@@ -34,7 +34,7 @@ return(
     :
         <DesktopHeader page ={'gallery'}/>
     }
-      <GalleryBody header ={{src:'MedellinGallery/Medellin11.jpg', label:'Medellin'}}
+      <GalleryBody header ={{src:'MedellinGallery/Medellin11.jpg', label:'Medellin', subLabel:'Photo Gallery'}}
                 blurb ={[{type:'text',text:"Medellín, Colombia is located in the Aburrá Valley, which is a central region of the Andes Mountains. It is one of the largest cities in the country and is nicknamed the “City of Eternal Spring” for its temperate weather. We stayed in Medellín for two weeks, which is long enough to see most of the city's top sites, but we could have stayed much longer. It is an incredibly livable city with an indescribable energy. You can read more about our       experience"},
                          {type:'link', text:'here',link:"/InTheKnowMedellin"}]}
                 updated={'December 2021'}

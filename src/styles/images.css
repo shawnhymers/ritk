@@ -56,7 +56,7 @@
 }
 
 .gallery-col:hover{
-    filter: brightness(50%);
+    filter: brightness(80%);
 }
 
 .gallery-label{
@@ -87,6 +87,18 @@
   display: block;
   font-family: roamingFont;
   font-size: calc((6 - 1) * 1.2vw + 1em);
+  color: #ebeae6;
+  z-index: 16;
+
+
+
+}
+.blog-sub-label{
+  position: absolute;
+  display: block;
+  font-family: roamingFont;
+  font-size: calc((2 - 1) * 1.2vw + 1em);
+  margin-top:calc((8 - 1) * 1.2vw + 1em);
   color: #ebeae6;
   z-index: 16;
 

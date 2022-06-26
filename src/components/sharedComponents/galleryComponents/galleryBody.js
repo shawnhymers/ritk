@@ -25,6 +25,7 @@ return(
       <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
         <p className ='blog-label centered-text'>{props.header.label}</p>
+        <p className ='centered-text blog-sub-label'>{props.header.subLabel} </p>
         <img src ={props.header.src}
              alt ={props.header.label}
              style ={{margin:'0vh',padding:'0vh',minWidth:'100vw'}}

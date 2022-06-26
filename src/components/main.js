@@ -17,7 +17,7 @@ class Main extends Component {
       isMobile:false,
       showOutcomeMessage:false,
       galleryPreviews:[
-        {name:'Costa Rica',
+        {name:'Costa Rica Photo Gallery',
          pic:'/galleryTest1.jpg',
          tags:['activity', 'bc','','','','','','','',''],
          link:'/Costarica',
@@ -125,8 +125,9 @@ return(
 
     <AboutPreview />
     <LinksPreview useLink={props.useLink}/>
-    <BlogPreview/>
     <GalleryPreview galleryImages={props.galleryPreviews}/>
+    <BlogPreview/>
+
     <Footer isMobile={props.isMobile}/>
   </>
 )

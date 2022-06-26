@@ -19,16 +19,55 @@ class BlogPage extends Component {
       emptySearch:false,
       blogSearch:'',
       blogs:[
+            {name:'Banos Activity Guide',
+             pic: '/banos/banos5.jpg',
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/BanosActivityGuide'},
+
+            {name:'In The Know Quito',
+             pic:'/QuitoGallery/Quito17.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/InTheKnowQuito'},
+
+            {name:'Carbon Cost of Ecuador',
+             pic:'/QuitoGallery/Quito26.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfEcuador'},
+
+            {name:'Carbon Cost of Colombia',
+             pic:'/QuindioGallery/Quindio18.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfColombia'},
 
             {name:'In The Know Medellin',
-             pic:'/MedellinGallery/Medellin11.jpg',
+             pic:'/MedellinGallery/Medellin13.jpg',
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
+            {name:'Medellin Food Guide',
+             pic:'/MedellinGallery/Medellin22.jpg',
+             tags:['food guide', 'notbc','','','','','','','',''],
+             link:'/MedellinFoodGuide'},
+
+            {name:'In The Know Guatape',
+             pic:'/GuatapeGallery/Guatape1.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/InTheKnowGuatape'},
+
+            {name:'Carbon Cost of Latam',
+             pic:'/CostaRicaGallery/costaRica15.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfLatam'},
+
             {name:'Carbon Cost of Our Diet',
-             pic:'/whistlerFood.jpg',
+             pic:'/ArequipaGallery/arequipa38.jpg',
              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
              link:'/CarbonCostOfDiet'},
+
+            {name:'Carbon Cost of Flying',
+             pic:'/planeWing.jpg',
+             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             link:'/CarbonCostOfFlying'},
 
             {name:'Whistler Activity Guide',
              pic:'/whistlerActivity.jpg',
@@ -45,113 +84,76 @@ class BlogPage extends Component {
              tags:['food guide', 'bc','','','','','','','',''],
              link:'/WhistlerFoodGuide'},
 
-            {name:'Carbon Cost of Latam',
-             pic:'/CostaRicaGallery/costaRica15.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfLatam'},
-
-            {name:'Carbon Cost of Flying',
-             pic:'/planeWing.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfFlying'},
-
-            {name:'Carbon Cost of Colombia',
-             pic:'/MedellinGallery/Medellin11.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfColombia'},
-
-            {name:'Carbon Cost of Ecuador',
-             pic:'/QuitoGallery/Quito26.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfEcuador'},
-
-            {name:'Banos Activity Guide',
-             pic: '/banos/banos5.jpg',
-             tags:['activity guide', 'notbc','','','','','','','',''],
-             link:'/BanosActivityGuide'},
-
-            {name:'In The Know Quito',
-             pic:'/QuitoGallery/Quito17.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTheKnowQuito'},
-
-            {name:'In The Know Guatape',
-             pic:'/GuatapeGallery/Guatape1.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTheKnowGuatape'},
-
-            {name:'Medellin Food Guide',
-             pic:'/GuatapeGallery/Guatape1.jpg',
-             tags:['food guide', 'notbc','','','','','','','',''],
-             link:'/MedellinFoodGuide'},
                 ],
 
       shownBlogs:[
 
-            {name:'In The Know Medellin',
-             pic:'/MedellinGallery/Medellin11.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTheKnowMedellin'},
+        {name:'Banos Activity Guide',
+         pic: '/banos/banos5.jpg',
+         tags:['activity guide', 'notbc','','','','','','','',''],
+         link:'/BanosActivityGuide'},
 
-            {name:'Carbon Cost of Our Diet',
-             pic:'/whistlerFood.jpg',
-             tags:['activity', 'notbc','carbon footprint','','','','','','',''],
-             link:'/CarbonCostOfDiet'},
+        {name:'In The Know Quito',
+         pic:'/QuitoGallery/Quito17.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/InTheKnowQuito'},
 
-            {name:'Whistler Activity Guide',
-             pic:'/whistlerActivity.jpg',
-             tags:['activity guide', 'bc','','','','','','','',''],
-             link:'/WhistlerActivityGuide'},
+        {name:'Carbon Cost of Ecuador',
+         pic:'/QuitoGallery/Quito26.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/CarbonCostOfEcuador'},
 
-            {name:'Vancouver Food Guide',
-             pic:'/vancouverFood.jpg',
-             tags:['food guide', 'bc','','','','','','','',''],
-             link:'/VancouverFoodGuide'},
+        {name:'Carbon Cost of Colombia',
+         pic:'/QuindioGallery/Quindio18.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/CarbonCostOfColombia'},
 
-            {name:'Whistler Food Guide',
-             pic:'/whistlerFood.jpg',
-             tags:['food guide', 'bc','','','','','','','',''],
-             link:'/WhistlerFoodGuide'},
+        {name:'In The Know Medellin',
+         pic:'/MedellinGallery/Medellin13.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/InTheKnowMedellin'},
 
-            {name:'Carbon Cost of Latam',
-             pic:'/CostaRicaGallery/costaRica15.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfLatam'},
+        {name:'Medellin Food Guide',
+         pic:'/MedellinGallery/Medellin22.jpg',
+         tags:['food guide', 'notbc','','','','','','','',''],
+         link:'/MedellinFoodGuide'},
 
-            {name:'Carbon Cost of Flying',
-             pic:'/planeWing.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfFlying'},
+        {name:'In The Know Guatape',
+         pic:'/GuatapeGallery/Guatape1.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/InTheKnowGuatape'},
 
-            {name:'Carbon Cost of Colombia',
-             pic:'/MedellinGallery/Medellin11.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfColombia'},
+        {name:'Carbon Cost of Latam',
+         pic:'/CostaRicaGallery/costaRica15.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/CarbonCostOfLatam'},
 
-            {name:'Carbon Cost of Ecuador',
-             pic:'/QuitoGallery/Quito26.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfEcuador'},
+        {name:'Carbon Cost of Our Diet',
+         pic:'/ArequipaGallery/arequipa38.jpg',
+         tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+         link:'/CarbonCostOfDiet'},
 
-            {name:'In The Know Quito',
-             pic:'/QuitoGallery/Quito17.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTheKnowQuito'},
+        {name:'Carbon Cost of Flying',
+         pic:'/planeWing.jpg',
+         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         link:'/CarbonCostOfFlying'},
 
-            {name:'Banos Activity Guide',
-             pic: '/banos/banos5.jpg',
-             tags:['activity guide', 'notbc','','','','','','','',''],
-             link:'/BanosActivityGuide'},
+        {name:'Whistler Activity Guide',
+         pic:'/whistlerActivity.jpg',
+         tags:['activity guide', 'bc','','','','','','','',''],
+         link:'/WhistlerActivityGuide'},
 
-            {name:'Medellin Food Guide',
-             pic:'/MedellinGallery/Medellin15.jpg',
-             tags:['food guide', 'notbc','','','','','','','',''],
-             link:'/MedellinFoodGuide'},
+        {name:'Vancouver Food Guide',
+         pic:'/vancouverFood.jpg',
+         tags:['food guide', 'bc','','','','','','','',''],
+         link:'/VancouverFoodGuide'},
 
-            {name:'In The Know Guatape',
-             pic:'/GuatapeGallery/Guatape1.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/InTheKnowGuatape'},
+        {name:'Whistler Food Guide',
+         pic:'/whistlerFood.jpg',
+         tags:['food guide', 'bc','','','','','','','',''],
+         link:'/WhistlerFoodGuide'},
+
+
            ],
     };
   };
@@ -233,10 +235,10 @@ class BlogPage extends Component {
     <>
 
       <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
           &nbsp;
         </Col>
-        <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+        <Col xs={6} sm={6} md={4} lg={4} xl={4}>
           <Row>
             <input onChange={this.tagInput}
                    value={this.state.searchValue}
@@ -247,7 +249,7 @@ class BlogPage extends Component {
             <label htmlFor="searchValue" >Search</label>
           </Row>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
           &nbsp;
         </Col>
       </Row>
@@ -309,10 +311,10 @@ class BlogPage extends Component {
     :
     <>
       <Row className ='nice-input-wrapper form-line' style ={{paddingTop:'12.5vh'}}>
-        <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
           &nbsp;
         </Col>
-        <Col  xs={6} sm={6} md={6} lg={6} xl={6}>
+          <Col xs={6} sm={6} md={4} lg={4} xl={4}>
           <Row>
             <input onChange={this.tagInput}
                    onBlur = {this.tagSearch}
@@ -327,7 +329,7 @@ class BlogPage extends Component {
         <Col xs={2} sm={2} md={2} lg={2} xl={2}>
           <HelpIcon message ="Search by keyword to find what you're looking for."/>
         </Col>
-        <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+        <Col xs={1} sm={1} md={2} lg={2} xl={2}>
           &nbsp;
         </Col>
       </Row>
@@ -402,9 +404,9 @@ class BlogPage extends Component {
     </>
 }
     </Row>
+    <Footer isMobile={this.state.isMobile}/>
     </div>
 
-<Footer isMobile={this.state.isMobile}/>
 
 
     </>

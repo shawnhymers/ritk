@@ -100,8 +100,9 @@ return(
         </Row>
       </Col>
     </Row>
+    <Footer isMobile={this.state.isMobile}/>
   </div>
-<Footer isMobile={this.state.isMobile}/>
+
 
 
   </>

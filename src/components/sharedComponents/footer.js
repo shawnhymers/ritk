@@ -54,15 +54,16 @@ return(
     <>
     <Row className ='form-line nice-input-wrapper fill-width'>
       <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-        <Row>
+        <Row  >
           <input type="text"
                  id="userEmail"
                  name="userEmail"
                  value = {userEmail}
+
                  placeholder ='Your Email:'
                  onChange = {updateEmail}/>
           <label htmlFor="userEmail">
-            Your Email:
+            Email:
           </label>
         </Row>
       </Col>
@@ -92,7 +93,7 @@ return(
       </Col>
     </Row>
     <Row >
-    <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
+    <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1.5rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
 
     </Row>
     </>
@@ -104,15 +105,15 @@ return(
       <Row className ='form-line nice-input-wrapper fill-width'>
 
         <Col xs={6} sm={6} md={8} lg={8} xl={8}>
-          <Row>
+          <Row style={{paddingLeft:'2.5em'}}>
             <input type="text"
                    id="userEmail"
                    name="userEmail"
                    value = {userEmail}
-                   placeholder ='Your Email:'
+                   placeholder ='Email:'
                    onChange = {updateEmail}/>
             <label htmlFor="userEmail">
-              Your Email:
+              Email:
             </label>
           </Row>
         </Col>
@@ -131,7 +132,7 @@ return(
           &nbsp;
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} className ='centered-children'>
-          <Row>
+          <Row style={{paddingRight:'2.5em'}}>
             <Col style ={{maxWidth:'2.6em'}}>
               <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
             </Col>
@@ -147,7 +148,7 @@ return(
           </Row>
         </Col>
       </Row>
-      <Row className ='centered-children'>
+      <Row className ='centered-children' style={{paddingRight:'2.5em'}}>
         <Col xs={0} sm={0} md={6} lg={6} xl={6}>
           &nbsp;
         </Col>

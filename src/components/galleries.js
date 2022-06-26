@@ -16,36 +16,41 @@ class GalleryPage extends Component {
       isMobile:false,
       showOutcomeMessage:false,
       galleries:[
-
-            {name:'Granada, Nicaragua',
-             pic:'/GranadaGallery/granada10.jpg',
-             tags:['food', 'bc','','','','','','','',''],
-             link:'/Granada',
-             key:'2'},
-
-            {name:'Ometepe Island',
-             pic:'/OmetepeGallery/ometepe8.jpg',
-             tags:['food', 'bc','','','','','','','',''],
-             link:'/Ometepe',
-             key:'1'},
-
-            {name:'Costa Rica',
-             pic:'/CostaRicaGallery/costaRica1.jpg',
-             tags:['activity', 'bc','','','','','','','',''],
-             link:'/Costarica',
-             key:'3'},
-
-            {name:'Cartagena',
-             pic:'/CartagenaGallery/cartagena1.jpg',
+            {name:'Huacachina',
+             pic:'/HuacachinaGallery/huacachina12.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/cartagena',
-             key:'4'},
+             link:'/huacachina',
+             key:'12'},
 
-            {name:'Medellin',
-             pic:'/MedellinGallery/Medellin12.jpg',
-             tags:['activity', 'bc','','','','','','','',''],
-             link:'/medellin',
-             key:'5'},
+            {name:'Arequipa',
+             pic:'/ArequipaGallery/arequipa1.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/arequipa',
+             key:'10'},
+
+            {name:'Sacred Valley',
+             pic:'/SacredValleyGallery/sacredValley14.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/sacredValley',
+             key:'13'},
+
+            {name:'Cusco',
+             pic:'/CuscoGallery/cusco11.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/cusco',
+             key:'11'},
+
+            {name:'Otavalo',
+             pic:'/OtavaloGallery/Otavalo2.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/otavalo',
+             key:'9'},
+
+            {name:'Quito',
+             pic:'/QuitoGallery/Quito17.jpg',
+             tags:['activity', 'notbc','','','','','','','',''],
+             link:'/quito',
+             key:'8'},
 
             {name:'Quindio',
              pic:'/QuindioGallery/Quindio18.jpg',
@@ -59,47 +64,44 @@ class GalleryPage extends Component {
              link:'/guatape',
              key:'7'},
 
-            {name:'Quito',
-             pic:'/QuitoGallery/Quito17.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/quito',
-             key:'8'},
+            {name:'Medellin',
+             pic:'/MedellinGallery/Medellin12.jpg',
+             tags:['activity', 'bc','','','','','','','',''],
+             link:'/medellin',
+             key:'5'},
 
-            {name:'Otavalo',
-             pic:'/OtavaloGallery/Otavalo2.jpg',
+            {name:'Cartagena',
+             pic:'/CartagenaGallery/cartagena1.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/otavalo',
-             key:'9'},
-
-            {name:'Arequipa',
-             pic:'/ArequipaGallery/arequipa1.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/arequipa',
-             key:'10'},
-
-            {name:'Cusco',
-             pic:'/CuscoGallery/cusco11.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/cusco',
-             key:'11'},
-
-            {name:'Huacachina',
-             pic:'/HuacachinaGallery/huacachina12.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/huacachina',
-             key:'12'},
-
-            {name:'Sacred Valley',
-             pic:'/SacredValleyGallery/sacredValley14.jpg',
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/sacredValley',
-             key:'13'},
+             link:'/cartagena',
+             key:'4'},
 
             {name:'Panama City',
              pic:'/PanamaGallery/panama9.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/panamaCity',
-             key:'14'}],
+             key:'14'},
+
+            {name:'Costa Rica',
+             pic:'/CostaRicaGallery/costaRica1.jpg',
+             tags:['activity', 'bc','','','','','','','',''],
+             link:'/Costarica',
+             key:'3'},
+
+            {name:'Ometepe Island',
+             pic:'/OmetepeGallery/ometepe8.jpg',
+             tags:['food', 'bc','','','','','','','',''],
+             link:'/Ometepe',
+             key:'1'},
+
+            {name:'Granada, Nicaragua',
+             pic:'/GranadaGallery/granada10.jpg',
+             tags:['food', 'bc','','','','','','','',''],
+             link:'/Granada',
+             key:'2'}
+
+
+            ],
     };
     this.updateDimensions = this.updateDimensions.bind(this);
   };
@@ -177,9 +179,9 @@ return(
 
   </Row>
 
+  <Footer isMobile={this.state.isMobile}/>
   </div>
 
-<Footer isMobile={this.state.isMobile}/>
 
   </>
 )}}

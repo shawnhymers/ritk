@@ -119,7 +119,7 @@
   /* letter-spacing: 0.08em; */
   text-transform: none;
   line-height: 1.4em;
-  font-size: calc((4.4 - 1) * 0.9vw + 1rem);
+  font-size: calc((4.1 - 1) * 0.9vw + 1rem);
 }
 .small-link-text{
   font-weight: 500;

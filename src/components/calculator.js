@@ -164,7 +164,7 @@ class CalculatorPage extends Component {
 
   return(
     <>
-
+<div style ={{overflowX:'hidden'}} >
     <Prompt
       when={this.state.shouldBlockNavigation}
       message='Leaving will discard your changes, are you sure you want to leave?'
@@ -204,6 +204,8 @@ class CalculatorPage extends Component {
                 hotelList={this.state.hotelList}/>
 
     <Footer isMobile={this.state.isMobile}/>
+
+      </div>
     </>
 
 )}};

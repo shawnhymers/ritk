@@ -34,7 +34,7 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'OtavaloGallery/otavalo1.jpg', label:'Otavalo'}}
+    <GalleryBody header ={{src:'OtavaloGallery/otavalo1.jpg', label:'Otavalo', subLabel:'Photo Gallery'}}
               blurb ={[{type:'text',text:"Otavalo is a town in the Andean highlands in the Imbabura province of northern Ecuador famous for its outdoor market in the central Plaza de Ponchos. It is the largest crafts market in South America, where hundreds of indigenous crafts people sell their textiles and handicrafts. We only spent an afternoon here during a day trip from Quito (the nearby capital city). The market was a super fun experience. The wares were reasonably priced and well made, and the locals were a blast to try to bargain with."}]}
               updated={'December 2021'}
               isMobile={isMobile}

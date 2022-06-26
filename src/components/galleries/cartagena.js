@@ -34,7 +34,7 @@ return(
    :
        <DesktopHeader page ={'gallery'}/>
    }
-     <GalleryBody header ={{src:'CartagenaGallery/cartagena13.jpg', label:'Cartagena'}}
+     <GalleryBody header ={{src:'CartagenaGallery/cartagena13.jpg', label:'Cartagena', subLabel:'Photo Gallery'}}
                   blurb ={[{type:'text',text:"Cartagena, Colombia is a city built around one of the major ports on Colombia’s northern coast. It has served as a vital port town since 1540. We were in Cartagena for a little over a week which was definitely enough for us to feel like we knew it. The old town is charming, but we found the heat, the hectic streets, and the party atmosphere a bit much for us."}]}
                   updated={'March 2022'}
                   isMobile={isMobile}
