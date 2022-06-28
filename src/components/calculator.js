@@ -40,7 +40,9 @@ class CalculatorPage extends Component {
       train:[],
       food:[],
       diet:[],
-      accomodation:[]
+      accomodation:[],
+
+
 
     };
     this.updateDimensions = this.updateDimensions.bind(this);
@@ -194,14 +196,14 @@ class CalculatorPage extends Component {
                 totalDietCost={this.state.totalDietCost}
                 totalAccomodationCost = {this.state.totalAccomodationCost}
                 isMobile={this.state.isMobile}
-                flightList={this.state.flightList}
-                transportList={this.state.transportList}
-                carList={this.state.carList}
-                busList={this.state.busList}
-                trainList={this.state.trainList}
-                foodList={this.state.foodList}
-                dietList={this.state.dietList}
-                hotelList={this.state.hotelList}/>
+                flightList={this.state.flight}
+                transportList={this.state.transport}
+                carList={this.state.car}
+                busList={this.state.bus}
+                trainList={this.state.train}
+                foodList={this.state.food}
+                dietList={this.state.diet}
+                hotelList={this.state.accomodation}/>
 
     <Footer isMobile={this.state.isMobile}/>
 

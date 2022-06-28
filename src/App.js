@@ -9,7 +9,7 @@ import './styles/layout.css';
 import './styles/text.css';
 import './styles/effects.css';
 import './styles/speechBubbles.css'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 
 import Main from './components/main';
 // import Blog from './components/blog'
@@ -58,7 +58,7 @@ function App() {
 
         <Router>
           <ScrollToTop>
-
+          <Switch>
             <Route exact path="/" component={Main} />
             <Route exact path="/home" component={Main} />
 
@@ -106,6 +106,7 @@ function App() {
             <Route exact path="/Huacachina" component={Huacachina} />
             <Route exact path="/SacredValley" component={SacredValley} />
             <Route exact path="/PanamaCity" component={PanamaCity} />
+          </Switch>
           </ScrollToTop>
         </Router>
 
