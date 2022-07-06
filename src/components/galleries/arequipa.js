@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-              
+
 
                             {type:'diptych',src1:'ArequipaGallery/Arequipa12.jpg',src2:'ArequipaGallery/Arequipa11.jpg'},
                             {type:'diptych',src1:'ArequipaGallery/Arequipa18.jpg',src2:'ArequipaGallery/Arequipa17.jpg'},

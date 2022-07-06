@@ -3,7 +3,7 @@ import React from "react";
 import {  Row, Col,Container} from 'react-bootstrap';
 import HelpIcon from "./sharedComponents/helpIcon"
 import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
 import LeftCol from  './sharedComponents/blogComponents/leftCol'
 import RightCol from './sharedComponents/blogComponents/rightCol'
 import BlogRow from  './sharedComponents/blogComponents/blogRow'

@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -40,7 +40,7 @@ return(
                 updated={'December 2021'}
                 isMobile={isMobile}
                 contentTest ={[
-                        
+
                                {type:'horizontalImage',src:'MedellinGallery/Medellin11.jpg'},
                                {type:'diptych',src1:'MedellinGallery/Medellin7.jpg',src2:'MedellinGallery/Medellin6.jpg'},
                                {type:'diptych',src1:'MedellinGallery/Medellin2.jpg',src2:'MedellinGallery/Medellin8.jpg'},

@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -39,7 +39,7 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                        
+
                             {type:'horizontalImage',src:'OtavaloGallery/Otavalo15.jpg'},
                             {type:'diptych',src1:'OtavaloGallery/Otavalo14.jpg',src2:'OtavaloGallery/Otavalo24.jpg'},
                             {type:'diptych',src1:'OtavaloGallery/Otavalo23.jpg',src2:'OtavaloGallery/Otavalo20.jpg'},

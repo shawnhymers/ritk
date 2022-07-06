@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -40,7 +40,7 @@ return(
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[
-              
+
 
                             {type:'diptych',src1:'SacredValleyGallery/sacredValley8.jpg',src2:'SacredValleyGallery/sacredValley13.jpg'},
                             {type:'diptych',src1:'SacredValleyGallery/sacredValley2.jpg',src2:'SacredValleyGallery/sacredValley10.jpg'},

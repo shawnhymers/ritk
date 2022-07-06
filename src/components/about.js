@@ -4,7 +4,7 @@ import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
 import { Link } from "react-router-dom";
 import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
 import  {  Component } from "react";
 import Footer from "./sharedComponents/footer"
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -40,7 +40,7 @@ return(
                 updated={'April 2022'}
                 isMobile={isMobile}
                 contentTest ={[
-                          
+
                                {type:'horizontalImage',src:'GuatapeGallery/Guatape1.jpg'},
                                {type:'diptych',src1:'GuatapeGallery/Guatape18.jpg',src2:'GuatapeGallery/Guatape22.jpg'},
                                {type:'horizontalImage',src:'GuatapeGallery/Guatape13.jpg'},

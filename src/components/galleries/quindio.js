@@ -1,6 +1,6 @@
 import React from 'react';
 import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
@@ -39,7 +39,7 @@ return(
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
-                        
+
                             {type:'horizontalImage',src:'QuindioGallery/Quindio22.jpg'},
                             {type:'horizontalImage',src:'QuindioGallery/Quindio26.jpg'},
                             {type:'horizontalImage',src:'QuindioGallery/Quindio20.jpg'},

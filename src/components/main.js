@@ -7,7 +7,7 @@ import GalleryPreview from "./sharedComponents/previewComponents/galleryPreview"
 import Footer from "./sharedComponents/footer"
 import { Row} from 'react-bootstrap';
 import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
 
 class Main extends Component {
   // Setting up initial state
@@ -82,15 +82,6 @@ class Main extends Component {
     <>
     <div style ={{overflowX:'hidden'}}>
 
-      {this.state.isMobile?
-          <MobileHeader changeView ={this.updateView}
-                         page ={this.state.view}/>
-      :
-          <DesktopHeader changeView ={this.updateView}
-                         urlView ={this.props.urlView}
-                         urlOverride ={this.state.urlOverride}
-                         page ={this.state.view}/>
-      }
       <HomePage galleryPreviews={this.state.galleryPreviews}
                 isMobile={this.state.isMobile}
                 useLink ={this.useLink}/>
@@ -108,6 +99,7 @@ return(
 
     {props.isMobile?
       <>
+        <MobileHeader />
         <Row style ={{pading:'0vh'}}>
           <img src= "/mobileCover1.jpg"
                alt = 'banner pic'
@@ -116,6 +108,7 @@ return(
       </>
       :
       <>
+        <DesktopHeader />
         <Row style ={{pading:'0vh'}}>
           <img src= "/homePageHorizontal.jpg"
                alt = 'banner pic'

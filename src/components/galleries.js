@@ -2,7 +2,7 @@ import React from 'react';
 import  {  Component } from "react";
 import { Row,Col} from 'react-bootstrap';
 import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/desktopHeader";
+import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
 import LeftCol from  './sharedComponents/blogComponents/leftCol'
 import RightCol from './sharedComponents/blogComponents/rightCol'
 import BlogRow from  './sharedComponents/blogComponents/blogRow'
