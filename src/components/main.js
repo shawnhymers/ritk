@@ -28,7 +28,7 @@ class Main extends Component {
           link:'/Arequipa',
           key:'2'},
           {name:'Sacred Valley',
-           pic:'/SacredValleyGallery/sacredValleySquare.jpg',
+           pic:'/SacredValleyGallery/sacredValleysquare.jpg',
            tags:['activity', 'bc','','','','','','','',''],
            link:'/SacredValley',
            key:'3'},

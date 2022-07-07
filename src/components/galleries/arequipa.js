@@ -36,7 +36,7 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'ArequipaGallery/Arequipa6.jpg', label:'Arequipa', subLabel:'Photo Gallery'}}
+    <GalleryBody header ={{src:'ArequipaGallery/arequipa6.jpg', label:'Arequipa', subLabel:'Photo Gallery'}}
               blurb ={[{type:'text',text:"Arequipa, Peru is a 14th century colonial city surrounded by three volcanoes. Its picturesque historic district consists of buildings made from mostly white and pink volcanic rock and is home to the charming Plaza de Armas. Arequipa is an amazing destination in its own right, but is also a popular destination for those looking to explore the nearby Colca Canyon. We stayed in Arequipa for about a week and a half. Although that was plenty of time to enjoy the typical sights and take part in the popular tours, we could have stayed for a lot longer since it’s so livable. It is a charming city and the weather when we visited in June was perfect."},
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
@@ -44,28 +44,28 @@ return(
               contentTest ={[
 
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa12.jpg',src2:'ArequipaGallery/Arequipa11.jpg'},
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa18.jpg',src2:'ArequipaGallery/Arequipa17.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa21.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa12.jpg',src2:'ArequipaGallery/arequipa11.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa18.jpg',src2:'ArequipaGallery/arequipa17.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa21.jpg'},
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa7.jpg',src2:'ArequipaGallery/Arequipa16.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa15.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa7.jpg',src2:'ArequipaGallery/arequipa16.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa15.jpg'},
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa22.jpg',src2:'ArequipaGallery/Arequipa14.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa35.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa22.jpg',src2:'ArequipaGallery/arequipa14.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa35.jpg'},
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa34.jpg',src2:'ArequipaGallery/Arequipa36.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa23.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa34.jpg',src2:'ArequipaGallery/arequipa36.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa23.jpg'},
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa37.jpg',src2:'ArequipaGallery/Arequipa24.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa30.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa37.jpg',src2:'ArequipaGallery/arequipa24.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa30.jpg'},
 
-                            {type:'diptych',src1:'ArequipaGallery/Arequipa28.jpg',src2:'ArequipaGallery/Arequipa26.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa29.jpg'},
+                            {type:'diptych',src1:'ArequipaGallery/arequipa28.jpg',src2:'ArequipaGallery/arequipa26.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa29.jpg'},
 
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa25.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa31.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/Arequipa32.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa25.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa31.jpg'},
+                            {type:'horizontalImage',src:'ArequipaGallery/arequipa32.jpg'},
 
 
 
