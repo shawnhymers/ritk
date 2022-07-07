@@ -163,21 +163,29 @@ class BlogPage extends Component {
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
 
-    this.updateDimensions();
-    if (this.props.match.params.searchTerm!== undefined) {
-      this.setState({blogs:this.state.blogs,searchValue:this.props.match.params.searchTerm})
-      this.tagSearch(this.props.match.params.searchTerm)
-    }
+    setTimeout(() => {
+      this.updateDimensions();
+      if (this.props.match.params.searchTerm!== undefined) {
+        this.tagSearch(this.props.match.params.searchTerm)
+        this.setState({searchValue:this.props.match.params.searchTerm})
+      }
+    }, 300)
+
+
   }
 
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
     let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
     if (windowWidth>= windowHeight) {
-      this.setState({isMobile:false});
+      if (this.state.isMobile) {
+        this.setState({isMobile:false});
+      }
     }
     else {
-      this.setState({isMobile:true});
+      if (!this.state.isMobile) {
+        this.setState({isMobile:true});
+      }
     }
   }
   tagInput = (e)=>{

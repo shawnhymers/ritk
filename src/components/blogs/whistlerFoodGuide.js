@@ -9,9 +9,10 @@ const WhistlerFoodGuide = props => {
 
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
-      updateDimensions()
     window.addEventListener("contextmenu", e => e.preventDefault());
-
+    setTimeout(() => {
+      updateDimensions();
+      }, 300)
     })
 
   function updateDimensions() {

@@ -114,17 +114,23 @@ class GalleryPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
-    this.updateDimensions();
+    setTimeout(() => {
+      this.updateDimensions();
+    }, 300)
   }
 
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
     let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
     if (windowWidth>= windowHeight) {
-      this.setState({isMobile:false});
+      if (this.state.isMobile) {
+        this.setState({isMobile:false});
+      }
     }
     else {
-      this.setState({isMobile:true});
+      if (!this.state.isMobile) {
+        this.setState({isMobile:true});
+      }
     }
   }
 

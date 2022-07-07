@@ -12,7 +12,9 @@ const CarbonCostOfEcuador = props => {
     window.addEventListener('resize', updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
 
-    updateDimensions()
+    setTimeout(() => {
+      updateDimensions();
+      }, 300)
     })
 
   function updateDimensions() {
