@@ -23,7 +23,6 @@ class AboutPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
-    window.scrollTo(0, 0);
     this.updateDimensions();
   }
 

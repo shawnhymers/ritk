@@ -153,7 +153,7 @@ return(
           &nbsp;
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} className ='centered-children'>
-          <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
+          <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1em'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
         </Col>
       </Row>
     </Col>

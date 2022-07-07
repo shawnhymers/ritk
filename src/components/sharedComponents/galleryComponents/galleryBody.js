@@ -98,7 +98,7 @@ return(
             </Col>
             <Col xs={4} sm={4} md={4} lg={4} xl={4}>
               <Row className = 'vertical-padding-sm'>
-  
+
                 <Col className ='centered-children'>
                   <MdFiberManualRecord size ='2em' color ="#E2B54B"/>
                 </Col>
@@ -193,8 +193,7 @@ const HorizontalBlogImage = props =>{
         <Col className ='centered-children '>
           <img src ={props.src}
                alt = {props.label}
-               style ={{width:'100%'}}
-               onContextMenu={false}/>
+               style ={{width:'100%'}}/>
         </Col>
       </Row>
     </>

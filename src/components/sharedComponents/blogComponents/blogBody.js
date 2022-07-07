@@ -199,7 +199,7 @@ const HorizontalBlogImage = props =>{
           <img src ={props.src}
                alt = {props.label}
                style ={{width:'100%'}}
-               onContextMenu={false}/>
+               />
         </Col>
       </Row>
     </>
@@ -207,17 +207,14 @@ const HorizontalBlogImage = props =>{
 }
 
 const VerticalBlogImage = props =>{
-  function dummy(){
-    return(false)
-  }
+
   return(
     <>
       <Row className ='vertical-padding-sm'>
         <Col className ='centered-children'>
           <img src ={props.src}
                alt = {props.label}
-               style ={{width:'100%'}}
-               onContextMenu={dummy} />
+               style ={{width:'100%'}} />
         </Col>
       </Row>
     </>
@@ -253,9 +250,7 @@ const FootprintComparison=props=>{
 }
 
 const DipTych = props =>{
-  function dummy(){
-    return(false)
-  }
+
   return(
 <>
     {props.isMobile?
@@ -264,14 +259,12 @@ const DipTych = props =>{
 
             <img src ={props.src1}
                  alt = {props.label}
-                 style ={{width:'95%'}}
-                 onContextMenu={dummy} />
+                 style ={{width:'95%'}}/>
           </Row>
           <Row className ='vertical-padding-sm'>
             <img src ={props.src2}
                  alt = {props.label}
-                 style ={{width:'95%'}}
-                 onContextMenu={dummy} />
+                 style ={{width:'95%'}}/>
           </Row>
 
     </>
@@ -281,15 +274,13 @@ const DipTych = props =>{
         <Col className ='centered-children'>
           <img src ={props.src1}
                alt = {props.label}
-               style ={{width:'100%'}}
-               onContextMenu={dummy} />
+               style ={{width:'100%'}}/>
         </Col>
 
         <Col className ='centered-children'>
           <img src ={props.src2}
                alt = {props.label}
-               style ={{width:'100%'}}
-               onContextMenu={dummy} />
+               style ={{width:'100%'}} />
         </Col>
       </Row>
     </>}

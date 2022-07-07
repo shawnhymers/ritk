@@ -159,10 +159,25 @@ class BlogPage extends Component {
   };
 
   componentDidMount(){
-    window.scrollTo(0, 0);
+
+    window.addEventListener('resize', this.updateDimensions);
+    window.addEventListener("contextmenu", e => e.preventDefault());
+
+    this.updateDimensions();
     if (this.props.match.params.searchTerm!== undefined) {
       this.setState({blogs:this.state.blogs,searchValue:this.props.match.params.searchTerm})
       this.tagSearch(this.props.match.params.searchTerm)
+    }
+  }
+
+  updateDimensions() {
+    let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+    if (windowWidth>= windowHeight) {
+      this.setState({isMobile:false});
+    }
+    else {
+      this.setState({isMobile:true});
     }
   }
   tagInput = (e)=>{

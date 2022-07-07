@@ -49,6 +49,7 @@ import Cusco from './components/galleries/cusco'
 import Huacachina from './components/galleries/huacachina'
 import SacredValley from './components/galleries/sacredValley'
 import PanamaCity from './components/galleries/panamaCity'
+import Huaraz from './components/galleries/huaraz'
 
 import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
@@ -106,6 +107,7 @@ function App() {
             <Route exact path="/Huacachina" component={Huacachina} />
             <Route exact path="/SacredValley" component={SacredValley} />
             <Route exact path="/PanamaCity" component={PanamaCity} />
+            <Route exact path="/Huaraz" component={Huaraz}/>
           </Switch>
           </ScrollToTop>
         </Router>

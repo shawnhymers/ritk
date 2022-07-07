@@ -9,7 +9,7 @@ import Overview from "./forms/calculatorForms/overview"
 import  { useState } from 'react';
 import CarbonTotal from "./sharedComponents/carbonTotal"
 import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
+import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
 import Footer from "./sharedComponents/footer"
 import { Prompt } from 'react-router'
 import OutcomeMessage from"./sharedComponents/outcomeMessage"
@@ -50,7 +50,6 @@ class CalculatorPage extends Component {
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
-    window.scrollTo(0, 0);
     this.updateDimensions();
   }
 
