@@ -1,18 +1,18 @@
-import React from 'react';
-import  {  Component } from "react";
+import React, {  lazy, Component, useState } from 'react';
 import { Row,Col} from 'react-bootstrap';
-import FlightForm from "./forms/calculatorForms/flights"
-import TransportForm from "./forms/calculatorForms/transportation/main"
-import FoodForm from "./forms/calculatorForms/food"
-import AccomodationForm from "./forms/calculatorForms/accomodation"
-import Overview from "./forms/calculatorForms/overview"
-import  { useState } from 'react';
-import CarbonTotal from "./sharedComponents/carbonTotal"
-import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
-import Footer from "./sharedComponents/footer"
 import { Prompt } from 'react-router'
-import OutcomeMessage from"./sharedComponents/outcomeMessage"
+
+const FlightForm = lazy(() => import('./forms/calculatorForms/flights'));
+const TransportForm = lazy(() => import('./forms/calculatorForms/transportation/main'));
+const FoodForm = lazy(() => import('./forms/calculatorForms/food'));
+const AccomodationForm = lazy(() => import('./forms/calculatorForms/accomodation'));
+const Overview = lazy(() => import('./forms/calculatorForms/overview'));
+const CarbonTotal = lazy(() => import('./sharedComponents/carbonTotal'));
+const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
+const Footer = lazy(() => import('./sharedComponents/footer'));
+const OutcomeMessage = lazy(() => import('./sharedComponents/outcomeMessage'));
+
 
 class CalculatorPage extends Component {
   // Setting up initial state

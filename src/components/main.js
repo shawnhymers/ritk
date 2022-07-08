@@ -1,13 +1,14 @@
-import  {  Component } from "react";
-import React from "react";
-import AboutPreview from "./sharedComponents/previewComponents/aboutPreview";
-import BlogPreview from "./sharedComponents/previewComponents/blogPreview";
-import LinksPreview from "./sharedComponents/previewComponents/linksPreview";
-import GalleryPreview from "./sharedComponents/previewComponents/galleryPreview"
-import Footer from "./sharedComponents/footer"
+import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
-import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
+
+const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
+
+const AboutPreview = lazy(() => import('./sharedComponents/previewComponents/aboutPreview'));
+const BlogPreview = lazy(() => import('./sharedComponents/previewComponents/blogPreview'));
+const LinksPreview = lazy(() => import('./sharedComponents/previewComponents/linksPreview'));
+const GalleryPreview = lazy(() => import('./sharedComponents/previewComponents/galleryPreview'));
+const Footer = lazy(() => import('./sharedComponents/footer'));
 
 class Main extends Component {
   // Setting up initial state

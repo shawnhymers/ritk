@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {  lazy, Component } from 'react';
 import { Container,Row,Col} from 'react-bootstrap';
-import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
+import {SiTiktok} from "react-icons/si";
 import { Link } from "react-router-dom";
-import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
-import  {  Component } from "react";
-import Footer from "./sharedComponents/footer"
+
+const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
+const Footer = lazy(() => import('./sharedComponents/footer'));
 
 class AboutPage extends Component {
 

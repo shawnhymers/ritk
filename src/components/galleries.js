@@ -1,12 +1,13 @@
-import React from 'react';
-import  {  Component } from "react";
+import React, {  lazy, Component } from 'react';
 import { Row,Col} from 'react-bootstrap';
-import DesktopHeader from "./sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "./sharedComponents/navComponents/mobileHeader";
-import LeftCol from  './sharedComponents/blogComponents/leftCol'
-import RightCol from './sharedComponents/blogComponents/rightCol'
-import BlogRow from  './sharedComponents/blogComponents/blogRow'
-import Footer from "./sharedComponents/footer"
+
+const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
+const LeftCol = lazy(() => import('./sharedComponents/blogComponents/leftCol'));
+const RightCol = lazy(() => import('./sharedComponents/blogComponents/rightCol'));
+const BlogRow = lazy(() => import('./sharedComponents/blogComponents/blogRow'));
+const Footer = lazy(() => import('./sharedComponents/footer'));
+
 
 class GalleryPage extends Component {
 
