@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
-import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
+const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
 const BanosActivityGuide = props => {
 

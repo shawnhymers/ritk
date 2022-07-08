@@ -1,16 +1,18 @@
-import './styles/App.css';
-import './styles/borders.css';
-import './styles/colours.css';
-import './styles/elements.css';
-import './styles/errors.css';
-import './styles/form.css';
-import './styles/images.css';
-import './styles/layout.css';
-import './styles/text.css';
-import './styles/effects.css';
-import './styles/speechBubbles.css'
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import {  Row, Col, Container} from 'react-bootstrap';
+
+import ('./styles/effects.css');
+import('./styles/speechBubbles.css')
+import ('./styles/App.css');
+import ('./styles/borders.css');
+import ('./styles/colours.css');
+import ('./styles/elements.css');
+import ('./styles/errors.css');
+import ('./styles/form.css');
+import ('./styles/images.css');
+import ('./styles/layout.css');
+import ('./styles/text.css');
 
 const Main = lazy(() => import('./components/main'));
 const CalculatorPage = lazy(() => import('./components/calculator'));
@@ -57,7 +59,20 @@ function App() {
     <>
 
         <Router>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={
+            <Container className ='roaming-white full-width' style ={{height:'100vh'}}>
+              <Row >
+                <Col className ='centered-children '>
+                  <img style ={{maxWidth:'40vw'}}src ="/logo2.png" alt ='loadingIcon' />
+                </Col>
+              </Row>
+              <Row className ='centered-children'>
+                <Col className ='centered-children '>
+                  <p className ='roaming-text centered-text'>Loading...</p>
+                </Col>
+              </Row>
+            </Container>
+          }>
             <ScrollToTop>
             <Switch>
               <Route exact path="/" component={Main} />

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {  lazy} from 'react';
 import { Container,Row} from 'react-bootstrap';
-import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/desktopHeader";
 import  { useState,useEffect } from 'react';
+const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
 const VancouverActivityGuide = props => {
   const[isMobile, setIsMobile]=useState(false)

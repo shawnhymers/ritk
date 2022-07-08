@@ -1,9 +1,8 @@
-
-import React from 'react';
-import DesktopHeader from "../sharedComponents/navComponents/desktopHeader";
-import MobileHeader from "../sharedComponents/navComponents/mobileHeader";
+import React, {  lazy} from 'react';
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
+const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
 const Huaraz = props => {
 
