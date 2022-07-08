@@ -238,12 +238,33 @@ const FootprintComparison=props=>{
   return(
     <>
       <Row>
-      <Col>
-        <p className ={'centered-text roaming-text medium-text '+(parseInt(props.footprintPerDay/41.5*100)<=100? " roaming-green-text":" roaming-red-text")}>{parseInt(props.footprintPerDay/41.5*100)+'% The average Canadian footprint'}</p>
-      </Col>
-      <Col>
-        <p className ={'centered-text roaming-text  medium-text'+(parseInt(props.footprintPerDay/13*100)<=100? " roaming-green-text":" roaming-red-text")}>{parseInt(props.footprintPerDay/13*100)+'% The global average footprint'}</p>
-      </Col>
+        {props.footprintPerDay<41.5?
+          <Col>
+            <p className ={'centered-text roaming-text medium-text roaming-green-text'}>
+            {parseInt(100*((41.5-parseFloat(props.footprintPerDay))/((parseFloat(props.footprintPerDay)+41.5)/2)))+'% Less than the average Canadian footprint'}</p>
+          </Col>
+          :
+          <Col>
+            <p className ={'centered-text roaming-text medium-text roaming-red-text'}>
+            {parseInt(100*((parseFloat(props.footprintPerDay-41.5))/((parseFloat(props.footprintPerDay)+41.5)/2)))+'% More than the average Canadian footprint'}</p>
+          </Col>
+
+        }
+
+        {props.footprintPerDay<13?
+          <Col>
+            <p className ={'centered-text roaming-text  medium-text roaming-green-text'}>
+            {parseInt(100*((13-parseFloat(props.footprintPerDay))/((parseFloat(props.footprintPerDay)+13)/2)))+'% Less than the global average footprint'}</p>
+          </Col>
+        :
+          <Col>
+            <p className ={'centered-text roaming-text  medium-text roaming-red-text'}>
+            {parseInt(100*((parseFloat(props.footprintPerDay)-13)/((parseFloat(props.footprintPerDay)+13)/2)))+'% More than the global average footprint'}</p>
+          </Col>
+        }
+
+
+
       </Row>
     </>
   )

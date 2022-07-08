@@ -9,107 +9,108 @@ import './styles/layout.css';
 import './styles/text.css';
 import './styles/effects.css';
 import './styles/speechBubbles.css'
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 
-import Main from './components/main';
-// import Blog from './components/blog'
-import CalculatorPage from './components/calculator'
-import AboutPage from "./components/about"
-import BlogPage from "./components/blogs"
-import GalleryPage from './components/galleries'
+const Main = lazy(() => import('./components/main'));
+const CalculatorPage = lazy(() => import('./components/calculator'));
+const AboutPage = lazy(() => import("./components/about"));
+const BlogPage = lazy(() => import('./components/blogs'));
+const GalleryPage = lazy(() => import('./components/galleries'));
 
-import WhistlerFoodGuide from './components/blogs/whistlerFoodGuide';
-import WhistlerActivityGuide from './components/blogs/whistlerActivityGuide';
-import VancouverFoodGuide from './components/blogs/vancouverFoodGuide';
-import VancouverActivityGuide from './components/blogs/vancouverActivityGuide';
-import CarbonCostOfLatam from './components/blogs/carbonCostOfLatam';
-import CarbonCostOfFlying from './components/blogs/carbonCostOfFlying';
-import CarbonCostOfColombia from './components/blogs/carbonCostOfColombia';
-import CarbonCostOfEcuador from './components/blogs/carbonCostOfEcuador';
-import CarbonCostOfDiet from  './components/blogs/carbonCostOfDiet';
-import BanosActivityGuide from './components/blogs/banosActivityGuide';
-import MedellinFoodGuide from "./components/blogs/medellinFoodGuide"
+const WhistlerFoodGuide = lazy(() => import('./components/blogs/whistlerFoodGuide'));
+const WhistlerActivityGuide = lazy(() => import('./components/blogs/whistlerActivityGuide'));
+const VancouverFoodGuide = lazy(() => import('./components/blogs/vancouverFoodGuide'));
+const VancouverActivityGuide = lazy(() => import('./components/blogs/vancouverActivityGuide'));
+const CarbonCostOfLatam = lazy(() => import('./components/blogs/carbonCostOfLatam'));
+const CarbonCostOfFlying = lazy(() => import('./components/blogs/carbonCostOfFlying'));
+const CarbonCostOfColombia = lazy(() => import('./components/blogs/carbonCostOfColombia'));
+const CarbonCostOfEcuador = lazy(() => import('./components/blogs/carbonCostOfEcuador'));
+const CarbonCostOfDiet = lazy(() => import('./components/blogs/carbonCostOfDiet'));
+const BanosActivityGuide = lazy(() => import('./components/blogs/banosActivityGuide'));
+const MedellinFoodGuide = lazy(() => import('./components/blogs/medellinFoodGuide'));
 
-import InTheKnowQuito from './components/blogs/inTheKnowQuito'
-import InTheKnowGuatape from './components/blogs/inTheKnowGuatape'
-import InTheKnowMedellin from './components/blogs/inTheKnowMedellin'
+const  InTheKnowQuito = lazy(() => import('./components/blogs/inTheKnowQuito'));
+const InTheKnowGuatape = lazy(() => import('./components/blogs/inTheKnowGuatape'));
+const InTheKnowMedellin = lazy(() => import('./components/blogs/inTheKnowMedellin'));
+const CostaRica = lazy(() => import('./components/galleries/costaRica'));
+const Granada = lazy(() => import('./components/galleries/granada'));
+const Ometepe = lazy(() => import('./components/galleries/ometepe'));
+const Cartagena = lazy(() => import('./components/galleries/cartagena'));
+const Guatape = lazy(() => import('./components/galleries/guatape'));
+const Quindio = lazy(() => import('./components/galleries/quindio'));
+const Medellin = lazy(() => import('./components/galleries/medellin'));
+const Quito = lazy(() => import('./components/galleries/quito'));
+const Otavalo = lazy(() => import('./components/galleries/otavalo'));
+const Arequipa = lazy(() => import('./components/galleries/arequipa'));
+const Cusco = lazy(() => import('./components/galleries/cusco'));
+const Huacachina = lazy(() => import('./components/galleries/huacachina'));
+const SacredValley = lazy(() => import('./components/galleries/sacredValley'));
+const PanamaCity = lazy(() => import('./components/galleries/panamaCity'));
+const Huaraz = lazy(() => import('./components/galleries/huaraz'));
+const ScrollToTop = lazy(() => import('./components/helpers/scrollToTop'));
 
-import CostaRica from './components/galleries/costaRica'
-import Granada from './components/galleries/granada'
-import Ometepe from './components/galleries/ometepe'
-import Cartagena from './components/galleries/cartagena'
-import Guatape from './components/galleries/guatape'
-import Quindio from './components/galleries/quindio'
-import Medellin from './components/galleries/medellin'
-import Quito from './components/galleries/quito'
-import Otavalo from './components/galleries/otavalo'
 
-import Arequipa from './components/galleries/arequipa'
-import Cusco from './components/galleries/cusco'
-import Huacachina from './components/galleries/huacachina'
-import SacredValley from './components/galleries/sacredValley'
-import PanamaCity from './components/galleries/panamaCity'
-import Huaraz from './components/galleries/huaraz'
-
-import ScrollToTop from "./components/helpers/scrollToTop"
 function App() {
 
   return (
     <>
 
         <Router>
-          <ScrollToTop>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/home" component={Main} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <ScrollToTop>
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/home" component={Main} />
 
-            <Route exact path="/calculator" component={CalculatorPage} />
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/blog" component={BlogPage} />
-            <Route exact path="/blog/:searchTerm" component={BlogPage} />
-            <Route exact path="/gallery" component={GalleryPage} />
+              <Route exact path="/calculator" component={CalculatorPage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/blog" component={BlogPage} />
+              <Route exact path="/blog/:searchTerm" component={BlogPage} />
+              <Route exact path="/gallery" component={GalleryPage} />
 
 
 
 
-            <Route exact path="/home/:redirectView" component={Main} />
+              <Route exact path="/home/:redirectView" component={Main} />
 
-            <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
-            <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
-            <Route exact path="/MedellinFoodGuide" component={MedellinFoodGuide} />
+              <Route exact path="/WhistlerFoodGuide" component={WhistlerFoodGuide} />
+              <Route exact path="/VancouverFoodGuide" component={VancouverFoodGuide} />
+              <Route exact path="/MedellinFoodGuide" component={MedellinFoodGuide} />
 
-            <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
-            <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
-            <Route exact path="/BanosActivityGuide" component={BanosActivityGuide} />
+              <Route exact path="/WhistlerActivityGuide" component={WhistlerActivityGuide} />
+              <Route exact path="/VancouverActivityGuide" component={VancouverActivityGuide} />
+              <Route exact path="/BanosActivityGuide" component={BanosActivityGuide} />
 
-            <Route exact path="/CarbonCostOfLatam" component={CarbonCostOfLatam} />
-            <Route exact path="/CarbonCostOfColombia" component={CarbonCostOfColombia} />
-            <Route exact path="/CarbonCostOfDiet" component={CarbonCostOfDiet} />
-            <Route exact path="/CarbonCostOfFlying" component={CarbonCostOfFlying} />
-            <Route exact path="/CarbonCostOfEcuador" component={CarbonCostOfEcuador} />
+              <Route exact path="/CarbonCostOfLatam" component={CarbonCostOfLatam} />
+              <Route exact path="/CarbonCostOfColombia" component={CarbonCostOfColombia} />
+              <Route exact path="/CarbonCostOfDiet" component={CarbonCostOfDiet} />
+              <Route exact path="/CarbonCostOfFlying" component={CarbonCostOfFlying} />
+              <Route exact path="/CarbonCostOfEcuador" component={CarbonCostOfEcuador} />
 
-            <Route exact path="/InTheKnowMedellin" component={InTheKnowMedellin} />
-            <Route exact path="/InTheKnowQuito" component={InTheKnowQuito} />
-            <Route exact path="/InTheKnowGuatape" component={InTheKnowGuatape} />
+              <Route exact path="/InTheKnowMedellin" component={InTheKnowMedellin} />
+              <Route exact path="/InTheKnowQuito" component={InTheKnowQuito} />
+              <Route exact path="/InTheKnowGuatape" component={InTheKnowGuatape} />
 
-            <Route exact path="/CostaRica" component={CostaRica} />
-            <Route exact path="/Granada" component={Granada} />
-            <Route exact path="/Ometepe" component={Ometepe} />
-            <Route exact path="/Cartagena" component={Cartagena} />
-            <Route exact path="/Quindo" component={Quindio} />
-            <Route exact path="/Guatape" component={Guatape} />
-            <Route exact path="/Medellin" component={Medellin} />
-            <Route exact path="/Quito" component={Quito} />
-            <Route exact path="/Otavalo" component={Otavalo} />
-            <Route exact path="/Arequipa" component={Arequipa} />
+              <Route exact path="/CostaRica" component={CostaRica} />
+              <Route exact path="/Granada" component={Granada} />
+              <Route exact path="/Ometepe" component={Ometepe} />
+              <Route exact path="/Cartagena" component={Cartagena} />
+              <Route exact path="/Quindo" component={Quindio} />
+              <Route exact path="/Guatape" component={Guatape} />
+              <Route exact path="/Medellin" component={Medellin} />
+              <Route exact path="/Quito" component={Quito} />
+              <Route exact path="/Otavalo" component={Otavalo} />
+              <Route exact path="/Arequipa" component={Arequipa} />
 
-            <Route exact path="/Cusco" component={Cusco} />
-            <Route exact path="/Huacachina" component={Huacachina} />
-            <Route exact path="/SacredValley" component={SacredValley} />
-            <Route exact path="/PanamaCity" component={PanamaCity} />
-            <Route exact path="/Huaraz" component={Huaraz}/>
-          </Switch>
-          </ScrollToTop>
+              <Route exact path="/Cusco" component={Cusco} />
+              <Route exact path="/Huacachina" component={Huacachina} />
+              <Route exact path="/SacredValley" component={SacredValley} />
+              <Route exact path="/PanamaCity" component={PanamaCity} />
+              <Route exact path="/Huaraz" component={Huaraz}/>
+            </Switch>
+            </ScrollToTop>
+          </Suspense>
         </Router>
 
     </>
