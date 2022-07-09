@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
 import ('./styles/App.css');
 
-// import ('./styles/text.css');
-// import ('./styles/effects.css');
-// import('./styles/speechBubbles.css')
-// import ('./styles/borders.css');
-// import ('./styles/colours.css');
-// import ('./styles/elements.css');
-// import ('./styles/errors.css');
-// import ('./styles/form.css');
-// import ('./styles/images.css');
-// import ('./styles/layout.css');
+import ('./styles/text.css');
+import ('./styles/effects.css');
+import('./styles/speechBubbles.css')
+import ('./styles/borders.css');
+import ('./styles/colours.css');
+import ('./styles/elements.css');
+import ('./styles/errors.css');
+import ('./styles/form.css');
+import ('./styles/images.css');
+import ('./styles/layout.css');
 
 
 const Main = lazy(() => import('./components/main'));
