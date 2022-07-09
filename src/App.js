@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
-
+import './styles/text.css';
 import ('./styles/effects.css');
 import('./styles/speechBubbles.css')
 import ('./styles/App.css');
@@ -12,7 +12,7 @@ import ('./styles/errors.css');
 import ('./styles/form.css');
 import ('./styles/images.css');
 import ('./styles/layout.css');
-import ('./styles/text.css');
+
 
 const Main = lazy(() => import('./components/main'));
 const CalculatorPage = lazy(() => import('./components/calculator'));
