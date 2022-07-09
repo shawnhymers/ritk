@@ -1,6 +1,7 @@
 import React, {  lazy, Component } from 'react';
-import { Row} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 import LazyLoad from "react-lazyload";
+import { Link } from "react-router-dom";
 
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
 import coupleIcon from "../assets/main/coupleIcon.png"
