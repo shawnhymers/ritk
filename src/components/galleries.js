@@ -1,5 +1,6 @@
 import React, {  lazy, Component } from 'react';
 import { Row,Col} from 'react-bootstrap';
+import huaraz3 from '../assets/galleries/huaraz/huaraz3.jpg'
 
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -18,13 +19,13 @@ class GalleryPage extends Component {
       showOutcomeMessage:false,
       galleries:[
             {name:'Huaraz',
-             pic:'/HuacachinaGallery/huacachina18.jpg',
+             pic:huaraz3,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huaraz',
              key:'1'},
 
             {name:'Huacachina',
-             pic:'/HuacachinaGallery/huacachina18.jpg',
+             pic:'/HuacachinaGallery/huacachina11.jpg',
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huacachina',
              key:'2'},

@@ -1,8 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
-import ('./styles/App.css');
 
+import coupleIcon from "./assets/icon/coupleIcon"
+
+import ('./styles/App.css');
 import ('./styles/text.css');
 import ('./styles/effects.css');
 import('./styles/speechBubbles.css')
@@ -64,12 +66,12 @@ function App() {
             <Container className ='roaming-white full-width' style ={{height:'100vh'}}>
               <Row >
                 <Col className ='centered-children '>
-                  <img style ={{maxWidth:'40vw'}}src ="/logo2.png" alt ='loadingIcon' />
+                  <img style ={{maxWidth:'60vw'}}src ={coupleIcon} alt ='loadingIcon' />
                 </Col>
               </Row>
               <Row className ='centered-children'>
                 <Col className ='centered-children '>
-                  <p className ='roaming-text centered-text'>Loading...</p>
+                  <p className ='roaming-text centered-text'>One moment please...</p>
                 </Col>
               </Row>
             </Container>

@@ -9,7 +9,7 @@ import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
 import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
 import cuscoSquare from '../assets/main/cuscoSquare.jpg'
 import otavaloSquare from '../assets/main/otavaloSquare.jpg'
-import quitoSquare from '../assets/main/quitoSquare.jpg'
+import huarazSquare from '../assets/main/huarazSquare.jpg'
 import DesktopHeader from './sharedComponents/navComponents/desktopHeader'
 // const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -31,36 +31,37 @@ class Main extends Component {
       isMobile:false,
       showOutcomeMessage:false,
       galleryPreviews:[
+        {name:'Huaraz',
+         pic:huarazSquare,
+         tags:['activity', 'bc','','','','','','','',''],
+         link:'/Huaraz',
+         key:'1'},
         {name:'Huacachina',
          pic:huacachinaSquare,
          tags:['activity', 'bc','','','','','','','',''],
          link:'/Huacachina',
-         key:'1'},
+         key:'2'},
          {name:'Arequipa',
           pic: arequipaSquare,
           tags:['activity', 'bc','','','','','','','',''],
           link:'/Arequipa',
-          key:'2'},
+          key:'3'},
           {name:'Sacred Valley',
            pic:sacredValleysquare,
            tags:['activity', 'bc','','','','','','','',''],
            link:'/SacredValley',
-           key:'3'},
+           key:'4'},
            {name:'Cusco',
             pic:cuscoSquare,
             tags:['activity', 'bc','','','','','','','',''],
             link:'/Cusco',
-            key:'4'},
+            key:'5'},
         {name:'Otavalo',
          pic:otavaloSquare,
          tags:['activity', 'bc','','','','','','','',''],
          link:'/Otavalo',
-         key:'5'},
-         {name:'Quito',
-          pic:quitoSquare,
-          tags:['activity', 'bc','','','','','','','',''],
-          link:'/Quito',
-          key:'6'},
+         key:'6'},
+
       ]
 
 
