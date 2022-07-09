@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
 
-import coupleIcon from "./assets/icon/coupleIcon"
+import coupleIcon from "./assets/icons/coupleIcon.png"
 
 import ('./styles/App.css');
 import ('./styles/text.css');
