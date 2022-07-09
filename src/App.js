@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
+import ('./styles/text.css');
 import ('./styles/effects.css');
 import('./styles/speechBubbles.css')
 import ('./styles/App.css');
