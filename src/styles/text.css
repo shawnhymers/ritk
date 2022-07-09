@@ -1,11 +1,12 @@
 @font-face {
-  font-family: roamingFont;
-  src: local('roamingFont'),URL('../fonts/roamingFont.woff2') format('truetype');
-}
-@font-face {
   font-family: balloonFont;
   src: local('balloonFont'),URL('../fonts/balloonFont.woff2') format('truetype');
 }
+@font-face {
+  font-family: roamingFont;
+  src: local('roamingFont'),URL('../fonts/roamingFont.woff2') format('truetype');
+}
+
 .nice-text-lg{
     font-family: acumin-pro,sans-serif;
     font-weight: 500;
