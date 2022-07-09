@@ -2,6 +2,31 @@ import React, {  lazy} from 'react';
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
 
+import arequipa6 from '../../assets/galleries/arequipa/arequipa6.jpg'
+import arequipa12 from '../../assets/galleries/arequipa/arequipa12.jpg'
+import arequipa11 from '../../assets/galleries/arequipa/arequipa11.jpg'
+import arequipa18 from '../../assets/galleries/arequipa/arequipa18.jpg'
+import arequipa17 from '../../assets/galleries/arequipa/arequipa17.jpg'
+import arequipa21 from '../../assets/galleries/arequipa/arequipa21.jpg'
+import arequipa7 from '../../assets/galleries/arequipa/arequipa7.jpg'
+import arequipa16 from '../../assets/galleries/arequipa/arequipa16.jpg'
+import arequipa15 from '../../assets/galleries/arequipa/arequipa15.jpg'
+import arequipa22 from '../../assets/galleries/arequipa/arequipa22.jpg'
+import arequipa14 from '../../assets/galleries/arequipa/arequipa14.jpg'
+import arequipa35 from '../../assets/galleries/arequipa/arequipa35.jpg'
+import arequipa34 from '../../assets/galleries/arequipa/arequipa34.jpg'
+import arequipa36 from '../../assets/galleries/arequipa/arequipa36.jpg'
+import arequipa23 from '../../assets/galleries/arequipa/arequipa23.jpg'
+import arequipa37 from '../../assets/galleries/arequipa/arequipa37.jpg'
+import arequipa24 from '../../assets/galleries/arequipa/arequipa24.jpg'
+import arequipa30 from '../../assets/galleries/arequipa/arequipa30.jpg'
+import arequipa28 from '../../assets/galleries/arequipa/arequipa28.jpg'
+import arequipa26 from '../../assets/galleries/arequipa/arequipa26.jpg'
+import arequipa29 from '../../assets/galleries/arequipa/arequipa29.jpg'
+import arequipa25 from '../../assets/galleries/arequipa/arequipa25.jpg'
+import arequipa31 from '../../assets/galleries/arequipa/arequipa31.jpg'
+import arequipa32 from '../../assets/galleries/arequipa/arequipa32.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -45,28 +70,28 @@ return(
               contentTest ={[
 
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa12.jpg',src2:'ArequipaGallery/arequipa11.jpg'},
-                            {type:'diptych',src1:'ArequipaGallery/arequipa18.jpg',src2:'ArequipaGallery/arequipa17.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa21.jpg'},
+                            {type:'diptych',src1:arequipa12,src2:arequipa11},
+                            {type:'diptych',src1:arequipa18,src2:arequipa17},
+                            {type:'horizontalImage',src:arequipa21},
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa7.jpg',src2:'ArequipaGallery/arequipa16.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa15.jpg'},
+                            {type:'diptych',src1:arequipa7,src2:arequipa16},
+                            {type:'horizontalImage',src:arequipa15},
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa22.jpg',src2:'ArequipaGallery/arequipa14.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa35.jpg'},
+                            {type:'diptych',src1:arequipa22,src2:arequipa14},
+                            {type:'horizontalImage',src:arequipa35},
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa34.jpg',src2:'ArequipaGallery/arequipa36.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa23.jpg'},
+                            {type:'diptych',src1:arequipa34,src2:arequipa36},
+                            {type:'horizontalImage',src:arequipa23},
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa37.jpg',src2:'ArequipaGallery/arequipa24.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa30.jpg'},
+                            {type:'diptych',src1:arequipa37,src2:arequipa24},
+                            {type:'horizontalImage',src:arequipa30},
 
-                            {type:'diptych',src1:'ArequipaGallery/arequipa28.jpg',src2:'ArequipaGallery/arequipa26.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa29.jpg'},
+                            {type:'diptych',src1:arequipa28,src2:arequipa26},
+                            {type:'horizontalImage',src:arequipa29},
 
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa25.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa31.jpg'},
-                            {type:'horizontalImage',src:'ArequipaGallery/arequipa32.jpg'},
+                            {type:'horizontalImage',src:arequipa25},
+                            {type:'horizontalImage',src:arequipa31},
+                            {type:'horizontalImage',src:arequipa32},
 
 
 

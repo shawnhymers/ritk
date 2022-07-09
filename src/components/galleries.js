@@ -4,7 +4,17 @@ import huaraz3 from '../assets/galleries/huaraz/huaraz3.jpg'
 import huacachina11 from '../assets/galleries/huacachina/huacachina11.jpg'
 import arequipa1 from '../assets/galleries/arequipa/arequipa1.jpg'
 import sacredValley14 from '../assets/galleries/sacredValley/sacredValley14.jpg'
-
+// '/CuscoGallery/cusco23.jpg',
+// '/OtavaloGallery/Otavalo17.jpg',
+// '/QuitoGallery/Quito17.jpg',
+// '/QuindioGallery/Quindio24.jpg',
+// '/GuatapeGallery/Guatape9.jpg',
+// '/MedellinGallery/Medellin13.jpg',
+// '/CartagenaGallery/cartagena13.jpg',
+// '/PanamaGallery/panama9.jpg',
+// '/CostaRicaGallery/costaRica8.jpg',
+// '/OmetepeGallery/ometepe13.jpg',
+// '/GranadaGallery/granada4.jpg',
 
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
