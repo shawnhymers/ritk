@@ -26,7 +26,7 @@ return(
     <Row>
       <Col xs={2} sm={2} md={2} lg={2} xl={2} className ='centered-children'>
         <Link to='/about'  className = 'centered-children'style = {{textDecoration:'none'}} >
-          <p style ={{zIndex:30}}className = {'centered-text auto-margins '+((props.page==='about' ) ? 'balloon-text medium-link-text roaming-black-text':'balloon-text roaming-yellow-text medium-link-text')}>
+          <p style ={{zIndex:30}}className = {'font-stand-in centered-text auto-margins '+((props.page==='about' ) ? 'balloon-text medium-link-text roaming-black-text':'balloon-text roaming-yellow-text medium-link-text')}>
              About</p>
         </Link>
       </Col>

@@ -161,7 +161,7 @@ class BlogPage extends Component {
   };
 
   componentDidMount(){
-window.addEventListener("load", this.onPageLoad);
+
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -172,10 +172,7 @@ window.addEventListener("load", this.onPageLoad);
         this.setState({searchValue:this.props.match.params.searchTerm})
       }
     }, 300)
-    if (document.readyState==='complete') {
-      console.log('already complete')
-      this.setState({isLoaded:true})
-    }
+
 
 
   }
@@ -247,21 +244,14 @@ window.addEventListener("load", this.onPageLoad);
       }
     }
   }
-  onPageLoad =()=>{
-    console.log('main page loaded')
-    console.log(document.readyState)
-    if (document.readyState === "complete") {
-      console.log('all the way done')
-      this.setState({isLoaded:true})
-    }
-  }
+
   render() {
 
 
   return(
     <>
 
-    {this.state.isLoaded?
+
       <div style ={{overflowX:'hidden'}} >
       {this.state.isMobile?
           <MobileHeader page ={'blog'}/>
@@ -444,10 +434,6 @@ window.addEventListener("load", this.onPageLoad);
       </Row>
       <Footer isMobile={this.state.isMobile}/>
       </div>
-    :
-      <LoadScreen/>
-    }
-
 
 
     </>

@@ -69,25 +69,17 @@ class Main extends Component {
 
     };
     this.updateDimensions = this.updateDimensions.bind(this);
-    this.onPageLoad = this.onPageLoad.bind(this);
+
   };
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
-    window.addEventListener("load", this.onPageLoad);
-      // // Remove the event listener when component unmounts
-      // return () => window.removeEventListener("load", this.onPageLoad);
-      // return () => window.removeEventListener('resize', this.updateDimensions);
     setTimeout(() => {
       this.updateDimensions();
     }, 100)
-    if (document.readyState==='complete') {
-      console.log('already complete')
-      this.setState({isLoaded:true})
-    }
+
   }
   componentWillUnmount() {
-        window.removeEventListener("load", this.onPageLoad);
         window.removeEventListener('resize', this.updateDimensions);
   }
   updateDimensions() {
@@ -104,20 +96,7 @@ class Main extends Component {
       }
     }
   }
-  onPageLoad =()=>{
-    console.log('main page loaded')
-    console.log(document.readyState)
-    if (document.readyState === "complete") {
-      console.log('all the way done')
-      this.setState({isLoaded:true})
-    }
-  }
-  componentReady=(component)=>{
-    console.log(component+'... is ready');
-  };
-  imageLoaded=(image)=>{
-    console.log(image+'... is ready')
-  }
+
 
 
 
@@ -126,16 +105,12 @@ class Main extends Component {
   return(
     <>
 
-    {this.state.isLoaded?
+
         <div style ={{overflowX:'hidden'}}>
           <HomePage galleryPreviews={this.state.galleryPreviews}
                     isMobile={this.state.isMobile}
-                    componentReady={this.componentReady}
-                    imageLoaded={this.imageLoaded}/>
+                    />
         </div>
-    :
-      <LoadScreen/>
-    }
 
 
 
@@ -145,21 +120,8 @@ export default Main;
 
 
 const HomePage = props => {
-  useEffect(() => {
-    if (document.readyState==='complete') {
-      console.log('sub componennt already complete')
-    }
-    window.addEventListener("load", onPageLoad);
-    })
 
-    function onPageLoad (){
-      console.log('home page loaded')
-      console.log(document.readyState)
-      // if (document.readyState === "complete") {
-      //   console.log('all the way done')
-      //   this.setState({isLoaded:true})
-      // }
-    }
+
 return(
   <>
 
@@ -179,7 +141,6 @@ return(
         <Row style ={{pading:'0vh'}}>
           <img src= {homePageHorizontal}
                alt = 'banner pic'
-               onLoad={props.imageLoaded('bannerPics')}
                className = 'banner-pic'/>
         </Row>
       </>}

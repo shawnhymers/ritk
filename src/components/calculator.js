@@ -21,7 +21,6 @@ class CalculatorPage extends Component {
     super(props);
     this.state = {
       isMobile:false,
-      isLoaded:false,
       shouldBlockNavigation:false,
       showOutcomeMessage:false,
       outcomeMessageType:'positive',
@@ -55,9 +54,7 @@ class CalculatorPage extends Component {
     setTimeout(() => {
       this.updateDimensions();
     }, 300)
-    window.onload = (event) => {
-      this.setState({isLoaded:true})
-    };
+
   }
 
   componentDidUpdate () {
@@ -176,7 +173,7 @@ class CalculatorPage extends Component {
 
   return(
     <>
-      {this.state.isLoaded?
+
         <div style ={{overflowX:'hidden'}} >
       <Prompt
         when={this.state.shouldBlockNavigation}
@@ -219,9 +216,7 @@ class CalculatorPage extends Component {
       <Footer isMobile={this.state.isMobile}/>
 
         </div>
-      :
-        <LoadScreen/>
-      }
+
 
     </>
 

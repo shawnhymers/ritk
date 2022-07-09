@@ -30,9 +30,7 @@ class AboutPage extends Component {
     setTimeout(() => {
       this.updateDimensions();
     }, 300)
-    window.onload = (event) => {
-      this.setState({isLoaded:true})
-    };
+
 
   }
 
@@ -55,7 +53,6 @@ class AboutPage extends Component {
 return(
   <>
 
-  {this.state.isLoaded?
     <div style ={{overflowX:'hidden'}}>
       {this.state.isMobile?
           <MobileHeader changeView ={this.updateView}
@@ -117,9 +114,6 @@ return(
       </Row>
       <Footer isMobile={this.state.isMobile}/>
     </div>
-  :
-    <LoadScreen/>
-  }
 
 
   </>
