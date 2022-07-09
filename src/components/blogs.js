@@ -8,6 +8,7 @@ const LeftCol = lazy(() => import('./sharedComponents/blogComponents/leftCol'));
 const RightCol = lazy(() => import('./sharedComponents/blogComponents/rightCol'));
 const BlogRow = lazy(() => import('./sharedComponents/blogComponents/blogRow'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
+const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 class BlogPage extends Component {
   // Setting up initial state
@@ -15,6 +16,7 @@ class BlogPage extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      isLoaded:false,
       searchValue:'',
       emptySearch:false,
       blogSearch:'',
@@ -170,6 +172,9 @@ class BlogPage extends Component {
         this.setState({searchValue:this.props.match.params.searchTerm})
       }
     }, 300)
+    window.onload = (event) => {
+      this.setState({isLoaded:true})
+    };
 
 
   }
@@ -247,188 +252,193 @@ class BlogPage extends Component {
 
   return(
     <>
-    <div style ={{overflowX:'hidden'}} >
-    {this.state.isMobile?
-        <MobileHeader page ={'blog'}/>
-    :
-        <DesktopHeader page ={'blog'}/>
-    }
-    <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
+
+    {this.state.isLoaded?
+      <div style ={{overflowX:'hidden'}} >
       {this.state.isMobile?
-    <>
+          <MobileHeader page ={'blog'}/>
+      :
+          <DesktopHeader page ={'blog'}/>
+      }
+      <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
+        {this.state.isMobile?
+      <>
 
-      <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
-        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
-          &nbsp;
-        </Col>
-        <Col xs={6} sm={6} md={4} lg={4} xl={4}>
-          <Row>
-            <input onChange={this.tagInput}
-                   value={this.state.searchValue}
-                   id="searchValue"
-                   type="text"
-                   placeholder='Search'
-                   className ='roaming-white'/>
-            <label htmlFor="searchValue" >Search</label>
-          </Row>
-        </Col>
-        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
-          &nbsp;
-        </Col>
-      </Row>
-      <Row className ='centered-children'>
-          {this.state.shownBlogs.map((blog, i)=>{
-                  return <BlogRow blog ={blog}
-                                   index = {i}
-                                   key={blog.name+i}/>})}
-      </Row>
-      {this.state.emptySearch?
-        <>
-          <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
-            <Row className ='roaming-white'>
-              <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-                &nbsp;
-              </Col>
-              <Col xs={5} sm={5} md={5} lg={5} xl={5}>
-                <img loading="lazy" style ={{width:'120%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
-              </Col>
-              <Col xs={5} sm={5} md={5} lg={5} xl={5} className='centered-children'>
-                <div style={{marginTop: '10vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
-              </Col>
-              <Col xs={1} sm={1} md={1} lg={1} xl={1}>
-                &nbsp;
-              </Col>
-            </Row>
-            <Row className ='roaming-white centered-children vertical-padding-sm' >
-              <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
-            </Row>
-            <Row>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
-                </div>
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
-                </div>
-              </Col>
-            </Row>
-            <Row className='vertical-padding-sm'>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
-                </div>
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </>
-
-      :null}
-    </>
-    :
-    <>
-      <Row className ='nice-input-wrapper form-line' style ={{paddingTop:'12.5vh'}}>
-        <Col xs={3} sm={3} md={4} lg={4} xl={4}>
-          &nbsp;
-        </Col>
+        <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
+          <Col xs={3} sm={3} md={4} lg={4} xl={4}>
+            &nbsp;
+          </Col>
           <Col xs={6} sm={6} md={4} lg={4} xl={4}>
-          <Row>
-            <input onChange={this.tagInput}
-                   onBlur = {this.tagSearch}
-                   value={this.state.searchValue}
-                   id="searchValue"
-                   type="text"
-                   placeholder='Search'
-                   className ='roaming-white'/>
-            <label htmlFor="searchValue" >Search</label>
-          </Row>
-        </Col>
-        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-          <HelpIcon message ="Search by keyword to find what you're looking for."/>
-        </Col>
-        <Col xs={1} sm={1} md={2} lg={2} xl={2}>
-          &nbsp;
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          {this.state.shownBlogs.map((blog, i)=>{
-                  return <LeftCol blog ={blog}
-                                  index = {i}
-                                  key={blog.name+i}/>
-                                   })}
-        </Col>
-        <Col>
-          {this.state.shownBlogs.map((blog, i)=>{
-                  return <RightCol blog ={blog}
-                                   index ={i}
-                                   key={blog.name+i}/>
-                                   })}
-        </Col>
-      </Row>
-      {this.state.emptySearch?
-        <>
-          <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
-            <Row className ='roaming-white'>
-              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-                &nbsp;
-              </Col>
-              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-                <img loading="lazy" style ={{width:'100%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
-              </Col>
-              <Col xs={3} sm={3} md={3} lg={3} xl={3} className='centered-children'>
-                <div style={{marginTop: '20vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
-              </Col>
-              <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-                &nbsp;
-              </Col>
-            </Row>
-            <Row className ='roaming-white centered-children vertical-padding-sm' >
-              <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
-            </Row>
             <Row>
-              <Col>
-                &nbsp;
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
-                </div>
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
-                </div>
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
-                </div>
-              </Col>
-              <Col className ='centered-children'>
-                <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
-                  <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
-                </div>
-              </Col>
-              <Col>
-                &nbsp;
-              </Col>
+              <input onChange={this.tagInput}
+                     value={this.state.searchValue}
+                     id="searchValue"
+                     type="text"
+                     placeholder='Search'
+                     className ='roaming-white'/>
+              <label htmlFor="searchValue" >Search</label>
             </Row>
-          </Container>
-        </>
+          </Col>
+          <Col xs={3} sm={3} md={4} lg={4} xl={4}>
+            &nbsp;
+          </Col>
+        </Row>
+        <Row className ='centered-children'>
+            {this.state.shownBlogs.map((blog, i)=>{
+                    return <BlogRow blog ={blog}
+                                     index = {i}
+                                     key={blog.name+i}/>})}
+        </Row>
+        {this.state.emptySearch?
+          <>
+            <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
+              <Row className ='roaming-white'>
+                <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                  &nbsp;
+                </Col>
+                <Col xs={5} sm={5} md={5} lg={5} xl={5}>
+                  <img loading="lazy" style ={{width:'120%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
+                </Col>
+                <Col xs={5} sm={5} md={5} lg={5} xl={5} className='centered-children'>
+                  <div style={{marginTop: '10vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                </Col>
+                <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                  &nbsp;
+                </Col>
+              </Row>
+              <Row className ='roaming-white centered-children vertical-padding-sm' >
+                <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
+              </Row>
+              <Row>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
+                  </div>
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className='vertical-padding-sm'>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
+                  </div>
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </>
 
-      :null}
-    </>
-}
-    </Row>
-    <Footer isMobile={this.state.isMobile}/>
-    </div>
+        :null}
+      </>
+      :
+      <>
+        <Row className ='nice-input-wrapper form-line' style ={{paddingTop:'12.5vh'}}>
+          <Col xs={3} sm={3} md={4} lg={4} xl={4}>
+            &nbsp;
+          </Col>
+            <Col xs={6} sm={6} md={4} lg={4} xl={4}>
+            <Row>
+              <input onChange={this.tagInput}
+                     onBlur = {this.tagSearch}
+                     value={this.state.searchValue}
+                     id="searchValue"
+                     type="text"
+                     placeholder='Search'
+                     className ='roaming-white'/>
+              <label htmlFor="searchValue" >Search</label>
+            </Row>
+          </Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+            <HelpIcon message ="Search by keyword to find what you're looking for."/>
+          </Col>
+          <Col xs={1} sm={1} md={2} lg={2} xl={2}>
+            &nbsp;
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {this.state.shownBlogs.map((blog, i)=>{
+                    return <LeftCol blog ={blog}
+                                    index = {i}
+                                    key={blog.name+i}/>
+                                     })}
+          </Col>
+          <Col>
+            {this.state.shownBlogs.map((blog, i)=>{
+                    return <RightCol blog ={blog}
+                                     index ={i}
+                                     key={blog.name+i}/>
+                                     })}
+          </Col>
+        </Row>
+        {this.state.emptySearch?
+          <>
+            <Container className ='roaming-white full-width' style={{minHeight:'90vh'}}>
+              <Row className ='roaming-white'>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                  &nbsp;
+                </Col>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                  <img loading="lazy" style ={{width:'100%'}}src ="/icon/aliaIcon.png" alt ='aliaIcon' />
+                </Col>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3} className='centered-children'>
+                  <div style={{marginTop: '20vh'}}><p className ='box3 sb14 roaming-text-sm'>Whoops! We don't have a blog about that yet.</p></div>
+                </Col>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                  &nbsp;
+                </Col>
+              </Row>
+              <Row className ='roaming-white centered-children vertical-padding-sm' >
+                <p className ='roaming-text-sm centered-text'>Try some of these popular tags:</p>
+              </Row>
+              <Row>
+                <Col>
+                  &nbsp;
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag' onClick={()=>this.suggestedTagInput('Food Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Food Guide</p>
+                  </div>
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Activity Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Activity Guide</p>
+                  </div>
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag'  onClick={()=>this.suggestedTagInput('Carbon Footprint')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Carbon Footprint</p>
+                  </div>
+                </Col>
+                <Col className ='centered-children'>
+                  <div className ='suggested-tag centered-children'  onClick={()=>this.suggestedTagInput('Location Guide')}>
+                    <p className ='roaming-text-sm centered-text' style={{margin:'auto'}}>Location Guide</p>
+                  </div>
+                </Col>
+                <Col>
+                  &nbsp;
+                </Col>
+              </Row>
+            </Container>
+          </>
+
+        :null}
+      </>
+  }
+      </Row>
+      <Footer isMobile={this.state.isMobile}/>
+      </div>
+    :
+      <LoadScreen/>
+    }
 
 
 

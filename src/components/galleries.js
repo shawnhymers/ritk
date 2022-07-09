@@ -8,6 +8,7 @@ const LeftCol = lazy(() => import('./sharedComponents/blogComponents/leftCol'));
 const RightCol = lazy(() => import('./sharedComponents/blogComponents/rightCol'));
 const BlogRow = lazy(() => import('./sharedComponents/blogComponents/blogRow'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
+const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 
 class GalleryPage extends Component {
@@ -16,6 +17,7 @@ class GalleryPage extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      isLoaded:false,
       showOutcomeMessage:false,
       galleries:[
             {name:'Huaraz',
@@ -112,13 +114,20 @@ class GalleryPage extends Component {
             ],
     };
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.onPageLoad = this.onPageLoad2.bind(this);
   };
   componentDidMount(){
+    window.addEventListener("load", this.onPageLoad2);
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+
     setTimeout(() => {
       this.updateDimensions();
-    }, 300)
+    }, 200)
+    if (document.readyState==='complete') {
+      console.log('already complete')
+      this.setState({isLoaded:true})
+    }
   }
 
   updateDimensions() {
@@ -135,65 +144,78 @@ class GalleryPage extends Component {
       }
     }
   }
+  onPageLoad2 =()=>{
+    console.log('page loaded')
+    console.log(document.readyState)
+    if (document.readyState === "complete") {
+      console.log('all the way done')
+      this.setState({isLoaded:true})
+    }
+  }
 
   render() {
 return(
   <>
-  <div style ={{overflowX:'hidden'}}>
 
-  {this.state.isMobile?
-      <MobileHeader page ={'gallery'}/>
-  :
-      <DesktopHeader page ={'gallery'}/>
-  }
-
-  <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
+  {this.state.isLoaded?
+    <div style ={{overflowX:'hidden'}}>
 
     {this.state.isMobile?
-      <>
-
-
-        <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
-          &nbsp;
-        </Row>
-        <Row className ='centered-children'>
-            {this.state.galleries.map((gallery, i)=>{
-                    return <BlogRow blog ={gallery}
-                                     index = {i}
-                                     key={gallery.name+i}/>})}
-        </Row>
-        </>
+        <MobileHeader page ={'gallery'}/>
     :
-        <>
-
-        <div style ={{overflowX:'hidden'}} className='roaming-white'>
-        <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
-          &nbsp;
-        </Row>
-        <Row>
-          <Col>
-            {this.state.galleries.map((gallery, i)=>{
-                    return <LeftCol blog ={gallery}
-                                    index = {i}
-                                    key={gallery.name+i}/>
-                                     })}
-          </Col>
-          <Col>
-            {this.state.galleries.map((gallery, i)=>{
-                    return <RightCol blog ={gallery}
-                                     index ={i}
-                                     key={gallery.name+i}/>
-                                     })}
-          </Col>
-        </Row>
-        </div>
-        </>
+        <DesktopHeader page ={'gallery'}/>
     }
 
-  </Row>
+    <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'90vh'}}>
 
-  <Footer isMobile={this.state.isMobile}/>
-  </div>
+      {this.state.isMobile?
+        <>
+
+
+          <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
+            &nbsp;
+          </Row>
+          <Row className ='centered-children'>
+              {this.state.galleries.map((gallery, i)=>{
+                      return <BlogRow blog ={gallery}
+                                       index = {i}
+                                       key={gallery.name+i}/>})}
+          </Row>
+          </>
+      :
+          <>
+
+          <div style ={{overflowX:'hidden'}} className='roaming-white'>
+          <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
+            &nbsp;
+          </Row>
+          <Row>
+            <Col>
+              {this.state.galleries.map((gallery, i)=>{
+                      return <LeftCol blog ={gallery}
+                                      index = {i}
+                                      key={gallery.name+i}/>
+                                       })}
+            </Col>
+            <Col>
+              {this.state.galleries.map((gallery, i)=>{
+                      return <RightCol blog ={gallery}
+                                       index ={i}
+                                       key={gallery.name+i}/>
+                                       })}
+            </Col>
+          </Row>
+          </div>
+          </>
+      }
+
+    </Row>
+
+    <Footer isMobile={this.state.isMobile}/>
+    </div>
+  :
+    <LoadScreen/>
+  }
 
 
   </>

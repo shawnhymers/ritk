@@ -1,6 +1,5 @@
 import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
-import LazyLoad from "react-lazyload";
 
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
 
@@ -10,10 +9,11 @@ import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
 import cuscoSquare from '../assets/main/cuscoSquare.jpg'
 import otavaloSquare from '../assets/main/otavaloSquare.jpg'
 import huarazSquare from '../assets/main/huarazSquare.jpg'
-import DesktopHeader from './sharedComponents/navComponents/desktopHeader'
-// const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
-const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 
+// const HuarazSquare = lazy(() => import('../assets/main/huarazSquare.jpg'));
+const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
+const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 const AboutPreview = lazy(() => import('./sharedComponents/previewComponents/aboutPreview'));
 const BlogPreview = lazy(() => import('./sharedComponents/previewComponents/blogPreview'));
 const LinksPreview = lazy(() => import('./sharedComponents/previewComponents/linksPreview'));
@@ -29,6 +29,7 @@ class Main extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      isLoaded:false,
       showOutcomeMessage:false,
       galleryPreviews:[
         {name:'Huaraz',
@@ -67,15 +68,27 @@ class Main extends Component {
 
     };
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.onPageLoad = this.onPageLoad.bind(this);
   };
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+    window.addEventListener("load", this.onPageLoad);
+      // // Remove the event listener when component unmounts
+      // return () => window.removeEventListener("load", this.onPageLoad);
+      // return () => window.removeEventListener('resize', this.updateDimensions);
     setTimeout(() => {
       this.updateDimensions();
     }, 100)
+    if (document.readyState==='complete') {
+      console.log('already complete')
+      this.setState({isLoaded:true})
+    }
   }
-
+  componentWillUnmount() {
+        window.removeEventListener("load", this.onPageLoad);
+        window.removeEventListener('resize', this.updateDimensions);
+  }
   updateDimensions() {
     let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
     let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
@@ -90,6 +103,14 @@ class Main extends Component {
       }
     }
   }
+  onPageLoad =()=>{
+    console.log('page loaded')
+    console.log(document.readyState)
+    if (document.readyState === "complete") {
+      console.log('all the way done')
+      this.setState({isLoaded:true})
+    }
+  }
 
 
 
@@ -97,12 +118,15 @@ class Main extends Component {
 
   return(
     <>
-
+    {this.state.isLoaded?
       <div style ={{overflowX:'hidden'}}>
-
         <HomePage galleryPreviews={this.state.galleryPreviews}
                   isMobile={this.state.isMobile}/>
       </div>
+    :
+      <LoadScreen/>
+    }
+
 
 
     </>
@@ -113,7 +137,7 @@ const HomePage = props => {
 
 return(
   <>
-    <LazyLoad height={'50vh'}>
+
     {props.isMobile?
       <>
         <MobileHeader />
@@ -141,7 +165,7 @@ return(
     <BlogPreview/>
 
     <Footer isMobile={props.isMobile}/>
-      </LazyLoad>
+
   </>
 )
 }

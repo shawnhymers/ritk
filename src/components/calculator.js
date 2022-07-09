@@ -12,6 +12,7 @@ const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/deskto
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
 const OutcomeMessage = lazy(() => import('./sharedComponents/outcomeMessage'));
+const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 
 class CalculatorPage extends Component {
@@ -20,6 +21,7 @@ class CalculatorPage extends Component {
     super(props);
     this.state = {
       isMobile:false,
+      isLoaded:false,
       shouldBlockNavigation:false,
       showOutcomeMessage:false,
       outcomeMessageType:'positive',
@@ -53,6 +55,9 @@ class CalculatorPage extends Component {
     setTimeout(() => {
       this.updateDimensions();
     }, 300)
+    window.onload = (event) => {
+      this.setState({isLoaded:true})
+    };
   }
 
   componentDidUpdate () {
@@ -171,48 +176,53 @@ class CalculatorPage extends Component {
 
   return(
     <>
-<div style ={{overflowX:'hidden'}} >
-    <Prompt
-      when={this.state.shouldBlockNavigation}
-      message='Leaving will discard your changes, are you sure you want to leave?'
-    />
-    {this.state.showOutcomeMessage?
-      <OutcomeMessage isMobile ={this.state.isMobile}
-                      outcomeMessageType = {this.state.outcomeMessageType}
-                      closeMessage ={this.closeMessage}
-                      message ={this.state.outcomeMessage}/>
-    :null}
-    {this.state.isMobile?
-        <MobileHeader changeView ={this.updateView}
-                       page ={this.state.view}/>
-    :
-        <DesktopHeader changeView ={this.updateView}
-                       page ={'calculator'}/>
-    }
-    <Calculator changeView ={this.updatePageView}
-                addCarbonCostItem ={this.addCarbonCostItem}
-                totalCarbonCost={this.state.totalCarbonCost}
-                totalTransportCost={this.state.totalTransportCost}
-                totalFlightCost = {this.state.totalFlightCost}
-                totalCarCost={this.state.totalCarCost}
-                totalBusCost={this.state.totalBusCost}
-                totalTrainCost={this.state.totalTrainCost}
-                totalFoodCost = {this.state.totalFoodCost}
-                totalDietCost={this.state.totalDietCost}
-                totalAccomodationCost = {this.state.totalAccomodationCost}
-                isMobile={this.state.isMobile}
-                flightList={this.state.flight}
-                transportList={this.state.transport}
-                carList={this.state.car}
-                busList={this.state.bus}
-                trainList={this.state.train}
-                foodList={this.state.food}
-                dietList={this.state.diet}
-                hotelList={this.state.accomodation}/>
+      {this.state.isLoaded?
+        <div style ={{overflowX:'hidden'}} >
+      <Prompt
+        when={this.state.shouldBlockNavigation}
+        message='Leaving will discard your changes, are you sure you want to leave?'
+      />
+      {this.state.showOutcomeMessage?
+        <OutcomeMessage isMobile ={this.state.isMobile}
+                        outcomeMessageType = {this.state.outcomeMessageType}
+                        closeMessage ={this.closeMessage}
+                        message ={this.state.outcomeMessage}/>
+      :null}
+      {this.state.isMobile?
+          <MobileHeader changeView ={this.updateView}
+                         page ={this.state.view}/>
+      :
+          <DesktopHeader changeView ={this.updateView}
+                         page ={'calculator'}/>
+      }
+      <Calculator changeView ={this.updatePageView}
+                  addCarbonCostItem ={this.addCarbonCostItem}
+                  totalCarbonCost={this.state.totalCarbonCost}
+                  totalTransportCost={this.state.totalTransportCost}
+                  totalFlightCost = {this.state.totalFlightCost}
+                  totalCarCost={this.state.totalCarCost}
+                  totalBusCost={this.state.totalBusCost}
+                  totalTrainCost={this.state.totalTrainCost}
+                  totalFoodCost = {this.state.totalFoodCost}
+                  totalDietCost={this.state.totalDietCost}
+                  totalAccomodationCost = {this.state.totalAccomodationCost}
+                  isMobile={this.state.isMobile}
+                  flightList={this.state.flight}
+                  transportList={this.state.transport}
+                  carList={this.state.car}
+                  busList={this.state.bus}
+                  trainList={this.state.train}
+                  foodList={this.state.food}
+                  dietList={this.state.diet}
+                  hotelList={this.state.accomodation}/>
 
-    <Footer isMobile={this.state.isMobile}/>
+      <Footer isMobile={this.state.isMobile}/>
 
-      </div>
+        </div>
+      :
+        <LoadScreen/>
+      }
+
     </>
 
 )}};
