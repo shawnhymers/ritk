@@ -10,7 +10,7 @@ return(
     <Col xs={6} sm={6} md={3} lg={3} xl={3} >
       <Link to='blog/food guide'  className = 'centered-children'style = {{textDecoration:'none'}} >
         <Row className = 'centered-children'>
-          <img  className ='image-highlight round-borders blog-tease vertical-margin-sm' src ='/avacado.png' alt ='avacado'/>
+          <img  loading="lazy" className ='image-highlight round-borders blog-tease vertical-margin-sm' src ='/avacado.png' alt ='avacado'/>
         </Row>
       </Link>
       <Row className = 'centered-children'>
@@ -20,7 +20,7 @@ return(
     <Col xs={6} sm={6} md={3} lg={3} xl={3} >
       <Link to='blog/carbon footprint'  className = 'centered-children'style = {{textDecoration:'none'}} >
         <Row className = 'centered-children'>
-          <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/footprintIcon.png' alt ='boots'/>
+          <img loading="lazy" className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/footprintIcon.png' alt ='boots'/>
         </Row>
       </Link>
       <Row className = 'centered-children center-justified-text'>
@@ -30,7 +30,7 @@ return(
       <Col xs={6} sm={6} md={3} lg={3} xl={3} >
         <Link to='blog/location guide'  className = 'centered-children'style = {{textDecoration:'none'}} >
           <Row className = 'centered-children'>
-            <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/locationIcon.png' alt ='tent'/>
+            <img loading="lazy" className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/locationIcon.png' alt ='tent'/>
           </Row>
         </Link>
         <Row className = 'centered-children center-justified-text'>
@@ -40,7 +40,7 @@ return(
       <Col xs={6} sm={6} md={3} lg={3} xl={3} >
         <Link to='blog/activity guide'  className = 'centered-children'style = {{textDecoration:'none'}} >
           <Row className = 'centered-children'>
-            <img className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/activityIcon.png' alt ='train'/>
+            <img loading="lazy" className ='image-highlight round-borders blog-tease vertical-margin-sm'src ='/icon/activityIcon.png' alt ='train'/>
           </Row>
         </Link>
         <Row className = 'centered-children'>

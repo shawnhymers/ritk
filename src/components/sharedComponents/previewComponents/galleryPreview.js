@@ -14,6 +14,7 @@ const Images = props => {
           <p className ='gallery-label'>{props.img.name}</p>
           <img src ={props.img.pic}
                alt={props.img.name}
+               loading="lazy"
                className ='img-fluid gallery-img'/>
         </Link>
       </Col>

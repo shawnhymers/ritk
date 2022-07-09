@@ -109,6 +109,7 @@ return(
         <Row style ={{pading:'0vh'}}>
           <img src= "/mobileCover1.jpg"
                alt = 'banner pic'
+               loading="lazy"
                className = 'banner-pic'/>
         </Row>
       </>
@@ -118,6 +119,7 @@ return(
         <Row style ={{pading:'0vh'}}>
           <img src= "/homePageHorizontal.jpg"
                alt = 'banner pic'
+               loading="lazy"
                className = 'banner-pic'/>
         </Row>
       </>}

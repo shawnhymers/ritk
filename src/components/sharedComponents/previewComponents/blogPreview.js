@@ -19,6 +19,7 @@ return(
                 className ='centered-children'>
               <img src = '/MedellinGallery/Medellin13.jpg'
                    alt ='whisterlActivity'
+                   loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
                    className = ' blog-tease vertical-margin-sm'/>
             </Link>
@@ -34,6 +35,7 @@ return(
             <Link to='/BanosActivityGuide' className ='centered-children'>
               <img src = '/banos/banos16.jpg'
                    alt ='whistlerFood'
+                   loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
                    className = ' blog-tease vertical-margin-sm'/>
             </Link>
@@ -49,6 +51,7 @@ return(
             <Link to='/CarbonCostOfFLying' className ='centered-children'>
               <img src = '/planeWing.jpg'
                    alt ='planeWing'
+                   loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
                    className = ' blog-tease vertical-margin-sm'/>
             </Link>

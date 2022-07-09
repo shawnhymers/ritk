@@ -60,7 +60,7 @@ return(
         <Container>
           <Row  style ={{paddingTop:'2em'}} >
             <Col xs={12} sm={12} md={12} lg={12} xl={12} className ='centered-children'>
-              <img style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
+              <img loading="lazy"style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
             </Col>
           </Row>
           <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}className ='horizontal-centered-children '>

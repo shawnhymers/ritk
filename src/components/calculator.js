@@ -231,6 +231,7 @@ return(
           <img src ='/plane.png'
                alt ='food'
                size ={'2em'}
+               loading="lazy"
                className ={'mobile-calculator-icon '}/>
         </Row>
         <Row className ='centered-children'>
@@ -244,6 +245,7 @@ return(
         <Row className ='centered-children'>
           <img src ='/train.png'
                alt ='food'
+               loading="lazy"
                className ={'mobile-calculator-icon '}/>
         </Row>
         <Row className ='centered-children'>
@@ -258,6 +260,7 @@ return(
           <img src ='/avacado.png'
                alt ='food'
                size ={'2em'}
+               loading="lazy"
                className ={'mobile-calculator-icon '}/>
         </Row>
         <Row className ='centered-children'>
@@ -271,6 +274,7 @@ return(
         <Row className ='centered-children'>
           <img src ='/tent.png'
                alt ='food'
+               loading="lazy"
                className ={'mobile-calculator-icon '}/>
         </Row>
         <Row className ='centered-children'>
@@ -284,6 +288,7 @@ return(
         <Row className ='centered-children'>
           <img src ='/trip.png'
                alt ='food'
+               loading="lazy"
                className ={'mobile-calculator-icon '}/>
         </Row>
         <Row className ='centered-children'>
@@ -308,6 +313,7 @@ const DesktopNav = props =>{
         <Row className ='centered-children'>
           <img src ='/plane.png'
                alt ='food'
+               loading="lazy"
                className ={'calculator-icon '+((props.stepCount>0)? "":"fadded")}/>
         </Row>
         <Row className ='centered-children'>
@@ -320,6 +326,7 @@ const DesktopNav = props =>{
         <Row className ='centered-children'>
           <img src ='/train.png'
                alt ='food'
+               loading="lazy"
                className ={'calculator-icon '+((props.stepCount>1)? "":"fadded")}/>
         </Row>
         <Row className ='centered-children'>
@@ -332,6 +339,7 @@ const DesktopNav = props =>{
         <Row className ='centered-children'>
           <img src ='/avacado.png'
                alt ='food'
+               loading="lazy"
                className ={'calculator-icon '+((props.stepCount>2)? "":"fadded")}/>
         </Row>
         <Row className ='centered-children'>
@@ -344,6 +352,7 @@ const DesktopNav = props =>{
         <Row className ='centered-children'>
           <img src ='/tent.png'
                alt ='food'
+               loading="lazy"
                className ={'calculator-icon '+((props.stepCount>3)? "":"fadded")}/>
         </Row>
         <Row className ='centered-children'>
@@ -356,6 +365,7 @@ const DesktopNav = props =>{
         <Row className ='centered-children'>
           <img src ='/trip.png'
                alt ='food'
+               loading="lazy"
                className ={'calculator-icon '+((props.stepCount>4)? "":"fadded")}/>
         </Row>
         <Row className ='centered-children'>
