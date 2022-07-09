@@ -3,6 +3,7 @@ import { Row} from 'react-bootstrap';
 import LazyLoad from "react-lazyload";
 
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
+
 import arequipaSquare from '../assets/main/arequipaSquare.jpg'
 import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
 import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
