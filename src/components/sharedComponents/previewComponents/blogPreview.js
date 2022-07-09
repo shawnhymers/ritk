@@ -1,13 +1,30 @@
 import React from 'react';
 import { Row,Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
-
+import  { useEffect } from 'react';
 import blog1 from "../../../assets/blogPreview/blog1.jpg"
 import blog2 from "../../../assets/blogPreview/blog2.jpg"
 import blog3 from "../../../assets/blogPreview/blog3.jpg"
 
 const BlogPreview = props => {
+  useEffect(() => {
+    if (document.readyState==='complete') {
+      console.log('blog preview componennt already complete')
+      props.componentReady('aboutPreview')
+    }
+    window.addEventListener("load", onPageLoad);
+    // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    })
 
+    function onPageLoad (){
+      console.log('blog preview loaded')
+      console.log(document.readyState)
+      if (document.readyState === "complete") {
+        console.log('all the way done')
+        props.componentReady('blogPreview')
+      }
+    }
 
 return(
   <>

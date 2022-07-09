@@ -1,8 +1,8 @@
 import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
-
+import OnImagesLoaded from 'react-on-images-loaded';
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
-
+import  { useState,useEffect } from 'react';
 import arequipaSquare from '../assets/main/arequipaSquare.jpg'
 import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
 import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
@@ -30,6 +30,7 @@ class Main extends Component {
     this.state = {
       isMobile:false,
       isLoaded:false,
+      imagesLoaded:false,
       showOutcomeMessage:false,
       galleryPreviews:[
         {name:'Huaraz',
@@ -104,12 +105,18 @@ class Main extends Component {
     }
   }
   onPageLoad =()=>{
-    console.log('page loaded')
+    console.log('main page loaded')
     console.log(document.readyState)
     if (document.readyState === "complete") {
       console.log('all the way done')
       this.setState({isLoaded:true})
     }
+  }
+  componentReady=(component)=>{
+    console.log(component+'... is ready');
+  };
+  imageLoaded=(image)=>{
+    console.log(image+'... is ready')
   }
 
 
@@ -118,11 +125,14 @@ class Main extends Component {
 
   return(
     <>
+
     {this.state.isLoaded?
-      <div style ={{overflowX:'hidden'}}>
-        <HomePage galleryPreviews={this.state.galleryPreviews}
-                  isMobile={this.state.isMobile}/>
-      </div>
+        <div style ={{overflowX:'hidden'}}>
+          <HomePage galleryPreviews={this.state.galleryPreviews}
+                    isMobile={this.state.isMobile}
+                    componentReady={this.componentReady}
+                    imageLoaded={this.imageLoaded}/>
+        </div>
     :
       <LoadScreen/>
     }
@@ -133,8 +143,23 @@ class Main extends Component {
 )}};
 export default Main;
 
-const HomePage = props => {
 
+const HomePage = props => {
+  useEffect(() => {
+    if (document.readyState==='complete') {
+      console.log('sub componennt already complete')
+    }
+    window.addEventListener("load", onPageLoad);
+    })
+
+    function onPageLoad (){
+      console.log('home page loaded')
+      console.log(document.readyState)
+      // if (document.readyState === "complete") {
+      //   console.log('all the way done')
+      //   this.setState({isLoaded:true})
+      // }
+    }
 return(
   <>
 
@@ -150,19 +175,21 @@ return(
       </>
       :
       <>
-        <DesktopHeader />
+        <DesktopHeader componentReady={props.componentReady}/>
         <Row style ={{pading:'0vh'}}>
           <img src= {homePageHorizontal}
                alt = 'banner pic'
-               loading="lazy"
+               onLoad={props.imageLoaded('bannerPics')}
                className = 'banner-pic'/>
         </Row>
       </>}
 
-    <AboutPreview />
-    <LinksPreview useLink={props.useLink}/>
-    <GalleryPreview galleryImages={props.galleryPreviews}/>
-    <BlogPreview/>
+    <AboutPreview componentReady={props.componentReady}/>
+    <LinksPreview useLink={props.useLink}
+                  componentReady={props.componentReady}/>
+    <GalleryPreview galleryImages={props.galleryPreviews}
+                    componentReady={props.componentReady}/>
+    <BlogPreview componentReady={props.componentReady}/>
 
     <Footer isMobile={props.isMobile}/>
 

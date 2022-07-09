@@ -1,14 +1,31 @@
 import React from 'react';
 import {Row,Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
-
+import  { useEffect } from 'react';
 import activityIcon from "../../../assets/icons/activityIcon.png"
 import avacado from "../../../assets/icons/avacado.png"
 import footprintIcon from "../../../assets/icons/footprintIcon.png"
 import locationIcon from "../../../assets/icons/locationIcon.png"
 
 const Links = props => {
+  useEffect(() => {
+    if (document.readyState==='complete') {
+      console.log('links preview componennt already complete')
+      props.componentReady('linksPreview')
+    }
+    window.addEventListener("load", onPageLoad);
+    // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    })
 
+    function onPageLoad (){
+      console.log('links preview loaded')
+      console.log(document.readyState)
+      if (document.readyState === "complete") {
+        console.log('all the way done')
+        props.componentReady('linksPreview')
+      }
+    }
 return(
   <>
     <Row className ='nice-white vertical-padding-md centered-children' style ={{minHeight:'80vh'}}>

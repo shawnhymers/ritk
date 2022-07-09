@@ -3,10 +3,26 @@ import { Container,Row,Col} from 'react-bootstrap';
 import {SiTiktok} from "react-icons/si";
 import {BsInstagram, BsYoutube} from "react-icons/bs";
 import { Link } from "react-router-dom";
+import  { useEffect } from 'react';
 
 const AboutPreview = props => {
+  useEffect(() => {
+    if (document.readyState==='complete') {
+      console.log('about preview componennt already complete')
+      props.componentReady('aboutPreview')
+    }
+    window.addEventListener("load", onPageLoad);
+    // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    })
 
-
+    function onPageLoad (){
+      console.log('about preview loaded')
+      console.log(document.readyState)
+      if (document.readyState === "complete") {
+        props.componentReady('aboutPreview')
+      }
+    }
 return(
   <>
   <Row className = 'roaming-white vertical-padding-md centered-children' style ={{minHeight:'80vh'}}>
