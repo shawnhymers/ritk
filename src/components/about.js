@@ -3,6 +3,7 @@ import { Container,Row,Col} from 'react-bootstrap';
 import {BsInstagram, BsYoutube} from "react-icons/bs";
 import {SiTiktok} from "react-icons/si";
 import { Link } from "react-router-dom";
+import coupleIcon from "../assets/main/coupleIcon.png"
 
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -60,7 +61,7 @@ return(
         <Container>
           <Row  style ={{paddingTop:'2em'}} >
             <Col xs={12} sm={12} md={12} lg={12} xl={12} className ='centered-children'>
-              <img loading="lazy"style ={{width:'90%'}}src ="/coupleIcon.png" alt ='coupleIcon' className = 'couple-icon'/>
+              <img loading="lazy"style ={{width:'90%'}}src ={coupleIcon} alt ='coupleIcon' className = 'couple-icon'/>
             </Col>
           </Row>
           <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}className ='horizontal-centered-children '>
