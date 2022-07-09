@@ -2,6 +2,10 @@ import React from 'react';
 import { Row,Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
+import blog1 from "../../../assets/blogPreview/blog1.jpg"
+import blog2 from "../../../assets/blogPreview/blog2.jpg"
+import blog3 from "../../../assets/blogPreview/blog3.jpg"
+
 const BlogPreview = props => {
 
 
@@ -17,7 +21,7 @@ return(
           <Col className ='centered-children' style={{marginTop:'0vh',paddingTop:'0vh'}}>
           <Link to='/InTheKnowMedellin'
                 className ='centered-children'>
-              <img src = '/MedellinGallery/Medellin13.jpg'
+              <img src = {blog1}
                    alt ='whisterlActivity'
                    loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
@@ -33,7 +37,7 @@ return(
         <Row >
           <Col className ='centered-children'>
             <Link to='/BanosActivityGuide' className ='centered-children'>
-              <img src = '/banos/banos16.jpg'
+              <img src = {blog2}
                    alt ='whistlerFood'
                    loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
@@ -49,7 +53,7 @@ return(
         <Row >
           <Col className ='centered-children'>
             <Link to='/CarbonCostOfFLying' className ='centered-children'>
-              <img src = '/planeWing.jpg'
+              <img src ={blog3}
                    alt ='planeWing'
                    loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
