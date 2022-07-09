@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 import  { useEffect } from 'react';
 const DesktopHeader = props => {
 
-  useEffect(() => {
-    if (document.readyState==='complete') {
-      console.log('desktop header componennt already complete')
-      props.componentReady('desktopHeader')
-    }
-    window.addEventListener("load", onPageLoad);
-    })
-
-    function onPageLoad (){
-      console.log('desktop header loaded')
-      console.log(document.readyState)
-      if (document.readyState === "complete") {
-        console.log('all the way done')
-        props.componentReady('desktopHeader')
-      }
-    }
+  // useEffect(() => {
+  //   if (document.readyState==='complete') {
+  //     console.log('desktop header componennt already complete')
+  //     props.componentReady('desktopHeader')
+  //   }
+  //   window.addEventListener("load", onPageLoad);
+  //   })
+  //
+  //   function onPageLoad (){
+  //     console.log('desktop header loaded')
+  //     console.log(document.readyState)
+  //     if (document.readyState === "complete") {
+  //       console.log('all the way done')
+  //       props.componentReady('desktopHeader')
+  //     }
+  //   }
 return(
   <>
 

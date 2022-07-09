@@ -161,7 +161,7 @@ class BlogPage extends Component {
   };
 
   componentDidMount(){
-
+window.addEventListener("load", this.onPageLoad);
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
 
@@ -172,9 +172,10 @@ class BlogPage extends Component {
         this.setState({searchValue:this.props.match.params.searchTerm})
       }
     }, 300)
-    window.onload = (event) => {
+    if (document.readyState==='complete') {
+      console.log('already complete')
       this.setState({isLoaded:true})
-    };
+    }
 
 
   }
@@ -246,7 +247,14 @@ class BlogPage extends Component {
       }
     }
   }
-
+  onPageLoad =()=>{
+    console.log('main page loaded')
+    console.log(document.readyState)
+    if (document.readyState === "complete") {
+      console.log('all the way done')
+      this.setState({isLoaded:true})
+    }
+  }
   render() {
 
 
