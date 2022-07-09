@@ -28,6 +28,7 @@ return(
         <p className ='centered-text blog-sub-label'>{props.header.subLabel} </p>
         <img src ={props.header.src}
              alt ={props.header.label}
+             loading="lazy"
              style ={{margin:'0vh',padding:'0vh',minWidth:'100vw'}}
              className ='img-fluid blog-img'/>
       </Row>
@@ -193,6 +194,7 @@ const HorizontalBlogImage = props =>{
         <Col className ='centered-children '>
           <img src ={props.src}
                alt = {props.label}
+               loading="lazy"
                style ={{width:'100%'}}/>
         </Col>
       </Row>
@@ -208,6 +210,7 @@ const VerticalBlogImage = props =>{
         <Col className ='centered-children'>
           <img src ={props.src}
                alt = {props.label}
+               loading="lazy"
                style ={{width:'100%'}} />
         </Col>
       </Row>
@@ -225,11 +228,13 @@ const DipTych = props =>{
 
             <img src ={props.src1}
                  alt = {props.label}
+                 loading="lazy"
                  style ={{width:'100%'}}/>
           </Row>
           <Row className ='vertical-padding-sm'>
             <img src ={props.src2}
                  alt = {props.label}
+                 loading="lazy"
                  style ={{width:'100%'}}/>
           </Row>
 
@@ -240,12 +245,14 @@ const DipTych = props =>{
         <Col className ='centered-children'>
           <img src ={props.src1}
                alt = {props.label}
+               loading="lazy"
                style ={{width:'100%'}} />
         </Col>
 
         <Col className ='centered-children'>
           <img src ={props.src2}
                alt = {props.label}
+               loading="lazy"
                style ={{width:'100%'}}/>
         </Col>
       </Row>

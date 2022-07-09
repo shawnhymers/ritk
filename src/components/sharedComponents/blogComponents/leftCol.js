@@ -14,6 +14,7 @@ const LeftCol = props =>{
                 className = 'centered-children' >
             <img src={props.blog.pic}
                  alt="Nita lake"
+                 loading="lazy"
                  style = {{width:'80%'}}
                  className = 'blog-zoom  vertical-margin-sm'/>
           </Link>

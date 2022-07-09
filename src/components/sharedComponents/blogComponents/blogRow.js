@@ -8,7 +8,7 @@ const BlogRow = props =>{
       <>
         <Row className ='centered-children'>
           <Link to={props.blog.link} className = 'centered-children' >
-            <img src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
+            <img loading="lazy" src={props.blog.pic} alt="Nita lake" style = {{width:'80%'}} className = 'blog-zoom  vertical-margin-sm'/>
           </Link>
         </Row>
         <Row className = 'centered-children'>
