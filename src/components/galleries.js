@@ -4,7 +4,9 @@ import huaraz3 from '../assets/galleries/huaraz/huaraz3.jpg'
 import huacachina11 from '../assets/galleries/huacachina/huacachina11.jpg'
 import arequipa1 from '../assets/galleries/arequipa/arequipa1.jpg'
 import sacredValley14 from '../assets/galleries/sacredValley/sacredValley14.jpg'
-// '/CuscoGallery/cusco23.jpg',
+
+import cusco23 from '../assets/galleries/cusco/cusco23.jpg'
+
 // '/OtavaloGallery/Otavalo17.jpg',
 // '/QuitoGallery/Quito17.jpg',
 // '/QuindioGallery/Quindio24.jpg',
