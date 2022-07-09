@@ -11,8 +11,8 @@ import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
 import cuscoSquare from '../assets/main/cuscoSquare.jpg'
 import otavaloSquare from '../assets/main/otavaloSquare.jpg'
 import quitoSquare from '../assets/main/quitoSquare.jpg'
-
-const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
+import DesktopHeader from './sharedComponents/navComponents/desktopHeader'
+// const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 
 const AboutPreview = lazy(() => import('./sharedComponents/previewComponents/aboutPreview'));
@@ -90,24 +90,19 @@ class Main extends Component {
       }
     }
   }
-  useLink =(link)=>{
-    this.setState({view:'blog',blogSearch:link,urlOverride:true})
 
-  }
 
 
   render() {
 
   return(
     <>
-    <LazyLoad height={150}>
+
       <div style ={{overflowX:'hidden'}}>
 
         <HomePage galleryPreviews={this.state.galleryPreviews}
-                  isMobile={this.state.isMobile}
-                  useLink ={this.useLink}/>
+                  isMobile={this.state.isMobile}/>
       </div>
-    </LazyLoad>
 
 
     </>
@@ -118,7 +113,7 @@ const HomePage = props => {
 
 return(
   <>
-
+    <LazyLoad height={'50vh'}>
     {props.isMobile?
       <>
         <MobileHeader />
@@ -146,6 +141,7 @@ return(
     <BlogPreview/>
 
     <Footer isMobile={props.isMobile}/>
+      </LazyLoad>
   </>
 )
 }
