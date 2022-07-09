@@ -1,5 +1,16 @@
 import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
+import LazyLoad from "react-lazyload";
+
+import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
+import coupleIcon from "../assets/main/coupleIcon.png"
+
+import arequipaSquare from '../assets/main/arequipaSquare.jpg'
+import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
+import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
+import cuscoSquare from '../assets/main/cuscoSquare.jpg'
+import otavaloSquare from '../assets/main/otavaloSquare.jpg'
+import quitoSquare from '../assets/main/quitoSquare.jpg'
 
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -9,6 +20,9 @@ const BlogPreview = lazy(() => import('./sharedComponents/previewComponents/blog
 const LinksPreview = lazy(() => import('./sharedComponents/previewComponents/linksPreview'));
 const GalleryPreview = lazy(() => import('./sharedComponents/previewComponents/galleryPreview'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
+// const homePageHorizontal = lazy(()=> import('../assets/main/homePageHorizontal.jpg'));
+// const ArequipaSquare = lazy(()=> import('../assets/main/arequipaSquare.jpg'))
+
 
 class Main extends Component {
   // Setting up initial state
@@ -19,32 +33,32 @@ class Main extends Component {
       showOutcomeMessage:false,
       galleryPreviews:[
         {name:'Huacachina',
-         pic:'/HuacachinaGallery/huacachinaSquare.jpg',
+         pic:huacachinaSquare,
          tags:['activity', 'bc','','','','','','','',''],
          link:'/Huacachina',
          key:'1'},
          {name:'Arequipa',
-          pic:'/ArequipaGallery/arequipaSquare.jpg',
+          pic: arequipaSquare,
           tags:['activity', 'bc','','','','','','','',''],
           link:'/Arequipa',
           key:'2'},
           {name:'Sacred Valley',
-           pic:'/SacredValleyGallery/sacredValleysquare.jpg',
+           pic:sacredValleysquare,
            tags:['activity', 'bc','','','','','','','',''],
            link:'/SacredValley',
            key:'3'},
            {name:'Cusco',
-            pic:'/CuscoGallery/cuscoSquare.jpg',
+            pic:cuscoSquare,
             tags:['activity', 'bc','','','','','','','',''],
             link:'/Cusco',
             key:'4'},
         {name:'Otavalo',
-         pic:'/OtavaloGallery/otavaloSquare.jpg',
+         pic:otavaloSquare,
          tags:['activity', 'bc','','','','','','','',''],
          link:'/Otavalo',
          key:'5'},
          {name:'Quito',
-          pic:'/QuitoGallery/quitoSquare.jpg',
+          pic:quitoSquare,
           tags:['activity', 'bc','','','','','','','',''],
           link:'/Quito',
           key:'6'},
@@ -86,12 +100,14 @@ class Main extends Component {
 
   return(
     <>
-    <div style ={{overflowX:'hidden'}}>
+    <LazyLoad height={150}>
+      <div style ={{overflowX:'hidden'}}>
 
-      <HomePage galleryPreviews={this.state.galleryPreviews}
-                isMobile={this.state.isMobile}
-                useLink ={this.useLink}/>
-    </div>
+        <HomePage galleryPreviews={this.state.galleryPreviews}
+                  isMobile={this.state.isMobile}
+                  useLink ={this.useLink}/>
+      </div>
+    </LazyLoad>
 
 
     </>
@@ -117,7 +133,7 @@ return(
       <>
         <DesktopHeader />
         <Row style ={{pading:'0vh'}}>
-          <img src= "/homePageHorizontal.jpg"
+          <img src= {homePageHorizontal}
                alt = 'banner pic'
                loading="lazy"
                className = 'banner-pic'/>

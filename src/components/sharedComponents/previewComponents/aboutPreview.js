@@ -18,8 +18,7 @@ return(
             src ="/coupleIcon.png"
             loading="lazy"
             alt ='coupleIcon'
-            className = 'couple-icon'
-            loading="lazy"/>
+            className = 'couple-icon'/>
           </Col>
         </Row>
         <Row  style ={{marginLeft:'5%',paddingTop:'1em',paddingBottom:'2em'}}className ='horizontal-centered-children '>
