@@ -1,0 +1,218 @@
+@font-face {
+  font-family: balloonFont;
+  src: local('balloonFont'),URL('../fonts/balloonFont.woff2') format('truetype');
+}
+@font-face {
+  font-family: roamingFont;
+  src: local('roamingFont'),URL('../fonts/roamingFont.woff2') format('truetype');
+}
+
+.nice-text-lg{
+    font-family: acumin-pro,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    line-height: 1.4em;
+    font-size: calc((2.2 - 1) * 1.2vw + 1rem);
+}
+.nice-text-med{
+    font-family: acumin-pro,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    line-height: 1.4em;
+    font-size: calc((1.8 - 1) * 1.1vw + 1rem);
+}
+.nice-text-sm{
+    font-family: acumin-pro,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    line-height: 1.4em;
+    font-size: calc((1.4 - 1) * 0.9vw + 1rem);
+}
+.link-style {
+   text-decoration: underline;
+   color: #4c8aed;
+   cursor: pointer;
+}
+
+.heavy-black-text{
+  font-weight: 800;
+  color:#111112;
+}
+
+.error-message{
+  font-family: acumin-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((1.4 - 1) * 0.9vw + 1rem);
+  color:red;
+}
+
+.vertical-centered-text{
+  text-align: center;
+}
+.balloon-text{
+  font-family: balloonFont;
+}
+
+
+.roaming-text{
+  font-family: roamingFont;
+}
+.roaming-text-md{
+  font-family: roamingFont;
+  font-size: calc((1.8 - 1) * 1.2vw + 1.1rem);
+
+}
+.roaming-text-sm{
+  font-family: roamingFont;
+  font-size: calc((1.8 - 1) * 0.9vw + 0.9rem);
+
+}
+.roaming-text-xtra-sm{
+  font-family: roamingFont;
+  font-size: calc((1.8 - 1) * 0.5vw + 0.6rem);
+
+}
+.roaming-black-text{
+  color: #595456;
+}
+.roaming-brown-text{
+  color: #B97F51;
+
+}
+.roaming-yellow-text{
+  color: #E2B54B;
+
+}
+
+.roaming-white-text{
+  color: #E7E2CD;
+
+}
+
+.roaming-blue-text{
+  color: #BED3C7;
+
+}
+
+.roaming-green-text{
+  color: #91A98F;
+
+}
+.roaming-red-text{
+  color: #c93b30;
+
+}
+
+
+.large-header-text{
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((4.1 - 1) * 0.9vw + 1rem);
+}
+.small-link-text{
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((1.8 - 1) * 0.9vw + 0.6rem);
+  cursor: pointer;
+}
+.medium-link-text{
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((1.8 - 1) * 0.9vw + 1rem);
+  cursor: pointer;
+}
+
+
+.medium-link-text:hover{
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((1.8 - 1) * 0.9vw + 1rem);
+  color: #595456!important;
+}
+.medium-text{
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  font-size: calc((1.8 - 1) * 0.9vw + 1rem);
+}
+
+.blog-title{
+  font-family: roamingFont;
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  color: #E2B54B;
+  font-size: calc((4.4 - 1) * 0.9vw + 1rem);
+}
+.blog-h1{
+  font-family: roamingFont;
+  font-weight: 500;
+  text-transform: none;
+  line-height: 1.4em;
+  color: #B97F51;
+  font-size: calc((3.4 - 1) * 0.9vw + 0.7rem);
+}
+
+.blog-h2{
+  font-family: roamingFont;
+  font-weight: 500;
+  font-style: normal;
+  /* letter-spacing: 0.08em; */
+  text-transform: none;
+  line-height: 1.4em;
+  color: #91A98F;
+  margin: 0!important;
+  font-size: calc((2.2 - 1) * 0.9vw + 0.7rem);
+}
+
+.blog-body{
+  font-family: roamingFont;
+  line-height: 1.5em;
+  font-size: calc((1.9 - 1) * 0.9vw + 0.7rem);
+}
+
+
+.centered-text{
+  align-self: center;
+  justify-content: center;
+   word-wrap: normal;
+}
+.center-justified-text{
+  align-self: center;
+  align-content: center;
+  align:center;
+  justify-content: center;
+  justify:center;
+  word-wrap: normal;
+   text-align: center;
+   text-overflow: inherit;
+}
+.auto-margins{
+  margin: auto;
+}
