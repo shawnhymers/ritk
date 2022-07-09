@@ -73,7 +73,7 @@ class Main extends Component {
     window.addEventListener("contextmenu", e => e.preventDefault());
     setTimeout(() => {
       this.updateDimensions();
-    }, 300)
+    }, 100)
   }
 
   updateDimensions() {
