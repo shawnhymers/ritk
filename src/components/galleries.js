@@ -6,13 +6,14 @@ import arequipa1 from '../assets/galleries/arequipa/arequipa1.jpg'
 import sacredValley14 from '../assets/galleries/sacredValley/sacredValley14.jpg'
 
 import cusco23 from '../assets/galleries/cusco/cusco23.jpg'
-
+import cartagena13 from "../assets/galleries/cartagena/cartagena13.jpg"
 // '/OtavaloGallery/Otavalo17.jpg',
 // '/QuitoGallery/Quito17.jpg',
 // '/QuindioGallery/Quindio24.jpg',
 // '/GuatapeGallery/Guatape9.jpg',
 // '/MedellinGallery/Medellin13.jpg',
-// '/CartagenaGallery/cartagena13.jpg',
+
+
 // '/PanamaGallery/panama9.jpg',
 // '/CostaRicaGallery/costaRica8.jpg',
 // '/OmetepeGallery/ometepe13.jpg',
@@ -107,7 +108,7 @@ class GalleryPage extends Component {
              key:'10'},
 
             {name:'Cartagena',
-             pic:'/CartagenaGallery/cartagena13.jpg',
+             pic:cartagena13,
              isVertical:false,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/cartagena',

@@ -1,6 +1,8 @@
 import React, {  lazy, Component } from 'react';
 import {  Row, Col,Container} from 'react-bootstrap';
 
+import banos5 from '../assets/galleries/banos/banos5.jpg'
+
 const HelpIcon = lazy(() => import('./sharedComponents/helpIcon'));
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -22,7 +24,7 @@ class BlogPage extends Component {
       blogSearch:'',
       blogs:[
             {name:'Banos Activity Guide',
-             pic: '/banos/banos5.jpg',
+             pic: banos5,
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/BanosActivityGuide'},
 
@@ -91,7 +93,7 @@ class BlogPage extends Component {
       shownBlogs:[
 
         {name:'Banos Activity Guide',
-         pic: '/banos/banos5.jpg',
+         pic: banos5,
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/BanosActivityGuide'},
 
