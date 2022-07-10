@@ -1,6 +1,11 @@
 cd Documents/websites/ritk && npm start
 cd Documents/websites/ritk && npm run build
 
+"redux": "^4.1.2",
+"redux-thunk": "^2.4.1",
+"react-on-images-loaded": "^2.2.8",
+"react-redux": "^7.2.2",
+
 cd Documents/websites/ritk && npm i react-on-images-loaded
 cd Documents/websites/ritk && npm i react-lazyload
 cd Documents/websites/ritk && npm i react-apexcharts
