@@ -1,6 +1,7 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
+import medellin15 from '../../assets/galleries/medellin/Medellin15.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -37,7 +38,7 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:'MedellinGallery/Medellin15.jpg', label:'Medellin Food Guide'}}
+    <BlogBody header ={{src:medellin15, label:'Medellin Food Guide'}}
               blurb ={"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}
               updated={'June 2022'}
               isMobile={isMobile}

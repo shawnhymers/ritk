@@ -1,7 +1,7 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
-
+import ometepe10 from '../../assets/galleries/ometepe/ometepe10.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -38,7 +38,7 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:'OmetepeGallery/ometepe10.jpg', label:'Carbon Cost of LATAM'}}
+    <BlogBody header ={{src:ometepe10, label:'Carbon Cost of LATAM'}}
               blurb ={"Here is a breakdown of our carbon footprint of 51 days of travelling Latin America."}
               updated={'May 2022'}
               isMobile={isMobile}

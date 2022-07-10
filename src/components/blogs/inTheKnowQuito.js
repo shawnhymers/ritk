@@ -1,6 +1,13 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
+
+import quito15 from '../../assets/galleries/quito/Quito15.jpg'
+import quito18 from '../../assets/galleries/quito/Quito18.jpg'
+import quito30 from '../../assets/galleries/quito/Quito30.jpg'
+import otavalo21 from '../../assets/galleries/otavalo/Otavalo21.jpg'
+import otavalo22 from '../../assets/galleries/otavalo/Otavalo22.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -37,7 +44,7 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:'QuitoGallery/Quito15.jpg', label:'In The Know : Quito'}}
+    <BlogBody header ={{src:quito15, label:'In The Know : Quito'}}
               blurb ={"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}
               updated={'May 2022'}
               isMobile={isMobile}
@@ -49,15 +56,15 @@ return(
                               {type:'header',text:"What To Do"},
                               {type:'listItem',text:"1) Visit The Old Town"},
                               {type:'paragraph',text:"Quito has the most well-preserved old towns in South America and is now a UNESCO world heritage site. The old town is huge and there is a lot to see. From the largest neo-gothic basilica in the Americas to one of the highest statues in South America. "},
-                              {type:'horizontalImage',src:'/QuitoGallery/Quito18.jpg'},
+                              {type:'horizontalImage',src:quito18},
 
                               {type:'listItem',text:"2) Do a Day Trip to Otavalo Market"},
                               {type:'paragraph',text:"You could spend all day in South America’s largest indigenous craft festival. The market stretches over many city blocks and is packed full of incredible handmade items made of different textiles. Keep in mind that bartering is part of the experience, and the vendors are very skilled at going back and forth on the price."},
-                              {type:'diptych',src1:'/OtavaloGallery/Otavalo21.jpg',src2:'/OtavaloGallery/Otavalo22.jpg'},
+                              {type:'diptych',src1:otavalo21,src2:otavalo22},
 
                               {type:'listItem',text:"3) Visit The Equator"},
                               {type:'paragraph',text:"There are several sites along the equator to choose to visit, the one we visited was in Cayambe and is technically more accurate than the famous one closer to Quito. If you have the chance, there are local guides that can explain how the indigenous people knew they were at the centre of the world how unique the site is globally. "},
-                              {type:'horizontalImage',src:'/QuitoGallery/Quito30.jpg'},
+                              {type:'horizontalImage',src:quito30},
 
                               {type:'listItem',text:"4) Walk Around La Floresta Neighbourhood"},
                               {type:'paragraph',text:"The La Floresta Neighbourhood is a hip little area with all the cute coffee shops you could ask for. We took our laptops and had a few fun work dates there. Great place for a coffee, some work, or even catch a movie at Ochoymedio."},

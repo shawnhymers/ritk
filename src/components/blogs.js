@@ -2,6 +2,15 @@ import React, {  lazy, Component } from 'react';
 import {  Row, Col,Container} from 'react-bootstrap';
 
 import banos5 from '../assets/galleries/banos/banos5.jpg'
+import quito17 from '../assets/galleries/quito/Quito17.jpg'
+import quito26 from '../assets/galleries/quito/Quito26.jpg'
+import quindio18 from '../assets/galleries/quindio/Quindio18.jpg'
+import medellin13 from '../assets/galleries/medellin/Medellin13.jpg'
+import medellin22 from '../assets/galleries/medellin/Medellin22.jpg'
+import guatape1 from '../assets/galleries/guatape/Guatape1.jpg'
+import costaRica15 from '../assets/galleries/costaRica/costaRica15.jpg'
+import arequipa38 from '../assets/galleries/arequipa/arequipa38.jpg'
+
 
 const HelpIcon = lazy(() => import('./sharedComponents/helpIcon'));
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
@@ -10,7 +19,6 @@ const LeftCol = lazy(() => import('./sharedComponents/blogComponents/leftCol'));
 const RightCol = lazy(() => import('./sharedComponents/blogComponents/rightCol'));
 const BlogRow = lazy(() => import('./sharedComponents/blogComponents/blogRow'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
-const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 class BlogPage extends Component {
   // Setting up initial state
@@ -29,42 +37,42 @@ class BlogPage extends Component {
              link:'/BanosActivityGuide'},
 
             {name:'In The Know Quito',
-             pic:'/QuitoGallery/Quito17.jpg',
+             pic:quito17,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
 
             {name:'Carbon Cost of Ecuador',
-             pic:'/QuitoGallery/Quito26.jpg',
+             pic:quito26,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
             {name:'Carbon Cost of Colombia',
-             pic:'/QuindioGallery/Quindio18.jpg',
+             pic:quindio18,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfColombia'},
 
             {name:'In The Know Medellin',
-             pic:'/MedellinGallery/Medellin13.jpg',
+             pic:medellin13,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
             {name:'Medellin Food Guide',
-             pic:'/MedellinGallery/Medellin22.jpg',
+             pic:medellin22,
              tags:['food guide', 'notbc','','','','','','','',''],
              link:'/MedellinFoodGuide'},
 
             {name:'In The Know Guatape',
-             pic:'/GuatapeGallery/Guatape1.jpg',
+             pic:guatape1,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowGuatape'},
 
             {name:'Carbon Cost of Latam',
-             pic:'/CostaRicaGallery/costaRica15.jpg',
+             pic:costaRica15,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
             {name:'Carbon Cost of Our Diet',
-             pic:'/ArequipaGallery/arequipa38.jpg',
+             pic:arequipa38,
              tags:['activity', 'notbc','carbon footprint','','','','','','',''],
              link:'/CarbonCostOfDiet'},
 
@@ -98,42 +106,42 @@ class BlogPage extends Component {
          link:'/BanosActivityGuide'},
 
         {name:'In The Know Quito',
-         pic:'/QuitoGallery/Quito17.jpg',
+         pic:quito17,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowQuito'},
 
         {name:'Carbon Cost of Ecuador',
-         pic:'/QuitoGallery/Quito26.jpg',
+         pic:quito26,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/CarbonCostOfEcuador'},
 
         {name:'Carbon Cost of Colombia',
-         pic:'/QuindioGallery/Quindio18.jpg',
+         pic:quindio18,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/CarbonCostOfColombia'},
 
         {name:'In The Know Medellin',
-         pic:'/MedellinGallery/Medellin13.jpg',
+         pic:medellin13,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowMedellin'},
 
         {name:'Medellin Food Guide',
-         pic:'/MedellinGallery/Medellin22.jpg',
+         pic:medellin22,
          tags:['food guide', 'notbc','','','','','','','',''],
          link:'/MedellinFoodGuide'},
 
         {name:'In The Know Guatape',
-         pic:'/GuatapeGallery/Guatape1.jpg',
+         pic:guatape1,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowGuatape'},
 
         {name:'Carbon Cost of Latam',
-         pic:'/CostaRicaGallery/costaRica15.jpg',
+         pic:costaRica15,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/CarbonCostOfLatam'},
 
         {name:'Carbon Cost of Our Diet',
-         pic:'/ArequipaGallery/arequipa38.jpg',
+         pic:arequipa38,
          tags:['activity', 'notbc','carbon footprint','','','','','','',''],
          link:'/CarbonCostOfDiet'},
 

@@ -1,7 +1,12 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
-
+import guatape9 from '../../assets/galleries/guatape/Guatape9.jpg'
+import guatape28 from '../../assets/galleries/guatape/Guatape28.jpg'
+import guatape29 from '../../assets/galleries/guatape/Guatape29.jpg'
+import guatape31 from '../../assets/galleries/guatape/Guatape31.jpg'
+import guatape21 from '../../assets/galleries/guatape/Guatape21.jpg'
+import guatape22 from '../../assets/galleries/guatape/Guatape22.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -38,7 +43,7 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:'GuatapeGallery/Guatape9.jpg', label:'In The Know : Guatape'}}
+    <BlogBody header ={{src:guatape9, label:'In The Know : Guatape'}}
               blurb ={"Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty."}
               updated={'May 2022'}
               isMobile={isMobile}
@@ -55,20 +60,20 @@ return(
                              {type:'header',text:"What To Do"},
                              {type:'listItem',text:'1) Climb El Peñol Rock'},
                              {type:'paragraph',text:"El Penol Rock is a 65-million-year-old massive stone monolith that stands 200 meters above the valley below. It is an incredible sight to be seen from a distance, but it also provides amazing views from the top. You can climb the 708 steps built into the side of the cliff and come up to the viewing area, which is complete with gift shops, bars, and food stands. If you can plan your trip so you can experience sunset from the lookout, we highly recommend it."},
-                             {type:'diptych',src1:'/GuatapeGallery/Guatape28.jpg',src2:'/GuatapeGallery/Guatape31.jpg'},
+                             {type:'diptych',src1:guatape28,src2:guatape31},
 
 
                              {type:'listItem',text:'2) Rent a Scooter'},
                              {type:'paragraph',text:"The typical way to get El Penol rock is via one of the local rickshaw drivers. A scooter provides a second more scenic option. On a scooter you can take the long side of the ring road that connects the rock and the town of Guatape. It is a beautiful ride, and you get to see El Penol from every angle before you arrive. We rented a scooter from the hostel we were staying at and the whole rental and filling it back up with gas was less than $15."},
-                             {type:'horizontalImage',src:'/GuatapeGallery/Guatape29.jpg'},
+                             {type:'horizontalImage',src:guatape29},
 
                              {type:'listItem',text:'3) Rent a Kayak'},
                              {type:'paragraph',text:"Guatape is surrounded by a beautiful system of lakes. Although we didn’t have the weather for it when we were there, there are many companies that offer watercraft rentals. You can rent anything from a kayak to a jet ski. There is an unbelievable amount of water to explore, at whatever your preferred speed is."},
-                             {type:'horizontalImage',src:'/GuatapeGallery/Guatape9.jpg'},
+                             {type:'horizontalImage',src:guatape9},
 
                              {type:'listItem',text:'4) Wander The Town and Take Photos!'},
                              {type:'paragraph',text:"Guatape is safe, small, and beautiful. The perfect place for a photo walk. Since a lot of people visit Guatape just for one day, early mornings before the first busses arrive, and in the evening as the last busses head back to Medellin, give you the best chance to avoid large crowds in the background."},
-                             {type:'diptych',src1:'/GuatapeGallery/Guatape21.jpg',src2:'/GuatapeGallery/Guatape22.jpg'},
+                             {type:'diptych',src1:guatape21,src2:guatape22},
 
                              {type:'header',text:"Where To Go For Vegan Options"},
                              {type:'listItem',text:'1) Namasté Vegan Food'},

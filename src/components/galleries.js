@@ -24,7 +24,6 @@ const LeftCol = lazy(() => import('./sharedComponents/blogComponents/leftCol'));
 const RightCol = lazy(() => import('./sharedComponents/blogComponents/rightCol'));
 const BlogRow = lazy(() => import('./sharedComponents/blogComponents/blogRow'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
-const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 
 class GalleryPage extends Component {
