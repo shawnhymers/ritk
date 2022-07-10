@@ -3,6 +3,7 @@ import React from 'react';
 import {  MdFiberManualRecord } from "react-icons/md";
 import Footer from "../footer"
 import { Link } from "react-router-dom";
+import  { useState } from 'react';
 
 const BlogSegment = props =>{
   return(
@@ -192,7 +193,11 @@ const BlogListItem = props =>{
 }
 
 const HorizontalBlogImage = props =>{
+  const [imageLoaded,setImageLoaded] =useState(false)
 
+  function onImageLoad(){
+    setImageLoaded(true)
+  }
   return(
     <>
       <Row className ='vertical-padding-sm '>
@@ -200,10 +205,21 @@ const HorizontalBlogImage = props =>{
           <img src ={props.src}
                alt = {props.label}
                loading="lazy"
-               style ={{width:'100%'}}
-               />
+               onLoad={onImageLoad}
+               style ={{width:'100%'}}/>
         </Col>
       </Row>
+      {imageLoaded?
+        null
+      :
+      <>
+        <Row style={{height:'35.5vw'}}className=' vertical-margin-sm' >
+          <Col className ='roaming-green centered-children'style = {{width:'100%',height:'100%'}} >
+            &nbsp;
+          </Col>
+        </Row>
+      </>
+    }
     </>
   )
 }
@@ -274,7 +290,14 @@ const FootprintComparison=props=>{
 }
 
 const DipTych = props =>{
-
+  const [image1Loaded,setImage1Loaded] =useState(false)
+  const [image2Loaded,setImage2Loaded] =useState(false)
+  function onImage1Load(){
+    setImage1Loaded(true)
+  }
+  function onImage2Load(){
+    setImage2Loaded(true)
+  }
   return(
 <>
     {props.isMobile?
@@ -284,13 +307,15 @@ const DipTych = props =>{
             <img src ={props.src1}
                  alt = {props.label}
                  loading="lazy"
-                 style ={{width:'95%'}}/>
+                 onLoad={onImage1Load}
+                 style ={{width:'100%'}}/>
           </Row>
           <Row className ='vertical-padding-sm'>
             <img src ={props.src2}
                  alt = {props.label}
                  loading="lazy"
-                 style ={{width:'95%'}}/>
+                 onLoad={onImage2Load}
+                 style ={{width:'100%'}}/>
           </Row>
 
     </>
@@ -301,16 +326,30 @@ const DipTych = props =>{
           <img src ={props.src1}
                alt = {props.label}
                loading="lazy"
-               style ={{width:'100%'}}/>
+               onLoad={onImage1Load}
+               style ={{width:'100%'}} />
         </Col>
 
         <Col className ='centered-children'>
           <img src ={props.src2}
                alt = {props.label}
                loading="lazy"
-               style ={{width:'100%'}} />
+               onLoad={onImage2Load}
+               style ={{width:'100%'}}/>
         </Col>
       </Row>
+      {image1Loaded &&image2Loaded?
+        null
+        :
+        <>
+          <Row style={{height:'47.5vw'}}className=' vertical-margin-sm' >
+            <Col className ='roaming-green centered-children'style = {{width:'100%',height:'100%'}} >
+              &nbsp;
+            </Col>
+          </Row>
+        </>
+
+      }
     </>}
 
 
