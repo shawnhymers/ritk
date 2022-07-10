@@ -1,6 +1,22 @@
 import React, {  lazy} from 'react';
 import GalleryBody from "../sharedComponents/galleryComponents/galleryBody";
 import  { useState,useEffect } from 'react';
+
+import otavalo1 from '../../assets/galleries/otavalo/Otavalo1.jpg'
+import otavalo15 from '../../assets/galleries/otavalo/Otavalo15.jpg'
+import otavalo14 from '../../assets/galleries/otavalo/Otavalo14.jpg'
+import otavalo24 from '../../assets/galleries/otavalo/Otavalo24.jpg'
+import otavalo23 from '../../assets/galleries/otavalo/Otavalo23.jpg'
+import otavalo20 from '../../assets/galleries/otavalo/Otavalo20.jpg'
+import otavalo18 from '../../assets/galleries/otavalo/Otavalo18.jpg'
+import otavalo17 from '../../assets/galleries/otavalo/Otavalo17.jpg'
+import otavalo2 from '../../assets/galleries/otavalo/Otavalo2.jpg'
+import otavalo5 from '../../assets/galleries/otavalo/Otavalo5.jpg'
+import otavalo6 from '../../assets/galleries/otavalo/Otavalo6.jpg'
+import otavalo8 from '../../assets/galleries/otavalo/Otavalo8.jpg'
+import otavalo9 from '../../assets/galleries/otavalo/Otavalo9.jpg'
+import otavalo7 from '../../assets/galleries/otavalo/Otavalo7.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const Otavalo = props => {
@@ -35,22 +51,22 @@ return(
   :
       <DesktopHeader page ={'gallery'}/>
   }
-    <GalleryBody header ={{src:'OtavaloGallery/Otavalo1.jpg', label:'Otavalo', subLabel:'Photo Gallery'}}
+    <GalleryBody header ={{src:otavalo1, label:'Otavalo', subLabel:'Photo Gallery'}}
               blurb ={[{type:'text',text:"Otavalo is a town in the Andean highlands in the Imbabura province of northern Ecuador famous for its outdoor market in the central Plaza de Ponchos. It is the largest crafts market in South America, where hundreds of indigenous crafts people sell their textiles and handicrafts. We only spent an afternoon here during a day trip from Quito (the nearby capital city). The market was a super fun experience. The wares were reasonably priced and well made, and the locals were a blast to try to bargain with."}]}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[
 
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo15.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/Otavalo14.jpg',src2:'OtavaloGallery/Otavalo24.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/Otavalo23.jpg',src2:'OtavaloGallery/Otavalo20.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo18.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo17.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo1.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/Otavalo2.jpg',src2:'OtavaloGallery/Otavalo5.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo6.jpg'},
-                            {type:'diptych',src1:'OtavaloGallery/Otavalo8.jpg',src2:'OtavaloGallery/Otavalo9.jpg'},
-                            {type:'horizontalImage',src:'OtavaloGallery/Otavalo7.jpg'},
+                            {type:'horizontalImage',src:otavalo15},
+                            {type:'diptych',src1:otavalo14,src2:otavalo24},
+                            {type:'diptych',src1:otavalo23,src2:otavalo20},
+                            {type:'horizontalImage',src:otavalo18},
+                            {type:'horizontalImage',src:otavalo17},
+                            {type:'horizontalImage',src:otavalo1},
+                            {type:'diptych',src1:otavalo2,src2:otavalo5},
+                            {type:'horizontalImage',src:otavalo6},
+                            {type:'diptych',src1:otavalo8,src2:otavalo9},
+                            {type:'horizontalImage',src:otavalo7},
 
 
                            ]}/>

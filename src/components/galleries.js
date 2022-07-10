@@ -7,17 +7,16 @@ import sacredValley14 from '../assets/galleries/sacredValley/sacredValley14.jpg'
 
 import cusco23 from '../assets/galleries/cusco/cusco23.jpg'
 import cartagena13 from "../assets/galleries/cartagena/cartagena13.jpg"
-// '/OtavaloGallery/Otavalo17.jpg',
-// '/QuitoGallery/Quito17.jpg',
-// '/QuindioGallery/Quindio24.jpg',
-// '/GuatapeGallery/Guatape9.jpg',
-// '/MedellinGallery/Medellin13.jpg',
+import costaRica8 from "../assets/galleries/costaRica/costaRica8.jpg"
+import granada4 from '../assets/galleries/granada/granada4.jpg'
+import otavalo17 from '../assets/galleries/otavalo/Otavalo17.jpg'
+import quito17 from '../assets/galleries/quito/Quito17.jpg'
+import quindio24 from '../assets/galleries/quindio/Quindio24.jpg'
+import guatape9 from '../assets/galleries/guatape/Guatape9.jpg'
+import medellin13 from '../assets/galleries/medellin/Medellin13.jpg'
+import panama9 from '../assets/galleries/panama/panama9.jpg'
+import ometepe13 from '../assets/galleries/ometepe/ometepe13.jpg';
 
-
-// '/PanamaGallery/panama9.jpg',
-// '/CostaRicaGallery/costaRica8.jpg',
-// '/OmetepeGallery/ometepe13.jpg',
-// '/GranadaGallery/granada4.jpg',
 
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
@@ -66,42 +65,42 @@ class GalleryPage extends Component {
              key:'4'},
 
             {name:'Cusco',
-             pic:'/CuscoGallery/cusco23.jpg',
+             pic:cusco23,
              isVertical:false,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/cusco',
              key:'5'},
 
             {name:'Otavalo',
-             pic:'/OtavaloGallery/Otavalo17.jpg',
+             pic:otavalo17,
              isVertical:false,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/otavalo',
              key:'6'},
 
             {name:'Quito',
-             pic:'/QuitoGallery/Quito17.jpg',
+             pic:quito17,
              isVertical:true,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/quito',
              key:'7'},
 
             {name:'Quindio',
-             pic:'/QuindioGallery/Quindio24.jpg',
+             pic:quindio24,
              isVertical:true,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/quindo',
              key:'8'},
 
             {name:'Guatape',
-             pic:'/GuatapeGallery/Guatape9.jpg',
+             pic:guatape9,
              isVertical:false,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/guatape',
              key:'9'},
 
             {name:'Medellin',
-             pic:'/MedellinGallery/Medellin13.jpg',
+             pic:medellin13,
              isVertical:true,
              tags:['activity', 'bc','','','','','','','',''],
              link:'/medellin',
@@ -115,28 +114,28 @@ class GalleryPage extends Component {
              key:'11'},
 
             {name:'Panama City',
-             pic:'/PanamaGallery/panama9.jpg',
+             pic:panama9,
              isVertical:false,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/panamaCity',
              key:'12'},
 
             {name:'Costa Rica',
-             pic:'/CostaRicaGallery/costaRica8.jpg',
+             pic:costaRica8,
              isVertical:true,
              tags:['activity', 'bc','','','','','','','',''],
              link:'/Costarica',
              key:'13'},
 
             {name:'Ometepe Island',
-             pic:'/OmetepeGallery/ometepe13.jpg',
+             pic:ometepe13,
              isVertical:false,
              tags:['food', 'bc','','','','','','','',''],
              link:'/Ometepe',
              key:'14'},
 
             {name:'Granada',
-             pic:'/GranadaGallery/granada4.jpg',
+             pic:granada4,
              isVertical:true,
              tags:['food', 'bc','','','','','','','',''],
              link:'/Granada',
