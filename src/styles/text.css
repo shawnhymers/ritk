@@ -1,11 +1,11 @@
 @font-face {
   font-family: balloonFont;
-  src: local('balloonFont'),URL('../fonts/balloonFont.woff2') format('truetype');
+  src: local('balloonFont'),URL('../assets/fonts/balloonFont.woff2') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: roamingFont;
-  src: local('roamingFont'),URL('../fonts/roamingFont.woff2') format('truetype');
+  src: local('roamingFont'),URL('../assets/fonts/roamingFont.woff2') format('truetype');
 }
 .font-stand-in{
   font-family: "balloonFont.ttf";
