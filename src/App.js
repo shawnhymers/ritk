@@ -34,10 +34,16 @@ const CarbonCostOfEcuador = lazy(() => import('./components/blogs/carbonCostOfEc
 const CarbonCostOfDiet = lazy(() => import('./components/blogs/carbonCostOfDiet'));
 const BanosActivityGuide = lazy(() => import('./components/blogs/banosActivityGuide'));
 const MedellinFoodGuide = lazy(() => import('./components/blogs/medellinFoodGuide'));
-
 const  InTheKnowQuito = lazy(() => import('./components/blogs/inTheKnowQuito'));
 const InTheKnowGuatape = lazy(() => import('./components/blogs/inTheKnowGuatape'));
 const InTheKnowMedellin = lazy(() => import('./components/blogs/inTheKnowMedellin'));
+
+const InTheKnowArequipa = lazy(() => import('./components/blogs/inTheKnowArequipa'));
+const InTheKnowHuacachina = lazy(() => import('./components/blogs/inTheKnowHuacachina'));
+const PeruItinerary = lazy(() => import('./components/blogs/peruItinerary'));
+const PeruVeganGuide = lazy(() => import('./components/blogs/peruVeganGuide'));
+
+
 const CostaRica = lazy(() => import('./components/galleries/costaRica'));
 const Granada = lazy(() => import('./components/galleries/granada'));
 const Ometepe = lazy(() => import('./components/galleries/ometepe'));
@@ -112,6 +118,11 @@ function App() {
               <Route exact path="/InTheKnowMedellin" component={InTheKnowMedellin} />
               <Route exact path="/InTheKnowQuito" component={InTheKnowQuito} />
               <Route exact path="/InTheKnowGuatape" component={InTheKnowGuatape} />
+
+              <Route exact path="/InTheKnowArequipa" component={InTheKnowArequipa} />
+              <Route exact path="/InTheKnowHuacachina" component={InTheKnowHuacachina} />
+              <Route exact path="/PeruItinerary" component={PeruItinerary} />
+              <Route exact path="/PeruVeganGuide" component={PeruVeganGuide} />
 
               <Route exact path="/CostaRica" component={CostaRica} />
               <Route exact path="/Granada" component={Granada} />

@@ -10,7 +10,10 @@ import medellin22 from '../assets/galleries/medellin/Medellin22.jpg'
 import guatape1 from '../assets/galleries/guatape/Guatape1.jpg'
 import costaRica15 from '../assets/galleries/costaRica/costaRica15.jpg'
 import arequipa38 from '../assets/galleries/arequipa/arequipa38.jpg'
-
+import arequipa1 from '../assets/galleries/arequipa/arequipa1.jpg'
+import arequipa39 from '../assets/galleries/arequipa/arequipa39.jpg'
+import huacachina11 from '../assets/galleries/huacachina/huacachina11.jpg'
+import sacredValley17 from '../assets/galleries/sacredValley/sacredValley17.jpg'
 
 const HelpIcon = lazy(() => import('./sharedComponents/helpIcon'));
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
@@ -31,6 +34,26 @@ class BlogPage extends Component {
       emptySearch:false,
       blogSearch:'',
       blogs:[
+            {name:'Peru Itinerary',
+             pic: sacredValley17,
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/PeruItinerary'},
+
+            {name:'In The Know Huacachina',
+             pic: huacachina11,
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/InTheKnowHuacachina'},
+
+            {name:'In The Know Arequipa',
+             pic: arequipa1,
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/InTheKnowArequipa'},
+
+            {name:'Peru Vegan Guide',
+             pic: arequipa39,
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/PeruVeganGuide'},
+
             {name:'Banos Activity Guide',
              pic: banos5,
              tags:['activity guide', 'notbc','','','','','','','',''],
@@ -99,6 +122,26 @@ class BlogPage extends Component {
                 ],
 
       shownBlogs:[
+
+        {name:'Peru Itinerary ',
+         pic: sacredValley17,
+         tags:['activity guide', 'notbc','','','','','','','',''],
+         link:'/PeruItinerary'},
+
+        {name:'In The Know Huacachina',
+         pic: huacachina11,
+         tags:['activity guide', 'notbc','','','','','','','',''],
+         link:'/InTheKnowHuacachina'},
+
+        {name:'In The Know Arequipa',
+         pic: arequipa1,
+         tags:['activity guide', 'notbc','','','','','','','',''],
+         link:'/InTheKnowArequipa'},
+
+        {name:'Peru Vegan Guide',
+         pic: arequipa39,
+         tags:['activity guide', 'notbc','','','','','','','',''],
+         link:'/PeruVeganGuide'},
 
         {name:'Banos Activity Guide',
          pic: banos5,
