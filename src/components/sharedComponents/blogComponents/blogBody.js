@@ -155,6 +155,7 @@ const BlogParagraph = props =>{
     </>
   )
 }
+
 const LinkParagraphSegment = props=>{
   return(
     <>

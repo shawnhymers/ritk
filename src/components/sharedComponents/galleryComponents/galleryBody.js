@@ -19,20 +19,43 @@ const BlogSegment = props =>{
 }
 
 const GalleryBody = props => {
+  const [imageLoaded,setImageLoaded] =useState(false)
 
+  function onImageLoad(){
+    setImageLoaded(true)
+  }
 return(
   <>
     <Container className ='full-width roaming-white' style ={{margin:'0vh',padding:'0vh'}}>
       <Row className ='fill-width  blog-header-wrapper'
            style ={{margin:'0vh',padding:'0vh'}}>
-        <p className ='blog-label centered-text'>{props.header.label}</p>
-        <p className ='centered-text blog-sub-label'>{props.header.subLabel} </p>
+           {imageLoaded?
+             <>
+             <p className ='blog-label centered-text'>{props.header.label}</p>
+             <p className ='centered-text blog-sub-label'>{props.header.subLabel} </p>
+             </>
+             :
+             null}
         <img src ={props.header.src}
              alt ={props.header.label}
              loading="lazy"
              style ={{margin:'0vh',padding:'0vh',minWidth:'100vw'}}
+             onLoad={onImageLoad}
              className ='img-fluid blog-img'/>
+
       </Row>
+      {imageLoaded?
+        null
+        :
+        <>
+        <Row className ='fill-width  blog-header-wrapper roaming-green'
+             style ={{margin:'0vh',padding:'0vh',height:'75vw'}}>
+        <p className ='blog-label centered-text'>{props.header.label}</p>
+        <p className ='centered-text blog-sub-label'>{props.header.subLabel} </p>
+        &nbsp;
+        </Row>
+        </>
+      }
       <Row>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
