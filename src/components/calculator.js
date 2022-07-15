@@ -12,7 +12,7 @@ const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/deskto
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
 const OutcomeMessage = lazy(() => import('./sharedComponents/outcomeMessage'));
-const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
+// const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 
 class CalculatorPage extends Component {

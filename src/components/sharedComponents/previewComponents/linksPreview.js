@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row,Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import  { useEffect } from 'react';
+// import  { useEffect } from 'react';
 import activityIcon from "../../../assets/icons/activityIcon.png"
 import avacado from "../../../assets/icons/avacado.png"
 import footprintIcon from "../../../assets/icons/footprintIcon.png"

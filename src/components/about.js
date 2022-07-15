@@ -8,7 +8,7 @@ import coupleIcon from "../assets/main/coupleIcon.png"
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
-const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
+// const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 
 
 class AboutPage extends Component {

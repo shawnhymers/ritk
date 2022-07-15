@@ -1,8 +1,8 @@
 import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
-import OnImagesLoaded from 'react-on-images-loaded';
+// import OnImagesLoaded from 'react-on-images-loaded';
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
-import  { useState,useEffect } from 'react';
+// import  { useState,useEffect } from 'react';
 import arequipaSquare from '../assets/main/arequipaSquare.jpg'
 import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
 import sacredValleysquare from '../assets/main/sacredValleysquare.jpg'
@@ -13,7 +13,7 @@ import huarazSquare from '../assets/main/huarazSquare.jpg'
 // const HuarazSquare = lazy(() => import('../assets/main/huarazSquare.jpg'));
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
-const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
+// const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
 const AboutPreview = lazy(() => import('./sharedComponents/previewComponents/aboutPreview'));
 const BlogPreview = lazy(() => import('./sharedComponents/previewComponents/blogPreview'));
 const LinksPreview = lazy(() => import('./sharedComponents/previewComponents/linksPreview'));

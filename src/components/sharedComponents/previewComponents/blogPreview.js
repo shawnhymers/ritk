@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row,Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import  { useEffect } from 'react';
+// import  { useEffect } from 'react';
 import blog1 from "../../../assets/blogPreview/blog1.jpg"
 import blog2 from "../../../assets/blogPreview/blog2.jpg"
 import blog3 from "../../../assets/blogPreview/blog3.jpg"
