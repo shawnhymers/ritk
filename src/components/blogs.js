@@ -94,15 +94,15 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
-            {name:'Carbon Cost of Our Diet',
-             pic:arequipa38,
-             tags:['activity', 'notbc','carbon footprint','','','','','','',''],
-             link:'/CarbonCostOfDiet'},
+            // {name:'Carbon Cost of Our Diet',
+            //  pic:arequipa38,
+            //  tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+            //  link:'/CarbonCostOfDiet'},
 
-            {name:'Carbon Cost of Flying',
-             pic:'/planeWing.jpg',
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
-             link:'/CarbonCostOfFlying'},
+            // {name:'Carbon Cost of Flying',
+            //  pic:'/planeWing.jpg',
+            //  tags:['carbon footprint', 'notbc','','','','','','','',''],
+            //  link:'/CarbonCostOfFlying'},
 
             {name:'Whistler Activity Guide',
              pic:'/whistlerActivity.jpg',
@@ -183,15 +183,15 @@ class BlogPage extends Component {
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/CarbonCostOfLatam'},
 
-        {name:'Carbon Cost of Our Diet',
-         pic:arequipa38,
-         tags:['activity', 'notbc','carbon footprint','','','','','','',''],
-         link:'/CarbonCostOfDiet'},
-
-        {name:'Carbon Cost of Flying',
-         pic:'/planeWing.jpg',
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
-         link:'/CarbonCostOfFlying'},
+        // {name:'Carbon Cost of Our Diet',
+        //  pic:arequipa38,
+        //  tags:['activity', 'notbc','carbon footprint','','','','','','',''],
+        //  link:'/CarbonCostOfDiet'},
+        //
+        // {name:'Carbon Cost of Flying',
+        //  pic:'/planeWing.jpg',
+        //  tags:['carbon footprint', 'notbc','','','','','','','',''],
+        //  link:'/CarbonCostOfFlying'},
 
         {name:'Whistler Activity Guide',
          pic:'/whistlerActivity.jpg',
