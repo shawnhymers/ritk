@@ -612,7 +612,7 @@ const CarList =props=>{
 
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.transport.vehicle}</p>
+          <p className='roaming-text-sm '>{props.transport.vehicle}</p> 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
           <p className='roaming-text-sm '>{props.transport.drivingType}</p>

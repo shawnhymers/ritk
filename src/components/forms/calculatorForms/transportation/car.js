@@ -281,11 +281,12 @@ const CarForm = props => {
 
     if (carbonFootprint>0) {
       if (isAdvanced) {
+        console.log('adding advanced drive...'+vehicle)
         let data = {distance:distance,
                     passengers:passengers,
                     carbonFootprint:carbonFootprint,
                     drivingType:advancedDrivingType,
-                    vehicle:vehicle,
+                    vehicle:vehicle.Make+', '+vehicle.Model,
                     type:'transport',
                     subType:'car'}
         props.addCarbonCostItem(data)
