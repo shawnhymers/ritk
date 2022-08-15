@@ -18,10 +18,10 @@ return(
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row style={{marginTop:'0vh',paddingTop:'0vh'}}>
           <Col className ='centered-children' style={{marginTop:'0vh',paddingTop:'0vh'}}>
-          <Link to='/InTheKnowMedellin'
+          <Link to='/PeruVeganGuide'
                 className ='centered-children'>
               <img src = {blog1}
-                   alt ='whisterlActivity'
+                   alt ='Peru Vegan Food Guide'
                    loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
                    className = ' blog-tease vertical-margin-sm'/>
@@ -29,15 +29,15 @@ return(
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text-sm'>In The Know Medellin</p>
+          <p className ='centered-text roaming-text-sm'>Peru Vegan Food Guide</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row >
           <Col className ='centered-children'>
-            <Link to='/BanosActivityGuide' className ='centered-children'>
+            <Link to='/PeruItinerary' className ='centered-children'>
               <img src = {blog2}
-                   alt ='whistlerFood'
+                   alt ='Peru Itinerary'
                    loading="lazy"
                    style={{marginTop:'0vh',paddingTop:'0vh'}}
                    className = ' blog-tease vertical-margin-sm'/>
@@ -45,7 +45,7 @@ return(
           </Col>
         </Row>
         <Row className ='centered-children'>
-          <p className ='centered-text roaming-text-sm'>Banos Activity Guide</p>
+          <p className ='centered-text roaming-text-sm'>Peru Itinerary</p>
         </Row>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>

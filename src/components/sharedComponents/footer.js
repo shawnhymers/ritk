@@ -139,9 +139,7 @@ return(
             <Col style ={{maxWidth:'2.6em'}}>
               <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
             </Col>
-            <Col style ={{maxWidth:'2.6em'}}>
-              <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
-            </Col>
+
             <Col style ={{maxWidth:'10em'}}>
                <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
             </Col>
@@ -268,3 +266,8 @@ export default Footer;
 //     <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
 //   </Col>
 // </Row>
+
+//
+// <Col style ={{maxWidth:'2.6em'}}>
+//   <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
+// </Col>

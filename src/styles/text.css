@@ -78,10 +78,14 @@ line-height: 1.6;
   font-size: calc((1.8 - 1) * 1.2vw + 1.1rem);
 
 }
+.roaming-text-sm-itemized{
+  font-family: roamingFont;
+  color:#6b6b6a;
+  font-size: calc((1.5 - 1) * 0.9vw + 0.9rem);
+}
 .roaming-text-sm{
   font-family: roamingFont;
   font-size: calc((1.8 - 1) * 0.9vw + 0.9rem);
-
 }
 .roaming-text-xtra-sm{
   font-family: roamingFont;
@@ -89,33 +93,33 @@ line-height: 1.6;
 
 }
 .roaming-black-text{
-  color: #595456;
+  color: #595456!important;
 }
 .roaming-brown-text{
-  color: #B97F51;
+  color: #B97F51!important;
 
 }
 .roaming-yellow-text{
-  color: #E2B54B;
+  color: #E2B54B!important;
 
 }
 
 .roaming-white-text{
-  color: #E7E2CD;
+  color: #E7E2CD!important;
 
 }
 
 .roaming-blue-text{
-  color: #BED3C7;
+  color: #BED3C7!important;
 
 }
 
 .roaming-green-text{
-  color: #91A98F;
+  color: #91A98F!important;
 
 }
 .roaming-red-text{
-  color: #c93b30;
+  color: #c93b30!important;
 
 }
 

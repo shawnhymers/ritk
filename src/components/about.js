@@ -88,15 +88,7 @@ return(
                             color='#595456'/>
                 </Link>
               </Col>
-              <Col style ={{maxWidth:'2.6em'}}>
-                <Link to={{pathname:'https://www.youtube.com/'}}
-                      className = 'centered-children'
-                      target="_blank">
-                  <BsYoutube size ='1.5em'
-                             style ={{cursor:'pointer'}}
-                             color='#595456'/>
-                </Link>
-              </Col>
+
               <Col style ={{maxWidth:'10em'}}>
                  <p className ='centered-text roaming-text-sm charcoal' >@roamingintheknow</p>
               </Col>
@@ -105,10 +97,10 @@ return(
         </Col>
         <Col xs={12} sm={12} md={7} lg={7} xl={7}>
           <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}  >
-            <p className ='roaming-yellow-text roaming-text large-header-text centered-text'>WE ARE ROAMING IN THE KNOW!</p>
+            <p className ='roaming-yellow-text roaming-text large-header-text'>WE ARE ROAMING IN THE KNOW!</p>
           </Row>
           <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}>
-            <p className ='roaming-yellow-text roaming-text-sm centered-text'>We’re Shawn and Alia, a married twenty-something couple with a desire to travel full time and live our lives to the fullest, all while being mindful of our footprint. We believe balance is an essential part of life which means we want to see the world, but we also want to see it be habitable for generations to come. </p>
+            <p className ='roaming-yellow-text roaming-text-sm centered-text'>We’re Shawn and Alia, a married twenty-something couple travelling full-time, all while being mindful of our carbon footprint. We believe balance is an essential part of life which means we want to see the world, but we also want to see it be habitable for generations to come.</p>
           </Row>
         </Col>
       </Row>
@@ -119,3 +111,15 @@ return(
   </>
 )}}
 export default AboutPage;
+
+//
+//
+// <Col style ={{maxWidth:'2.6em'}}>
+//   <Link to={{pathname:'https://www.youtube.com/'}}
+//         className = 'centered-children'
+//         target="_blank">
+//     <BsYoutube size ='1.5em'
+//                style ={{cursor:'pointer'}}
+//                color='#595456'/>
+//   </Link>
+// </Col>

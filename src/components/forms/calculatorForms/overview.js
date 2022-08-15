@@ -251,7 +251,7 @@ const Overview= props =>{
     </Container>
 
 
-    <Container className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh',paddingTop:'0.7rem'}}>
+    <Container className ='white round-borders raised-borders ' style ={{width:'90vw',marginTop:'5vh',paddingTop:'0.7rem',paddingLeft:'4em',paddingRight:'4em'}}>
     <Row>
       <Col onClick={()=>setItemType('flight')}>
         <Row className ='centered-children'>
@@ -333,7 +333,7 @@ const Overview= props =>{
           &nbsp;
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
-          <p className='roaming-text-sm '>
+          <p className='roaming-text-sm roaming-yellow-text '>
           {'Total: '+(props.totalFlightCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
           </p>
         </Col>
@@ -553,19 +553,19 @@ const FlightList = props=>{
     <>
       <Row className =' '>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.flight.fromAirport.City}</p>
+          <p className='roaming-text-sm-itemized '>{props.flight.fromAirport.City}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.flight.toAirport.City}</p>
+          <p className='roaming-text-sm-itemized '>{props.flight.toAirport.City}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
 
           {props.flight.flightType==='Round Trip'?
-          <p className='roaming-text-sm '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (RT)'}
+          <p className='roaming-text-sm-itemized '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (RT)'}
           </p>
           :
-          <p className='roaming-text-sm '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (OW)'}
+          <p className='roaming-text-sm-itemized '>{(props.flight.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (OW)'}
           </p>
           }
 
@@ -573,7 +573,7 @@ const FlightList = props=>{
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
 
 
-        <p className='roaming-text-sm '>{(props.flight.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+        <p className='roaming-text-sm-itemized '>{(props.flight.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
 
 
         </Col>
@@ -589,17 +589,17 @@ const TrainList =props=>{
 
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>  {props.transport.country}</p>
+          <p className='roaming-text-sm-itemized '>  {props.transport.country}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>  {props.transport.engineType}</p>
+          <p className='roaming-text-sm-itemized '>  {props.transport.engineType}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>          {(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>          {(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>          {(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
       </Row>
     </>
@@ -612,16 +612,16 @@ const CarList =props=>{
 
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.transport.vehicle}</p> 
+          <p className='roaming-text-sm-itemized '>{props.transport.vehicle}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.transport.drivingType}</p>
+          <p className='roaming-text-sm-itemized '>{props.transport.drivingType}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
       </Row>
     </>
@@ -634,16 +634,16 @@ const BusList =props=>{
 
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.transport.fullness}</p>
+          <p className='roaming-text-sm-itemized '>{props.transport.fullness}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{props.transport.drivingType}</p>
+          <p className='roaming-text-sm-itemized '>{props.transport.drivingType}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>{(props.transport.distance).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-          <p className='roaming-text-sm '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
+          <p className='roaming-text-sm-itemized '>{(props.transport.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}</p>
         </Col>
       </Row>
     </>
@@ -657,15 +657,15 @@ const FoodList =props=>{
       <Row className =''>
 
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>{props.food.food.food}</p>
+        <p className='roaming-text-sm-itemized '>{props.food.food.food}</p>
 
         </Col>
           <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>  {props.food.quantity +' x ('+props.food.food.servingDescr+')'}</p>
+        <p className='roaming-text-sm-itemized '>  {props.food.quantity +' x ('+props.food.food.servingDescr+')'}</p>
 
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm-itemized '>          {(props.food.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
 </p>
         </Col>
       </Row>
@@ -680,15 +680,15 @@ const DietList =props=>{
       <Row className =''>
 
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>{props.diet.dietType.food}</p>
+        <p className='roaming-text-sm-itemized '>{props.diet.dietType.food}</p>
 
         </Col>
           <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>  {props.diet.quantity}</p>
+        <p className='roaming-text-sm-itemized '>  {props.diet.quantity}</p>
 
         </Col>
         <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <p className='roaming-text-sm '>          {(props.diet.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm-itemized '>          {(props.diet.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
 </p>
         </Col>
       </Row>
@@ -702,18 +702,18 @@ const HotelList =props=>{
     <>
       <Row className =''>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>{props.hotel.hotelName}</p>
+        <p className='roaming-text-sm-itemized '>{props.hotel.hotelName}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>  {props.hotel.numberOfNights}</p>
+        <p className='roaming-text-sm-itemized '>  {props.hotel.numberOfNights}</p>
 
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>          {props.hotel.numberOfGuests}</p>
+        <p className='roaming-text-sm-itemized '>          {props.hotel.numberOfGuests}</p>
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3}>
-        <p className='roaming-text-sm '>          {(props.hotel.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
+        <p className='roaming-text-sm-itemized '>          {(props.hotel.carbonFootprint).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })}
 </p>
         </Col>
       </Row>

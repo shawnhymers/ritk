@@ -39,12 +39,12 @@ class BlogPage extends Component {
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/PeruItinerary'},
 
-            {name:'In The Know Huacachina',
+            {name:'In The Know: Huacachina',
              pic: huacachina11,
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/InTheKnowHuacachina'},
 
-            {name:'In The Know Arequipa',
+            {name:'In The Know: Arequipa',
              pic: arequipa1,
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/InTheKnowArequipa'},
@@ -59,7 +59,7 @@ class BlogPage extends Component {
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/BanosActivityGuide'},
 
-            {name:'In The Know Quito',
+            {name:'In The Know: Quito',
              pic:quito17,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowQuito'},
@@ -74,7 +74,7 @@ class BlogPage extends Component {
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/CarbonCostOfColombia'},
 
-            {name:'In The Know Medellin',
+            {name:'In The Know: Medellin',
              pic:medellin13,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowMedellin'},
@@ -84,7 +84,7 @@ class BlogPage extends Component {
              tags:['food guide', 'notbc','','','','','','','',''],
              link:'/MedellinFoodGuide'},
 
-            {name:'In The Know Guatape',
+            {name:'In The Know: Guatape',
              pic:guatape1,
              tags:['carbon footprint', 'notbc','','','','','','','',''],
              link:'/InTheKnowGuatape'},
@@ -128,12 +128,12 @@ class BlogPage extends Component {
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/PeruItinerary'},
 
-        {name:'In The Know Huacachina',
+        {name:'In The Know: Huacachina',
          pic: huacachina11,
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/InTheKnowHuacachina'},
 
-        {name:'In The Know Arequipa',
+        {name:'In The Know: Arequipa',
          pic: arequipa1,
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/InTheKnowArequipa'},
@@ -148,7 +148,7 @@ class BlogPage extends Component {
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/BanosActivityGuide'},
 
-        {name:'In The Know Quito',
+        {name:'In The Know: Quito',
          pic:quito17,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowQuito'},
@@ -163,7 +163,7 @@ class BlogPage extends Component {
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/CarbonCostOfColombia'},
 
-        {name:'In The Know Medellin',
+        {name:'In The Know: Medellin',
          pic:medellin13,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowMedellin'},
@@ -173,7 +173,7 @@ class BlogPage extends Component {
          tags:['food guide', 'notbc','','','','','','','',''],
          link:'/MedellinFoodGuide'},
 
-        {name:'In The Know Guatape',
+        {name:'In The Know: Guatape',
          pic:guatape1,
          tags:['carbon footprint', 'notbc','','','','','','','',''],
          link:'/InTheKnowGuatape'},
@@ -315,7 +315,7 @@ class BlogPage extends Component {
         {this.state.isMobile?
       <>
 
-        <Row className ='nice-input-wrapper form-line ' style ={{paddingTop:'12.5vh'}}>
+        <Row className ='nice-input-wrapper form-line roaming-black-text' style ={{paddingTop:'12.5vh'}}>
           <Col xs={3} sm={3} md={4} lg={4} xl={4}>
             &nbsp;
           </Col>
@@ -326,8 +326,8 @@ class BlogPage extends Component {
                      id="searchValue"
                      type="text"
                      placeholder='Search'
-                     className ='roaming-white'/>
-              <label htmlFor="searchValue" >Search</label>
+                     className ='roaming-white roaming-black-text'/>
+              <label htmlFor="searchValue" className ='charcoal'>Search</label>
             </Row>
           </Col>
           <Col xs={3} sm={3} md={4} lg={4} xl={4}>
@@ -391,7 +391,7 @@ class BlogPage extends Component {
       </>
       :
       <>
-        <Row className ='nice-input-wrapper form-line' style ={{paddingTop:'12.5vh'}}>
+        <Row className ='nice-input-wrapper form-line roaming-black-text' style ={{paddingTop:'12.5vh'}}>
           <Col xs={3} sm={3} md={4} lg={4} xl={4}>
             &nbsp;
           </Col>
@@ -403,8 +403,8 @@ class BlogPage extends Component {
                      id="searchValue"
                      type="text"
                      placeholder='Search'
-                     className ='roaming-white'/>
-              <label htmlFor="searchValue" >Search</label>
+                     className ='roaming-white roaming-black-text'/>
+              <label htmlFor="searchValue" className ='charcoal'>Search</label>
             </Row>
           </Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}>
