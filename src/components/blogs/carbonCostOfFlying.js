@@ -39,8 +39,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'/planeWingHorizontal.jpg', label:'Carbon Cost of Flying'}}
-              blurb ={"Flying is amazing. You hop into a little metal tube, put on a movie or a podcast, and get launched at insane speeds and hurtle through the atmosphere and then land safely on the other side of the planet later that day. However, this speed and convenience comes at a cost to your carbon footprint."}
-              updated={'June 2022'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'June 2022',
+                         content:[{type:'text',text:"Flying is amazing. You hop into a little metal tube, put on a movie or a podcast, and get launched at insane speeds and hurtle through the atmosphere and then land safely on the other side of the planet later that day. However, this speed and convenience comes at a cost to your carbon footprint."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"How much carbon does flying produce?"},
                              {type:'paragraph',text:"In short, flights are not great for the environment. For example, a round trip flight from LA to New York generates over 1,200 KG of Co2. A shorter round-trip flight between London to Paris generate 218 KG of Co2. To put these numbers in perspective, the global average carbon footprint for an entire year is 4,734 KG. Although some populations produce much more: The average for Europe is 7,832 KG, Oceania is 9, 526.5 KG, and North America is 11,770 KG."},

@@ -39,8 +39,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:quito26, label:'Carbon Cost of Ecuador'}}
-              blurb ={"Here is a breakdown of our carbon footprint of 21 days of travelling Ecuador."}
-              updated={'May 2022'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:"Here is a breakdown of our carbon footprint of 21 days of travelling Ecuador."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"Carbon Footprint For Ecuador"},
                               {type:'horizontalImage',src:'CarbonCostCharts/equadorCost.png'},

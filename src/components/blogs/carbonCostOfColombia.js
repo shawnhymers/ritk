@@ -39,8 +39,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:medellin11, label:'Carbon Cost of Colombia'}}
-              blurb ={"Here is a breakdown of our carbon footprint of 39 days of travelling Colombia."}
-              updated={'May 2022'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:'Here is a breakdown of our carbon footprint of 39 days of travelling Colombia.'}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"Carbon Footprint For Colombia"},
                               {type:'horizontalImage',src:'CarbonCostCharts/colombiaCost.png'},

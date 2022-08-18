@@ -45,8 +45,12 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:quito15, label:'In The Know : Quito'}}
-              blurb ={"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}
-              updated={'May 2022'}
+
+
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}]}}
+
               isMobile={isMobile}
               contentTest ={[
                               {type:'paragraph',text:"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high. From the moment we landed, our expectations were continuously blown away, beginning with the airport. (Nicest airport in South America?!) The next day we ventured to the Old Town and were once again amazed by how incredible it was. It was the largest and most beautiful old town in all of the Latin American countries we had been so far… it even beat Cartagena in our eyes (controversial opinion I know!) We then found out Quito has South America’s best-preserved and least altered historic centre in Latin America, making it one of the first ever cities to be declared a World Heritage Site by UNESCO."},

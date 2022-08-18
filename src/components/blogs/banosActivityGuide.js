@@ -52,9 +52,11 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:banos20, label:'Banos Activity Guide'}}
-              blurb ={"Most travelers assume all the adventure Ecuador has to offer is to be had in the Galapagos, but that’s far from the truth. "}
-              updated={'May 2022'}
+
               isMobile={isMobile}
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:'Most travelers assume all the adventure Ecuador has to offer is to be had in the Galapagos, but that’s far from the truth.'}]}}
               contentTest ={[{type:'header',text:"Banos Activity Guide"},
 
                             {type:'paragraph',text:'Most travelers assume all the adventure Ecuador has to offer is to be had in the Galapagos, but that’s far from the truth. When we visited Ecuador, we didn’t have time (or budget!) to visit the Galapagos, but it still ended up being an incredible, adrenaline filled, gorgeous destination nevertheless. Banos is a small city, 3-4 hours south of Quito, and it is Ecuador’s adventure capital. It’s a stunning town, surrounded by gorgeous green mountains, rivers, and waterfalls. We spent a week in this town and found plenty of adventures to go on that ranged from nice and relaxing to extremely adventurous. We have compiled a guide of the activities we did in Banos in order of most chill to most adventurous.'},
@@ -74,7 +76,7 @@ return(
                             {type:'horizontalImage',src:banos5},
 
                             {type:'listItem',text:"3. Hike to Sendero de la Virgen"},
-                            {type:'paragraph',text:"On the mountain’s that surround the city, there are multiple look out points to the valley below. One of them is a large Virgin Mary statue that you can hike to from one of the town’s main roads. One morning us and a group of friends set out to hike this one, somewhat oblivious to the fact the hike was almost 700 stairs straight up. Once we got up to the statue, it was inside a cloud so we didn’t get rewarded with a spectacular view. But every now and then the clouds would break to reveal the valley below. On a clear sunset, this hike would be spectacular and worth the challenging trek up as the views of the valley are unbeatable. It’s a great workout no matter what, if that’s your thing!"},
+                            {type:'paragraph',text:"On the mountains that surround the city, there are multiple look out points to the valley below. One of them is a large Virgin Mary statue that you can hike to from one of the town’s main roads. One morning us and a group of friends set out to hike this one, somewhat oblivious to the fact the hike was almost 700 stairs straight up. Once we got up to the statue, it was inside a cloud so we didn’t get rewarded with a spectacular view. But every now and then the clouds would break to reveal the valley below. On a clear sunset, this hike would be spectacular and worth the challenging trek up as the views of the valley are unbeatable. It’s a great workout no matter what, if that’s your thing!"},
                             {type:'diptych',src1:banos1,src2:banos2},
 
 

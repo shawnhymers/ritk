@@ -35,8 +35,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
   <BlogBody header ={{src:'WhistlerFoodGuide/whistlerFood5.jpg', label:'Whistler Food Guide'}}
-            blurb ={"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}
-            updated={'December 2021'}
+
+            topBlurb={{type:'topBlurb',
+                       updated:'December 2021',
+                       content:[{type:'text',text:"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}]}}
+
             isMobile={isMobile}
             contentTest ={[{type:'header',text:'Whistler Food Guide'},
                            {type:'paragraph',text:"Despite its proximity to Canada’s vegan capital (Vancouver) and being a hub for outdoor and wellness activities, Whistler doesn’t have an abundance of plant-based dining options. As someone who frequents the town a lot, this has been a source of frustration for me. Many of Whistler’s top dining options recommended through mainstream blogs/vlogs can hardly offer a salad to vegans which is a bummer for folks looking to celebrate a special occasion."},

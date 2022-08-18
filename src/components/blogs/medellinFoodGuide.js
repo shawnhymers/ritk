@@ -39,8 +39,10 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:medellin15, label:'Medellin Food Guide'}}
-              blurb ={"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}
-              updated={'June 2022'}
+              topBlurb={{type:'topBlurb',
+                         updated:'June 2022',
+                         content:[{type:'text',text:"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'paragraph',text:"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America. When we arrived and typed ‘vegan’ into google maps and more than 20 red pins showed up, I nearly cried from joy. After spending two weeks in Medellin, we feel we hardly scratched the surface of all the vegan options this city had to offer. The best part about Medellin being a vegan food destination, is that you don’t have to spend a lot! Even the nicer restaurants are so reasonably priced! "},
                              {type:'paragraph',text:"Below is a list of all the restaurants we frequented during our stay in Medellin:"},

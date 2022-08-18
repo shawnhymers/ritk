@@ -39,8 +39,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'vancouverFood.jpg', label:'Carbon Cost of LATAM'}}
-              blurb ={"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}
-              updated={'December 2021'}
+  
+              topBlurb={{type:'topBlurb',
+                         updated:'December 2021',
+                         content:[{type:'text',text:"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'paragraph',text:"I’m just going to come out and say it: Vancouver is the mecca of vegan food."},
                              {type:'diptych', src1:'VancouverFoodBlog/vancouverFood8.jpg',src2:'VancouverFoodBlog/vancouverFood7.jpg'},

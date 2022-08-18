@@ -40,6 +40,7 @@ const InTheKnowMedellin = lazy(() => import('./components/blogs/inTheKnowMedelli
 
 const InTheKnowArequipa = lazy(() => import('./components/blogs/inTheKnowArequipa'));
 const InTheKnowHuacachina = lazy(() => import('./components/blogs/inTheKnowHuacachina'));
+const InTheKnowCusco = lazy(() => import('./components/blogs/inTheKnowCusco'));
 const PeruItinerary = lazy(() => import('./components/blogs/peruItinerary'));
 const PeruVeganGuide = lazy(() => import('./components/blogs/peruVeganGuide'));
 
@@ -121,6 +122,7 @@ function App() {
 
               <Route exact path="/InTheKnowArequipa" component={InTheKnowArequipa} />
               <Route exact path="/InTheKnowHuacachina" component={InTheKnowHuacachina} />
+              <Route exact path="/InTheKnowCusco" component={InTheKnowCusco} />
               <Route exact path="/PeruItinerary" component={PeruItinerary} />
               <Route exact path="/PeruVeganGuide" component={PeruVeganGuide} />
 
@@ -140,6 +142,7 @@ function App() {
               <Route exact path="/SacredValley" component={SacredValley} />
               <Route exact path="/PanamaCity" component={PanamaCity} />
               <Route exact path="/Huaraz" component={Huaraz}/>
+
             </Switch>
             </ScrollToTop>
           </Suspense>

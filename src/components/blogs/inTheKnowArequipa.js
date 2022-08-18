@@ -42,8 +42,11 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:arequipa6, label:'In The Know Arequipa'}}
-              blurb ={"Peru’s second largest city, Arequipa, is often a quick stop for travellers looking to visit one of the deepest canyons in the world: the Colca Canyon. We believe it should be a destination in its own right, as we fell in love with the old town’s architecture and charm, as well as the city’s climate and sunsets. "}
-              updated={'July 2022'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'July 2022',
+                         content:[{type:'text',text:"Peru’s second largest city, Arequipa, is often a quick stop for travellers looking to visit one of the deepest canyons in the world: the Colca Canyon. We believe it should be a destination in its own right, as we fell in love with the old town’s architecture and charm, as well as the city’s climate and sunsets. "}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"In The Know Arequipa"},
 
@@ -54,7 +57,7 @@ return(
 
                             {type:'header',text:"What to do:"},
                             {type:'listItem',text:"1. Wander the San Lázaro neighbourhood "},
-                            {type:'paragraph', text:"The oldest neighbourhood in the city is filled to the brim with charm. While it’s less colourful and romantic as other colonial neighbourhoods throughout Latin America, it’s white facades and more straight forward architecture makes it unique. The best part is when the sun hits the neighbourhood’s walls at around 3pm in the afternoon. Give yourself some time to sit at one of the area’s outdoor patios and make sure to bring your camera along as you won’t be able to resist taking photos. "},
+                            {type:'paragraph', text:"The oldest neighbourhood in the city is filled to the brim with charm. While it’s less colourful and romantic as other colonial neighbourhoods throughout Latin America, it’s white facades and more straight forward architecture make it unique. The best part is when the sun hits the neighbourhood’s walls at around 3pm in the afternoon. Give yourself some time to sit at one of the area’s outdoor patios and make sure to bring your camera along as you won’t be able to resist taking photos. "},
                             {type:'listItem',text:"2. Visit one of the many rooftops in the city (our favourite was sipping coffee at Puku Puku)"},
                             {type:'paragraph', text:"This is the city of rooftops – they are everywhere and for good reason, the city has views of magnificent volcanoes in every direction. One of our favourite spots to hang out with a notebook was Puku Puku. Their great coffee and bean bag chairs made for the perfect spot to rest, take in some vitamin D, and recharge your batteries before or after your next adventure. "},
                             {type:'listItem',text:"3. Watch sunset from a roof surrounding Plaza de Armas (We went to Waya Lookout on numerous occasions) "},
@@ -69,6 +72,10 @@ return(
 
                             {type:'header',text:"Where to eat: "},
                             {type:'paragraph', text:"Check out our Peru Vegan Guide for our favourite spots in Arequipa."},
+                            {type:'linkParagraph',content:[{type:'text', text:"Check out our "},
+                                                           {type:'link', text:'Peru Vegan Guide ',link:"/PeruVeganGuide"},
+                                                           {type:'text', text:'for our favourite spots in Arequipa.'}]},
+
 
                             {type:'header',text:"Carbon conscious tips: "},
                             {type:'paragraph', text:"-Bring a water bottle with a filter or find a filter water tap (Selina Arequipa has one) to avoid purchasing plastic water bottles"},

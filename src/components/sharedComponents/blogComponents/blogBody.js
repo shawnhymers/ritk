@@ -8,6 +8,7 @@ import  { useState } from 'react';
 const BlogSegment = props =>{
   return(
     <>
+
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
     {props.content.type ==='linkParagraph'? <Row className ='vertical-margin-md' >
                                               <p className ='blog-body' style={{display:'inline'}}>
@@ -18,8 +19,26 @@ const BlogSegment = props =>{
                                               </p>
                                             </Row>
                                       :null}
+    {props.content.type ==='externalLinkParagraph'? <Row className ='vertical-margin-md' >
+                                              <p className ='blog-body' style={{display:'inline'}}>
+                                                {props.content.content.map((content, i)=>{
+                                                  return <ExternalLinkParagraphSegment content ={content}
+                                                                                       isMobile={props.isMobile}
+                                                                                       key={content.type+i}/>})}
+                                              </p>
+                                            </Row>
+                                      :null}
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
     {props.content.type ==='listItem'?<BlogListItem text ={props.content.text} centered={props.content.centered}/>:null}
+    {props.content.type ==='listItemLink'?<Row className ='vertical-margin-md' >
+                                              <p className ='blog-h2' style={{display:'inline'}}>
+                                                {props.content.content.map((content, i)=>{
+                                                  return <ListItemLink content ={content}
+                                                                        isMobile={props.isMobile}
+                                                                                       key={content.type+i}/>})}
+                                              </p>
+                                            </Row>:null}
+
     {props.content.type ==='diptych'?<DipTych src1 ={props.content.src1} src2 ={props.content.src2} isMobile={props.isMobile}/>:null}
     {props.content.type === 'horizontalImage'? <HorizontalBlogImage src ={props.content.src}/> :null}
     {props.content.type === 'verticalImage'? <VerticalBlogImage src = {props.content.src}/>:null}
@@ -64,15 +83,18 @@ return(
         </Row>
         </>
       }
-      <Row>
+
+      <Row className='fill-width centered-text center-justified-text  centered-text vertical-padding-sm'>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
         </Col>
         <Col xs={8} sm={8} md={6} lg={6} xl={6} >
-
-          <p className ='blog-body centered-text center-justified-text vertical-padding-sm' align='center'>{props.blurb}</p>
-
-
+        <p className ='blog-body centered-text center-justified-text vertical-padding-sm' style={{display:'inline'}}>
+        {props.topBlurb.content.map((content, i)=>{
+                      return <TopBlurb content ={content}
+                                          isMobile={props.isMobile}
+                                          key={content.type+i}/>})}
+       </p>
         </Col>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
@@ -83,12 +105,13 @@ return(
           &nbsp;
         </Col>
         <Col xs={8} sm={8} md={6} lg={6} xl={6}>
-          <p className ='blog-body centered-text'>{'Updated '+props.updated}</p>
+          <p className ='blog-body centered-text'>{'Updated '+props.topBlurb.updated}</p>
         </Col>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
         </Col>
       </Row>
+
       {props.isMobile?
         <>
           <Row className = 'vertical-padding-sm '>
@@ -165,7 +188,22 @@ return(
   </>
 )}
 
+const TopBlurb = props=>{
+  return(
+    <>
+    {props.content.type==='text'?
+      <span>{props.content.text}</span>
+    :null
+    }
+    {props.content.type ==='link'?
+      <span style ={{textDecoration:'none'}}><Link style ={{textDecoration:'none'}} className='roaming-green-text'to={{pathname: props.content.link} }target="_blank">{props.content.text}</Link></span>
+    :null}
 
+
+
+    </>
+  )
+}
 const BlogParagraph = props =>{
 
   return(
@@ -186,7 +224,24 @@ const LinkParagraphSegment = props=>{
     }
     {props.content.type ==='link'?
 
-      <span><Link to={props.content.link}>{props.content.text}</Link></span>
+      <span style ={{textDecoration:'none'}} ><Link style ={{textDecoration:'none'}}className='roaming-green-text'to={props.content.link}target="_blank">{props.content.text}</Link></span>
+
+    :null}
+
+    </>
+  )
+}
+
+const ExternalLinkParagraphSegment = props=>{
+  return(
+    <>
+    {props.content.type==='text'?
+      <span>{props.content.text}</span>
+    :null
+    }
+    {props.content.type ==='link'?
+
+      <span style ={{textDecoration:'none'}}><Link style ={{textDecoration:'none'}} className='roaming-green-text'to={{pathname: props.content.link} }target="_blank">{props.content.text}</Link></span>
 
     :null}
 
@@ -210,6 +265,21 @@ const BlogListItem = props =>{
       <Row className ='vertical-margin-sm'>
         <p className ='blog-h2'>{props.text}</p>
       </Row>
+    </>
+  )
+}
+
+const ListItemLink = props=>{
+  return(
+    <>
+    {props.content.type==='text'?
+      <span>{props.content.text}</span>
+    :null
+    }
+    {props.content.type ==='link'?
+      <span style ={{textDecoration:'none'}}><Link style ={{textDecoration:'none'}} className='roaming-green-text'to={{pathname: props.content.link} }target="_blank">{props.content.text}</Link></span>
+    :null}
+
     </>
   )
 }

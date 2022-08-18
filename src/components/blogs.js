@@ -14,6 +14,8 @@ import arequipa1 from '../assets/galleries/arequipa/arequipa1.jpg'
 import arequipa39 from '../assets/galleries/arequipa/arequipa39.jpg'
 import huacachina11 from '../assets/galleries/huacachina/huacachina11.jpg'
 import sacredValley17 from '../assets/galleries/sacredValley/sacredValley17.jpg'
+import cusco23 from '../assets/galleries/cusco/cusco23.jpg'
+
 
 const HelpIcon = lazy(() => import('./sharedComponents/helpIcon'));
 const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/desktopHeader'));
@@ -48,6 +50,11 @@ class BlogPage extends Component {
              pic: arequipa1,
              tags:['activity guide', 'notbc','','','','','','','',''],
              link:'/InTheKnowArequipa'},
+
+            {name:'In The Know: Cusco',
+             pic: cusco23,
+             tags:['activity guide', 'notbc','','','','','','','',''],
+             link:'/InTheKnowCusco'},
 
             {name:'Peru Vegan Guide',
              pic: arequipa39,
@@ -138,6 +145,10 @@ class BlogPage extends Component {
          tags:['activity guide', 'notbc','','','','','','','',''],
          link:'/InTheKnowArequipa'},
 
+        {name:'In The Know: Cusco',
+          pic: cusco23,
+          tags:['activity guide', 'notbc','','','','','','','',''],
+          link:'/InTheKnowCusco'},
         {name:'Peru Vegan Guide',
          pic: arequipa39,
          tags:['activity guide', 'notbc','','','','','','','',''],

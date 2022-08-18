@@ -2,7 +2,8 @@ import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
-import banos20 from '../../assets/galleries/banos/banos20.jpg'
+// import banos20 from '../../assets/galleries/banos/banos20.jpg'
+import lima1 from '../../assets/galleries/lima/lima1.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -40,9 +41,12 @@ return(
     :
         <DesktopHeader page ={'blog'}/>
     }
-    <BlogBody header ={{src:banos20, label:'Peru Vegan Guide'}}
-              blurb ={"Peru is incredibly diverse in its natural beauty, culture, and food! Go on any food tour and your tour guide will tell you about how many different kinds of corn, potatoes, and quinoa this country can grow. They also will always tell you – it’s easy to be vegan in this country.  "}
-              updated={'July 2022'}
+    <BlogBody header ={{src:lima1, label:'Peru Vegan Guide'}}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'July 2022',
+                         content:[{type:'text',text:"Peru is incredibly diverse in its natural beauty, culture, and food! Go on any food tour and your tour guide will tell you about how many different kinds of corn, potatoes, and quinoa this country can grow. They also will always tell you – it’s easy to be vegan in this country.  "}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"Peru Vegan Guide"},
 
@@ -56,10 +60,10 @@ return(
                             {type:'listItem',text:"Veda Restaurant"},
                             {type:'paragraph',text:"For a more upscale dining experience, this restaurant should be a top choice. This fully vegan restaurant blew us away. We ordered the Tofu al Miso and Tofu Saltado with Fettuccine. We loved both meals but if we had to recommend only one – it would be the Tofu al Miso. The tofu had an incredible texture and had been marinated to perfection. Don’t skip on dessert – we tried their tiramisu and it was perfect."},
                             {type:'listItem',text:"Seitan Urban Bistro"},
-                            {type:'paragraph',text:"From KFC seitan wings in a red bowl to sushi rolls, anything this restaurant thinks they can use seitan to create, they do! Everytime we tried their food, it was delicious and provided true comfort. (We did tend to go for their comfort meals!) Our favourite dishes are the crispy tofu and popcorn seitan (We are suckers for appetisers)."},
+                            {type:'paragraph',text:"From KFC seitan wings in a red bowl to sushi rolls, anything this restaurant thinks they can use seitan to create, they do! Everytime we tried their food, it was delicious and provided true comfort. (We did tend to go for their comfort meals!) Our favourite dishes are the crispy tofu and popcorn seitan (We are suckers for appetizers)."},
 
                             {type:'header',text:'Best of Arequipa'},
-                            {type:'paragraph',text:"For a smaller tourist area than Cusco and Lima, this city packs a heavy punch when it comes to Vegan food options. We adored staying in Arequipa – the city is charming, they have the most incredible sunsets, and they have so many incredible vegan food options. Here’s our favourite spots in the city:"},
+                            {type:'paragraph',text:"For a smaller tourist area than Cusco and Lima, this city packs a heavy punch when it comes to vegan food options. We adored staying in Arequipa – the city is charming, they have the most incredible sunsets, and they have so many incredible vegan food options. Here’s our favourite spots in the city:"},
                             {type:'listItem',text:"El Buda Profano "},
                             {type:'paragraph',text:"This 100% vegan sushi restaurant does simple dishes right. They serve all the classic/traditional dishes one would find at a sushi restaurant, but veganized using tofu and seitan. We ordered gyozas, vegetable tempura, and their california roll. It was the first time we’ve ever ordered seconds at a restaurant… We are still thinking about those gyozas now. We’ve tried vegan sushi in multiple cities throughout Latin America and this takes the cake as our favourite spot. "},
                             {type:'listItem',text:"Prana Vegan Club "},

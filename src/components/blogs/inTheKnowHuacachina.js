@@ -41,14 +41,17 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:huacachina10, label:'In The Know Huacachina'}}
-              blurb ={"One of Peru's most interesting destination's is Huacachina, a tiny village built around the 'Oasis of America.'"}
-              updated={'July 2022'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'July 2022',
+                         content:[{type:'text',text:"One of Peru's most interesting destination's is Huacachina, a tiny village built around the 'Oasis of America.'"}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"In The Know Huacachina"},
 
 
                             // TEMP:
-                            {type:'paragraph',text:"One of Peru's most interesting destination's is Huacachina, a tiny village built around the 'Oasis of America.' The lagoon was created by seepage from an underwater aquifer. There are many legends of how the lake was created, but the local indigenous people believe it was created by a mourning weeping woman, and named the area Huacachina which means weeping woman in Quechua. Unfortunately due to well-drilling, the naturally occurring water is decreasing so now it's being artificially filled in order to preserve the tourism industry. Whether this oasis is natural or not, this place is out of a storybook... filled with wonder, illusion, and playfulness."},
+                            {type:'paragraph',text: "One of Peru's most interesting destinations is Huacachina, a tiny village built around the 'Oasis of America.' The lagoon was created by seepage from an underwater aquifer. There are many legends of how the lake was created, but the local indigenous people believe it was created by a mourning weeping woman, and named the area Huacachina which means weeping woman in Quechua. Unfortunately due to well-drilling, the naturally occurring water is decreasing so now it's being artificially filled in order to preserve the tourism industry. Whether this oasis is natural or not, this place is out of a storybook... filled with wonder, illusion, and playfulness."},
                             {type:'header',text:"How long to stay: "},
                             {type:'paragraph',text:"We recommend 2 days and 1 night if you’re on a tight schedule. If you have some breathing room in your schedule, add an extra night to lounge by the pool or do a tour to the nearby town of Paracas so you can do a boat tour of Ballestas Islands (Peru’s Poor Man’s Galapagos Islands.)"},
 

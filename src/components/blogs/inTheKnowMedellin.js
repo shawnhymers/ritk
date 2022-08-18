@@ -42,8 +42,12 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:medellin11, label:'In The Know : Medellin'}}
-              blurb ={"Medellín is a city with a very complicated history. Most people only know of it through a certain Netflix show and believe it’s still a dangerous place that you shouldn’t visit. "}
-              updated={'May 2022'}
+
+
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:"Medellín is a city with a very complicated history. Most people only know of it through a certain Netflix show and believe it’s still a dangerous place that you shouldn’t visit. "}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'paragraph',text:"Medellín is a city with a very complicated history. Most people only know of it through a certain Netflix show and believe it’s still a dangerous place that you shouldn’t visit. You’d be doing yourself a big disservice believing that as this city has a certain magic about it. A magic that most people can’t really identify, yet all feel it. It’s become an expat and digital nomad hub for that reason. "},
                              {type:'paragraph',text:"Maybe the magic has to do with the eternal spring weather it experiences, or the tree lined, coffee shop filled, neighbourhood of Poblado, or the incredible vegan restaurants that seem to be on every block, or the resilience and joy emitted from a lot of the local people. I’m sure it’s a little bit of all of that, and a lot more. "},

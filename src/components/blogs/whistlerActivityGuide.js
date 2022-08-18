@@ -37,8 +37,11 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'WhistlerActivityBlog/whistlerActivity16.jpg', label:'Whistler Activity Guide'}}
-              blurb ={"Whether you're a winter sports junkie, or a beach bum; Whistler has a great day in store for you."}
-              updated={'December 2021'}
+
+              topBlurb={{type:'topBlurb',
+                         updated:'December 2021',
+                         content:[{type:'text',text:"Whether you're a winter sports junkie, or a beach bum; Whistler has a great day in store for you."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'header',text:'Unique Things to Do in Whistler if you don’t Bike or Ski/Snowboard '},
                              {type:'paragraph',text:'Whistler is a resort town at the base of Blackcomb and Whistler Mountain. (traditionally called Skwikw by the Sḵwx̱wú7mesh (Squamish) Nation and Cwitima in the language of the Líl̓wat Nation.) People flock from all parts of the world to mountain bike in the summer months and ski/snowboard in the winter. These slopes had the world’s eyes on them during the 2010 Winter Olympics and continue to be a place for international competitive events. '},

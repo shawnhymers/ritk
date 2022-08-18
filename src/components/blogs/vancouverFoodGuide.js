@@ -36,8 +36,10 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'vancouverFood.jpg', label:'Vancouver Food Guide'}}
-              blurb ={"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}
-              updated={'December 2021'}
+              topBlurb={{type:'topBlurb',
+                         updated:'December 2021',
+                         content:[{type:'text',text:"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}]}}
+
               isMobile={isMobile}
               contentTest ={[{type:'paragraph',text:"I’m just going to come out and say it: Vancouver is the mecca of vegan food."},
                              {type:'paragraph',text:"I have not been to every city on HappyCow’s top vegan friendly cities list (though I plan to!), but I feel like Vancouver’s vegan community is hard to beat. It’s diversity of options makes this vegan food guide difficult for a very different reason than most cities – how do I choose my favorites?! "},

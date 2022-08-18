@@ -44,8 +44,12 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:guatape9, label:'In The Know : Guatape'}}
-              blurb ={"Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty."}
-              updated={'May 2022'}
+
+
+              topBlurb={{type:'topBlurb',
+                         updated:'May 2022',
+                         content:[{type:'text',text:"Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty."}]}}
+
               isMobile={isMobile}
               contentTest ={[
                              {type:'paragraph',text:'Two hours east of Colombia’s major city Medellín, is a quaint small town that is rich with natural and architectural beauty. It’s become popular as a tourist destination because of its proximity to El Peñol rock, a massive monolith that looks out of this world. The town is also know for how colourful it is. It’s covered in zócalos which are murals that are found on many buildings. This town exudes charm and we personally think it’s a must visit (day or overnight trip) if you’re visiting Medellín. '},

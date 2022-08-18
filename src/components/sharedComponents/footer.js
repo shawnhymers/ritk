@@ -29,7 +29,7 @@ const Footer = props => {
       console.log(message)
       toggleContactModal()
       e.preventDefault();
-      sendForm('service_5dpwlhk', 'template_rj36e27', form.current, '3OvB9yd-0dJbR1VD2')
+      sendForm('service_5e2hsqb', 'template_tzli0aa', form.current, 'PGrq0q2JL7mW0k_8p')
         .then((result) => {
             console.log(result.text);
         }, (error) => {
@@ -105,7 +105,7 @@ return(
       <Row className ='form-line nice-input-wrapper fill-width'>
 
         <Col xs={6} sm={6} md={8} lg={8} xl={8}>
-          <Row style={{paddingLeft:'2.5em'}}>
+          <Row style={{paddingLeft:'2.5em'}} >
             <input type="text"
                    id="userEmail"
                    name="userEmail"
@@ -172,16 +172,29 @@ return(
                 modalTitle ={'Hello, '+userEmail}
                 modalBody = {<>
                             <form ref={form} >
-                                <Row>
-                                  <input type="text"
-                                         id="user_email"
-                                         name="user_email"
-                                         value = {userEmail}
-                                         placeholder ='Your Email:'
-                                         onChange = {updateEmail}/>
-                                  <label htmlFor="user_email">
-                                    Your Email:
-                                  </label>
+                                <Row className='nice-input-wrapper'>
+                                  <Col>
+                                    &nbsp;
+                                  </Col>
+
+                                  <Col  className='nice-input-wrapper'>
+                                    <Row>
+                                      <input type="text"
+                                             id="user_email"
+                                             name="user_email"
+                                             value = {userEmail}
+                                             placeholder ='Your Email:'
+                                             onChange = {updateEmail}/>
+                                      <label htmlFor="user_email">
+                                        Your Email:
+                                      </label>
+                                    </Row>
+                                  </Col>
+
+                                  <Col>
+                                    &nbsp;
+                                  </Col>
+
                                 </Row>
                                 <Row className = 'centered-children vertical-padding-sm'>
                                   <input type = 'textarea'
