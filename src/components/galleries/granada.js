@@ -4,7 +4,6 @@ import  { useState,useEffect } from 'react';
 
 import granada10 from '../../assets/galleries/granada/granada10.jpg'
 import granada6 from '../../assets/galleries/granada/granada6.jpg'
-
 import granada4 from '../../assets/galleries/granada/granada4.jpg'
 import granada5 from '../../assets/galleries/granada/granada5.jpg'
 import granada3 from '../../assets/galleries/granada/granada3.jpg'
@@ -60,7 +59,7 @@ return(
 
                            {type:'horizontalImage',src:granada6},
                            {type:'diptych',src1:granada4,src2:granada5},
-                           {type:'horizontalImage',granada3},
+                           {type:'horizontalImage',src:granada3},
                            {type:'diptych',src1:granada2,src2:granada1},
                            {type:'horizontalImage',src:granada11},
                            {type:'diptych',src1:granada14,src2:granada13},
