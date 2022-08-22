@@ -58,7 +58,7 @@ return(
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
-              contentTest ={[
+              contentTest ={[ 
 
                             {type:'diptych',src1:huacachina15,src2:huacachina14},
                             {type:'horizontalImage',src:huacachina22},

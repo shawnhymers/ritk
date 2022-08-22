@@ -2,6 +2,7 @@ import React, {  lazy, Component } from 'react';
 import { Row} from 'react-bootstrap';
 // import OnImagesLoaded from 'react-on-images-loaded';
 import homePageHorizontal from '../assets/main/homePageHorizontal.jpg'
+import homePageVertical from "../assets/galleries/quindio/Quindio23.jpg"
 // import  { useState,useEffect } from 'react';
 import arequipaSquare from '../assets/main/arequipaSquare.jpg'
 import huacachinaSquare from '../assets/main/huacachinaSquare.jpg'
@@ -129,7 +130,7 @@ return(
       <>
         <MobileHeader />
         <Row style ={{pading:'0vh'}}>
-          <img src= "/mobileCover1.jpg"
+          <img src= {homePageVertical}
                alt = 'banner pic'
                loading="lazy"
                className = 'banner-pic'/>
