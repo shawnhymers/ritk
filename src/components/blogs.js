@@ -38,67 +38,67 @@ class BlogPage extends Component {
       blogs:[
             {name:'Peru Itinerary',
              pic: sacredValley17,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['', 'location guide','peru','sacred valley','','','','','',''],
              link:'/PeruItinerary'},
 
             {name:'In The Know: Huacachina',
              pic: huacachina11,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['', 'location guide','peru','south america','huacachina','','','','',''],
              link:'/InTheKnowHuacachina'},
 
             {name:'In The Know: Arequipa',
              pic: arequipa1,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['', 'location guide','peru','south america','arequipa','','','','',''],
              link:'/InTheKnowArequipa'},
 
             {name:'In The Know: Cusco',
              pic: cusco23,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['', 'location guide','peru','south america','cusco','','','','',''],
              link:'/InTheKnowCusco'},
 
             {name:'Peru Vegan Guide',
              pic: arequipa39,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['food guide', 'notbc','peru','south america','','','','','',''],
              link:'/PeruVeganGuide'},
 
             {name:'Banos Activity Guide',
              pic: banos5,
-             tags:['activity guide', 'notbc','','','','','','','',''],
+             tags:['activity guide', 'banos','ecuador','south america','','','','','',''],
              link:'/BanosActivityGuide'},
 
             {name:'In The Know: Quito',
              pic:quito17,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'location guide','ecuador','south america','','','','','',''],
              link:'/InTheKnowQuito'},
 
             {name:'Carbon Cost of Ecuador',
              pic:quito26,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'ecuador','south america','','','','','','',''],
              link:'/CarbonCostOfEcuador'},
 
             {name:'Carbon Cost of Colombia',
              pic:quindio18,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'colombia','south america','','','','','','',''],
              link:'/CarbonCostOfColombia'},
 
             {name:'In The Know: Medellin',
              pic:medellin13,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['location guide', 'colombia','south america','','','','','','',''],
              link:'/InTheKnowMedellin'},
 
             {name:'Medellin Food Guide',
              pic:medellin22,
-             tags:['food guide', 'notbc','','','','','','','',''],
+             tags:['food guide', 'notbc','colombia','south america','','','','','',''],
              link:'/MedellinFoodGuide'},
 
             {name:'In The Know: Guatape',
              pic:guatape1,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['location guide', 'notbc','colombia','south america','','','','','',''],
              link:'/InTheKnowGuatape'},
 
             {name:'Carbon Cost of Latam',
              pic:costaRica15,
-             tags:['carbon footprint', 'notbc','','','','','','','',''],
+             tags:['carbon footprint', 'latam','latin america','','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
             // {name:'Carbon Cost of Our Diet',
@@ -113,92 +113,93 @@ class BlogPage extends Component {
 
             {name:'Whistler Activity Guide',
              pic:'/whistlerActivity.jpg',
-             tags:['activity guide', 'bc','','','','','','','',''],
+             tags:['activity guide', 'bc','canada','','','','','','',''],
              link:'/WhistlerActivityGuide'},
 
             {name:'Vancouver Food Guide',
              pic:'/vancouverFood.jpg',
-             tags:['food guide', 'bc','','','','','','','',''],
+             tags:['food guide', 'bc','canada','','','','','','',''],
              link:'/VancouverFoodGuide'},
 
             {name:'Whistler Food Guide',
              pic:'/whistlerFood.jpg',
-             tags:['food guide', 'bc','','','','','','','',''],
+             tags:['food guide', 'bc','canada','','','','','','',''],
              link:'/WhistlerFoodGuide'},
 
                 ],
 
       shownBlogs:[
 
-        {name:'Peru Itinerary ',
+        {name:'Peru Itinerary',
          pic: sacredValley17,
-         tags:['activity guide', 'notbc','','','','','','','',''],
+         tags:['', 'location guide','peru','sacred valley','','','','','',''],
          link:'/PeruItinerary'},
 
         {name:'In The Know: Huacachina',
          pic: huacachina11,
-         tags:['activity guide', 'notbc','','','','','','','',''],
+         tags:['', 'location guide','peru','south america','huacachina','','','','',''],
          link:'/InTheKnowHuacachina'},
 
         {name:'In The Know: Arequipa',
          pic: arequipa1,
-         tags:['activity guide', 'notbc','','','','','','','',''],
+         tags:['', 'location guide','peru','south america','arequipa','','','','',''],
          link:'/InTheKnowArequipa'},
 
         {name:'In The Know: Cusco',
-          pic: cusco23,
-          tags:['activity guide', 'notbc','','','','','','','',''],
-          link:'/InTheKnowCusco'},
+         pic: cusco23,
+         tags:['', 'location guide','peru','south america','cusco','','','','',''],
+         link:'/InTheKnowCusco'},
+
         {name:'Peru Vegan Guide',
          pic: arequipa39,
-         tags:['activity guide', 'notbc','','','','','','','',''],
+         tags:['food guide', 'notbc','peru','south america','','','','','',''],
          link:'/PeruVeganGuide'},
 
         {name:'Banos Activity Guide',
          pic: banos5,
-         tags:['activity guide', 'notbc','','','','','','','',''],
+         tags:['activity guide', 'banos','ecuador','south america','','','','','',''],
          link:'/BanosActivityGuide'},
 
         {name:'In The Know: Quito',
          pic:quito17,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['carbon footprint', 'location guide','ecuador','south america','','','','','',''],
          link:'/InTheKnowQuito'},
 
         {name:'Carbon Cost of Ecuador',
          pic:quito26,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['carbon footprint', 'ecuador','south america','','','','','','',''],
          link:'/CarbonCostOfEcuador'},
 
         {name:'Carbon Cost of Colombia',
          pic:quindio18,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['carbon footprint', 'colombia','south america','','','','','','',''],
          link:'/CarbonCostOfColombia'},
 
         {name:'In The Know: Medellin',
          pic:medellin13,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['location guide', 'colombia','south america','','','','','','',''],
          link:'/InTheKnowMedellin'},
 
         {name:'Medellin Food Guide',
          pic:medellin22,
-         tags:['food guide', 'notbc','','','','','','','',''],
+         tags:['food guide', 'notbc','colombia','south america','','','','','',''],
          link:'/MedellinFoodGuide'},
 
         {name:'In The Know: Guatape',
          pic:guatape1,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['location guide', 'notbc','colombia','south america','','','','','',''],
          link:'/InTheKnowGuatape'},
 
         {name:'Carbon Cost of Latam',
          pic:costaRica15,
-         tags:['carbon footprint', 'notbc','','','','','','','',''],
+         tags:['carbon footprint', 'latam','latin america','','','','','','',''],
          link:'/CarbonCostOfLatam'},
 
         // {name:'Carbon Cost of Our Diet',
         //  pic:arequipa38,
         //  tags:['activity', 'notbc','carbon footprint','','','','','','',''],
         //  link:'/CarbonCostOfDiet'},
-        //
+
         // {name:'Carbon Cost of Flying',
         //  pic:'/planeWing.jpg',
         //  tags:['carbon footprint', 'notbc','','','','','','','',''],
@@ -206,20 +207,18 @@ class BlogPage extends Component {
 
         {name:'Whistler Activity Guide',
          pic:'/whistlerActivity.jpg',
-         tags:['activity guide', 'bc','','','','','','','',''],
+         tags:['activity guide', 'bc','canada','','','','','','',''],
          link:'/WhistlerActivityGuide'},
 
         {name:'Vancouver Food Guide',
          pic:'/vancouverFood.jpg',
-         tags:['food guide', 'bc','','','','','','','',''],
+         tags:['food guide', 'bc','canada','','','','','','',''],
          link:'/VancouverFoodGuide'},
 
         {name:'Whistler Food Guide',
          pic:'/whistlerFood.jpg',
-         tags:['food guide', 'bc','','','','','','','',''],
+         tags:['food guide', 'bc','canada','','','','','','',''],
          link:'/WhistlerFoodGuide'},
-
-
            ],
     };
   };

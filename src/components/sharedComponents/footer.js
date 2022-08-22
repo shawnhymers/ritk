@@ -52,7 +52,11 @@ return(
 
   {props.isMobile?
     <>
-    <Row className ='form-line nice-input-wrapper fill-width'>
+    {props.isCalculator?
+    null
+    :
+    <>
+    <Row className ='form-line nice-input-wrapper fill-width' >
       <Col xs={8} sm={8} md={8} lg={8} xl={8}>
         <Row  >
           <input type="text"
@@ -76,26 +80,27 @@ return(
 
     </Row>
     <Row className ='vertical-padding-sm'>
-      <Col style ={{maxWidth:'15vw'}}>
+      <Col style ={{maxWidth:'50vw'}}>
         &nbsp;
       </Col>
-      <Col style ={{maxWidth:'15vw'}}>
+      <Col style ={{maxWidth:'10vw'}}>
         <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
       </Col>
-      <Col style ={{maxWidth:'15vw'}}>
+      <Col style ={{maxWidth:'10vw'}}>
         <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
       </Col>
-      <Col style ={{maxWidth:'15vw'}}>
-        <BsYoutube size ='1.5em'style ={{cursor:'pointer'}}/>
-      </Col>
-      <Col style ={{maxWidth:'40vw'}}>
-         <p className ='centered-text roaming-text-sm auto-margins'>@roamingintheknow</p>
+
+      <Col style ={{maxWidth:'30vw'}}>
+         <p className =' roaming-text-sm auto-margins'>@roamingintheknow</p>
       </Col>
     </Row>
     <Row >
     <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1.5rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
 
     </Row>
+    </>
+  }
+
     </>
   :
   <>

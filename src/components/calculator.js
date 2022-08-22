@@ -213,7 +213,8 @@ class CalculatorPage extends Component {
                   dietList={this.state.diet}
                   hotelList={this.state.accomodation}/>
 
-      <Footer isMobile={this.state.isMobile}/>
+      <Footer isMobile={this.state.isMobile}
+              isCalculator={true}/>
 
         </div>
 
@@ -228,7 +229,7 @@ const MobileNav = props => {
 return(
   <>
 
-    <Row style ={{position:'fixed',bottom:'0vh',margin:'auto',minHeight:'6em'}}
+    <Row style ={{position:'fixed',bottom:'0vh',margin:'auto',minHeight:'6em',zIndex:34}}
          className ='centered-children fill-width white vertical-padding-sm'>
       <Col onClick={()=>props.updateView('flights')}
            className ='mobile-nav-col'>

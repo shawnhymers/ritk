@@ -84,12 +84,12 @@ return(
         </>
       }
 
-      <Row className='fill-width centered-text center-justified-text  centered-text vertical-padding-sm'>
+      <Row className='fill-width centered-text center-justified-text blog-body centered-text vertical-padding-sm'>
         <Col xs={2} sm={2} md={3} lg={3} xl={3}>
           &nbsp;
         </Col>
         <Col xs={8} sm={8} md={6} lg={6} xl={6} >
-        <p className ='blog-body centered-text center-justified-text vertical-padding-sm' style={{display:'inline'}}>
+        <p style={{display:'inline'}}>
         {props.topBlurb.content.map((content, i)=>{
                       return <TopBlurb content ={content}
                                           isMobile={props.isMobile}
