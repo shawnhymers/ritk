@@ -9,14 +9,14 @@ import { sendForm } from 'emailjs-com';
 
 const Footer = props => {
 
-  const [userEmail, setUserEmail]=useState('')
+  const [from_name, setUserEmail]=useState('')
   const [showContactModal, setShowContactModal]=useState(false)
   const [message,setMessage]=useState('')
 
   const form = useRef();
 
   function toggleContactModal(){
-    if (userEmail!=='' && !showContactModal) {
+    if (from_name!=='' && !showContactModal) {
       setShowContactModal(true)
     }
     else {
@@ -25,6 +25,7 @@ const Footer = props => {
   }
 
   function submitMessage(e){
+    console.log(form.current)
     if (message!=='') {
       console.log(message)
       toggleContactModal()
@@ -60,13 +61,13 @@ return(
       <Col xs={8} sm={8} md={8} lg={8} xl={8}>
         <Row  >
           <input type="text"
-                 id="userEmail"
-                 name="userEmail"
-                 value = {userEmail}
+                 id="from_name"
+                 name="from_name"
+                 value = {from_name}
 
                  placeholder ='Your Email:'
                  onChange = {updateEmail}/>
-          <label htmlFor="userEmail">
+          <label htmlFor="from_name">
             Email:
           </label>
         </Row>
@@ -112,12 +113,12 @@ return(
         <Col xs={6} sm={6} md={8} lg={8} xl={8}>
           <Row style={{paddingLeft:'2.5em'}} >
             <input type="text"
-                   id="userEmail"
-                   name="userEmail"
-                   value = {userEmail}
+                   id="from_name"
+                   name="from_name"
+                   value = {from_name}
                    placeholder ='Email:'
                    onChange = {updateEmail}/>
-            <label htmlFor="userEmail">
+            <label htmlFor="from_namel">
               Email:
             </label>
           </Row>
@@ -174,7 +175,7 @@ return(
     <>
     <LargeModal isOpen={true}
                 closeModal ={toggleContactModal}
-                modalTitle ={'Hello, '+userEmail}
+                modalTitle ={'Hello, '+from_name}
                 modalBody = {<>
                             <form ref={form} >
                                 <Row className='nice-input-wrapper'>
@@ -185,12 +186,12 @@ return(
                                   <Col  className='nice-input-wrapper'>
                                     <Row>
                                       <input type="text"
-                                             id="user_email"
-                                             name="user_email"
-                                             value = {userEmail}
+                                             id="from_name"
+                                             name="from_name"
+                                             value = {from_name}
                                              placeholder ='Your Email:'
                                              onChange = {updateEmail}/>
-                                      <label htmlFor="user_email">
+                                      <label htmlFor="from_user">
                                         Your Email:
                                       </label>
                                     </Row>

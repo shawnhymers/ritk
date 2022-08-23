@@ -27,7 +27,7 @@ const CarForm = props => {
 
   const [advancedDrivingType,setAdvancedDrivingType] = useState('City')
   const [searchBy, setSearchBy] = useState('Make');
-  const [year, setYear] = useState('2020');
+  const [year, setYear] = useState('2021');
   // const [vehicleSearch, setVehicleSearch] = useState('');
   const [vehicle, setVehicle] = useState('');
   const [vehicleOptions, setVehicleOptions] = useState(smallCarData);
@@ -43,6 +43,15 @@ const CarForm = props => {
                                                       distanceError:false})
   function selectYear(e){
     setYear(e.target.value)
+
+    var options = smallCarData.filter(function (el)
+      {
+          return el.Year===parseInt(e.target.value)
+      });
+
+
+
+  setVehicleOptions(options);
   }
   function selectSearchBy(e){
     setSearchBy(e.target.value)

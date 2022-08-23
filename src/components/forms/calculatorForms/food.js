@@ -97,7 +97,7 @@ const FoodForm = props =>{
                     food: selectedFood,
                     carbonFootprint: carbonFootprint
         }
-
+        console.log(data)
         props.addCarbonCostItem(data)
       }
       else {
@@ -107,7 +107,7 @@ const FoodForm = props =>{
                     dietType:selectedDiet,
                     carbonFootprint: carbonFootprint
         }
-
+        console.log(data)
         props.addCarbonCostItem(data)
       }
       setFoodQuantity('')

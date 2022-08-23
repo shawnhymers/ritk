@@ -138,7 +138,7 @@ class CalculatorPage extends Component {
     else if (data.type ==='diet') {
       console.log('saving a diet line in main.js')
       this.addToList(data.type,data)
-      this.setState({totalDietCost:this.state.totalDietCost+data.carbonFootprint,
+      this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
                      showOutcomeMessage:true,
                      shouldBlockNavigation:true,
                      outcomeMessageType:'positive',
