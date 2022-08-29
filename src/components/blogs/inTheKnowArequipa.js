@@ -71,7 +71,6 @@ return(
                             {type:'paragraph', text:"There are many hostels and hotels close to Plaza des Armes but we personally had an amazing stay at Selina Arequipa which is close to the San Lázaro neighbourhood. It’s our favourite Selina location so far and has an incredible pool and courtyard/garden area that even includes a tree house! "},
 
                             {type:'header',text:"Where to eat: "},
-                            {type:'paragraph', text:"Check out our Peru Vegan Guide for our favourite spots in Arequipa."},
                             {type:'linkParagraph',content:[{type:'text', text:"Check out our "},
                                                            {type:'link', text:'Peru Vegan Guide ',link:"/PeruVeganGuide"},
                                                            {type:'text', text:'for our favourite spots in Arequipa.'}]},
