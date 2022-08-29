@@ -38,11 +38,11 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:ometepe10, label:'Carbon Cost of LATAM'}}
+    <BlogBody header ={{src:ometepe10, label:'Carbon Cost of Central America'}}
 
               topBlurb={{type:'topBlurb',
                          updated:'June 2022',
-                         content:[{type:'text',text:"Here is a breakdown of our carbon footprint of 51 days of travelling Latin America."}]}}
+                         content:[{type:'text',text:"Here is a breakdown of our carbon footprint of 51 days of travelling Central America."}]}}
 
               isMobile={isMobile}
               contentTest ={[ {type:'header',text:"Carbon Footprint For LATAM"},
@@ -50,7 +50,7 @@ return(
                               {type:'listItem',text:"Total Footprint ",centered:true},
                                 {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2',centered:true},
                               {type:'footprintComparison',footprintPerDay:'24.9'},
-                            {type:'paragraph',text:'Overall Central America was a huge win for us. It was the first leg out of adventure, and we were still learning how to travel safely and efficiently. A huge hit to our carbon budget was our flights in. Flying all the way from Canada to Nicaragua was over half of our carbon footprint for the entire 51 days. This is a great example of how longer trips, if you have the privilege of taking the time, are much more environmentally friendly. A big win for us was the amount of Vegan food we found all throughout Central America. Although it’s not the most vegan friendly part of the world, we were able to find delicious vegan food for the entirety of our trip which really helped us offset those huge flights!'},
+                            {type:'paragraph',text:'Overall Central America was a huge win for us. It was the first leg out of adventure, and we were still learning how to travel safely and efficiently. A huge hit to our carbon budget was our flights in. Flying all the way from Canada to Nicaragua was over half of our carbon footprint for the entire 51 days. This is a great example of how longer trips, if you have the privilege of taking the time, are much more environmentally friendly. A big win for us was the amount of vegan food we found all throughout Central America. Although it’s not the most vegan friendly part of the world, we were able to find delicious vegan food for the entirety of our trip which really helped us offset those huge flights!'},
 
 
                              {type:'header',text:"Flights"},
@@ -74,9 +74,9 @@ return(
                               {type:'footprintLine',distance:'113',footprint:'2.0',unit:'KG Co2'},
                              {type:'listItem',text:"6) Bus from Liberia to La Fortuna"},
                               {type:'footprintLine',distance:'134',footprint:'3.3',unit:'KG Co2'},
-                             {type:'listItem',text:"7) Bus from La Fortuna to Monte Verde"},
+                             {type:'listItem',text:"7) Bus from La Fortuna to Monteverde"},
                               {type:'footprintLine',distance:'121',footprint:'2.2',unit:'KG Co2'},
-                             {type:'listItem',text:"8) Bus from Monte Verde to Manuel Antonio"},
+                             {type:'listItem',text:"8) Bus from Monteverde to Manuel Antonio"},
                               {type:'footprintLine',distance:'182',footprint:'3.3',unit:'KG Co2'},
                              {type:'listItem',text:"9) Bus from Manuel Antonio to Alajuela"},
                               {type:'footprintLine',distance:'157',footprint:'2.8',unit:'KG Co2'},

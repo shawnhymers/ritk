@@ -43,7 +43,7 @@ return(
               isMobile={isMobile}
               contentTest ={[{type:'paragraph',text:"I’m just going to come out and say it: Vancouver is the mecca of vegan food."},
                              {type:'paragraph',text:"I have not been to every city on HappyCow’s top vegan friendly cities list (though I plan to!), but I feel like Vancouver’s vegan community is hard to beat. It’s diversity of options makes this vegan food guide difficult for a very different reason than most cities – how do I choose my favorites?! "},
-                             {type:'paragraph',text:"I have to admit that I have not tried every vegan restaurant in Vancouver’s Lower Mainland, but I have tried A LOT. So many in fact, that I will divide this food guide into 3 categories instead of my usual two."},
+                             {type:'paragraph',text:"I have to admit that I have not tried every vegan restaurant in Vancouver’s Lower Mainland, but I have tried A LOT. So many in fact, that I have divided this guide into three categories:"},
                              {type:'diptych', src1:'VancouverFoodBlog/vancouverFood8.jpg',src2:'VancouverFoodBlog/vancouverFood7.jpg'},
 
                              {type:'header',text:"Top ‘Going out for a nice meal’ dining options:"},
