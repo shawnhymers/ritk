@@ -64,22 +64,25 @@ return(
 
 
                             {type:'listItem',text:"To Do:"},
-                            {type:"paragraph",text:"- Visit Larcomar Mall "},
-                            {type:"paragraph",text:"- Rent an electric scooter and ride along the waterfront"},
-                            {type:"paragraph",text:"- Take a surf lesson"},
-                            {type:"paragraph",text:"- Visit one of Barranco’s many lovely coffee shops"},
-                            {type:"paragraph",text:"- Enjoy dining at one of Lima’s incredible restaurants (if you’re vegan, check out Veda Restaurant) "},
+                            {type:'list',content:[{text:"- Visit Larcomar Mall "},
+                                                  {text:"- Rent an electric scooter and ride along the waterfront"},
+                                                  {text:"- Take a surf lesson"},
+                                                  {text:"- Visit one of Barranco’s many lovely coffee shops"},
+                                                  {text:"- Enjoy dining at one of Lima’s incredible restaurants (if you’re vegan, check out Veda Restaurant) "},]},
+
                             {type:"paragraph",text:"Once you’re ready to move on, hop on an early morning bus to Huacachina. "},
 
                             {type:'header',text:"Huacachina (1-2 Nights)"},
                             {type:"paragraph",text:"Peru’s famous desert oasis is a 4.5 bus ride away from Lima. You’ll take the bus to the nearby city of Ica and then take a cab to Huacachina for 15 soles. "},
                             {type:"paragraph",text:"Stay: We stayed at Desert Nights Hostel, the sister hotel to popular EcoCamp Huacachina. While EcoCamp is popular, three people who stayed there recommended against it. We were happy with our stay at Desert Nights Hostel as it was clean, quiet, and gave us access to EcoCamp’s pool."},
+
                             {type:'listItem',text:"To Do:"},
-                            {type:"paragraph",text:"- Go on a sand buggy & sandboarding tour (Book in person when you arrive. It should cost 35-40 soles per person.)"},
-                            {type:"paragraph",text:"- Watch sunrise or sunset from the tallest sand dune "},
-                            {type:"paragraph",text:"- Rent a paddle boat on the oasis (costs 30 soles for 20 minutes)"},
-                            {type:"paragraph",text:"- Paraglide (we did not do this although it looked like fun) "},
-                            {type:"paragraph",text:"- Spend time at the pool and soak up the heat before you move on"},
+                            {type:'list',content:[{text:"- Go on a sand buggy & sandboarding tour (Book in person when you arrive. It should cost 35-40 soles per person.)"},
+                                                  {text:"- Watch sunrise or sunset from the tallest sand dune"},
+                                                  {text:"- Rent a paddle boat on the oasis (costs 30 soles for 20 minutes)"},
+                                                  {text:"- Paraglide (we did not do this although it looked like fun)"},
+                                                  {text:"- Spend time at the pool and soak up the heat before you move on"},]},
+
                             {type:"paragraph",text:"Either take a night bus to Arequipa or add one of the following two destinations onto your itinerary:"},
                             {type:'listItem',text:"Paracas "},
                             {type:"paragraph",text:"The town of Paracas is a popular day trip from Huacachina or next stop for many travellers. If you are interested in visiting the Ballestas Islands (Peru’s Poor Man’s Galapagos) then you may want to consider visiting here for a night."},
@@ -91,9 +94,10 @@ return(
                             {type:"paragraph",text:"Peru’s second largest city, Arequipa, is often a quick stop for travellers looking to visit one of the deepest canyons in the world: the Colca Canyon. This city and a visit to the Colca Canyon can be done quickly, but we do encourage you to take this stop a little slower as this city is beautiful to spend some time in. "},
                             {type:"paragraph",text:"Stay: We stayed at Selina Arequipa. This location is one of their best as it has a beautiful garden area with a tree house and a pool. Their private plus rooms are really nice."},
                             {type:'listItem',text:"To Do:"},
-                            {type:"paragraph",text:"- A day trip or 2 day/1 night trek of the Colca Canyon"},
-                            {type:"paragraph",text:"- Wander the San Lázaro neighbourhood "},
-                            {type:"paragraph",text:"- Watch sunset on of the rooftop terraces overlooking Plaza des Armes (Waya Lookout was where we went) "},
+                            {type:'list',content:[{text:"- A day trip or 2 day/1 night trek of the Colca Canyon"},
+                                                  {text:"- Wander the San Lázaro neighbourhood "},
+                                                  {text:"- Watch sunset on of the rooftop terraces overlooking Plaza des Armes (Waya Lookout was where we went)"}]},
+
                             {type:'paragraph',text:"Once you’re ready to move on, take a bus to either Puno or straight to Cusco."},
 
                             {type:'header',text:"Puno/Lake Titicaca "},
@@ -105,9 +109,10 @@ return(
                             {type:"paragraph",text:"Cusco is a vibrant beautiful city that is the gateway to the Sacred Valley and Machu Picchu. It has many wonderful things to do in the city as well as incredible day trip options to choose from which make it a city that’s worth lingering in before and after your tour of the Sacred Valley. "},
                             {type:"paragraph",text:"Stay: There are many great AirBnb options in the area. While we do not recommend the one we stayed in, our friends found a great one in the San Blas neighbourhood. For hostels, we recommend Selina and for hotels, we recommend Casa Andina. We stayed at their ‘Standard’ location but thought the location of their San Blas one was ideal. "},
                             {type:'listItem',text:"To Do:"},
-                            {type:"paragraph",text:"- Do a day trip Lake Humantay, Rainbow Mountain, Palccoyo Mountain, or  7 lagunas Ausangate (We did Palcoyo and Laguna Humantay but would definitely visit the other two options the next time around) "},
-                            {type:"paragraph",text:"- Wander the San Blas neighbourhood & eat lunch at Green Point"},
-                            {type:"paragraph",text:"- Cusco’s local markets: San Pedro Market & San Blas Market"},
+                            {type:"list",content:[{text:"- Do a day trip Lake Humantay, Rainbow Mountain, Palccoyo Mountain, or  7 lagunas Ausangate (We did Palcoyo and Laguna Humantay but would definitely visit the other two options the next time around) "},
+                                                  {text:"- Wander the San Blas neighbourhood & eat lunch at Green Point"},
+                                                  {text:"- Cusco’s local markets: San Pedro Market & San Blas Market"}]},
+
                             {type:"paragraph",text:"At this point, you’ll want to see the Sacred Valley. Since we did not plan this ourselves, we cannot recommend how to get around."},
 
                             {type:'header',text:"Sacred Valley"},
@@ -124,11 +129,11 @@ return(
                             {type:"paragraph",text:"Where to stay: We stayed at Selina Huaraz"},
 
                             {type:'listItem',text:"To Do:"},
-                            {type:"paragraph",text:"- Laguna 69 Hike (On a tour)"},
-                            {type:"paragraph",text:"- Laguna Paron Tour"},
-                            {type:"paragraph",text:"- Laguna Churup Hike (Self-Guided)"},
-                            {type:"paragraph",text:"- Wilcacocha (We didn’t get time to do this but have heard it’s a great 1st or 2nd day hike to acclimate)"},
-                            {type:"paragraph",text:"-Pastoruri Glacier (We also didn’t do this but heard great things)"},
+                            {type:"list",content:[{text:"- Laguna 69 Hike (On a tour)"},
+                                                  {text:"- Laguna Paron Tour"},
+                                                  {text:"- Laguna Churup Hike (Self-Guided)"},
+                                                  {text:"- Wilcacocha (We didn’t get time to do this but have heard it’s a great 1st or 2nd day hike to acclimate)"},
+                                                  {text:"-Pastoruri Glacier (We also didn’t do this but heard great things)"},]},
 
                             {type:"header",text:"That wraps up our Peru itinerary! "},
                             {type:'linkParagraph',content:[{type:'text', text:"Here are more detailed blog posts on "},

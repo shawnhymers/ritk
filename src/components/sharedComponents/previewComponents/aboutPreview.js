@@ -55,6 +55,13 @@ return(
       <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}>
         <p className ='roaming-yellow-text roaming-text-sm centered-text'>We’re Shawn and Alia, a married twenty-something couple travelling full-time, all while being mindful of our carbon footprint. We believe balance is an essential part of life which means we want to see the world, but we also want to see it be habitable for generations to come.</p>
       </Row>
+      <Row style ={{marginLeft:'5vw',marginRight:'5vw'}}>
+        <Link to={{pathname:'https://roamingintheknow.com/about'}}
+              style={{textDecoration:'none'}}
+              target="_blank" >
+        <p className ='roaming-black-text roaming-text-sm'>Read More</p>
+        </Link>
+      </Row>
     </Col>
   </Row>
 

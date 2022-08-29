@@ -44,6 +44,12 @@ const BlogSegment = props =>{
     {props.content.type === 'verticalImage'? <VerticalBlogImage src = {props.content.src}/>:null}
     {props.content.type === 'footprintLine'? <FootprintLine unit={props.content.unit}footprint={props.content.footprint} centered={props.content.centered}/>:null}
     {props.content.type === 'footprintComparison'? <FootprintComparison footprintPerDay={props.content.footprintPerDay}/>:null}
+    {props.content.type === 'list'?<Row className ='vertical-margin-sm' >
+                                          {props.content.content.map((content, i)=>{
+                                            return <List content ={content}
+                                                         isMobile={props.isMobile}
+                                                         key={content.text+i}/>})}
+                                    </Row> :null}
     </>
   )
 }
@@ -209,12 +215,20 @@ const BlogParagraph = props =>{
   return(
     <>
       <Row className ='vertical-margin-md' >
-        <p className ='blog-body'>{props.text}</p>
+        <p className ='blog-body roaming-black-text'>{props.text}</p>
       </Row>
     </>
   )
 }
 
+const List = props =>{
+
+  return(
+    <>
+        <p className ='blog-body'>{props.content.text}</p>
+    </>
+  )
+}
 const LinkParagraphSegment = props=>{
   return(
     <>

@@ -78,9 +78,9 @@ return(
 
 
                             {type:'header',text:"Carbon conscious tips: "},
-                            {type:'paragraph', text:"-Bring a water bottle with a filter or find a filter water tap (Selina Arequipa has one) to avoid purchasing plastic water bottles"},
-                            {type:'paragraph', text:"-Take the night bus or train to and from Arequipa instead of flying"},
-                            {type:'paragraph', text:"-Take advantage of some of the great (and affordable) vegan restaurants in town & eat plant-based! "},
+                            {type:'list',content:[{text:"-Bring a water bottle with a filter or find a filter water tap (Selina Arequipa has one) to avoid purchasing plastic water bottles"},
+                                                  {text:"-Take the night bus or train to and from Arequipa instead of flying"},
+                                                  {text:"-Take advantage of some of the great (and affordable) vegan restaurants in town & eat plant-based!"}]},
 
 
 
