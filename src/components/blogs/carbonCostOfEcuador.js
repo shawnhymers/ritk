@@ -84,7 +84,7 @@ return(
 
                              {type:'header',text:"Overview"},
                              {type:'horizontalImage',src:'CarbonCostCharts/equadorCost.png'},
-                             {type:'listItem',text:"Total Footprint "},
+                             {type:'totalFootprint',text:"Total Footprint "},
                                {type:'footprintLine',footprint:'354',unit:'KG Co2',centered:true},
                              {type:'footprintComparison',footprintPerDay:'16.9'},
                            ]}/>

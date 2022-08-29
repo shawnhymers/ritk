@@ -47,7 +47,7 @@ return(
               isMobile={isMobile}
               contentTest ={[{type:'header',text:"Carbon Footprint For Colombia"},
                               {type:'horizontalImage',src:'CarbonCostCharts/colombiaCost.png'},
-                              {type:'listItem',text:"Total Footprint "},
+                              {type:'totalFootprint',text:"Total Footprint "},
                                 {type:'footprintLine',footprint:'713.2',unit:'KG Co2',centered:true},
                               {type:'footprintComparison',footprintPerDay:'18.3'},
                             {type:'paragraph',text:'Colombia was even easier than our time in Central America when it came to our carbon footprint. Firstly, we headed to Colombia from Panama City which is a hop skip and a jump compared to if we had returned home and then flew in again from Canada. This is another one of our core take aways for how to reduce your carbon footprint: traveling sequentially, i.e. checking out adjacent countries instead of zig zagging around the globe. Secondly, the vegan food in Colombia (excluding Cartagena) was INCREDIBLE. We had our pick of fully vegan restaurants, and others made vegan options very easily available. We even found tofu and vegan cheese at the supermarkets in Medellin and Bogota.'},
@@ -92,7 +92,7 @@ return(
                              {type:'header',text:"Overview"},
 
                              {type:'horizontalImage',src:'CarbonCostCharts/colombiaCost.png'},
-                             {type:'listItem',text:"Total Footprint "},
+                             {type:'totalFootprint',text:"Total Footprint "},
                                {type:'footprintLine',footprint:'713.2',unit:'KG Co2', centered:true},
                              {type:'footprintComparison',footprintPerDay:'18.3'},
 
