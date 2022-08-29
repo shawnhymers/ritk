@@ -41,6 +41,11 @@ class BlogPage extends Component {
              tags:['', 'location guide','peru','sacred valley','','','','','',''],
              link:'/PeruItinerary'},
 
+             {name:'Peru Vegan Guide',
+              pic: arequipa39,
+              tags:['food guide', 'notbc','peru','south america','','','','','',''],
+              link:'/PeruVeganGuide'},
+
             {name:'In The Know: Huacachina',
              pic: huacachina11,
              tags:['', 'location guide','peru','south america','huacachina','','','','',''],
@@ -55,11 +60,6 @@ class BlogPage extends Component {
              pic: cusco23,
              tags:['', 'location guide','peru','south america','cusco','','','','',''],
              link:'/InTheKnowCusco'},
-
-            {name:'Peru Vegan Guide',
-             pic: arequipa39,
-             tags:['food guide', 'notbc','peru','south america','','','','','',''],
-             link:'/PeruVeganGuide'},
 
             {name:'Banos Activity Guide',
              pic: banos5,
@@ -111,15 +111,17 @@ class BlogPage extends Component {
             //  tags:['carbon footprint', 'notbc','','','','','','','',''],
             //  link:'/CarbonCostOfFlying'},
 
+            {name:'Vancouver Food Guide',
+             pic:'/vancouverFood.jpg',
+             tags:['food guide', 'bc','canada','','','','','','',''],
+             link:'/VancouverFoodGuide'},
+
+
             {name:'Whistler Activity Guide',
              pic:'/whistlerActivity.jpg',
              tags:['activity guide', 'bc','canada','','','','','','',''],
              link:'/WhistlerActivityGuide'},
 
-            {name:'Vancouver Food Guide',
-             pic:'/vancouverFood.jpg',
-             tags:['food guide', 'bc','canada','','','','','','',''],
-             link:'/VancouverFoodGuide'},
 
             {name:'Whistler Food Guide',
              pic:'/whistlerFood.jpg',
@@ -135,6 +137,11 @@ class BlogPage extends Component {
          tags:['', 'location guide','peru','sacred valley','','','','','',''],
          link:'/PeruItinerary'},
 
+         {name:'Peru Vegan Guide',
+          pic: arequipa39,
+          tags:['food guide', 'notbc','peru','south america','','','','','',''],
+          link:'/PeruVeganGuide'},
+
         {name:'In The Know: Huacachina',
          pic: huacachina11,
          tags:['', 'location guide','peru','south america','huacachina','','','','',''],
@@ -149,11 +156,6 @@ class BlogPage extends Component {
          pic: cusco23,
          tags:['', 'location guide','peru','south america','cusco','','','','',''],
          link:'/InTheKnowCusco'},
-
-        {name:'Peru Vegan Guide',
-         pic: arequipa39,
-         tags:['food guide', 'notbc','peru','south america','','','','','',''],
-         link:'/PeruVeganGuide'},
 
         {name:'Banos Activity Guide',
          pic: banos5,
@@ -205,15 +207,17 @@ class BlogPage extends Component {
         //  tags:['carbon footprint', 'notbc','','','','','','','',''],
         //  link:'/CarbonCostOfFlying'},
 
+        {name:'Vancouver Food Guide',
+         pic:'/vancouverFood.jpg',
+         tags:['food guide', 'bc','canada','','','','','','',''],
+         link:'/VancouverFoodGuide'},
+
+
         {name:'Whistler Activity Guide',
          pic:'/whistlerActivity.jpg',
          tags:['activity guide', 'bc','canada','','','','','','',''],
          link:'/WhistlerActivityGuide'},
 
-        {name:'Vancouver Food Guide',
-         pic:'/vancouverFood.jpg',
-         tags:['food guide', 'bc','canada','','','','','','',''],
-         link:'/VancouverFoodGuide'},
 
         {name:'Whistler Food Guide',
          pic:'/whistlerFood.jpg',

@@ -10,7 +10,7 @@ const BlogSegment = props =>{
     <>
 
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
-    {props.content.type ==='linkParagraph'? <Row className ='vertical-margin-md' >
+    {props.content.type ==='linkParagraph'? <Row className ='' >
                                               <p className ='blog-body roaming-black-text' style={{display:'inline'}}>
                                                 {props.content.content.map((content, i)=>{
                                                   return <LinkParagraphSegment content ={content}
@@ -19,8 +19,8 @@ const BlogSegment = props =>{
                                               </p>
                                             </Row>
                                       :null}
-    {props.content.type ==='externalLinkParagraph'? <Row className ='vertical-margin-md' >
-                                              <p className ='blog-body' style={{display:'inline'}}>
+    {props.content.type ==='externalLinkParagraph'? <Row className ='vertical-margin-sm' >
+                                              <p className ='blog-body roaming-black-text' style={{display:'inline'}}>
                                                 {props.content.content.map((content, i)=>{
                                                   return <ExternalLinkParagraphSegment content ={content}
                                                                                        isMobile={props.isMobile}
@@ -31,7 +31,7 @@ const BlogSegment = props =>{
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
     {props.content.type ==='totalFootprint'?<TotalFootprint text ={props.content.text}/>:null}
     {props.content.type ==='listItem'?<BlogListItem text ={props.content.text} centered={props.content.centered}/>:null}
-    {props.content.type ==='listItemLink'?<Row className ='vertical-margin-md' >
+    {props.content.type ==='listItemLink'?<Row className ='vertical-margin-sm' >
                                               <p className ='blog-h2 roaming-black-text' style={{display:'inline'}}>
                                                 {props.content.content.map((content, i)=>{
                                                   return <ListItemLink content ={content}
@@ -219,7 +219,7 @@ const BlogParagraph = props =>{
 
   return(
     <>
-      <Row className ='vertical-margin-md' >
+      <Row className ='' >
         <p className ='blog-body roaming-black-text'>{props.text}</p>
       </Row>
     </>
