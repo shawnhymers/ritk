@@ -11,7 +11,7 @@ const BlogSegment = props =>{
 
     {props.content.type ==='paragraph'?<BlogParagraph text ={props.content.text}/>:null}
     {props.content.type ==='linkParagraph'? <Row className ='vertical-margin-md' >
-                                              <p className ='blog-body' style={{display:'inline'}}>
+                                              <p className ='blog-body roaming-black-text' style={{display:'inline'}}>
                                                 {props.content.content.map((content, i)=>{
                                                   return <LinkParagraphSegment content ={content}
                                                                                isMobile={props.isMobile}
@@ -29,9 +29,10 @@ const BlogSegment = props =>{
                                             </Row>
                                       :null}
     {props.content.type ==='header'?<BlogHeader text ={props.content.text}/>:null}
+    {props.content.type ==='totalFootprint'?<TotalFootprint text ={props.content.text}/>:null}
     {props.content.type ==='listItem'?<BlogListItem text ={props.content.text} centered={props.content.centered}/>:null}
     {props.content.type ==='listItemLink'?<Row className ='vertical-margin-md' >
-                                              <p className ='blog-h2' style={{display:'inline'}}>
+                                              <p className ='blog-h2 roaming-black-text' style={{display:'inline'}}>
                                                 {props.content.content.map((content, i)=>{
                                                   return <ListItemLink content ={content}
                                                                         isMobile={props.isMobile}
@@ -221,11 +222,24 @@ const BlogParagraph = props =>{
   )
 }
 
+const TotalFootprint = props =>{
+
+  return(
+    <>
+      <Row className ='vertical-margin-md' >
+        <p className ='blog-h1 roaming-black-text'>{props.text}</p>
+      </Row>
+    </>
+  )
+}
+
+
+
 const List = props =>{
 
   return(
     <>
-        <p className ='blog-body'>{props.content.text}</p>
+        <p className ='blog-body roaming-black-text'>{props.content.text}</p>
     </>
   )
 }
@@ -351,7 +365,7 @@ const FootprintLine =props=>{
     <>
     <Row >
       <Col className ={(props.centered? "centered-children ":" ")}>
-        <p className =' roaming-text blog-body'>{props.footprint+' '+props.unit}</p>
+        <p className =' blog-h1 roaming-black-text'>{props.footprint+' '+props.unit}</p>
       </Col>
     </Row>
     </>
