@@ -2,7 +2,7 @@ import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 import vancouverFood1 from "../../assets/galleries/vancouver/vancouverFood1.jpg"
-import whistlerActivity1 from '../../assets/galleries/whistler/whistlerActivity1.jpg'
+import whistlerActivity18 from '../../assets/galleries/whistler/whistlerActivity18.jpg'
 import arequipa38 from "../../assets/galleries/arequipa/arequipa38.jpg"
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -42,7 +42,7 @@ return(
             nextTitle2={'Whistler Activity Guide'}
             nextTitle3={"Peru Vegan Guide"}
             nextPic1 ={vancouverFood1}
-            nextPic2 ={whistlerActivity1}
+            nextPic2 ={whistlerActivity18}
             nextPic3 ={arequipa38}
             nextLink1= {'/vancouverFoodGuide'}
             nextLink2= {'/whistlerActivityGuide'}
