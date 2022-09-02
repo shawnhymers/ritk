@@ -96,9 +96,9 @@ class BlogPage extends Component {
              tags:['location guide', 'notbc','colombia','south america','','','','','',''],
              link:'/InTheKnowGuatape'},
 
-            {name:'Carbon Cost of Latam',
+            {name:'Carbon Cost of Central America',
              pic:costaRica15,
-             tags:['carbon footprint', 'latam','latin america','','','','','','',''],
+             tags:['carbon footprint', 'latam','latin america','central america','','','','','',''],
              link:'/CarbonCostOfLatam'},
 
             // {name:'Carbon Cost of Our Diet',
@@ -192,9 +192,9 @@ class BlogPage extends Component {
          tags:['location guide', 'notbc','colombia','south america','','','','','',''],
          link:'/InTheKnowGuatape'},
 
-        {name:'Carbon Cost of Latam',
+        {name:'Carbon Cost of Central America',
          pic:costaRica15,
-         tags:['carbon footprint', 'latam','latin america','','','','','','',''],
+         tags:['carbon footprint', 'latam','latin america','central america','','','','','',''],
          link:'/CarbonCostOfLatam'},
 
         // {name:'Carbon Cost of Our Diet',

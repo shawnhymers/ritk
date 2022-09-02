@@ -1,6 +1,9 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
+import vancouverFood1 from "../../assets/galleries/vancouver/vancouverFood1.jpg"
+import whistlerActivity1 from '../../assets/galleries/whistler/whistlerActivity1.jpg'
+import arequipa38 from "../../assets/galleries/arequipa/arequipa38.jpg"
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const WhistlerFoodGuide = props => {
@@ -35,7 +38,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
   <BlogBody header ={{src:'WhistlerFoodGuide/whistlerFood5.jpg', label:'Whistler Food Guide'}}
-
+            nextTitle1={"Vancouver Food Guide"}
+            nextTitle2={'Whistler Activity Guide'}
+            nextTitle3={"Peru Vegan Guide"}
+            nextPic1 ={vancouverFood1}
+            nextPic2 ={whistlerActivity1}
+            nextPic3 ={arequipa38}
+            nextLink1= {'/vancouverFoodGuide'}
+            nextLink2= {'/whistlerActivityGuide'}
+            nextLink3= {'/PeruVeganGuide'}
             topBlurb={{type:'topBlurb',
                        updated:'December 2021',
                        content:[{type:'text',text:"Whistler isn't the most vegan friendly place in the world, but here are a few gems!"}]}}

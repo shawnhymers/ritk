@@ -7,7 +7,9 @@ import quito18 from '../../assets/galleries/quito/Quito18.jpg'
 import quito30 from '../../assets/galleries/quito/Quito30.jpg'
 import otavalo21 from '../../assets/galleries/otavalo/Otavalo21.jpg'
 import otavalo22 from '../../assets/galleries/otavalo/Otavalo22.jpg'
-
+import banos16 from '../../assets/galleries/banos/banos16.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import medellin24 from '../../assets/galleries/medellin/Medellin24.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -46,7 +48,15 @@ return(
   }
     <BlogBody header ={{src:quito15, label:'In The Know : Quito'}}
 
-
+              nextTitle1={"Medellin Food Guide"}
+              nextTitle2={'In The Know: Cusco'}
+              nextTitle3={"Banos Activity Guide"}
+              nextPic1 ={medellin24}
+              nextPic2 ={cusco6}
+              nextPic3 ={banos16}
+              nextLink1= {'/medellinFoodGuide'}
+              nextLink2= {'/inTheKnowCusco'}
+              nextLink3= {'/banosActivityGuide'}
               topBlurb={{type:'topBlurb',
                          updated:'May 2022',
                          content:[{type:'text',text:"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}]}}

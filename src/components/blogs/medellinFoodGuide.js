@@ -2,6 +2,10 @@ import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 import medellin15 from '../../assets/galleries/medellin/Medellin15.jpg'
+import banos16 from '../../assets/galleries/banos/banos16.jpg'
+import medellin13 from '../../assets/galleries/medellin/Medellin13.jpg'
+import vancouverFood1 from "../../assets/galleries/vancouver/vancouverFood1.jpg"
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -39,6 +43,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:medellin15, label:'Medellin Food Guide'}}
+              nextTitle1={"In The Know: Medellin"}
+              nextTitle2={'Banos Activity Guide'}
+              nextTitle3={"Vancouver Food Guide"}
+              nextPic1 ={medellin13}
+              nextPic2 ={banos16}
+              nextPic3 ={vancouverFood1}
+              nextLink1= {'/inTheKnowMedellin'}
+              nextLink2= {'/banosActivityGuide'}
+              nextLink3= {'/vancouverFoodGuide'}
               topBlurb={{type:'topBlurb',
                          updated:'June 2022',
                          content:[{type:'text',text:"Medellin has one of the fastest growing and exciting vegan food scenes in Latin America."}]}}

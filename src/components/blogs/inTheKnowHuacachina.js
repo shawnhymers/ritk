@@ -3,6 +3,9 @@ import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 import huacachina10 from '../../assets/galleries/huacachina/huacachina10.jpg'
+import banos16 from '../../assets/galleries/banos/banos16.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import sacredValley20 from '../../assets/galleries/sacredValley/sacredValley20.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -41,6 +44,16 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:huacachina10, label:'In The Know Huacachina'}}
+
+              nextTitle1={"Peru Itinerary"}
+              nextTitle2={'In The Know: Cusco'}
+              nextTitle3={"Banos Activity Guide"}
+              nextPic1 ={sacredValley20}
+              nextPic2 ={cusco6}
+              nextPic3 ={banos16}
+              nextLink1= {'/peruItinerary'}
+              nextLink2= {'/inTheKnowCusco'}
+              nextLink3= {'/banosActivityGuide'}
 
               topBlurb={{type:'topBlurb',
                          updated:'July 2022',

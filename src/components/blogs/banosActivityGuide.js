@@ -1,5 +1,6 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
+import NextNav from "../sharedComponents/navComponents/nextNav"
 import  { useState,useEffect } from 'react';
 
 import banos1 from '../../assets/galleries/banos/banos1.jpg'
@@ -14,6 +15,10 @@ import banos19 from '../../assets/galleries/banos/banos19.jpg'
 import banos20 from '../../assets/galleries/banos/banos20.jpg'
 import banos12 from '../../assets/galleries/banos/banos12.jpg'
 import banos8 from '../../assets/galleries/banos/banos8.jpg'
+
+import quito17 from "../../assets/galleries/quito/Quito17.jpg"
+import cartagena12 from "../../assets/galleries/cartagena/cartagena12.jpg"
+import quito6 from "../../assets/galleries/quito/Quito6.jpg"
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -52,6 +57,16 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:banos20, label:'Banos Activity Guide'}}
+
+             nextTitle1={'In The Know: Quito'}
+             nextTitle2={"Carbon Cost of Colombia"}
+             nextTitle3={"Carbon Cost of Ecuador"}
+             nextPic1 ={quito17}
+             nextPic2 ={cartagena12}
+             nextPic3 ={quito6}
+             nextLink1= {'/inTheKnowQuito'}
+             nextLink2= {'/carbonCostOfColombia'}
+             nextLink3= {'/carbonCostOfEcuador'}
 
               isMobile={isMobile}
               topBlurb={{type:'topBlurb',
@@ -97,6 +112,8 @@ return(
 
                            ]}/>
   </div>
+
+
   </>
 )}
 

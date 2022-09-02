@@ -7,6 +7,11 @@ import guatape29 from '../../assets/galleries/guatape/Guatape29.jpg'
 import guatape31 from '../../assets/galleries/guatape/Guatape31.jpg'
 import guatape21 from '../../assets/galleries/guatape/Guatape21.jpg'
 import guatape22 from '../../assets/galleries/guatape/Guatape22.jpg'
+
+import banos16 from '../../assets/galleries/banos/banos16.jpg'
+import medellin13 from '../../assets/galleries/medellin/Medellin13.jpg'
+import medellin24 from '../../assets/galleries/medellin/Medellin24.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -45,6 +50,15 @@ return(
   }
     <BlogBody header ={{src:guatape9, label:'In The Know : Guatape'}}
 
+              nextTitle1={"In The Know: Medellin"}
+              nextTitle2={'Banos Activity Guide'}
+              nextTitle3={"Medellin Food Guide"}
+              nextPic1 ={medellin13}
+              nextPic2 ={banos16}
+              nextPic3 ={medellin24}
+              nextLink1= {'/inTheKnowMedellin'}
+              nextLink2= {'/banosActivityGuide'}
+              nextLink3= {'/medellinFoodGuide'}
 
               topBlurb={{type:'topBlurb',
                          updated:'May 2022',

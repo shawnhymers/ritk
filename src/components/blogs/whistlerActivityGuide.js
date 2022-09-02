@@ -1,6 +1,10 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
+import vancouverFood1 from "../../assets/galleries/vancouver/vancouverFood1.jpg"
+import whistlerFood8 from '../../assets/galleries/whistler/whistlerFood8.jpg'
+import arequipa38 from "../../assets/galleries/arequipa/arequipa38.jpg"
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const WhistlerActivityGuide = props => {
@@ -37,7 +41,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'WhistlerActivityBlog/whistlerActivity16.jpg', label:'Whistler Activity Guide'}}
-
+              nextTitle1={"Vancouver Food Guide"}
+              nextTitle2={'Whistler Food Guide'}
+              nextTitle3={"Peru Vegan Guide"}
+              nextPic1 ={vancouverFood1}
+              nextPic2 ={whistlerFood8}
+              nextPic3 ={arequipa38}
+              nextLink1= {'/vancouverFoodGuide'}
+              nextLink2= {'/whistlerFoodGuide'}
+              nextLink3= {'/PeruVeganGuide'}
               topBlurb={{type:'topBlurb',
                          updated:'December 2021',
                          content:[{type:'text',text:"Whether you're a winter sports junkie, or a beach bum; Whistler has a great day in store for you."}]}}

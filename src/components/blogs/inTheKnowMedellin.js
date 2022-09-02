@@ -6,6 +6,10 @@ import medellin5 from '../../assets/galleries/medellin/Medellin5.jpg'
 import medellin8 from '../../assets/galleries/medellin/Medellin8.jpg'
 import medellin6 from '../../assets/galleries/medellin/Medellin6.jpg'
 import medellin4 from '../../assets/galleries/medellin/Medellin4.jpg'
+
+import banos16 from '../../assets/galleries/banos/banos16.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import medellin24 from '../../assets/galleries/medellin/Medellin24.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const InTheKnowMedellin = props => {
@@ -42,7 +46,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:medellin11, label:'In The Know : Medellin'}}
-
+              nextTitle1={"Medellin Food Guide"}
+              nextTitle2={'In The Know: Cusco'}
+              nextTitle3={"Banos Activity Guide"}
+              nextPic1 ={medellin24}
+              nextPic2 ={cusco6}
+              nextPic3 ={banos16}
+              nextLink1= {'/medellinFoodGuide'}
+              nextLink2= {'/inTheKnowCusco'}
+              nextLink3= {'/banosActivityGuide'}
 
               topBlurb={{type:'topBlurb',
                          updated:'May 2022',

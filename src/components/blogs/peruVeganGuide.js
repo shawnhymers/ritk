@@ -3,6 +3,10 @@ import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 // import banos20 from '../../assets/galleries/banos/banos20.jpg'
+import arequipa6 from '../../assets/galleries/arequipa/arequipa6.jpg'
+import sacredValley14 from '../../assets/galleries/sacredValley/sacredValley14.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import huacachina14 from '../../assets/galleries/huacachina/huacachina14.jpg'
 import lima1 from '../../assets/galleries/lima/lima1.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
@@ -42,6 +46,16 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:lima1, label:'Peru Vegan Guide'}}
+
+              nextTitle1={"In The Know: Cusco"}
+              nextTitle2={'Peru Itinerary'}
+              nextTitle3={"In The Know: Huacachina"}
+              nextPic1 ={cusco6}
+              nextPic2 ={sacredValley14}
+              nextPic3 ={huacachina14}
+              nextLink1= {'/inTheKnowCusco'}
+              nextLink2= {'/peruItinerary'}
+              nextLink3= {'/InTheKnowHuacachina'}
 
               topBlurb={{type:'topBlurb',
                          updated:'July 2022',

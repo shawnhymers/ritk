@@ -1,5 +1,9 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
+import whistlerActivity1 from '../../assets/galleries/whistler/whistlerActivity1.jpg'
+import whistlerFood8 from '../../assets/galleries/whistler/whistlerFood8.jpg'
+import arequipa38 from "../../assets/galleries/arequipa/arequipa38.jpg"
+
 import  { useState,useEffect } from 'react';
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -36,6 +40,17 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'vancouverFood.jpg', label:'Vancouver Food Guide'}}
+
+              nextTitle1={"Whistler Activity Guide"}
+              nextTitle2={'Whistler Food Guide'}
+              nextTitle3={"Peru Vegan Guide"}
+              nextPic1 ={whistlerActivity1}
+              nextPic2 ={whistlerFood8}
+              nextPic3 ={arequipa38}
+              nextLink1= {'/whistlerActivityGuide'}
+              nextLink2= {'/whistlerFoodGuide'}
+              nextLink3= {'/PeruVeganGuide'}
+
               topBlurb={{type:'topBlurb',
                          updated:'December 2021',
                          content:[{type:'text',text:"Whether you're a vegan veteran, or just looking to expand your plant based options -- this guides got you covered."}]}}

@@ -21,7 +21,12 @@
   min-width: 100%;
   overflow-x: hidden;
 }
-
+.small-margin-left{
+  padding-left: 5vw;
+}
+.small-margin-right{
+  padding-right: 5vw;
+}
 .horizontal-centered-children{
   display: flex;
       justify-content: center;

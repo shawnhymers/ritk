@@ -3,6 +3,9 @@ import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 import cusco7 from '../../assets/galleries/cusco/cusco7.jpg'
+import sacredValley14 from '../../assets/galleries/sacredValley/sacredValley14.jpg'
+import arequipa1 from '../../assets/galleries/arequipa/arequipa1.jpg'
+import huacachina14 from '../../assets/galleries/huacachina/huacachina14.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -41,7 +44,15 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:cusco7, label:'In The Know: Cusco'}}
-
+              nextTitle1={"In The Know: Arequipa"}
+              nextTitle2={'Peru Itinerary'}
+              nextTitle3={"In The Know: Huacachina"}
+              nextPic1 ={arequipa1}
+              nextPic2 ={sacredValley14}
+              nextPic3 ={huacachina14}
+              nextLink1= {'/inTheKnowArequipa'}
+              nextLink2= {'/peruItinerary'}
+              nextLink3= {'/InTheKnowHuacachina'}
               topBlurb={{type:'topBlurb',
                          updated:'July 2022',
                          content:[{type:'text',text:"Cusco is undoubtedly one of the most popular destinations in Peru. As the gateway to the Sacred Valley and Machu Picchu, it’s a city that all travellers will find themselves in for some amount of time."}]}}

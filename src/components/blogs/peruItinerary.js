@@ -4,6 +4,10 @@ import  { useState,useEffect } from 'react';
 
 import sacredValley17 from '../../assets/galleries/sacredValley/sacredValley17.jpg'
 
+import arequipa18 from '../../assets/galleries/arequipa/arequipa18.jpg'
+import arequipa39 from '../../assets/galleries/arequipa/arequipa39.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -41,6 +45,16 @@ return(
         <DesktopHeader page ={'blog'}/>
     }
     <BlogBody header ={{src:sacredValley17, label:'Peru Itinerary'}}
+
+              nextTitle1={'In The Know: Arequipa'}
+              nextTitle2={"Peru Vegan Guide"}
+              nextTitle3={"In The Know: Cusco"}
+              nextPic1 ={arequipa18}
+              nextPic2 ={arequipa39}
+              nextPic3 ={cusco6}
+              nextLink1= {'/inTheKnowArequipa'}
+              nextLink2= {'/peruVeganGuide'}
+              nextLink3= {'/inTheKnowCusco'}
 
               isMobile={isMobile}
               topBlurb={{type:'topBlurb',updated:'July 2022',content:[{type:'text',text:'Peru is an incredible country to travel – it has the most diverse scenery, beauty, architecture, and history. We spent 7 weeks travelling slowly through Peru, and still feel like there’s more to see. This blog was inspired by a collaboration we did with '},

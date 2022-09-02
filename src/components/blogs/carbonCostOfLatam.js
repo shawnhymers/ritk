@@ -2,6 +2,9 @@ import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 import ometepe10 from '../../assets/galleries/ometepe/ometepe10.jpg'
+import cartagena12 from "../../assets/galleries/cartagena/cartagena12.jpg"
+import blog3 from "../../assets/blogPreview/blog3.jpg"
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -39,13 +42,21 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:ometepe10, label:'Carbon Cost of Central America'}}
-
+              nextTitle1={'Carbon Cost of Flying'}
+              nextTitle2={"Carbon Cost of Ecuador"}
+              nextTitle3={"Carbon Cost of Colombia"}
+              nextPic1 ={blog3}
+              nextPic2 ={quito17}
+              nextPic3 ={cartagena12}
+              nextLink1= {'/carbonCostOfFlying'}
+              nextLink2= {'/carbonCostOfEcuador'}
+              nextLink3= {'/carbonCostOfColombia'}
               topBlurb={{type:'topBlurb',
                          updated:'June 2022',
                          content:[{type:'text',text:"Here is a breakdown of our carbon footprint of 51 days of travelling Central America."}]}}
 
               isMobile={isMobile}
-              contentTest ={[ {type:'header',text:"Carbon Footprint For LATAM"},
+              contentTest ={[ {type:'header',text:"Carbon Footprint For Central America"},
                               {type:'horizontalImage',src:'CarbonCostCharts/LATAMCost.png'},
                               {type:'totalFootprint',text:"Total Footprint ",centered:true},
                                 {type:'footprintLine',footprint:'1,269.3',unit:'KG Co2',centered:true},

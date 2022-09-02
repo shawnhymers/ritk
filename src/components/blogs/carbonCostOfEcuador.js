@@ -2,6 +2,10 @@ import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 import quito26 from '../../assets/galleries/quito/Quito26.jpg'
+
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
+import cartagena12 from "../../assets/galleries/cartagena/cartagena12.jpg"
+import blog3 from "../../assets/blogPreview/blog3.jpg"
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -39,7 +43,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:quito26, label:'Carbon Cost of Ecuador'}}
-
+              nextTitle1={'Carbon Cost of Flying'}
+              nextTitle2={"Carbon Cost of Central America"}
+              nextTitle3={"Carbon Cost of Colombia"}
+              nextPic1 ={blog3}
+              nextPic2 ={quito17}
+              nextPic3 ={cartagena12}
+              nextLink1= {'/carbonCostOfFlying'}
+              nextLink2= {'/carbonCostOfLatam'}
+              nextLink3= {'/carbonCostOfColombia'}
               topBlurb={{type:'topBlurb',
                          updated:'May 2022',
                          content:[{type:'text',text:"Here is a breakdown of our carbon footprint of 21 days of travelling Ecuador."}]}}

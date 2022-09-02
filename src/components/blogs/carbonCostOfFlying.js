@@ -1,7 +1,9 @@
 import React, {  lazy} from 'react';
 import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
-
+import cartagena12 from "../../assets/galleries/cartagena/cartagena12.jpg"
+import quito6 from '../../assets/galleries/quito/Quito6.jpg'
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -39,7 +41,15 @@ return(
       <DesktopHeader page ={'blog'}/>
   }
     <BlogBody header ={{src:'/planeWingHorizontal.jpg', label:'Carbon Cost of Flying'}}
-
+              nextTitle1={'Carbon Cost of Flying'}
+              nextTitle2={"Carbon Cost of Central America"}
+              nextTitle3={"Carbon Cost of Colombia"}
+              nextPic1 ={quito6}
+              nextPic2 ={quito17}
+              nextPic3 ={cartagena12}
+              nextLink1= {'/carbonCostOfEcuador'}
+              nextLink2= {'/carbonCostOfLatam'}
+              nextLink3= {'/carbonCostOfColombia'}
               topBlurb={{type:'topBlurb',
                          updated:'June 2022',
                          content:[{type:'text',text:"Flying is amazing. You hop into a little metal tube, put on a movie or a podcast, and get launched at insane speeds and hurtle through the atmosphere and then land safely on the other side of the planet later that day. However, this speed and convenience comes at a cost to your carbon footprint."}]}}
