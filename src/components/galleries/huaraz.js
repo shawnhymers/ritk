@@ -17,6 +17,10 @@ import huaraz6 from '../../assets/galleries/huaraz/huaraz6.jpg'
 import huaraz4 from '../../assets/galleries/huaraz/huaraz4.jpg'
 import huaraz2 from '../../assets/galleries/huaraz/huaraz2.jpg'
 
+import huacachina12 from '../../assets/galleries/huacachina/huacachina12.jpg'
+import arequipa1 from '../../assets/galleries/arequipa/arequipa1.jpg'
+import sacredValley15 from '../../assets/galleries/sacredValley/sacredValley15.jpg'
+
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 
@@ -53,8 +57,17 @@ return(
         <DesktopHeader page ={'gallery'}/>
     }
       <GalleryBody header ={{src:huaraz3, label:'Huaraz', subLabel:'Photo Gallery'}}
-                blurb ={[{type:'text',text:"Medellín, Colombia is located in the Aburrá Valley, which is a central region of the Andes Mountains. It is one of the largest cities in the country and is nicknamed the “City of Eternal Spring” for its temperate weather. We stayed in Medellín for two weeks, which is long enough to see most of the city's top sites, but we could have stayed much longer. It is an incredibly livable city with an indescribable energy. You can read more about our       experience"},
-                         {type:'link', text:'here',link:"/InTheKnowMedellin"}]}
+                  nextTitle1={"Huacachina"}
+                  nextTitle2={'Arequipa'}
+                  nextTitle3={"The Sacred Valley"}
+                  nextPic1 ={huacachina12}
+                  nextPic2 ={arequipa1}
+                  nextPic3 ={sacredValley15}
+                  nextLink1= {'/huacachina'}
+                  nextLink2= {'/arequipa'}
+                  nextLink3= {'/sacredValley'}
+                blurb ={[{type:'text',text:"Huaraz is Peru’s hiking capital and gateway to the Peruvian Andes’ Cordillera Blanca range. The hikes accessible from this town feature some of the best views we’ve ever seen. The hikes pictured below are Laguna Parón, Laguna Churup, and our favourite, Laguna 69. "},
+                         {type:'link', text:'',link:"/InTheKnowMedellin"}]}
                 updated={'July 2022'}
                 isMobile={isMobile}
                 contentTest ={[

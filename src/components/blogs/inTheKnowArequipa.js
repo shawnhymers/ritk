@@ -7,6 +7,9 @@ import sacredValley14 from '../../assets/galleries/sacredValley/sacredValley14.j
 import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
 import huacachina14 from '../../assets/galleries/huacachina/huacachina14.jpg'
 
+import arequipa1 from '../../assets/blogPics/inTheKnowArequipa/arequipa1.jpg'
+import arequipa2 from '../../assets/blogPics/inTheKnowArequipa/arequipa2.jpg'
+
 
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
@@ -72,10 +75,13 @@ return(
                             {type:'header',text:"What to do:"},
                             {type:'listItem',text:"1. Wander the San Lázaro neighbourhood "},
                             {type:'paragraph', text:"The oldest neighbourhood in the city is filled to the brim with charm. While it’s less colourful and romantic as other colonial neighbourhoods throughout Latin America, it’s white facades and more straight forward architecture make it unique. The best part is when the sun hits the neighbourhood’s walls at around 3pm in the afternoon. Give yourself some time to sit at one of the area’s outdoor patios and make sure to bring your camera along as you won’t be able to resist taking photos. "},
+                            {type:'horizontalImage',src:arequipa2},
+
                             {type:'listItem',text:"2. Visit one of the many rooftops in the city (our favourite was sipping coffee at Puku Puku)"},
                             {type:'paragraph', text:"This is the city of rooftops – they are everywhere and for good reason, the city has views of magnificent volcanoes in every direction. One of our favourite spots to hang out with a notebook was Puku Puku. Their great coffee and bean bag chairs made for the perfect spot to rest, take in some vitamin D, and recharge your batteries before or after your next adventure. "},
                             {type:'listItem',text:"3. Watch sunset from a roof surrounding Plaza de Armas (We went to Waya Lookout on numerous occasions) "},
                             {type:'paragraph', text:"We usually only chase sunsets when we’re visiting cities or towns along the ocean, but this city changed that for us. The sunsets we saw here are some of our all time favourites from our travels. Waya Lookout is an amazing vantage point to watch the sunset light spill along the square and turn the whole city golden. Make sure to stick around afterwards as the golden light turns into a pink alpenglow that’ll leave you in awe."},
+                            {type:'horizontalImage',src:arequipa1},
                             {type:'listItem',text:"4. Walk along Chili River & take in view’s of the city from Yanahuara "},
                             {type:'paragraph', text:"On the other side of the river from where the old town is, is a lovely river walk. Make sure to cross the Puente Grau from the historical centre to reach it. You’ll see beautiful views as you walk the cobble stoned path. The path will lead you to the Yanahuara lookout point (which we didn’t get the chance to visit ourselves but have heard it’s lovely.) "},
                             {type:'listItem',text:"5. Check out Mercado San Camilo (we didn’t do this but heard good things about it!) "},

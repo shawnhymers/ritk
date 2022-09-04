@@ -16,7 +16,9 @@ import medellin15 from '../../assets/galleries/medellin/Medellin15.jpg'
 import medellin18 from '../../assets/galleries/medellin/Medellin18.jpg'
 import medellin17 from '../../assets/galleries/medellin/Medellin17.jpg'
 import medellin20 from '../../assets/galleries/medellin/Medellin20.jpg'
-
+import guatape10 from '../../assets/galleries/guatape/Guatape10.jpg'
+import quindio23 from '../../assets/galleries/quindio/Quindio23.jpg'
+import cartagena12 from '../../assets/galleries/cartagena/cartagena12.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -53,7 +55,18 @@ return(
         <DesktopHeader page ={'gallery'}/>
     }
       <GalleryBody header ={{src:medellin11, label:'Medellin', subLabel:'Photo Gallery'}}
-                blurb ={[{type:'text',text:"Medellín, Colombia is located in the Aburrá Valley, which is a central region of the Andes Mountains. It is one of the largest cities in the country and is nicknamed the “City of Eternal Spring” for its temperate weather. We stayed in Medellín for two weeks, which is long enough to see most of the city's top sites, but we could have stayed much longer. It is an incredibly livable city with an indescribable energy. You can read more about our       experience"},
+
+                   nextTitle1={"Quindio"}
+                   nextTitle2={'Guatape'}
+                   nextTitle3={"Cartagena"}
+                   nextPic1 ={quindio23}
+                   nextPic2 ={guatape10}
+                   nextPic3 ={cartagena12}
+                   nextLink1= {'/quindio'}
+                   nextLink2= {'/guatape'}
+                   nextLink3= {'/cartagena'}
+
+                blurb ={[{type:'text',text:"Medellín, Colombia is located in the Aburrá Valley, which is a central region of the Andes Mountains. It is one of the largest cities in the country and is nicknamed the “City of Eternal Spring” for its temperate weather. We visited Comuna 13, Minorista Market, and rode the metro cable to Parque Arvi. You can read more about our experience "},
                          {type:'link', text:'here',link:"/InTheKnowMedellin"}]}
                 updated={'December 2021'}
                 isMobile={isMobile}

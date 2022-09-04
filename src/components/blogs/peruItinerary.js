@@ -7,6 +7,10 @@ import sacredValley17 from '../../assets/galleries/sacredValley/sacredValley17.j
 import arequipa18 from '../../assets/galleries/arequipa/arequipa18.jpg'
 import arequipa39 from '../../assets/galleries/arequipa/arequipa39.jpg'
 import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import peruItinerary1 from '../../assets/blogPics/peruItinerary/peruItinerary1.jpg'
+import peruItinerary5 from '../../assets/blogPics/peruItinerary/peruItinerary5.jpg'
+import peruItinerary6 from '../../assets/blogPics/peruItinerary/peruItinerary6.jpg'
+import peruItinerary2 from '../../assets/blogPics/peruItinerary/peruItinerary2.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -102,7 +106,7 @@ return(
                             {type:"paragraph",text:"The town of Paracas is a popular day trip from Huacachina or next stop for many travellers. If you are interested in visiting the Ballestas Islands (Peru’s Poor Man’s Galapagos) then you may want to consider visiting here for a night."},
                             {type:'listItem',text:"Nazca "},
                             {type:"paragraph",text:"We did not visit Nazca, but if you are interested in seeing ancient hieroglyphs you may want to take a bus from Huacachina to Nazca, take a flight over the hieroglyphs (which you can book last minute from agencies near the bus stop) and continue onto Arequipa without spending a night there. (It’s actually been recommended to us by @seeyouontheroad_ on IG to not spend a night here.)   "},
-
+                            {type:'horizontalImage',src:peruItinerary1},
 
                             {type:'header',text:"Arequipa (3-7 Nights)"},
                             {type:"paragraph",text:"Peru’s second largest city, Arequipa, is often a quick stop for travellers looking to visit one of the deepest canyons in the world: the Colca Canyon. This city and a visit to the Colca Canyon can be done quickly, but we do encourage you to take this stop a little slower as this city is beautiful to spend some time in. "},
@@ -111,8 +115,8 @@ return(
                             {type:'list',content:[{text:"- A day trip or 2 day/1 night trek of the Colca Canyon"},
                                                   {text:"- Wander the San Lázaro neighbourhood "},
                                                   {text:"- Watch sunset on of the rooftop terraces overlooking Plaza des Armes (Waya Lookout was where we went)"}]},
-
                             {type:'paragraph',text:"Once you’re ready to move on, take a bus to either Puno or straight to Cusco."},
+                            {type:'horizontalImage',src:peruItinerary5},
 
                             {type:'header',text:"Puno/Lake Titicaca "},
 
@@ -128,6 +132,7 @@ return(
                                                   {text:"- Cusco’s local markets: San Pedro Market & San Blas Market"}]},
 
                             {type:"paragraph",text:"At this point, you’ll want to see the Sacred Valley. Since we did not plan this ourselves, we cannot recommend how to get around."},
+                            {type:'horizontalImage',src:peruItinerary6},
 
                             {type:'header',text:"Sacred Valley"},
                             {type:"paragraph",text:"We did a tour of the Sacred Valley and this is the itinerary we did:"},
@@ -148,6 +153,7 @@ return(
                                                   {text:"- Laguna Churup Hike (Self-Guided)"},
                                                   {text:"- Wilcacocha (We didn’t get time to do this but have heard it’s a great 1st or 2nd day hike to acclimate)"},
                                                   {text:"-Pastoruri Glacier (We also didn’t do this but heard great things)"},]},
+                                                  {type:'horizontalImage',src:peruItinerary2},
 
                             {type:"header",text:"That wraps up our Peru itinerary! "},
                             {type:'linkParagraph',content:[{type:'text', text:"Here are more detailed blog posts on "},

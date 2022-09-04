@@ -6,6 +6,8 @@ import cusco7 from '../../assets/galleries/cusco/cusco7.jpg'
 import sacredValley14 from '../../assets/galleries/sacredValley/sacredValley14.jpg'
 import arequipa1 from '../../assets/galleries/arequipa/arequipa1.jpg'
 import huacachina14 from '../../assets/galleries/huacachina/huacachina14.jpg'
+import cusco2 from '../../assets/blogPics/inTheKnowCusco/cusco2.jpg'
+import cusco3 from '../../assets/blogPics/inTheKnowCusco/cusco3.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -70,7 +72,7 @@ return(
 
                             {type:'listItem',text:"1. Hang out in the San Blas neighbourhood"},
                             {type:'paragraph',text:"Our favourite thing to do in most cities is simply walk around, admire the architecture and way of life, and grab a cup of coffee. The best place to do that in Cusco is the San Blas neighbourhood where every street is a delight for the eyes. We recommend watching the streets of San Blas from L'atelier Café’s balcony (the coffee isn’t great, but the views make up for it.) Or park up on a bench in the main square, where on certain days of the week they have a pop up market. Most importantly, wander every charming nook and cranny of this gorgeous neighbourhood (And don’t forget your camera!)"},
-
+                            {type:'horizontalImage',src:cusco2},
                             {type:'listItemLink',content:[{type:'text',text:'2. Visit the 12th best vegan restaurant in the world,'},
                                                           {type:'link',text:' greenpointcusco',link:'https://www.instagram.com/greenpointcusco/?hl=en'}]},
 
@@ -85,7 +87,7 @@ return(
                             {type:'listItem',text:"5. Do a day trip "},
                             {type:'paragraph', text:'Cusco is rich in day trip options to choose from. There are so many incredible natural wonders that are doable day trips from Cusco: Lake Humantay, Rainbow Mountain, Palccoyo Mountain, and 7 lagunas Ausangate are some of the most popular. We did Lake Humantay and Palccoyo Mountain – and definitely would have done the other two if we had the time.'},
                             {type:'paragraph', text:'One note: I would probably skip Laguna Humantay if you are planning to go to Huaraz! You will see even better blue lagoons for a fraction of the price there.'},
-
+                            {type:'horizontalImage',src:cusco3},
 
 
                             {type:'header',text:"Where to eat"},

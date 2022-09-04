@@ -23,7 +23,9 @@ import costaRica13 from '../../assets/galleries/costaRica/costaRica13.jpg'
 import costaRica14 from '../../assets/galleries/costaRica/costaRica14.jpg'
 import costaRica15 from '../../assets/galleries/costaRica/costaRica15.jpg'
 import costaRica16 from '../../assets/galleries/costaRica/costaRica16.jpg'
-
+import cartagena12 from '../../assets/galleries/cartagena/cartagena12.jpg'
+import panama28 from '../../assets/galleries/panama/panama28.jpg'
+import ometepe1 from '../../assets/galleries/ometepe/ometepe1.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -61,7 +63,17 @@ return(
    }
      <GalleryBody header ={{src:costaRica9, label:'Costa Rica', subLabel:'Photo Gallery'}}
 
-               blurb ={[{type:'text',text:"Costa Rica is one of the most popular Central American vacation destinations, known for its beaches, jungles, diverse wildlife, and volcanoes. We were in Costa Rica for just over three weeks traveling between La Fortuna, Monteverde, and Manuel Antonio. We swam in some of the warmest bodies of water at some of the nicest beaches we’ve ever been to, hiked through a cloud forest, and saw about 100 waterfalls. It was beautiful, safe, and accessible. The only downside was, due to popularity, everything was quite busy and expensive."}]}
+                  nextTitle1={"Cartagena"}
+                  nextTitle2={'Panama City'}
+                  nextTitle3={"Ometepe Island"}
+                  nextPic1 ={cartagena12}
+                  nextPic2 ={panama28}
+                  nextPic3 ={ometepe1}
+                  nextLink1= {'/cartagena'}
+                  nextLink2= {'/panamaCity'}
+                  nextLink3= {'/ometepe'}
+
+               blurb ={[{type:'text',text:"Costa Rica is one of the most popular Central American vacation destinations, known for its beaches, jungles, diverse wildlife, and volcanoes. We were in Costa Rica for just over three weeks traveling between La Fortuna, Monteverde, and Manuel Antonio. We swam in some of the warmest bodies of water at some of the nicest beaches we’ve ever been to, hiked through a cloud forest, and saw about 100 waterfalls."}]}
                updated={'February 2022'}
                isMobile={isMobile}
                contentTest ={[

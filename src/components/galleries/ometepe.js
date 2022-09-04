@@ -15,7 +15,9 @@ import ometepe2 from '../../assets/galleries/ometepe/ometepe2.jpg'
 import ometepe3 from '../../assets/galleries/ometepe/ometepe3.jpg'
 import ometepe8 from '../../assets/galleries/ometepe/ometepe8.jpg'
 import ometepe9 from '../../assets/galleries/ometepe/ometepe9.jpg'
-
+import panama28 from '../../assets/galleries/panama/panama28.jpg'
+import costaRica11 from '../../assets/galleries/costaRica/costaRica11.jpg'
+import granada2 from '../../assets/galleries/granada/granada2.jpg'
 
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
@@ -53,7 +55,18 @@ return(
         <DesktopHeader page ={'gallery'}/>
     }
   <GalleryBody header ={{src:ometepe7, label:'Ometepe Island', subLabel:'Photo Gallery'}}
-            blurb ={[{type:'text',text:"Ometepe Island, Nicaragua is an island in lake Nicaragua famous for being the largest on fresh water in the world and for its two volcanoes: Concepcion and Maderas. We stayed for 5 nights at 3 different accommodations (which was two too many!). Most people only spend a night or two on the island and that is probably enough. The island is stunning and many people find their time there to be spiritually significant. We were still adjusting to life on the road and Central America, so the rougher accommodations, bugs, and scorpions definitely subtracted from our spiritual experience. "}]}
+
+               nextTitle1={"Panama City"}
+               nextTitle2={'Costa Rica'}
+               nextTitle3={"Granada"}
+               nextPic1 ={panama28}
+               nextPic2 ={costaRica11}
+               nextPic3 ={granada2}
+               nextLink1= {'/panamaCity'}
+               nextLink2= {'/costaRica'}
+               nextLink3= {'/granada'}
+
+            blurb ={[{type:'text',text:"Ometepe Island, Nicaragua is an island in lake Nicaragua famous for being the largest on fresh water in the world and for its two volcanoes: Concepcion and Maderas. We swam in Ojo De Agua, rented scooters, and visited beaches with unbeatable views of volcanoes."}]}
             updated={'December 2021'}
             isMobile={isMobile}
             contentTest ={[

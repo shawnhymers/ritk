@@ -3,9 +3,18 @@ import BlogBody from "../sharedComponents/blogComponents/blogBody";
 import  { useState,useEffect } from 'react';
 
 import huacachina10 from '../../assets/galleries/huacachina/huacachina10.jpg'
+
+import huacachina12 from '../../assets/galleries/huacachina/huacachina12.jpg'
+import huacachina14 from '../../assets/galleries/huacachina/huacachina14.jpg'
+
+
 import banos16 from '../../assets/galleries/banos/banos16.jpg'
 import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
 import sacredValley20 from '../../assets/galleries/sacredValley/sacredValley20.jpg'
+import huacachina1 from '../../assets/blogPics/inTheKnowHuacachina/huacachina1.jpg'
+import huacachina2 from '../../assets/blogPics/inTheKnowHuacachina/huacachina2.jpg'
+import huacachina3 from '../../assets/blogPics/inTheKnowHuacachina/huacachina3.jpg'
+import huacachina4 from '../../assets/blogPics/inTheKnowHuacachina/huacachina4.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -71,12 +80,17 @@ return(
                             {type:'header',text:"What to do:"},
                             {type:'listItem',text:"1. Go on a sand buggy/sand boarding tour at sunset"},
                             {type:'paragraph',text:"If you don’t go sand buggying or sandboarding in Huacachina, did you even go? This activity is a staple among visitors and you’ll notice that every single person in the town is doing this at sunset. We had so much fun riding the buggy on the dunes – at times it felt like we were on a roller coaster. Don’t book this tour ahead of time, as it’s very easy to find last minute tours at a fraction of the cost in person. They are on average 35-40 soles per person. Every tour, from what we could tell, does pretty much the same thing so don’t stress too much about who you are booking with. "},
+                            {type:'horizontalImage',src:huacachina4},
                             {type:'listItem',text:"2. Walk the highest dune for sunrise"},
                             {type:'paragraph',text:"While the highest sand dune looks massive, it’s not as hard to climb as it seems. It took us less than an hour to climb to the highest point both times we did it. While the view is spectacular for sunset, at sunrise you’ll have the dune to yourself and you’ll be able to climb up during the cool temperatures. The sunrise we saw from the dune was the most epic sunrise we’ve ever seen in our lives. "},
+                            {type:'horizontalImage',src:huacachina2},
                             {type:'listItem',text:"3. Paraglide"},
                             {type:'paragraph',text:"While we did not paraglide ourselves, it sounds like a really fun thing to do in Huacachina. Our friend did it and raved about the experience, and we watched paragliders one evening and it looked so fun. We were recommended @icaroparagliding (their IG handle) when we were looking into it and found out it costs 260 soles per person. "},
+                            {type:'diptych',src1:huacachina12,src2:huacachina14},
+
                             {type:'listItem',text:"4. Rent a paddle boat on the oasis"},
                             {type:'paragraph',text:"If you want a fun and chill thing to do in the day between sunrise and sunset, may we recommend renting a paddle boat on the oasis. The boat rentals are 30 soles for 20 minutes. It’s a fun way to get a new perspective on the dunes. "},
+                            {type:'diptych',src1:huacachina1,src2:huacachina3},
 
                             {type:'header',text:"How to Get There:"},
                             {type:'paragraph',text:"It’s a 4.5 hour bus from Lima to Ica, the nearby city. Once you reach Ica, you can take a taxi to Huacachina for 15 soles. We recommend the bus company Cruz Del Sur, as they have been reliable and very comfortable. "},

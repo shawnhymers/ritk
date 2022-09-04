@@ -16,7 +16,9 @@ import granada12 from '../../assets/galleries/granada/granada12.jpg'
 import granada9 from '../../assets/galleries/granada/granada9.jpg'
 import granada7 from '../../assets/galleries/granada/granada7.jpg'
 import granada8 from '../../assets/galleries/granada/granada8.jpg'
-
+import panama28 from '../../assets/galleries/panama/panama28.jpg'
+import costaRica11 from '../../assets/galleries/costaRica/costaRica11.jpg'
+import ometepe1 from '../../assets/galleries/ometepe/ometepe1.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const Granada = props => {
@@ -52,7 +54,17 @@ return(
         <DesktopHeader page ={'gallery'}/>
     }
   <GalleryBody header ={{src:granada10, label:'Granada', subLabel:'Photo Gallery'}}
-            blurb ={[{type:'text',text:"Granada, Nicaragua is a beautiful colonial city on the coast of lake Nicaragua and is the oldest colonial city in Latin America. We were in Granada for around a week and since it was our first destination in Central America we were a bit intimidated but definitely charmed by the vibrant colonial city."}]}
+
+               nextTitle1={"Panama City"}
+               nextTitle2={'Costa Rica'}
+               nextTitle3={"Ometepe Island"}
+               nextPic1 ={panama28}
+               nextPic2 ={costaRica11}
+               nextPic3 ={ometepe1}
+               nextLink1= {'/panamaCity'}
+               nextLink2= {'/costaRica'}
+               nextLink3= {'/ometepe'}
+            blurb ={[{type:'text',text:"Granada, Nicaragua is a beautiful colonial city on the coast of lake Nicaragua and is the oldest colonial city in Latin America. Visiting Masaya Volcano, climbing the city’s bell tower at sunset, and shopping at the hectic and colourful local market were highlights for us."}]}
             updated={'February 2022'}
             isMobile={isMobile}
             contentTest ={[

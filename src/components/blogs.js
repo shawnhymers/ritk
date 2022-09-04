@@ -38,67 +38,67 @@ class BlogPage extends Component {
       blogs:[
             {name:'Peru Itinerary',
              pic: sacredValley17,
-             tags:['', 'location guide','peru','sacred valley','','','','','',''],
+             tags:['huacachina', 'location guide','peru','sacred valley','arequipa','cusco','huaraz','lima','machu picchu','colca canyon','Peru Itinerary'],
              link:'/PeruItinerary'},
 
              {name:'Peru Vegan Guide',
               pic: arequipa39,
-              tags:['food guide', 'notbc','peru','south america','','','','','',''],
+              tags:['food guide', 'arequipa','peru','south america','vegan','cusco','lima','green point','plant based','sustainability','Peru Vegan Guide'],
               link:'/PeruVeganGuide'},
 
             {name:'In The Know: Huacachina',
              pic: huacachina11,
-             tags:['', 'location guide','peru','south america','huacachina','','','','',''],
+             tags:['activity guide', 'location guide','peru','south america','huacachina','sand boarding','hostel','In The Know: Huacachina','',''],
              link:'/InTheKnowHuacachina'},
 
             {name:'In The Know: Arequipa',
              pic: arequipa1,
-             tags:['', 'location guide','peru','south america','arequipa','','','','',''],
+             tags:['activity guide', 'location guide','peru','south america','arequipa','colca canyon','sustainability','In The Know: Arequipa','',''],
              link:'/InTheKnowArequipa'},
 
             {name:'In The Know: Cusco',
              pic: cusco23,
-             tags:['', 'location guide','peru','south america','cusco','','','','',''],
+             tags:['activity guide', 'location guide','peru','south america','cusco','vegan','sacred valley','In The Know: Cusco','',''],
              link:'/InTheKnowCusco'},
 
             {name:'Banos Activity Guide',
              pic: banos5,
-             tags:['activity guide', 'banos','ecuador','south america','','','','','',''],
+             tags:['activity guide', 'banos','ecuador','south america','biking','waterfall','latin america','adventure','galapagos','thermal baths','Banos Activity Guide'],
              link:'/BanosActivityGuide'},
 
             {name:'In The Know: Quito',
              pic:quito17,
-             tags:['carbon footprint', 'location guide','ecuador','south america','','','','','',''],
+             tags:['carbon footprint', 'location guide','ecuador','south america','quito','activity guide','sustainability','sustainable','cotopaxi','In The Know: Quito'],
              link:'/InTheKnowQuito'},
 
             {name:'Carbon Cost of Ecuador',
              pic:quito26,
-             tags:['carbon footprint', 'ecuador','south america','','','','','','',''],
+             tags:['carbon footprint', 'ecuador','south america','sustainable','sustainability','latin america','quito','banos','tenna','Carbon Cost of Ecuador'],
              link:'/CarbonCostOfEcuador'},
 
             {name:'Carbon Cost of Colombia',
              pic:quindio18,
-             tags:['carbon footprint', 'colombia','south america','','','','','','',''],
+             tags:['carbon footprint', 'colombia','south america','sustainable','sustainability','latin america','medellin','bogata','filandia','Carbon Cost of Colombia'],
              link:'/CarbonCostOfColombia'},
 
             {name:'In The Know: Medellin',
              pic:medellin13,
-             tags:['location guide', 'colombia','south america','','','','','','',''],
+             tags:['location guide', 'colombia','south america','medellin','activity guide','sustainable','sustainability','communa 13','In The Know: Medellin',''],
              link:'/InTheKnowMedellin'},
 
-            {name:'Medellin Food Guide',
+            {name:'Medellin Vegan Guide',
              pic:medellin22,
-             tags:['food guide', 'notbc','colombia','south america','','','','','',''],
+             tags:['food guide', 'vegan','colombia','south america','plant based','sustainable','sustainability','vegetarian','Medellin Vegan Guide',''],
              link:'/MedellinFoodGuide'},
 
             {name:'In The Know: Guatape',
              pic:guatape1,
-             tags:['location guide', 'notbc','colombia','south america','','','','','',''],
+             tags:['location guide', 'guatape','colombia','south america','activity guide','vegan food','sustainable','sustainability','latin america','el pernol','In The Know: Guatape'],
              link:'/InTheKnowGuatape'},
 
             {name:'Carbon Cost of Central America',
              pic:costaRica15,
-             tags:['carbon footprint', 'latam','latin america','central america','','','','','',''],
+             tags:['carbon footprint', 'latam','latin america','central america','sustainable','sustainability','Carbon Cost of Central America','','',''],
              link:'/CarbonCostOfLatam'},
 
             // {name:'Carbon Cost of Our Diet',
@@ -111,21 +111,21 @@ class BlogPage extends Component {
             //  tags:['carbon footprint', 'notbc','','','','','','','',''],
             //  link:'/CarbonCostOfFlying'},
 
-            {name:'Vancouver Food Guide',
+            {name:'Vancouver Vegan Guide',
              pic:'/vancouverFood.jpg',
-             tags:['food guide', 'bc','canada','','','','','','',''],
+             tags:['food guide', 'bc','canada','vancouver','vegan','plant based','north america','city','Vancouver Vegan Guide','sustainability'],
              link:'/VancouverFoodGuide'},
 
 
             {name:'Whistler Activity Guide',
              pic:'/whistlerActivity.jpg',
-             tags:['activity guide', 'bc','canada','','','','','','',''],
+             tags:['activity guide', 'bc','canada','north america','whistler','hiking','mountain','Whistler Activity Guide','',''],
              link:'/WhistlerActivityGuide'},
 
 
-            {name:'Whistler Food Guide',
+            {name:'Whistler Vegan Guide',
              pic:'/whistlerFood.jpg',
-             tags:['food guide', 'bc','canada','','','','','','',''],
+             tags:['food guide', 'bc','canada','vegan','plant based','sustainable','sustainability','whistler','mountain',''],
              link:'/WhistlerFoodGuide'},
 
                 ],
@@ -134,67 +134,67 @@ class BlogPage extends Component {
 
         {name:'Peru Itinerary',
          pic: sacredValley17,
-         tags:['', 'location guide','peru','sacred valley','','','','','',''],
+         tags:['huacachina', 'location guide','peru','sacred valley','arequipa','cusco','huaraz','lima','machu picchu','colca canyon','Peru Itinerary'],
          link:'/PeruItinerary'},
 
          {name:'Peru Vegan Guide',
           pic: arequipa39,
-          tags:['food guide', 'notbc','peru','south america','','','','','',''],
+          tags:['food guide', 'arequipa','peru','south america','vegan','cusco','lima','green point','plant based','sustainability','Peru Vegan Guide'],
           link:'/PeruVeganGuide'},
 
         {name:'In The Know: Huacachina',
          pic: huacachina11,
-         tags:['', 'location guide','peru','south america','huacachina','','','','',''],
+         tags:['activity guide', 'location guide','peru','south america','huacachina','sand boarding','hostel','In The Know: Huacachina','',''],
          link:'/InTheKnowHuacachina'},
 
         {name:'In The Know: Arequipa',
          pic: arequipa1,
-         tags:['', 'location guide','peru','south america','arequipa','','','','',''],
+         tags:['activity guide', 'location guide','peru','south america','arequipa','colca canyon','sustainability','In The Know: Arequipa','',''],
          link:'/InTheKnowArequipa'},
 
         {name:'In The Know: Cusco',
          pic: cusco23,
-         tags:['', 'location guide','peru','south america','cusco','','','','',''],
+         tags:['activity guide', 'location guide','peru','south america','cusco','vegan','sacred valley','In The Know: Cusco','',''],
          link:'/InTheKnowCusco'},
 
         {name:'Banos Activity Guide',
          pic: banos5,
-         tags:['activity guide', 'banos','ecuador','south america','','','','','',''],
+         tags:['activity guide', 'banos','ecuador','south america','biking','waterfall','latin america','adventure','galapagos','thermal baths','Banos Activity Guide'],
          link:'/BanosActivityGuide'},
 
         {name:'In The Know: Quito',
          pic:quito17,
-         tags:['carbon footprint', 'location guide','ecuador','south america','','','','','',''],
+         tags:['carbon footprint', 'location guide','ecuador','south america','quito','activity guide','sustainability','sustainable','cotopaxi','In The Know: Quito'],
          link:'/InTheKnowQuito'},
 
         {name:'Carbon Cost of Ecuador',
          pic:quito26,
-         tags:['carbon footprint', 'ecuador','south america','','','','','','',''],
+         tags:['carbon footprint', 'ecuador','south america','sustainable','sustainability','latin america','quito','banos','tenna','Carbon Cost of Ecuador'],
          link:'/CarbonCostOfEcuador'},
 
         {name:'Carbon Cost of Colombia',
          pic:quindio18,
-         tags:['carbon footprint', 'colombia','south america','','','','','','',''],
+         tags:['carbon footprint', 'colombia','south america','sustainable','sustainability','latin america','medellin','bogata','filandia','Carbon Cost of Colombia'],
          link:'/CarbonCostOfColombia'},
 
         {name:'In The Know: Medellin',
          pic:medellin13,
-         tags:['location guide', 'colombia','south america','','','','','','',''],
+         tags:['location guide', 'colombia','south america','medellin','activity guide','sustainable','sustainability','communa 13','In The Know: Medellin',''],
          link:'/InTheKnowMedellin'},
 
-        {name:'Medellin Food Guide',
+        {name:'Medellin Vegan Guide',
          pic:medellin22,
-         tags:['food guide', 'notbc','colombia','south america','','','','','',''],
+         tags:['food guide', 'vegan','colombia','south america','plant based','sustainable','sustainability','vegetarian','Medellin Vegan Guide',''],
          link:'/MedellinFoodGuide'},
 
         {name:'In The Know: Guatape',
          pic:guatape1,
-         tags:['location guide', 'notbc','colombia','south america','','','','','',''],
+         tags:['location guide', 'guatape','colombia','south america','activity guide','vegan food','sustainable','sustainability','latin america','el pernol','In The Know: Guatape'],
          link:'/InTheKnowGuatape'},
 
         {name:'Carbon Cost of Central America',
          pic:costaRica15,
-         tags:['carbon footprint', 'latam','latin america','central america','','','','','',''],
+         tags:['carbon footprint', 'latam','latin america','central america','sustainable','sustainability','Carbon Cost of Central America','','',''],
          link:'/CarbonCostOfLatam'},
 
         // {name:'Carbon Cost of Our Diet',
@@ -207,23 +207,23 @@ class BlogPage extends Component {
         //  tags:['carbon footprint', 'notbc','','','','','','','',''],
         //  link:'/CarbonCostOfFlying'},
 
-        {name:'Vancouver Food Guide',
+        {name:'Vancouver Vegan Guide',
          pic:'/vancouverFood.jpg',
-         tags:['food guide', 'bc','canada','','','','','','',''],
+         tags:['food guide', 'bc','canada','vancouver','vegan','plant based','north america','city','Vancouver Vegan Guide','sustainability'],
          link:'/VancouverFoodGuide'},
 
 
         {name:'Whistler Activity Guide',
          pic:'/whistlerActivity.jpg',
-         tags:['activity guide', 'bc','canada','','','','','','',''],
+         tags:['activity guide', 'bc','canada','north america','whistler','hiking','mountain','Whistler Activity Guide','',''],
          link:'/WhistlerActivityGuide'},
 
 
-        {name:'Whistler Food Guide',
+        {name:'Whistler Vegan Guide',
          pic:'/whistlerFood.jpg',
-         tags:['food guide', 'bc','canada','','','','','','',''],
+         tags:['food guide', 'bc','canada','vegan','plant based','sustainable','sustainability','whistler','mountain',''],
          link:'/WhistlerFoodGuide'},
-           ],
+                  ],
     };
   };
 
@@ -300,6 +300,26 @@ class BlogPage extends Component {
           tempBlogs.push(this.state.blogs[i])
         }
         else if (this.state.blogs[i].tags[9].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+
+        else if (this.state.blogs[i].tags[10].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+
+        else if (this.state.blogs[i].tags[11].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+
+        else if (this.state.blogs[i].tags[12].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+
+        else if (this.state.blogs[i].tags[13].includes(value.toLowerCase())) {
+          tempBlogs.push(this.state.blogs[i])
+        }
+
+        else if (this.state.blogs[i].tags[14].includes(value.toLowerCase())) {
           tempBlogs.push(this.state.blogs[i])
         }
       }

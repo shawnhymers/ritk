@@ -130,7 +130,7 @@ function App() {
               <Route exact path="/Granada" component={Granada} />
               <Route exact path="/Ometepe" component={Ometepe} />
               <Route exact path="/Cartagena" component={Cartagena} />
-              <Route exact path="/Quindo" component={Quindio} />
+              <Route exact path="/Quindio" component={Quindio} />
               <Route exact path="/Guatape" component={Guatape} />
               <Route exact path="/Medellin" component={Medellin} />
               <Route exact path="/Quito" component={Quito} />

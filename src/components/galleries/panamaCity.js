@@ -30,7 +30,10 @@ import panama30 from '../../assets/galleries/panama/panama30.jpg'
 import panama31 from '../../assets/galleries/panama/panama31.jpg'
 import panama32 from '../../assets/galleries/panama/panama32.jpg'
 import panama34 from '../../assets/galleries/panama/panama34.jpg'
+import medellin13 from '../../assets/galleries/medellin/Medellin13.jpg'
+import cartagena12 from '../../assets/galleries/cartagena/cartagena12.jpg'
 
+import costaRica11 from '../../assets/galleries/costaRica/costaRica11.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const PanamaCity = props => {
@@ -66,7 +69,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:panama9, label:'Panama City', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Panama City, Panama is a huge and modern city that is the country's capital. Although the city spreads over a huge area, the small, cobblestoned historic district is where most tourists find themselves spending most of their time. We were only in the city for 6 nights as an extended layover during our flight from Costa Rica to Colombia. The historic district was nice and the canal was awesome in the truest sense of the word, but overall we found the vibe to be a bit standoffish and we never felt too comfortable. Of course, we were visiting recently after the city was coming out of a very strict pandemic lockdown, so businesses and people’s mental health were not at their best, which may have contributed to the uneasy vibe we were picking up."},
+
+                 nextTitle1={"Medellin"}
+                 nextTitle2={'Cartagena'}
+                 nextTitle3={"Costa Rica"}
+                 nextPic1 ={medellin13}
+                 nextPic2 ={cartagena12}
+                 nextPic3 ={costaRica11}
+                 nextLink1= {'/medellin'}
+                 nextLink2= {'/cartagena'}
+                 nextLink3= {'/costaRica'}
+
+              blurb ={[{type:'text',text:"Panama City, Panama is a huge and modern city that is the country's capital. Although the city spreads over a huge area, the small, cobblestoned historic district is where most tourists find themselves spending most of their time. That and the Panama Canal, of course. We also had the opportunity to visit an Embera community’s village. It was a beautiful experience being welcomed and taught about this Indigenous community’s way of life. "},
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}

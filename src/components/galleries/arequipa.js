@@ -26,6 +26,9 @@ import arequipa29 from '../../assets/galleries/arequipa/arequipa29.jpg'
 import arequipa25 from '../../assets/galleries/arequipa/arequipa25.jpg'
 import arequipa31 from '../../assets/galleries/arequipa/arequipa31.jpg'
 import arequipa32 from '../../assets/galleries/arequipa/arequipa32.jpg'
+import huacachina15 from '../../assets/galleries/huacachina/huacachina15.jpg'
+import sacredValley15 from '../../assets/galleries/sacredValley/sacredValley15.jpg'
+import huaraz19 from '../../assets/galleries/huaraz/huaraz19.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -63,7 +66,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:arequipa6, label:'Arequipa', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Arequipa, Peru is a 14th century colonial city surrounded by three volcanoes. Its picturesque historic district consists of buildings made from mostly white and pink volcanic rock and is home to the charming Plaza de Armas. Arequipa is an amazing destination in its own right, but is also a popular destination for those looking to explore the nearby Colca Canyon. We stayed in Arequipa for about a week and a half. Although that was plenty of time to enjoy the typical sights and take part in the popular tours, we could have stayed for a lot longer since it’s so livable. It is a charming city and the weather when we visited in June was perfect."},
+
+              nextTitle1={"Huaraz"}
+              nextTitle2={'Huacachina'}
+              nextTitle3={"The Sacred Valley"}
+              nextPic1 ={huaraz19}
+              nextPic2 ={huacachina15}
+              nextPic3 ={sacredValley15}
+              nextLink1= {'/huaraz'}
+              nextLink2= {'/huacachina'}
+              nextLink3= {'/sacredValley'}
+
+              blurb ={[{type:'text',text:"Arequipa, Peru is a 14th century colonial city surrounded by three volcanoes. Its picturesque historic district consists of buildings made from mostly white volcanic rock and is home to the charming Plaza de Armas. It’s the gateway to the Colca Canyon, the world’s second deepest canyon and home to the largest flying bird in the world, the endangered Andean Condor. "},
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}

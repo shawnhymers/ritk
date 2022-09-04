@@ -88,7 +88,7 @@ class GalleryPage extends Component {
              pic:quindio24,
              isVertical:true,
              tags:['activity', 'notbc','','','','','','','',''],
-             link:'/quindo',
+             link:'/quindio',
              key:'8'},
 
             {name:'Guatape',

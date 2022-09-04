@@ -20,6 +20,9 @@ import quindio15 from '../../assets/galleries/quindio/Quindio15.jpg'
 import quindio3 from '../../assets/galleries/quindio/Quindio3.jpg'
 import quindio5 from '../../assets/galleries/quindio/Quindio5.jpg'
 import quindio17 from '../../assets/galleries/quindio/Quindio17.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
+import guatape10 from '../../assets/galleries/guatape/Guatape10.jpg'
 
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
@@ -57,7 +60,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:quindio22, label:'Quindio', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Quindo, Colombia is a part of the “Coffee Triangle”, a part of the Colombian Paisa region in the rural area of Colombia famous for its moderate weather and impressive coffee plantations. It is also home to the famous Valle de Cocora, which is one of the beautiful places we’ve seen to date. We stayed near Filandia for a bit over a week and the entire time we felt like we were in a dream. The lush green rolling hills and countryside calmness was a lovely juxtaposition to our time in the busy Colombian cities."}]}
+
+                 nextTitle1={"Cusco"}
+                 nextTitle2={'Quito'}
+                 nextTitle3={"Guatape"}
+                 nextPic1 ={cusco6}
+                 nextPic2 ={quito17}
+                 nextPic3 ={guatape10}
+                 nextLink1= {'/cusco'}
+                 nextLink2= {'/quito'}
+                 nextLink3= {'/guatape'}
+
+                 blurb ={[{type:'text',text:"Quindio, Colombia is a part of the “Coffee Triangle”, a part of the Colombian Paisa region in the rural area of Colombia, famous for its moderate weather and impressive coffee plantations. It’s also home to the famous and unique Valle de Cocora. We stayed near Filandia for a bit over a week and the lush green rolling hills and countryside calmness was a lovely juxtaposition to our time in the busy Colombian cities."}]}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[

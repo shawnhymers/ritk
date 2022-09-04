@@ -17,6 +17,10 @@ import cartagena16 from '../../assets/galleries/cartagena/cartagena16.jpg'
 import cartagena1 from '../../assets/galleries/cartagena/cartagena1.jpg'
 import cartagena2 from '../../assets/galleries/cartagena/cartagena2.jpg'
 
+import medellin13 from '../../assets/galleries/medellin/Medellin13.jpg'
+import guatape10 from '../../assets/galleries/guatape/Guatape10.jpg'
+
+import panama28 from '../../assets/galleries/panama/panama28.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -53,7 +57,18 @@ return(
        <DesktopHeader page ={'gallery'}/>
    }
      <GalleryBody header ={{src:cartagena13, label:'Cartagena', subLabel:'Photo Gallery'}}
-                  blurb ={[{type:'text',text:"Cartagena, Colombia is a city built around one of the major ports on Colombia’s northern coast. It has served as a vital port town since 1540. We were in Cartagena for a little over a week which was definitely enough for us to feel like we knew it. The old town is charming, but we found the heat, the hectic streets, and the party atmosphere a bit much for us."}]}
+
+                  nextTitle1={"Guatape"}
+                  nextTitle2={'Medellin'}
+                  nextTitle3={"Panama City"}
+                  nextPic1 ={guatape10}
+                  nextPic2 ={medellin13}
+                  nextPic3 ={panama28}
+                  nextLink1= {'/guatape'}
+                  nextLink2= {'/medellin'}
+                  nextLink3= {'/panamaCity'}
+
+                  blurb ={[{type:'text',text:"Cartagena, Colombia is a city built around one of the major ports on Colombia’s northern coast. It has served as a vital port town since 1540. Now hundreds of thousands of cruise ship passengers come through the port, making tourism one of its largest current industries. We spent the majority of our time wandering the colourful and photogenic streets of the old town and neighbouring hip neighbourhood, Getsemani."}]}
                   updated={'March 2022'}
                   isMobile={isMobile}
                   contentTest ={[

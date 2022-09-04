@@ -21,6 +21,9 @@ import guatape25 from '../../assets/galleries/guatape/Guatape25.jpg'
 import guatape4 from '../../assets/galleries/guatape/Guatape4.jpg'
 
 
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
+import quindio23 from '../../assets/galleries/quindio/Quindio23.jpg'
+import medellin13 from '../../assets/galleries/medellin/Medellin13.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -57,7 +60,18 @@ return(
         <DesktopHeader page ={'gallery'}/>
     }
       <GalleryBody header ={{src:guatape9, label:'Guatape', subLabel:'Photo Gallery'}}
-                blurb ={[{type:'text',text:"Guatape, Colombia is a small Andean resort town a few hours away from Medelín, and is home to Piedra del Peñol, a giant granite rock towering 220 meters high. We stayed there for just one night, which is probably all you need. The town is very much built around tourism, but we felt like it retained a lot more of its charm than other similarly touristy towns. You can read more about our experience"},
+                   // TEMP:
+                   nextTitle1={"Quito"}
+                   nextTitle2={'Quindio'}
+                   nextTitle3={"Medellin"}
+                   nextPic1 ={quito17}
+                   nextPic2 ={quindio23}
+                   nextPic3 ={medellin13}
+                   nextLink1= {'/quito'}
+                   nextLink2= {'/quindio'}
+                   nextLink3= {'/medellin'}
+
+                blurb ={[{type:'text',text:"Guatape, Colombia is a small Andean resort town a few hours away from Medelín, and is home to Piedra del Peñol, a giant granite rock towering 220 meters high. This town experiences a high amount of tourism, but we felt like it retained a lot more of its charm than other similarly touristy towns. You can read more about our experience "},
                          {type:'link',text:' here.',link:"/InTheKnowGuatape"}]}
                 updated={'April 2022'}
                 isMobile={isMobile}

@@ -94,7 +94,11 @@ return(
                               {type:'paragraph',text:'There are two neighbourhoods you’ll likely stay in if you’re visiting: La Floresta and Old Town, and you’ll be happy either way. It depends on if you want to better know the city’s past or present.'},
 
                               {type:'header',text:'Where to eat for vegan options:'},
-                              {type:'paragraph',text:'You can watch our Quito Vegan Food Reel here for everywhere we ate, but our favourite spot was definitely Tandana.'},
+                              {type:'externalLinkParagraph',content:[{type:'text',text:"CYou can watch our "},
+                                                             {type:'link',text:'Quito Vegan Food Reel',link:"https://www.instagram.com/p/Cdi771uAkjB/?hl=en"},
+                                                             {type:'text',text:" for everywhere we ate, but our favourite spot was definitely Tandana."},
+                                                          ]},
+
 
                               {type:'header',text:'Carbon Conscious Thoughts:'},
                               {type:'paragraph',text:"Ecuador is a country that makes it easier to have a reduced carbon footprint. With 79% of it’s power coming from hydroelectricity, a year long growing season that allows for local production of many fruits and vegetables, vegan food options in every city, and a country small enough that bus travel is very doable, this has been one of the easiest countries to keep our carbon footprint equivalent or less than it would be back home. Embracing the local way of life, eating plant-based, and using shared transportation is the easiest way to be carbon conscious in Ecuador."},

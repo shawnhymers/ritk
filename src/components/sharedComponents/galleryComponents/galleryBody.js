@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Footer from "../footer"
 import {  MdFiberManualRecord } from "react-icons/md";
 import  { useState } from 'react';
-
+import NextNav from "../navComponents/nextNav"
 const BlogSegment = props =>{
   return(
     <>
@@ -161,6 +161,24 @@ return(
         &nbsp;
       </Row>
     </Container>
+      <Row style={{height:'2em'}} className='roaming-white'>
+        &nbsp;
+      </Row>
+
+      <NextNav isMobile={props.isMobile}
+               nextTitle1 = {props.nextTitle1}
+               nextTitle2 = {props.nextTitle2}
+               nextTitle3 = {props.nextTitle3}
+               nextPic1 = {props.nextPic1}
+               nextPic2 = {props.nextPic2}
+               nextPic3 = {props.nextPic3}
+               nextLink1 = {props.nextLink1}
+               nextLink2 = {props.nextLink2}
+               nextLink3 = {props.nextLink3}/>
+
+      <Row style={{height:'4em'}} className='roaming-white'>
+        &nbsp;
+      </Row>
     <Footer isMobile={props.isMobile}/>
   </>
 )}

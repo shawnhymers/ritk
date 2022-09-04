@@ -17,6 +17,9 @@ import cusco15 from '../../assets/galleries/cusco/cusco15.jpg'
 import cusco1 from '../../assets/galleries/cusco/cusco1.jpg'
 import cusco18 from '../../assets/galleries/cusco/cusco18.jpg'
 
+import sacredValley15 from '../../assets/galleries/sacredValley/sacredValley15.jpg'
+import arequipa1 from '../../assets/galleries/arequipa/arequipa1.jpg'
+import otavalo9 from '../../assets/galleries/otavalo/Otavalo9.jpg'
 
 
 
@@ -55,8 +58,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:cusco10, label:'Cusco', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Cusco, Peru is a city in the Peruvian Andes that was once famously the capital of the Incan empire. The Incan influence is clear when walking through the narrow cobblestone streets and seeing the Incan stone as building foundations. We were in Cusco for around 2 weeks and had a mixed bag experience. The elevation and the cold wore us out a little, but the charm of the old city and the amazing food to be had made up for it. Aside from beautiful architecture, there isn’t too much to see in the city itself, but there are loads of day tours to do that start from Cusco. To learn more about what we got up to in our time there check out"},
-                       {type:'link',text:' our blog about it',link:'/InTheKnowQuito'}]}
+
+              nextTitle1={"Arequipa"}
+              nextTitle2={'Sacred Valley'}
+              nextTitle3={"Otavalo"}
+              nextPic1 ={arequipa1}
+              nextPic2 ={sacredValley15}
+              nextPic3 ={otavalo9}
+              nextLink1= {'/arequipa'}
+              nextLink2= {'/sacredValley'}
+              nextLink3= {'/otavalo'}
+              blurb ={[{type:'text',text:"Cusco, Peru is a city in the Peruvian Andes that was once famously the capital of the Incan empire. The Incan influence is clear when walking through the narrow cobblestone streets and seeing the Incan stone as building foundations. To learn more about what we got up to in our time there check out "},
+                       {type:'link',text:'our blog about it',link:'/InTheKnowCusco'}]}
               updated={'June 2022'}
               isMobile={isMobile}
               contentTest ={[

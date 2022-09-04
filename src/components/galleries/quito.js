@@ -15,6 +15,16 @@ import quito1 from '../../assets/galleries/quito/Quito1.jpg'
 import quito2 from '../../assets/galleries/quito/Quito2.jpg'
 import quito4 from '../../assets/galleries/quito/Quito4.jpg'
 
+import quito31 from '../../assets/galleries/quito/Quito31.jpg'
+import quito32 from '../../assets/galleries/quito/Quito32.jpg'
+import quito33 from '../../assets/galleries/quito/Quito33.jpg'
+import quito34 from '../../assets/galleries/quito/Quito34.jpg'
+import quito35 from '../../assets/galleries/quito/Quito35.jpg'
+
+
+import quindio23 from '../../assets/galleries/quindio/Quindio23.jpg'
+import sacredValley15 from '../../assets/galleries/sacredValley/sacredValley15.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
 const Quito = props => {
@@ -50,7 +60,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:quito15, label:'Quito', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Quito, Ecuador is the country's capital and is actually built on top of an ancient Incan city. You can clearly see Incan stones making up the foundations of many of the buildings in the old town. We were there for about a week and did several day trips from the city. The old town was amazing and the day trips you can do from the city are incredible. Be warned though, the city sits at almost 3,000 M above sea level, so before you fully acclimate make sure you take it slow and stay hydrated. You can read more about our experience "},
+
+                 nextTitle1={"Sacred Valley"}
+                 nextTitle2={'Cusco'}
+                 nextTitle3={"Quindio"}
+                 nextPic1 ={sacredValley15}
+                 nextPic2 ={cusco6}
+                 nextPic3 ={quindio23}
+                 nextLink1= {'/sacredValley'}
+                 nextLink2= {'/cusco'}
+                 nextLink3= {'/quindio'}
+
+              blurb ={[{type:'text',text:"Quito, Ecuador is the country's capital and is built not only on top of an ancient Incan city, but also on the equator. It’s also the gateway to the country’s most famous volcano, Cotopaxi. You can read more about our experience "},
                        {type:'link',text:'here',link:'/InTheKnowQuito'}]}
               updated={'December 2021'}
               isMobile={isMobile}
@@ -59,11 +80,17 @@ return(
                             {type:'diptych',src1:quito27,src2:quito6},
                             {type:'horizontalImage',src:quito11},
                             {type:'horizontalImage',src:quito13},
+
                             {type:'horizontalImage',src:quito26},
                             {type:'diptych',src1:quito24,src2:quito22},
                             {type:'horizontalImage',src:quito3},
                             {type:'diptych',src1:quito1,src2:quito2},
                             {type:'horizontalImage',src:quito4},
+                            {type:'horizontalImage',src:quito34},
+                            {type:'horizontalImage',src:quito31},
+                            {type:'horizontalImage',src:quito32},
+                            {type:'diptych',src1:quito35,src2:quito33},
+
 
 
                            ]}/>

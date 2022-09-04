@@ -16,6 +16,9 @@ import otavalo6 from '../../assets/galleries/otavalo/Otavalo6.jpg'
 import otavalo8 from '../../assets/galleries/otavalo/Otavalo8.jpg'
 import otavalo9 from '../../assets/galleries/otavalo/Otavalo9.jpg'
 import otavalo7 from '../../assets/galleries/otavalo/Otavalo7.jpg'
+import sacredValley15 from '../../assets/galleries/sacredValley/sacredValley15.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
+import quito17 from '../../assets/galleries/quito/Quito17.jpg'
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
 const MobileHeader = lazy(() => import('../sharedComponents/navComponents/mobileHeader'));
@@ -52,7 +55,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:otavalo1, label:'Otavalo', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"Otavalo is a town in the Andean highlands in the Imbabura province of northern Ecuador famous for its outdoor market in the central Plaza de Ponchos. It is the largest crafts market in South America, where hundreds of indigenous crafts people sell their textiles and handicrafts. We only spent an afternoon here during a day trip from Quito (the nearby capital city). The market was a super fun experience. The wares were reasonably priced and well made, and the locals were a blast to try to bargain with."}]}
+
+              nextTitle1={"Cusco"}
+              nextTitle2={'Sacred Valley'}
+              nextTitle3={"Quito"}
+              nextPic1 ={cusco6}
+              nextPic2 ={sacredValley15}
+              nextPic3 ={quito17}
+              nextLink1= {'/cusco6'}
+              nextLink2= {'/sacredValley'}
+              nextLink3= {'/quito'}
+
+              blurb ={[{type:'text',text:"Otavalo is a town in the Andean highlands in the Imbabura province of northern Ecuador famous for its outdoor market in the central Plaza de Ponchos. It is the largest crafts market in South America, where hundreds of indigenous crafts people sell their textiles and handicrafts."}]}
               updated={'December 2021'}
               isMobile={isMobile}
               contentTest ={[

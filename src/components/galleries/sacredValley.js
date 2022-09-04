@@ -26,6 +26,9 @@ import sacredValley19 from '../../assets/galleries/sacredValley/sacredValley19.j
 import sacredValley18 from '../../assets/galleries/sacredValley/sacredValley18.jpg'
 
 
+import huacachina15 from '../../assets/galleries/huacachina/huacachina15.jpg'
+import arequipa1 from '../../assets/galleries/arequipa/arequipa1.jpg'
+import cusco6 from '../../assets/galleries/cusco/cusco6.jpg'
 
 
 const DesktopHeader = lazy(() => import('../sharedComponents/navComponents/desktopHeader'));
@@ -63,7 +66,18 @@ return(
       <DesktopHeader page ={'gallery'}/>
   }
     <GalleryBody header ={{src:sacredValley17, label:'Sacred Valley', subLabel:'Photo Gallery'}}
-              blurb ={[{type:'text',text:"The Sacred Valley is a famous region in Peru’s Andean highlands that stretches over 60 square kilometers. Its fertile land once formed the center of Incan civilization. Today, the Sacred Valley is known for small villages, Incan ruins, and of course the main attraction: Machu Picchu. We visited the Sacred Valley as a part of a group tour and were amazed with what we saw. Visiting Machu Picchu and the other Incan sites was a really special experience, and even during the bus and train rides between locations we were surrounded by incredible mountains and rugged scenery along the way."},
+
+              nextTitle1={"Huacachina"}
+              nextTitle2={'Arequipa'}
+              nextTitle3={"Cusco"}
+              nextPic1 ={huacachina15}
+              nextPic2 ={arequipa1}
+              nextPic3 ={cusco6}
+              nextLink1= {'/huacachina'}
+              nextLink2= {'/arequipa'}
+              nextLink3= {'/cusco'}
+
+              blurb ={[{type:'text',text:"The Sacred Valley is a famous region in Peru’s Andean highlands that stretches over 60 square kilometers. Its fertile land once formed the center of Incan civilization. Today, the Sacred Valley is known for small villages, Incan ruins, and of course the main attraction: Machu Picchu. "},
                        {type:'link',text:'',link:'/InTheKnowQuito'}]}
               updated={'June 2022'}
               isMobile={isMobile}
