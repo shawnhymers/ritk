@@ -6,7 +6,7 @@ import { MdCopyright } from "react-icons/md";
 import  { useState,useRef } from 'react';
 import LargeModal from "./largeModal"
 import { sendForm } from 'emailjs-com';
-
+import { Link } from "react-router-dom";
 const Footer = props => {
 
   const [from_name, setUserEmail]=useState('')
@@ -16,7 +16,7 @@ const Footer = props => {
   const form = useRef();
 
   function toggleContactModal(){
-    if (from_name!=='' && !showContactModal) {
+    if ( !showContactModal) {
       setShowContactModal(true)
     }
     else {
@@ -26,7 +26,7 @@ const Footer = props => {
 
   function submitMessage(e){
     console.log(form.current)
-    if (message!=='') {
+    if (message!=='' && from_name!=='') {
       console.log(message)
       toggleContactModal()
       e.preventDefault();
@@ -58,42 +58,41 @@ return(
     :
     <>
     <Row className ='form-line nice-input-wrapper fill-width' >
-      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-        <Row  >
-          <input type="text"
-                 id="from_name"
-                 name="from_name"
-                 value = {from_name}
-
-                 placeholder ='Your Email:'
-                 onChange = {updateEmail}/>
-          <label htmlFor="from_name">
-            Email:
-          </label>
-        </Row>
+      <Col xs={4} sm={4} md={4} lg={4} xl={4}>
+      <Button value ="Contact"
+              variant='custom'
+              className='roaming-text-sm'
+              onClick = {toggleContactModal}>Contact Us</Button>
       </Col>
-        <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-        <Button value ="Contact"
-                variant='custom'
-                className='roaming-text-xtra-sm'
-                onClick = {toggleContactModal}>Contact Us</Button>
-      </Col>
-
-    </Row>
-    <Row className ='vertical-padding-sm'>
-      <Col style ={{maxWidth:'50vw'}}>
+        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
         &nbsp;
       </Col>
+      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+      <Row style ={{paddingTop:'0.6em'}}>
       <Col style ={{maxWidth:'10vw'}}>
-        <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+      <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
+            className = 'centered-children'
+            target="_blank" >
+        <BsInstagram size ='1.5em' className='roaming-black'color='#595456'style ={{cursor:'pointer'}}/>
+      </Link>
       </Col>
       <Col style ={{maxWidth:'10vw'}}>
-        <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+        <Link to={{pathname:'https://www.tiktok.com/@roamingintheknow'}}
+              className = 'centered-children'
+              target="_blank" >
+              <SiTiktok size ='1.5em' className='roaming-black'color='#595456'style ={{cursor:'pointer'}}/>
+        </Link>
       </Col>
 
       <Col style ={{maxWidth:'30vw'}}>
          <p className =' roaming-text-sm auto-margins'>@roamingintheknow</p>
       </Col>
+      </Row>
+      </Col>
+
+    </Row>
+    <Row className ='vertical-padding-sm'>
+
     </Row>
     <Row >
     <p className ='centered-text roaming-text-xtra-sm '><MdCopyright size={'1.5rem'} style={{margin:''}}/>&nbsp; 2022 Roaming In The Know All Rights Reserved</p>
@@ -110,23 +109,13 @@ return(
     <Col className ='vertical-centered-children '>
       <Row className ='form-line nice-input-wrapper fill-width'>
 
-        <Col xs={6} sm={6} md={8} lg={8} xl={8}>
-          <Row style={{paddingLeft:'2.5em'}} >
-            <input type="text"
-                   id="from_name"
-                   name="from_name"
-                   value = {from_name}
-                   placeholder ='Email:'
-                   onChange = {updateEmail}/>
-            <label htmlFor="from_namel">
-              Email:
-            </label>
-          </Row>
+        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+          &nbsp;
         </Col>
-          <Col xs={6} sm={6} md={4} lg={4} xl={4}>
+          <Col xs={10} sm={10} md={10} lg={10} xl={10}>
           <Button value ="Contact"
                   variant='custom'
-                  className='roaming-text-xtra-sm'
+                  className='roaming-text-sm'
                   onClick = {toggleContactModal}>Contact Us</Button>
         </Col>
 
@@ -140,10 +129,18 @@ return(
         <Col xs={12} sm={12} md={6} lg={6} xl={6} className ='centered-children'>
           <Row style={{paddingRight:'2.5em'}}>
             <Col style ={{maxWidth:'2.6em'}}>
-              <BsInstagram size ='1.5em' style ={{cursor:'pointer'}}/>
+            <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
+                  className = 'centered-children'
+                  target="_blank" >
+              <BsInstagram size ='1.5em' color='#595456'className='roaming-black'style ={{cursor:'pointer'}}/>
+              </Link>
             </Col>
             <Col style ={{maxWidth:'2.6em'}}>
-              <SiTiktok size ='1.5em' style ={{cursor:'pointer'}}/>
+            <Link to={{pathname:'https://www.tiktok.com/@roamingintheknow'}}
+                  className = 'centered-children'
+                  target="_blank" >
+              <SiTiktok size ='1.5em' color='#595456'className='roaming-black'style ={{cursor:'pointer'}}/>
+              </Link>
             </Col>
 
             <Col style ={{maxWidth:'10em'}}>
@@ -185,6 +182,7 @@ return(
 
                                   <Col  className='nice-input-wrapper'>
                                     <Row>
+
                                       <input type="text"
                                              id="from_name"
                                              name="from_name"
@@ -223,6 +221,34 @@ return(
 </>)}
 
 export default Footer;
+
+
+
+//
+// <Row style={{paddingLeft:'2.5em'}} >
+//   <input type="text"
+//          id="from_name"
+//          name="from_name"
+//          value = {from_name}
+//          placeholder ='Email:'
+//          onChange = {updateEmail}/>
+//   <label htmlFor="from_namel">
+//     Email:
+//   </label>
+// </Row>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //
 //
