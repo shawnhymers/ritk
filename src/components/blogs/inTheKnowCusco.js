@@ -73,8 +73,7 @@ return(
                             {type:'listItem',text:"1. Hang out in the San Blas neighbourhood"},
                             {type:'paragraph',text:"Our favourite thing to do in most cities is simply walk around, admire the architecture and way of life, and grab a cup of coffee. The best place to do that in Cusco is the San Blas neighbourhood where every street is a delight for the eyes. We recommend watching the streets of San Blas from L'atelier Café’s balcony (the coffee isn’t great, but the views make up for it.) Or park up on a bench in the main square, where on certain days of the week they have a pop up market. Most importantly, wander every charming nook and cranny of this gorgeous neighbourhood (And don’t forget your camera!)"},
                             {type:'horizontalImage',src:cusco2},
-                            {type:'listItemLink',content:[{type:'text',text:'2. Visit the 12th best vegan restaurant in the world,'},
-                                                          {type:'link',text:' greenpointcusco',link:'https://www.instagram.com/greenpointcusco/?hl=en'}]},
+                            {type:'listItem',text:"2. Visit the 12th best vegan restaurant in the world, Green Point"},
 
                             {type:'paragraph',text:"Our favourite restaurant in all of Latin America is Green Point in Cusco. Turns out we’re not the only ones who feel that way because they have been rated the 12th best vegan restaurant in the world. Visiting Green Point is an experience you’ll keep wanting to come back for. It’s open for all meals, has a take away bakery, has their own brewery & distillery, and offers a reasonably priced ‘menu del dia’ lunch every weekday. We practically lived at this restaurant and miss it since we’ve left Cusco! "},
 

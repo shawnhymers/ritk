@@ -319,7 +319,7 @@ const ListItemLink = props=>{
   return(
     <>
     {props.content.type==='text'?
-      <span>{props.content.text}</span>
+      <span className='roaming-green-text'>{props.content.text}</span>
     :null
     }
     {props.content.type ==='link'?
