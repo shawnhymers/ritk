@@ -65,7 +65,7 @@ return(
                              {type:'paragraph',text:"Flights also produce a level of non Co2 radiative forcing, which is a fancy way of saying all the other stuff aviation does to increase the greenhouse effect. The contrails you can see sometimes trailing behind planes have a slight warming effect on the planet. The soot and water vapour deposited into the atmosphere during flight do as well. Interestingly, the nitrogen oxide produced during a flight warms the planet through ozone production and cools the planet through methane reduction. Long story short, when doing the calculations, all these indirect effects are summed up in what we call “non Co2 radiative forcing”."},
 
                              {type:'header',text:"How does this impact my travel plans?"},
-                             {type:'paragraph',text:"When planning shorter vacations, the environmental impact of the flight is most travelers largest factor in their carbon footprint. Let’s take a look a hypothetical trip. If couple from Toronto want to spend a two-week vacation in Costa Rica, this would be the typical carbon footprint."},
+                             {type:'paragraph',text:"When planning shorter vacations, the environmental impact of the flight is most travelers largest factor in their carbon footprint. Let’s take a look a hypothetical trip. If couple from Toronto wants to spend a two-week vacation in Costa Rica, this would be the typical carbon footprint."},
 
                              {type:'listItem',text:"1.	Round trip flight from Toronto to San Jose."},
                              {type:'paragraph',text:"1, 200 KG"},
