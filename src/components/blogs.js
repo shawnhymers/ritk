@@ -106,10 +106,10 @@ class BlogPage extends Component {
             //  tags:['activity', 'notbc','carbon footprint','','','','','','',''],
             //  link:'/CarbonCostOfDiet'},
 
-            // {name:'Carbon Cost of Flying',
-            //  pic:'/planeWing.jpg',
-            //  tags:['carbon footprint', 'notbc','','','','','','','',''],
-            //  link:'/CarbonCostOfFlying'},
+            {name:'Carbon Cost of Flying',
+             pic:'/planeWing.jpg',
+             tags:['carbon footprint', 'sustainable','sustainability','calculation','','','','','',''],
+             link:'/CarbonCostOfFlying'},
 
             {name:'Vancouver Vegan Guide',
              pic:'/vancouverFood.jpg',
@@ -202,10 +202,11 @@ class BlogPage extends Component {
         //  tags:['activity', 'notbc','carbon footprint','','','','','','',''],
         //  link:'/CarbonCostOfDiet'},
 
-        // {name:'Carbon Cost of Flying',
-        //  pic:'/planeWing.jpg',
-        //  tags:['carbon footprint', 'notbc','','','','','','','',''],
-        //  link:'/CarbonCostOfFlying'},
+        {name:'Carbon Cost of Flying',
+         pic:'/planeWing.jpg',
+         tags:['carbon footprint', 'sustainable','sustainability','calculation','','','','','',''],
+         link:'/CarbonCostOfFlying'},
+
 
         {name:'Vancouver Vegan Guide',
          pic:'/vancouverFood.jpg',
