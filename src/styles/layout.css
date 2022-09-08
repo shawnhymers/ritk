@@ -130,7 +130,23 @@
 .top-padding-lg{
   padding-top:3em;
 }
+.input-padding-sm{
+  padding-left:1em;
+  padding-right:1em;
 
+}
+.input-padding-md{
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:1em;
+  padding-bottom: 1em;
+}
+.input-padding-lg{
+  padding-left:3em;
+  padding-right:3em;
+  padding-top:1.5em;
+  padding-bottom: 1.5em;
+}
 
 .blog-row{
   margin-left: 15vw;

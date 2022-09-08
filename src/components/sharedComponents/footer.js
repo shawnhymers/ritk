@@ -6,10 +6,14 @@ import { MdCopyright } from "react-icons/md";
 import  { useState,useRef } from 'react';
 import LargeModal from "./largeModal"
 import { sendForm } from 'emailjs-com';
+import mountains from "../../assets/icons/mountainIcon.png"
 import { Link } from "react-router-dom";
 const Footer = props => {
 
   const [from_name, setUserEmail]=useState('')
+  const [first_name, setUserFirstName]=useState('')
+  const [last_name, setUserLastName]=useState('')
+
   const [showContactModal, setShowContactModal]=useState(false)
   const [message,setMessage]=useState('')
 
@@ -46,6 +50,12 @@ const Footer = props => {
 
   function updateEmail(e){
     setUserEmail(e.target.value)
+  }
+  function updateFirstName(e){
+    setUserFirstName(e.target.value)
+  }
+  function updateLastName(e){
+    setUserLastName(e.target.value)
   }
 
 return(
@@ -109,15 +119,13 @@ return(
     <Col className ='vertical-centered-children '>
       <Row className ='form-line nice-input-wrapper fill-width'>
 
-        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-          &nbsp;
-        </Col>
-          <Col xs={10} sm={10} md={10} lg={10} xl={10}>
+
+
           <Button value ="Contact"
                   variant='custom'
                   className='roaming-text-sm'
+                  style={{width:'6em',marginLeft:'3em'}}
                   onClick = {toggleContactModal}>Contact Us</Button>
-        </Col>
 
       </Row>
     </Col>
@@ -172,38 +180,89 @@ return(
     <>
     <LargeModal isOpen={true}
                 closeModal ={toggleContactModal}
-                modalTitle ={'Hello, '+from_name}
+                modalTitle ={''}
                 modalBody = {<>
+
+                            <Row className = 'centered-children'>
+                              <img src= {mountains}
+                                   alt = 'mountain Icon'
+                                   style={{width:'10em'}}/>
+                            </Row>
+
+                            <Row className = 'centered-children'>
+                              <p className = 'centered-text roaming-yellow-text balloon-text '>HI THERE!</p>
+                            </Row>
+
+                            <Row className = 'centered-children'>
+                              <p className = 'centered-text roaming-black-text blog-body'>Drop us a line below to get in touch. Or if you prefer you can email us at roamingintheknow@gmail.com</p>
+                            </Row>
                             <form ref={form} >
-                                <Row className='nice-input-wrapper'>
-                                  <Col>
-                                    &nbsp;
-                                  </Col>
+                                <Row >
 
-                                  <Col  className='nice-input-wrapper'>
+                                    <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                                      &nbsp;
+                                    </Col>
+                                    <Col  xs={5} sm={5} md={5} lg={5} xl={5}>
+                                      <Row className='input-padding-md nice-input-wrapper'>
+                                      <input type="text"
+                                             id="from_first_name"
+                                             name="from_first_name"
+                                             value = {first_name}
+                                             placeholder ='First Name:'
+                                             className='roaming-black-text'
+                                             onChange = {updateFirstName}/>
+                                      <label htmlFor="first_name" className='roaming-black-text'>
+                                        First Name
+                                      </label>
+                                      </Row>
+                                    </Col>
+                                    <Col xs={5} sm={5} md={5} lg={5} xl={5}>
+                                      <Row className='input-padding-md nice-input-wrapper'>
+                                      <input type="text"
+                                             id="from_last_name"
+                                             className='roaming-black-text'
+                                             name="from_last_name"
+                                             value = {last_name}
+                                             placeholder ='Last Name:'
+                                             onChange = {updateLastName}/>
+                                      <label htmlFor="last_name" className='roaming-black-text'>
+                                        Last Name
+                                      </label>
+                                      </Row>
+                                    </Col>
+                                    <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                                      &nbsp;
+                                    </Col>
+                                    </Row>
+
                                     <Row>
-
+                                    <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                                      &nbsp;
+                                    </Col>
+                                    <Col xs={10} sm={10} md={10} lg={10} xl={10}>
+                                      <Row className='nice-input-wrapper input-padding-md'>
                                       <input type="text"
                                              id="from_name"
                                              name="from_name"
                                              value = {from_name}
+                                             className='roaming-black-text'
                                              placeholder ='Your Email:'
                                              onChange = {updateEmail}/>
-                                      <label htmlFor="from_user">
+                                      <label htmlFor="from_user" className='roaming-black-text'>
                                         Your Email:
                                       </label>
+                                      </Row>
+                                    </Col>
+
+                                      <Col xs={1} sm={1} md={1} lg={1} xl={1}>
+                                        &nbsp;
+                                      </Col>
                                     </Row>
-                                  </Col>
 
-                                  <Col>
-                                    &nbsp;
-                                  </Col>
-
-                                </Row>
-                                <Row className = 'centered-children vertical-padding-sm'>
+                                <Row className = 'centered-children input-padding-md'>
                                   <input type = 'textarea'
                                          style = {{ width:'80%',height:'20vh'  } }
-                                         placeholder = 'Enter your Message Here'
+                                         placeholder = 'Message'
                                          name = 'message'
                                          value = {message}
                                          onChange = {updateMessage}/>
