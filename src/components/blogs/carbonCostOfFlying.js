@@ -68,13 +68,16 @@ return(
                              {type:'paragraph',text:"When planning shorter vacations, the environmental impact of the flight is most travelers largest factor in their carbon footprint. Let’s take a look a hypothetical trip. If couple from Toronto wants to spend a two-week vacation in Costa Rica, this would be the typical carbon footprint."},
 
                              {type:'listItem',text:"1.	Round trip flight from Toronto to San Jose."},
-                             {type:'paragraph',text:"1, 200 KG"},
+
+                             {type:'footprintLine',footprint:'1200',unit:'KG Co2'},
                              {type:'listItem',text:"2.	14 days of eating a balanced diet (a mix of meat, vegetarian, and vegan foods)."},
-                             {type:'paragraph',text:"143 KG"},
+                          
+                             {type:'footprintLine',footprint:'143',unit:'KG Co2'},
                              {type:'listItem',text:"3.	300 KM driven in their rented 2017 Rav 4."},
-                             {type:'paragraph',text:"35.5 KG"},
+
+                             {type:'footprintLine',footprint:'35.5',unit:'KG Co2'},
                              {type:'listItem',text:"4.	13 nights at a mid-sized hotel"},
-                             {type:'paragraph',text:"100 KG"},
+                             {type:'footprintLine',footprint:'100',unit:'KG Co2'},
 
                              {type:'paragraph',text:"The total carbon footprint of their vacation is close to 1,500 KG. Over 80% of that cost was just the flight in and out. "},
 

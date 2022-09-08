@@ -15,7 +15,7 @@ const CustomOptions = props =>{
             <Row onClick = {(selection)=>props.select(props.option)}
                  style ={{margin:'0vh'}}
                  className ='dropdown-item '>
-              <p className ='dropdown-text'>
+              <p className ='dropdown-text roaming-black-text'>
                 {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]}
               </p>
             </Row>
@@ -26,7 +26,7 @@ const CustomOptions = props =>{
             <Row onClick = {(selection)=>props.select(props.option)}
                 style ={{margin:'0vh'}}
                  className ='dropdown-item '>
-                <p className ='dropdown-text'>
+                <p className ='dropdown-text roaming-black-text'>
                   {props.option[props.displayKeys[0]]+", "+props.option[props.displayKeys[1]]+ ", "+props.option[props.displayKeys[2]]}
                 </p>
             </Row>
@@ -36,7 +36,7 @@ const CustomOptions = props =>{
       <Row onClick = {(selection)=>props.select(props.option)}
            style ={{margin:'0vh'}}
            className ='dropdown-item'>
-           <p className ='dropdown-text'>
+           <p className ='dropdown-text roaming-black-text'>
             {props.option[props.displayKeys[0]]}
           </p>
       </Row>
@@ -99,7 +99,7 @@ return(
           <Row className ='nice-input-wrapper'>
 
               <input style ={{minWidth:'25vw'}}
-                    className ={props.invalidInput? 'error-input':''}
+                    className ={props.invalidInput? 'error-input':'roaming-black-text'}
                      type = 'text'
                      id= {props.inputId}
                      value = {props.searchValue}
@@ -109,7 +109,7 @@ return(
                      onFocus = {showDefaultOptions}
                      onBlur = {cancelOptions}/>
               <label htmlFor={props.inputId}
-                     className ={props.invalidInput? 'error-label':''}>
+                     className ={props.invalidInput? 'error-label':'roaming-black-text'}>
 
                 {props.inputLabel}
 

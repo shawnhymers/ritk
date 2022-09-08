@@ -147,9 +147,10 @@ const Overview= props =>{
     </Container>
 
     <Container  className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
-    <Row className ='form-line'>
+    <Row className ='form-line'style={{width:'40%',marginLeft:'8em',paddingTop:'3em',paddingBottom:'2em'}}>
+
       <FormControl component="fieldset">
-        <FormLabel component="legend">Compare To:</FormLabel>
+        <FormLabel component="legend" className='roaming-black-text'>Compare To:</FormLabel>
         <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
           <FormControlLabel value="country"
                             control={<GreenRadio/>}
@@ -157,11 +158,13 @@ const Overview= props =>{
           <FormControlLabel value="region" control={<GreenRadio />} label="Region" />
         </RadioGroup>
       </FormControl>
+
+
     </Row>
     {compareType==='country'?
       <>
-        <Row className ='form-line'>
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+        <Row className ='form-line ' style={{width:'40%',marginLeft:'8em',paddingBottom:'3em'}}>
+            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
             <SearchDrop options={countryOptions}
                         inputId ={'compareToCountry'}
                         inputName={'compareToCountry'}
@@ -175,12 +178,13 @@ const Overview= props =>{
                         keyFields ={['Country','Footprint']}
                         invalidInput={countryError}
                         key ={'Country Compare Search'}/>
-          </Col>
+        </Col>
+
         </Row>
 
-        <Row>
+        <Row style={{paddingBottom:'2em'}}>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-            <Row>
+            <Row >
               <CarbonTotal footprint={props.totalCarbonCost}
                            label={'Your trips Carbon Footprint (KG)'}/>
             </Row>
@@ -191,7 +195,7 @@ const Overview= props =>{
                 <p className='centered-text roaming-text medium-link-text'>Select a country to compare your trip to.</p>
               </Row>
             :
-              <Row>
+              <Row >
                 <CarbonTotal footprint={selectedCountry.Footprint*1000}
                              label={'The annual average of '+ selectedCountry.Country+ ' (KG/Person)'} />
               </Row>}
@@ -200,7 +204,7 @@ const Overview= props =>{
       </>
       :
       <>
-        <Row className ='form-line'>
+        <Row className ='form-line' style={{width:'40%',marginLeft:'8em',paddingBottom:'3em'}}>
           <Col xs={8} sm={8} md={8} lg={8} xl={8}>
             <SearchDrop options={regionOptions}
                         inputId ={'compareToRegion'}
@@ -217,7 +221,7 @@ const Overview= props =>{
                         key ={'Region Compare Search'}/>
           </Col>
         </Row>
-        <Row>
+        <Row style={{paddingBottom:'2em'}}>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
             <Row>
               <CarbonTotal footprint={props.totalCarbonCost}
@@ -227,11 +231,11 @@ const Overview= props =>{
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
 
           {selectedRegion.Entity ===undefined?
-            <Row>
+            <Row >
               <p className='centered-text roaming-text medium-link-text'>Select a region to compare your trip to.</p>
             </Row>
           :
-            <Row>
+            <Row >
               <CarbonTotal footprint={selectedRegion.Footprint*1000}
                            label={'The annual average of '+ selectedRegion.Entity+ ' (KG/Person)'} />
             </Row>}
