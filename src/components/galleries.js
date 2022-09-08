@@ -41,20 +41,20 @@ class GalleryPage extends Component {
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huaraz',
              key:'1'},
-
+             {name:'Arequipa',
+              pic:arequipa1,
+              isVertical:true,
+              tags:['activity', 'notbc','','','','','','','',''],
+              link:'/arequipa',
+              key:'2'},
             {name:'Huacachina',
              pic:huacachina11,
              isVertical:true,
              tags:['activity', 'notbc','','','','','','','',''],
              link:'/huacachina',
-             key:'2'},
-
-            {name:'Arequipa',
-             pic:arequipa1,
-             isVertical:true,
-             tags:['activity', 'notbc','','','','','','','',''],
-             link:'/arequipa',
              key:'3'},
+
+
 
             {name:'Sacred Valley',
              pic:sacredValley14,
