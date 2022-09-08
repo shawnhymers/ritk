@@ -462,16 +462,7 @@ const Overview= props =>{
               return <DietList diet ={diet}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
-<Row>
-  <Col xs={9} sm={9} md={9} lg={9} xl={9}>
-    &nbsp;
-  </Col>
-  <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
-    <p className='roaming-text-sm '>
-    {'Total: '+(props.totalDietCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
-    </p>
-  </Col>
-</Row>
+
 
 <Row>
   <p className='roaming-text-md  '>Food</p>
@@ -721,3 +712,16 @@ const HotelList =props=>{
   )
 }
 export default Overview;
+
+
+
+// <Row>
+//   <Col xs={9} sm={9} md={9} lg={9} xl={9}>
+//     &nbsp;
+//   </Col>
+//   <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
+//     <p className='roaming-text-sm '>
+//     {'Total: '+(props.totalDietCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+//     </p>
+//   </Col>
+// </Row>
