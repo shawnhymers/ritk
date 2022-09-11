@@ -68,7 +68,7 @@ return(
            style ={{margin:'0vh',padding:'0vh'}}>
            {imageLoaded?
              <>
-             <p className ='blog-label centered-text'>{props.header.label}</p>
+             <p className ='blog-label centered-text center-justified-text'>{props.header.label}</p>
              </>
              :
              null}
@@ -176,16 +176,16 @@ return(
           </Row>
         </>}
       <Row>
-        <Col xs={2} sm={2} md={3} lg={3} xl={3}>
+        <Col xs={1} sm={1} md={2} lg={2} xl={2}>
           &nbsp;
         </Col>
-        <Col xs={8} sm={8} md={6} lg={6} xl={6}>
+        <Col xs={10} sm={10} md={8} lg={8} xl={8}>
           {props.contentTest.map((content, i)=>{
                         return <BlogSegment content ={content}
                                             isMobile={props.isMobile}
                                             key={content.type+i}/>})}
         </Col>
-        <Col xs={2} sm={2} md={3} lg={3} xl={3}>
+        <Col xs={1} sm={1} md={2} lg={2} xl={2}>
           &nbsp;
         </Col>
       </Row>

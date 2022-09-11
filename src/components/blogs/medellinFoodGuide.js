@@ -42,7 +42,7 @@ return(
   :
       <DesktopHeader page ={'blog'}/>
   }
-    <BlogBody header ={{src:medellin15, label:'Medellin Food Guide'}}
+    <BlogBody header ={{src:medellin15, label:'Medellin Vegan Guide'}}
               nextTitle1={"In The Know: Medellin"}
               nextTitle2={'Banos Activity Guide'}
               nextTitle3={"Vancouver Food Guide"}

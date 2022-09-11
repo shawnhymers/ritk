@@ -64,7 +64,8 @@ return(
           <Row>
             <p className ='blog-body centered-text center-justified-text vertical-padding-md'
                align='center'
-               style={{display:'inline'}}>
+
+               style={{display:'inline',textDecoration:'none'}}>
                 {props.blurb.map((blurb, i)=>{
                   return <LinkBlurbSegment blurb={blurb}
                                            isMobile={props.isMobile}
@@ -212,7 +213,7 @@ const LinkBlurbSegment = props=>{
     :null
     }
     {props.blurb.type ==='link'?
-      <span><Link to={props.blurb.link}>{props.blurb.text}</Link></span>
+      <span className='roaming-green-text '><Link style ={{textDecoration:'none'}} className='roaming-green-text' to={props.blurb.link}>{props.blurb.text}</Link></span>
     :null}
     </>
   )

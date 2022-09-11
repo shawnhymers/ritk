@@ -194,7 +194,15 @@ return(
                             </Row>
 
                             <Row className = 'centered-children'>
-                              <p className = 'centered-text roaming-black-text blog-body'>Drop us a line below to get in touch. Or if you prefer you can email us at roamingintheknow@gmail.com</p>
+                              <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                                &nbsp;
+                              </Col>
+                              <Col  xs={10} sm={10} md={10} lg={10} xl={10} className = 'centered-children'>
+                                <p className = 'centered-text center-justified-text roaming-black-text blog-body'>Drop us a line below to get in touch. Or if you prefer you can email us at roamingintheknow@gmail.com</p>
+                              </Col>
+                              <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                                &nbsp;
+                              </Col>
                             </Row>
                             <form ref={form} >
                                 <Row >

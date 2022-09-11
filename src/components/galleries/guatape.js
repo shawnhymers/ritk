@@ -71,7 +71,7 @@ return(
                    nextLink2= {'/quindio'}
                    nextLink3= {'/medellin'}
 
-                blurb ={[{type:'text',text:"Guatape, Colombia is a small Andean resort town a few hours away from Medelín, and is home to Piedra del Peñol, a giant granite rock towering 220 meters high. This town experiences a high amount of tourism, but we felt like it retained a lot more of its charm than other similarly touristy towns. You can read more about our experience "},
+                blurb ={[{type:'text',text:"Guatape, Colombia is a small Andean resort town a few hours away from Medellín, and is home to Piedra del Peñol, a giant granite rock towering 220 meters high. This town experiences a high amount of tourism, but we felt like it retained a lot more of its charm than other similarly touristy towns. You can read more about our experience "},
                          {type:'link',text:' here.',link:"/InTheKnowGuatape"}]}
                 updated={'April 2022'}
                 isMobile={isMobile}
