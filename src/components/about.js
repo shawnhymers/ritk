@@ -129,10 +129,10 @@ return(
 
       <Row className = 'roaming-white vertical-padding-sm centered-children'>
 
-      <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <Col xs={1} sm={1} md={3} lg={3} xl={3}>
         &nbsp;
       </Col>
-      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+      <Col xs={10} sm={10} md={6} lg={6} xl={6}>
         <p className = 'roaming-yellow-text roaming-text-md centered-text '>Who Are Alia & Shawn?</p>
         <p className = 'roaming-black-text roaming-text-sm '>We’re a twenty-something married couple who met when we were 18 in our university residence. Alia was studying photography and wanted to move to New York City and be a fashion photographer, Shawn was studying aerospace engineering and wanted to adopt a husky and build a cabin in the woods. After 6 months of being in the same friend group, this unlikely duo fell for each other and found out they actually had a ton of similarities. After 5 years together, once we had finished our degrees, we decided to have a small 8 person wedding and say ‘I do’ to forever. Our post-degree interests each changed a few times over by the time we got married, and we began working in our respective fields unsure of what the future held.</p>
 
@@ -218,7 +218,7 @@ return(
           </Col>
         </Row>
       </Col>
-      <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+      <Col xs={1} sm={1} md={3} lg={3} xl={3}>
         &nbsp;
       </Col>
 

@@ -475,7 +475,8 @@ return(
                   trainList={props.trainList}
                   foodList={props.foodList}
                   dietList={props.dietList}
-                  hotelList={props.hotelList}/>
+                  hotelList={props.hotelList}
+                  isMobile={props.isMobile}/>
       </Row>
     </>:null}
 

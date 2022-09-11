@@ -82,7 +82,7 @@ const Overview= props =>{
   function selectCompareToRegion(region) {
     setSelectedRegion(region)
   }
-
+  console.log(props)
   return(
     <>
     <Container className ='white round-borders raised-borders'style ={{width:'90vw'}}>
@@ -146,7 +146,108 @@ const Overview= props =>{
       </div>
     </Container>
 
-    <Container  className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+    {props.isMobile?
+      <Container  className ='white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
+      <Row className ='form-line'style={{paddingTop:'3em',paddingBottom:'2em'}}>
+
+        <FormControl component="fieldset">
+          <FormLabel component="legend" className='roaming-black-text'>Compare To:</FormLabel>
+          <RadioGroup row aria-label="compareTo" name="selectedCompareType" value={compareType} onChange={updateCompareType}>
+            <FormControlLabel value="country"
+                              control={<GreenRadio/>}
+                              label="Country" />
+            <FormControlLabel value="region" control={<GreenRadio />} label="Region" />
+          </RadioGroup>
+        </FormControl>
+
+
+      </Row>
+      {compareType==='country'?
+        <>
+          <Row className ='form-line centered-children' style={{paddingBottom:'3em',paddingLeft:'2em',paddingRight:'2em'}}>
+
+              <SearchDrop options={countryOptions}
+                          inputId ={'compareToCountry'}
+                          inputName={'compareToCountry'}
+                          inputLabel={'Select The Country'}
+                          searchValue = {countrySearchValue}
+                          setSearchValue ={updateCountrySearchValue}
+                          updateOptions = {updateCompareToCountry}
+                          selectOption = {selectCompareToCountry}
+                          displayKeys = {['Country']}
+                          valueKey ={'Footprint'}
+                          keyFields ={['Country','Footprint']}
+                          invalidInput={countryError}
+                          key ={'Country Compare Search'}/>
+
+
+          </Row>
+
+          <Row style={{paddingBottom:'2em'}}>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Row >
+                <CarbonTotal footprint={props.totalCarbonCost}
+                             label={'Your trips Carbon Footprint (KG)'}/>
+              </Row>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              {selectedCountry.Country ===undefined?
+                <Row>
+                  <p className='centered-text roaming-text medium-link-text'>Select a country to compare your trip to.</p>
+                </Row>
+              :
+                <Row >
+                  <CarbonTotal footprint={selectedCountry.Footprint*1000}
+                               label={'The annual average of '+ selectedCountry.Country+ ' (KG/Person)'} />
+                </Row>}
+            </Col>
+          </Row>
+        </>
+        :
+        <>
+          <Row className ='form-line centered-children' style={{paddingBottom:'3em',paddingLeft:'2em',paddingRight:'2em'}}>
+              <SearchDrop options={regionOptions}
+                          inputId ={'compareToRegion'}
+                          inputName={'compareToRegion'}
+                          inputLabel={'Select The Region'}
+                          searchValue = {regionSearchValue}
+                          setSearchValue ={updateRegionSearchValue}
+                          updateOptions = {updateCompareToRegion}
+                          selectOption = {selectCompareToRegion}
+                          displayKeys = {['Entity']}
+                          valueKey ={'Footprint'}
+                          keyFields ={['Entity','Footprint']}
+                          invalidInput={regionError}
+                          key ={'Region Compare Search'}/>
+          </Row>
+          <Row style={{paddingBottom:'2em'}}>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+              <Row>
+                <CarbonTotal footprint={props.totalCarbonCost}
+                             label={'Your trips Carbon Footprint (KG)'}/>
+              </Row>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+
+            {selectedRegion.Entity ===undefined?
+              <Row >
+                <p className='centered-text roaming-text medium-link-text center-justified-text'>Select a region to compare your trip to.</p>
+              </Row>
+            :
+              <Row >
+                <CarbonTotal footprint={selectedRegion.Footprint*1000}
+                             label={'The annual average of '+ selectedRegion.Entity+ ' (KG/Person)'} />
+              </Row>}
+            </Col>
+          </Row>
+
+
+        </>}
+
+      </Container>
+
+    :
+    <Container  className =' white round-borders raised-borders' style ={{width:'90vw',marginTop:'5vh'}}>
     <Row className ='form-line'style={{width:'40%',marginLeft:'8em',paddingTop:'3em',paddingBottom:'2em'}}>
 
       <FormControl component="fieldset">
@@ -245,14 +346,10 @@ const Overview= props =>{
 
       </>}
 
-
-
-
-
-
-
-
     </Container>
+
+  }
+
 
 
     <Container className ='white round-borders raised-borders ' style ={{width:'90vw',marginTop:'5vh',paddingTop:'0.7rem',paddingLeft:'4em',paddingRight:'4em'}}>
