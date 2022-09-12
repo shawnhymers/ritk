@@ -59,7 +59,7 @@ return(
               nextLink3= {'/banosActivityGuide'}
               topBlurb={{type:'topBlurb',
                          updated:'May 2022',
-                         content:[{type:'text',text:"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high."}]}}
+                         content:[{type:'text',text:"Quito was somewhere we knew little about before we arrived, and maybe because of that, our expectations going in were not that high. From the moment we landed, our expectations were continuously blown away."}]}}
 
               isMobile={isMobile}
               contentTest ={[
@@ -94,7 +94,7 @@ return(
                               {type:'paragraph',text:'There are two neighbourhoods you’ll likely stay in if you’re visiting: La Floresta and Old Town, and you’ll be happy either way. It depends on if you want to better know the city’s past or present.'},
 
                               {type:'header',text:'Where to eat for vegan options:'},
-                              {type:'externalLinkParagraph',content:[{type:'text',text:"CYou can watch our "},
+                              {type:'externalLinkParagraph',content:[{type:'text',text:"You can watch our "},
                                                              {type:'link',text:'Quito Vegan Food Reel',link:"https://www.instagram.com/p/Cdi771uAkjB/?hl=en"},
                                                              {type:'text',text:" for everywhere we ate, but our favourite spot was definitely Tandana."},
                                                           ]},
