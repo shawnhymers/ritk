@@ -354,7 +354,7 @@ const Overview= props =>{
 
     <Container className ='white round-borders raised-borders ' style ={{width:'90vw',marginTop:'5vh',paddingTop:'0.7rem',paddingLeft:'4em',paddingRight:'4em'}}>
     <Row>
-      <Col onClick={()=>setItemType('flight')}>
+      <Col onClick={()=>setItemType('flight')} xs={3} sm={3} md={3} lg={3} xl={3}>
         <Row className ='centered-children'>
           <img src ='/plane.png'
                alt ='food'
@@ -367,7 +367,7 @@ const Overview= props =>{
                        Flights</p>
         </Row>
       </Col>
-      <Col onClick={()=>setItemType('transport')}>
+      <Col onClick={()=>setItemType('transport')} xs={3} sm={3} md={3} lg={3} xl={3}>
         <Row className ='centered-children'>
           <img src ='/train.png'
                alt ='food'
@@ -380,7 +380,7 @@ const Overview= props =>{
                        Transport</p>
         </Row>
       </Col>
-      <Col onClick={()=>setItemType('food')}>
+      <Col onClick={()=>setItemType('food')} xs={3} sm={3} md={3} lg={3} xl={3}>
         <Row className ='centered-children'>
           <img src ='/avacado.png'
                alt ='food'
@@ -393,7 +393,7 @@ const Overview= props =>{
                        Food</p>
         </Row>
       </Col>
-      <Col onClick={()=>setItemType('accomodation')}>
+      <Col onClick={()=>setItemType('accomodation')} xs={3} sm={3} md={3} lg={3} xl={3}>
         <Row className ='centered-children'>
           <img src ='/tent.png'
                alt ='food'

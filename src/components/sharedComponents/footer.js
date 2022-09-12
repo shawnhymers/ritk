@@ -74,10 +74,10 @@ return(
               className='roaming-text-sm'
               onClick = {toggleContactModal}>Contact Us</Button>
       </Col>
-        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
+        <Col xs={1} sm={1} md={2} lg={2} xl={2}>
         &nbsp;
       </Col>
-      <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+      <Col xs={7} sm={7} md={6} lg={6} xl={6}>
       <Row style ={{paddingTop:'0.6em'}}>
       <Col style ={{maxWidth:'10vw'}}>
       <Link to={{pathname:'https://www.instagram.com/accounts/login/?next=/roamingintheknow/'}}
