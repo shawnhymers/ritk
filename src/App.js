@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
-
+import ReactGA from 'react-ga';
+import  { useEffect } from 'react';
 import coupleIcon from "./assets/icons/coupleIcon.png"
 
 import ('./styles/App.css');
@@ -16,6 +17,9 @@ import ('./styles/form.css');
 import ('./styles/images.css');
 import ('./styles/layout.css');
 
+
+
+const TRACKING_ID = "G-NPMRQ3YSSG"; // OUR_TRACKING_IDn
 
 const Main = lazy(() => import('./components/main'));
 const CalculatorPage = lazy(() => import('./components/calculator'));
@@ -61,10 +65,13 @@ const SacredValley = lazy(() => import('./components/galleries/sacredValley'));
 const PanamaCity = lazy(() => import('./components/galleries/panamaCity'));
 const Huaraz = lazy(() => import('./components/galleries/huaraz'));
 const ScrollToTop = lazy(() => import('./components/helpers/scrollToTop'));
-
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
 
+  useEffect(() => {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
   return (
     <>
 

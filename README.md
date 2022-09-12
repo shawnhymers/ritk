@@ -6,6 +6,7 @@ cd Documents/websites/ritk && npm run build
 "react-on-images-loaded": "^2.2.8",
 "react-redux": "^7.2.2",
 
+cd Documents/websites/ritk && npm i react-ga
 cd Documents/websites/ritk && npm i react-on-images-loaded
 cd Documents/websites/ritk && npm i react-lazyload
 cd Documents/websites/ritk && npm i react-apexcharts
