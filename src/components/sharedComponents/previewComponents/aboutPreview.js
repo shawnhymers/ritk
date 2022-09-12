@@ -15,7 +15,7 @@ return(
       <Container>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12} xl={12} className='centered-children'>
-            <img style ={{width:'80%'}}
+            <img style ={{width:'90%'}}
             src ="/coupleIcon.png"
             loading="lazy"
             alt ='coupleIcon'
