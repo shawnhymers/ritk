@@ -264,8 +264,8 @@ const Overview= props =>{
     </Row>
     {compareType==='country'?
       <>
-        <Row className ='form-line ' style={{width:'40%',marginLeft:'8em',paddingBottom:'3em'}}>
-            <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+        <Row className ='form-line ' style={{marginLeft:'8em',paddingBottom:'3em'}}>
+            <Col xs={10} sm={10} md={6} lg={6} xl={6}>
             <SearchDrop options={countryOptions}
                         inputId ={'compareToCountry'}
                         inputName={'compareToCountry'}
@@ -280,7 +280,9 @@ const Overview= props =>{
                         invalidInput={countryError}
                         key ={'Country Compare Search'}/>
         </Col>
-
+        <Col xs={2} sm={2} md={6} lg={6} xl={6}>
+        &nbsp;
+        </Col>
         </Row>
 
         <Row style={{paddingBottom:'2em'}}>
@@ -305,8 +307,8 @@ const Overview= props =>{
       </>
       :
       <>
-        <Row className ='form-line' style={{width:'40%',marginLeft:'8em',paddingBottom:'3em'}}>
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+        <Row className ='form-line' style={{marginLeft:'8em',paddingBottom:'3em'}}>
+            <Col xs={10} sm={10} md={6} lg={6} xl={6}>
             <SearchDrop options={regionOptions}
                         inputId ={'compareToRegion'}
                         inputName={'compareToRegion'}
@@ -320,6 +322,9 @@ const Overview= props =>{
                         keyFields ={['Entity','Footprint']}
                         invalidInput={regionError}
                         key ={'Region Compare Search'}/>
+          </Col>
+          <Col xs={2} sm={2} md={6} lg={6} xl={6}>
+          &nbsp;
           </Col>
         </Row>
         <Row style={{paddingBottom:'2em'}}>
