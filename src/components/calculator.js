@@ -4,7 +4,7 @@ import { Prompt } from 'react-router'
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import {changeView, resetNavState} from "../store/actions/creators/navigation"
-import{resetSubmitState} from "../store/actions/creators/submits"
+import{resetSubmitState, hideOutcomeMessage} from "../store/actions/creators/submits"
 import coupleIcon from "../assets/icons/coupleIcon.png"
 const FlightForm = lazy(() => import('./forms/calculatorForms/flights'));
 const TransportForm = lazy(() => import('./forms/calculatorForms/transportation/main'));
@@ -27,7 +27,6 @@ class CalculatorPage extends Component {
     this.state = {
       isMobile:false,
       shouldBlockNavigation:false,
-      showOutcomeMessage:false,
       outcomeMessageType:'positive',
       showModalPrompt:false
     };
@@ -77,7 +76,8 @@ class CalculatorPage extends Component {
   }
 
   closeMessage = ()=>{
-    this.setState({showOutcomeMessage:false})
+    // this.setState({showOutcomeMessage:false})
+    this.props.dispatch(hideOutcomeMessage())
   }
   closeModal=()=>{
     this.setState({showModalPrompt:false})
@@ -129,11 +129,11 @@ class CalculatorPage extends Component {
        </>
        :
        null}
-      {this.state.showOutcomeMessage?
+      {this.props.submits.showOutcomeMessage?
         <OutcomeMessage isMobile ={this.state.isMobile}
-                        outcomeMessageType = {this.state.outcomeMessageType}
+                        outcomeMessageType = 'positive'
                         closeMessage ={this.closeMessage}
-                        message ={this.state.outcomeMessage}/>
+                        message ='Add Succesfully'/>
       :null}
       {this.state.isMobile?
           <MobileHeader changeView ={this.updateView}

@@ -50,9 +50,6 @@ const FoodForm = props =>{
     }
   }
 
-
-
-
   const [carbonFootprint, setCarbonFootprint] = useState(0);
 
   const [isAdvanced, setType]=useState(false)

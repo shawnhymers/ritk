@@ -5,7 +5,7 @@ import {SUBMIT_CAR} from '../actions/types/submits';
 import {SUBMIT_BUS} from '../actions/types/submits';
 import {SUBMIT_TRAIN} from '../actions/types/submits';
 import {SUBMIT_HOTEL} from '../actions/types/submits';
-import {RESET_SUBMIT} from '../actions/types/submits';
+import {RESET_SUBMIT, HIDE_MESSAGE} from '../actions/types/submits';
 
 const initialState = {
   flightList:[],
@@ -15,6 +15,7 @@ const initialState = {
   busList:[],
   trainList:[],
   hotelList:[],
+  showOutcomeMessage:false
 
 }
 
@@ -26,14 +27,16 @@ const submitReducer =( state= initialState, action)=>{
     case SUBMIT_FLIGHT:
       return{
         ...state,
-        flightList:[...state.flightList,action.payload]
+        flightList:[...state.flightList,action.payload],
+        showOutcomeMessage:true
       }
       break
 
     case SUBMIT_FOOD:
       return{
         ...state,
-        foodList:[...state.foodList,action.payload]
+        foodList:[...state.foodList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
@@ -41,35 +44,40 @@ const submitReducer =( state= initialState, action)=>{
     console.log('adding diet form data to store')
       return{
         ...state,
-        dietList:[...state.dietList,action.payload]
+        dietList:[...state.dietList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
     case SUBMIT_CAR:
       return{
         ...state,
-        carList:[...state.carList,action.payload]
+        carList:[...state.carList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
     case SUBMIT_BUS:
       return{
         ...state,
-        busList:[...state.busList,action.payload]
+        busList:[...state.busList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
     case SUBMIT_TRAIN:
       return{
         ...state,
-        trainList:[...state.trainList,action.payload]
+        trainList:[...state.trainList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
     case SUBMIT_HOTEL:
       return{
         ...state,
-        hotelList:[...state.hotelList,action.payload]
+        hotelList:[...state.hotelList,action.payload],
+        showOutcomeMessage:true
       };
       break
 
@@ -83,6 +91,14 @@ const submitReducer =( state= initialState, action)=>{
         busList:[],
         trainList:[],
         hotelList:[],
+        showOutcomeMessage:false
+      };
+      break
+
+    case HIDE_MESSAGE:
+      return{
+        ...state,
+        showOutcomeMessage:false
       };
       break
 

@@ -1,7 +1,7 @@
 import {SUBMIT_FLIGHT, SUBMIT_FOOD,
         SUBMIT_CAR, SUBMIT_BUS,
         SUBMIT_TRAIN, SUBMIT_HOTEL,
-        SUBMIT_DIET, RESET_SUBMIT} from '../types/submits';
+        SUBMIT_DIET, RESET_SUBMIT,HIDE_MESSAGE} from '../types/submits';
 
 export const submitFlight=(formData)=>{
   console.log('submit FLIGHT action reached')
@@ -77,5 +77,12 @@ export const resetSubmitState=()=>{
   return{
     type:RESET_SUBMIT,
     payload:{}
+  }
+}
+
+export const hideOutcomeMessage=()=>{
+  console.log('hide outcome message reached')
+  return{
+    type:HIDE_MESSAGE
   }
 }
