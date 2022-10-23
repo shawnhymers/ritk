@@ -1,7 +1,11 @@
 import React, {  lazy, Component, useState } from 'react';
-import { Row,Col} from 'react-bootstrap';
+import { Row,Col, Button} from 'react-bootstrap';
 import { Prompt } from 'react-router'
-
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import {changeView, resetNavState} from "../store/actions/creators/navigation"
+import{resetSubmitState} from "../store/actions/creators/submits"
+import coupleIcon from "../assets/icons/coupleIcon.png"
 const FlightForm = lazy(() => import('./forms/calculatorForms/flights'));
 const TransportForm = lazy(() => import('./forms/calculatorForms/transportation/main'));
 const FoodForm = lazy(() => import('./forms/calculatorForms/food'));
@@ -12,10 +16,11 @@ const DesktopHeader = lazy(() => import('./sharedComponents/navComponents/deskto
 const MobileHeader = lazy(() => import('./sharedComponents/navComponents/mobileHeader'));
 const Footer = lazy(() => import('./sharedComponents/footer'));
 const OutcomeMessage = lazy(() => import('./sharedComponents/outcomeMessage'));
-// const LoadScreen = lazy(()=> import('./sharedComponents/loadScreen'))
+const LargeModal = lazy(() => import('./sharedComponents/largeModal'));
 
 
 class CalculatorPage extends Component {
+
   // Setting up initial state
   constructor(props) {
     super(props);
@@ -24,33 +29,24 @@ class CalculatorPage extends Component {
       shouldBlockNavigation:false,
       showOutcomeMessage:false,
       outcomeMessageType:'positive',
-      flightFormData:{},
-      totalCarbonCost:0,
-      totalFlightCost:0,
-      totalTransportCost:0,
-      totalCarCost:0,
-      totalBusCost:0,
-      totalTrainCost:0,
-      totalFoodCost:0,
-      totalDietCost:0,
-      totalAccomodationCost:0,
-      flight:[],
-      transport:[],
-      car:[],
-      bus:[],
-      train:[],
-      food:[],
-      diet:[],
-      accomodation:[],
-
-
-
+      showModalPrompt:false
     };
     this.updateDimensions = this.updateDimensions.bind(this);
+
   };
   componentDidMount(){
     window.addEventListener('resize', this.updateDimensions);
     window.addEventListener("contextmenu", e => e.preventDefault());
+    if (this.props.submits.flightList.length>0 ||
+     this.props.submits.carList.length>0 ||
+     this.props.submits.busList.length>0 ||
+     this.props.submits.trainList.length>0 ||
+     this.props.submits.foodList.length>0 ||
+     this.props.submits.dietList.length>0 ||
+     this.props.submits.hotelList.length>0)
+     {
+      this.setState({showModalPrompt:true})
+      }
     setTimeout(() => {
       this.updateDimensions();
     }, 300)
@@ -79,106 +75,60 @@ class CalculatorPage extends Component {
       }
     }
   }
-  addToList =(type,data)=>{
-    console.log('adding to list of carbon items')
-    console.log('type is...'+type)
-    console.log('data is...'+data)
-    let tempArray = this.state[type]
-    tempArray.push(data);
-    console.log('temp array is...'+tempArray)
-    this.setState({[type]:tempArray},()=>{console.log(this.state[type])});
-  }
-  addCarbonCostItem = (data)=>{
-    if (data.type==='flight') {
-      this.addToList(data.type,data)
-      this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint,
-                     showOutcomeMessage:true,
-                     shouldBlockNavigation:true,
-                     outcomeMessageType:'positive',
-                     outcomeMessage:'Added succesfully!'})
 
-    }
-    else if (data.type ==='transport') {
-      this.addToList(data.subType,data)
-
-      if (data.subType==='car') {
-        this.setState({totalCarCost:this.state.totalCarCost+data.carbonFootprint,
-                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
-                       showOutcomeMessage:true,
-                       shouldBlockNavigation:true,
-                       outcomeMessageType:'positive',
-                       outcomeMessage:'Added succesfully!'})
-      }
-      else if (data.subType==='bus') {
-        this.setState({totalBusCost:this.state.totalBusCost+data.carbonFootprint,
-                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
-                       showOutcomeMessage:true,
-                       shouldBlockNavigation:true,
-                       outcomeMessageType:'positive',
-                       outcomeMessage:'Added succesfully!'})
-      }
-      else if (data.subType==='train') {
-        this.setState({totalTrainCost:this.state.totalTrainCost+data.carbonFootprint,
-                       totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
-                       showOutcomeMessage:true,
-                       shouldBlockNavigation:true,
-                       outcomeMessageType:'positive',
-                       outcomeMessage:'Added succesfully!'})
-      }
-
-    }
-    else if (data.type ==='food') {
-      this.addToList(data.type,data)
-      this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
-                     showOutcomeMessage:true,
-                     shouldBlockNavigation:true,
-                     outcomeMessageType:'positive',
-                     outcomeMessage:'Added succesfully!'})
-    }
-    else if (data.type ==='diet') {
-      console.log('saving a diet line in main.js')
-      this.addToList(data.type,data)
-      this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
-                     showOutcomeMessage:true,
-                     shouldBlockNavigation:true,
-                     outcomeMessageType:'positive',
-                     outcomeMessage:'Added succesfully!'})
-    }
-    else if (data.type ==='accomodation') {
-      this.addToList(data.type,data)
-      this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
-                     showOutcomeMessage:true,
-                     shouldBlockNavigation:true,
-                     outcomeMessageType:'positive',
-                     outcomeMessage:'Added succesfully!'})
-    }
-    else {
-      this.setState({showOutcomeMessage:true,
-                     outcomeMessageType:'negative',
-                     outcomeMessage:'Oops! Something went wrong.'})
-    }
-    this.setState({totalCarbonCost:this.state.totalCarbonCost+data.carbonFootprint})
-  }
   closeMessage = ()=>{
     this.setState({showOutcomeMessage:false})
   }
-
-  updatePageView=()=>{
-    console.log('test')
+  closeModal=()=>{
+    this.setState({showModalPrompt:false})
   }
-
-
-
+  startFresh=()=>{
+    this.props.dispatch(resetNavState())
+    this.props.dispatch(resetSubmitState())
+    this.setState({showModalPrompt:false})
+  }
   render() {
 
   return(
     <>
 
-        <div style ={{overflowX:'hidden'}} >
-      <Prompt
-        when={this.state.shouldBlockNavigation}
-        message='Leaving will discard your changes, are you sure you want to leave?'
-      />
+      <div style ={{overflowX:'hidden'}} >
+      {this.state.showModalPrompt ?
+       <>
+       <LargeModal isOpen={true}
+                   closeModal ={this.closeModal}
+                   modalTitle ={''}
+                   modalBody = {<>
+                     <Row className = 'centered-children'>
+                     <img src= {coupleIcon}
+                          alt = 'couple Icon'
+                          style={{width:'10em',paddingBottom: '1em'}}/>
+                     </Row>
+                     <Row className = 'centered-children'>
+                       <p className = 'centered-text roaming-yellow-text balloon-text '>HI THERE!</p>
+                     </Row>
+                     <Row className = 'centered-children'>
+                       <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                         &nbsp;
+                       </Col>
+                       <Col  xs={10} sm={10} md={10} lg={10} xl={10} className = 'centered-children'>
+                         <p className = 'centered-text center-justified-text roaming-black-text blog-body'>Would you like to start back where you left off, or start fresh?</p>
+                       </Col>
+                       <Col  xs={1} sm={1} md={1} lg={1} xl={1}>
+                         &nbsp;
+                       </Col>
+                     </Row>
+                     <Row>
+                      <Col className='centered-children'>
+                        <Button variant='custom' onClick={this.closeModal}>Continue</Button>
+                      </Col>
+                      <Col className='centered-children'>
+                        <Button variant='custom' onClick={this.startFresh}>Start Fresh</Button>
+                      </Col>
+                     </Row></>}/>
+       </>
+       :
+       null}
       {this.state.showOutcomeMessage?
         <OutcomeMessage isMobile ={this.state.isMobile}
                         outcomeMessageType = {this.state.outcomeMessageType}
@@ -192,26 +142,9 @@ class CalculatorPage extends Component {
           <DesktopHeader changeView ={this.updateView}
                          page ={'calculator'}/>
       }
-      <Calculator changeView ={this.updatePageView}
-                  addCarbonCostItem ={this.addCarbonCostItem}
-                  totalCarbonCost={this.state.totalCarbonCost}
-                  totalTransportCost={this.state.totalTransportCost}
-                  totalFlightCost = {this.state.totalFlightCost}
-                  totalCarCost={this.state.totalCarCost}
-                  totalBusCost={this.state.totalBusCost}
-                  totalTrainCost={this.state.totalTrainCost}
-                  totalFoodCost = {this.state.totalFoodCost}
-                  totalDietCost={this.state.totalDietCost}
-                  totalAccomodationCost = {this.state.totalAccomodationCost}
-                  isMobile={this.state.isMobile}
-                  flightList={this.state.flight}
-                  transportList={this.state.transport}
-                  carList={this.state.car}
-                  busList={this.state.bus}
-                  trainList={this.state.train}
-                  foodList={this.state.food}
-                  dietList={this.state.diet}
-                  hotelList={this.state.accomodation}/>
+      <Calculator navigation={this.props.navigation}
+                  submits={this.props.submits}
+                  isMobile={this.state.isMobile}/>
 
       <Footer isMobile={this.state.isMobile}
               isCalculator={true}/>
@@ -222,7 +155,12 @@ class CalculatorPage extends Component {
     </>
 
 )}};
-export default CalculatorPage;
+const mapStateToProps = (state) => {
+  return{submits:state.submits,navigation:state.navigation}
+};
+
+export default connect(mapStateToProps)(CalculatorPage);
+
 
 const MobileNav = props => {
 
@@ -242,7 +180,7 @@ return(
         </Row>
         <Row className ='centered-children'>
         <p className = {'centered-text '
-                       +(props.view==='flights'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       +(props.navigation.view==='flights'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
                        Flights</p>
         </Row>
       </Col>
@@ -256,7 +194,7 @@ return(
         </Row>
         <Row className ='centered-children'>
         <p className = {'centered-text '
-                       +(props.view==='transportation'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       +(props.navigation.view==='transportation'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
                        Transport</p>
         </Row>
       </Col>
@@ -271,7 +209,7 @@ return(
         </Row>
         <Row className ='centered-children'>
         <p className = {'centered-text '
-                       +(props.view==='food'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       +(props.navigation.view==='food'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
                        Food</p>
         </Row>
       </Col>
@@ -285,7 +223,7 @@ return(
         </Row>
         <Row className ='centered-children'>
         <p className = {'centered-text '
-                       +(props.view==='accomodation'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       +(props.navigation.view==='accomodation'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
                        Accomodation</p>
         </Row>
       </Col>
@@ -299,7 +237,7 @@ return(
         </Row>
         <Row className ='centered-children'>
         <p className = {'centered-text '
-                       +(props.view==='overview'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
+                       +(props.navigation.view==='overview'? 'balloon-text small-link-text':'balloon-text roaming-yellow-text small-link-text ')}>
                        Overview</p>
         </Row>
       </Col>
@@ -387,26 +325,64 @@ const DesktopNav = props =>{
   )
 }
 const Calculator = props => {
-
-  const [view,setView]=useState('flights')
-
-  const [stepCount, setStepCount]= useState(1)
+  const dispatch = useDispatch();
+  console.log('calculator props')
+  console.log(props)
 
   function updateView(view){
-    setView(view)
-    if (view==='transportation' && stepCount<=2) {
-      setStepCount(2)
+    if(view ==='flights'){
+      dispatch(changeView({view:view,stepCount:props.navigation.stepCount}))
     }
-    else if (view==='food'&& stepCount<=3) {
-      setStepCount(3)
+    else if (view==='transportation' && props.navigation.stepCount<=2) {
+      dispatch(changeView({view:view,stepCount:2}))
     }
-    else if (view==='accomodation'&& stepCount<=4) {
-      setStepCount(4)
+    else if (view==='transportation' && props.navigation.stepCount>2) {
+      dispatch(changeView({view:view,stepCount:props.navigation.stepCount}))
     }
-    else if (view==='overview'&& stepCount<=5) {
-      setStepCount(5)
+    else if (view==='food'&& props.navigation.stepCount<=3) {
+      dispatch(changeView({view:view,stepCount:3}))
+    }
+    else if (view==='food'&& props.navigation.stepCount>3) {
+      dispatch(changeView({view:view,stepCount:props.navigation.stepCount}))
+    }
+    else if (view==='accomodation'&& props.navigation.stepCount<=4) {
+      dispatch(changeView({view:view,stepCount:4}))
+    }
+    else if (view==='accomodation'&& props.navigation.stepCount>4) {
+      dispatch(changeView({view:view,stepCount:props.navigation.stepCount}))
+    }
+    else if (view==='overview'&& props.navigation.stepCount<=5) {
+      dispatch(changeView({view:view,stepCount:5}))
+    }
+    else if (view==='overview'&& props.navigation.stepCount>5) {
+      dispatch(changeView({view:view,stepCount:props.navigation.stepCount}))
     }
   }
+
+  const flightCostSum = props.submits.flightList.reduce((accumulator, flight) => {
+    return accumulator + parseFloat(flight.carbonFootprint);
+  }, 0);
+  const carCostSum = props.submits.carList.reduce((accumulator, car) => {
+    return accumulator + parseFloat(car.carbonFootprint);
+  }, 0);
+  const busCostSum = props.submits.busList.reduce((accumulator, bus) => {
+    return accumulator + parseFloat(bus.carbonFootprint);
+  }, 0);
+  const trainCostSum = props.submits.trainList.reduce((accumulator, train) => {
+    return accumulator + parseFloat(train.carbonFootprint);
+  }, 0);
+
+  const foodCostSum = props.submits.foodList.reduce((accumulator, food) => {
+    return accumulator + parseFloat(food.carbonFootprint);
+  }, 0);
+  const dietCostSum = props.submits.dietList.reduce((accumulator, diet) => {
+    return accumulator + parseFloat(diet.carbonFootprint);
+  }, 0);
+  const hotelCostSum = props.submits.hotelList.reduce((accumulator, hotel) => {
+    return accumulator + parseFloat(hotel.carbonFootprint);
+  }, 0);
+  const carbonFootprint=carCostSum+busCostSum+trainCostSum+foodCostSum+dietCostSum+hotelCostSum+flightCostSum;
+
 
 return(
   <>
@@ -414,8 +390,8 @@ return(
   {!props.isMobile?
     <>
     <Row style ={{paddingTop:'10vh'}} className ='roaming-white'>
-      <DesktopNav view ={view}
-                  stepCount ={stepCount}
+      <DesktopNav view ={props.navigation.view}
+                  stepCount ={props.navigation.stepCount}
                   updateView ={updateView}/>
     </Row>
     </>
@@ -427,65 +403,130 @@ return(
     </>}
 
     <Row className ='roaming-white 'style ={{paddingTop:'10vh'}} >
-        <CarbonTotal footprint={props.totalCarbonCost}
+        <CarbonTotal footprint={carbonFootprint}
                      label={'Total Carbon Footprint (KG)'}/>
     </Row>
-    {view==='flights'?
+    {props.navigation.view==='flights'?
     <>
       <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
-        <FlightForm addCarbonCostItem={props.addCarbonCostItem} />
+        <FlightForm />
       </Row>
     </>:null}
-    {view==='transportation'?
+    {props.navigation.view==='transportation'?
     <>
       <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
-        <TransportForm addCarbonCostItem={props.addCarbonCostItem}/>
+        <TransportForm />
       </Row>
     </>:null}
-    {view==='food'?
+    {props.navigation.view==='food'?
     <>
       <Row  className =' centered-children roaming-white' style ={{paddingBottom:'9em'}}>
-        <FoodForm addCarbonCostItem={props.addCarbonCostItem}/>
+        <FoodForm />
       </Row>
     </>:null}
 
-    {view==='accomodation'?
+    {props.navigation.view==='accomodation'?
     <>
     <Row  className ='centered-children roaming-white' style ={{paddingBottom:'9em'}}>
-      <AccomodationForm addCarbonCostItem={props.addCarbonCostItem}/>
+      <AccomodationForm />
     </Row>
     </>:null}
 
-    {view==='overview'?
+    {props.navigation.view==='overview'?
     <>
       <Row  className ='centered-children roaming-white' style ={{paddingBottom:'9em'}}>
-        <Overview totalCarbonCost = {props.totalCarbonCost}
-                  totalFlightCost = {props.totalFlightCost}
-                  totalTransportCost={props.totalTransportCost}
-                  totalCarCost={props.totalCarCost}
-                  totalBusCost={props.totalBusCost}
-                  totalTrainCost={props.totalTrainCost}
-                  totalFoodCost ={props.totalFoodCost}
-                  totalDietCost={props.totalDietCost}
-                  totalAccomodationCost = {props.totalAccomodationCost}
-                  flightList={props.flightList}
-                  transportList={props.transportList}
-                  carList={props.carList}
-                  busList={props.busList}
-                  trainList={props.trainList}
-                  foodList={props.foodList}
-                  dietList={props.dietList}
-                  hotelList={props.hotelList}
-                  isMobile={props.isMobile}/>
+        <Overview isMobile={props.isMobile}/>
       </Row>
     </>:null}
 
 
     {props.isMobile?
       <>
-        <MobileNav view ={view}
+        <MobileNav view ={props.navigation.view}
                    updateView ={updateView}/>
       </>:null}
 
   </>
 )}
+
+//
+// addToList =(type,data)=>{
+//   console.log('adding to list of carbon items')
+//   console.log('type is...'+type)
+//   console.log('data is...'+data)
+//   let tempArray = this.state[type]
+//   tempArray.push(data);
+//   console.log('temp array is...'+tempArray)
+//   this.setState({[type]:tempArray},()=>{console.log(this.state[type])});
+// }
+// addCarbonCostItem = (data)=>{
+//   if (data.type==='flight') {
+//     this.addToList(data.type,data)
+//     this.setState({totalFlightCost:this.state.totalFlightCost+data.carbonFootprint,
+//                    showOutcomeMessage:true,
+//                    shouldBlockNavigation:true,
+//                    outcomeMessageType:'positive',
+//                    outcomeMessage:'Added succesfully!'})
+//
+//   }
+//   else if (data.type ==='transport') {
+//     this.addToList(data.subType,data)
+//
+//     if (data.subType==='car') {
+//       this.setState({totalCarCost:this.state.totalCarCost+data.carbonFootprint,
+//                      totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+//                      showOutcomeMessage:true,
+//                      shouldBlockNavigation:true,
+//                      outcomeMessageType:'positive',
+//                      outcomeMessage:'Added succesfully!'})
+//     }
+//     else if (data.subType==='bus') {
+//       this.setState({totalBusCost:this.state.totalBusCost+data.carbonFootprint,
+//                      totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+//                      showOutcomeMessage:true,
+//                      shouldBlockNavigation:true,
+//                      outcomeMessageType:'positive',
+//                      outcomeMessage:'Added succesfully!'})
+//     }
+//     else if (data.subType==='train') {
+//       this.setState({totalTrainCost:this.state.totalTrainCost+data.carbonFootprint,
+//                      totalTransportCost:this.state.totalTransportCost+data.carbonFootprint,
+//                      showOutcomeMessage:true,
+//                      shouldBlockNavigation:true,
+//                      outcomeMessageType:'positive',
+//                      outcomeMessage:'Added succesfully!'})
+//     }
+//
+//   }
+//   else if (data.type ==='food') {
+//     this.addToList(data.type,data)
+//     this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
+//                    showOutcomeMessage:true,
+//                    shouldBlockNavigation:true,
+//                    outcomeMessageType:'positive',
+//                    outcomeMessage:'Added succesfully!'})
+//   }
+//   else if (data.type ==='diet') {
+//     console.log('saving a diet line in main.js')
+//     this.addToList(data.type,data)
+//     this.setState({totalFoodCost:this.state.totalFoodCost+data.carbonFootprint,
+//                    showOutcomeMessage:true,
+//                    shouldBlockNavigation:true,
+//                    outcomeMessageType:'positive',
+//                    outcomeMessage:'Added succesfully!'})
+//   }
+//   else if (data.type ==='accomodation') {
+//     this.addToList(data.type,data)
+//     this.setState({totalAccomodationCost:this.state.totalAccomodationCost+data.carbonFootprint,
+//                    showOutcomeMessage:true,
+//                    shouldBlockNavigation:true,
+//                    outcomeMessageType:'positive',
+//                    outcomeMessage:'Added succesfully!'})
+//   }
+//   else {
+//     this.setState({showOutcomeMessage:true,
+//                    outcomeMessageType:'negative',
+//                    outcomeMessage:'Oops! Something went wrong.'})
+//   }
+//   this.setState({totalCarbonCost:this.state.totalCarbonCost+data.carbonFootprint})
+// }

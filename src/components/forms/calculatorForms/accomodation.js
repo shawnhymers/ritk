@@ -1,5 +1,7 @@
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import  { useState } from 'react';
+import {submitHotel} from "../../../store/actions/creators/submits"
+import { connect } from "react-redux";
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -8,8 +10,10 @@ import CarbonTotal from "../../sharedComponents/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
 import HelpIcon from "../../sharedComponents/helpIcon"
 import GreenRadio from "../../sharedComponents/formComponents/greenRadio"
+import { useDispatch } from "react-redux";
 
 const Accomodation = props =>{
+  const dispatch = useDispatch();
 
   // const [type, setType] = useState('basic');
   const [isAdvanced, setIsAdvanced] = useState(false)
@@ -346,7 +350,8 @@ const Accomodation = props =>{
                   numberOfGuests:numberOfGuests}
 
 
-      props.addCarbonCostItem(data)
+      // props.addCarbonCostItem(data)
+      dispatch(submitHotel(data))
       resetState()
     }
     else {
@@ -448,9 +453,9 @@ const Accomodation = props =>{
                          max="100"
                          value = {avgOccupancy}
                          onChange = {updateAvgOccupancy}
-                         className ={errors.occupancyError? "error-input":""}/>
+                         className ={errors.occupancyError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="avgOccupancy"
-                         className ={errors.occupancyError? "error-label":""}>
+                         className ={errors.occupancyError? "error-label":"dropdown-text roaming-black-text"}>
                     Average Occupancy (%)
                   </label>
                 </Row>
@@ -470,9 +475,9 @@ const Accomodation = props =>{
                          max="100"
                          value = {electricConsumption}
                          onChange = {updateElectricConsumption}
-                         className ={errors.electricConsumptionError? "error-input":""}/>
+                         className ={errors.electricConsumptionError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="electricConsumption"
-                         className ={errors.electricConsumptionError? "error-label":""}>Electricity Consumption (kWh/ M^2 Year)</label>
+                         className ={errors.electricConsumptionError? "error-label":"dropdown-text roaming-black-text"}>Electricity Consumption (kWh/ M^2 Year)</label>
                 </Row>
               </Col>
               <Col>
@@ -490,9 +495,9 @@ const Accomodation = props =>{
                          max="1000"
                          value = {fuelConsumption}
                          onChange = {updateFuelConsumption}
-                         className ={errors.fuelConsumptionError? "error-input":""}/>
+                         className ={errors.fuelConsumptionError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="fuelConsumption"
-                         className ={errors.fuelConsumptionError? "error-label":""}>
+                         className ={errors.fuelConsumptionError? "error-label":"dropdown-text roaming-black-text"}>
                     Fuel Consumption (kWh/ M^2 Year)
                   </label>
                 </Row>
@@ -512,9 +517,9 @@ const Accomodation = props =>{
 
                          value = {waterConsumption}
                          onChange = {updateWaterConsumption}
-                         className ={errors.waterConsumptionError? "error-input":""}/>
+                         className ={errors.waterConsumptionError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="gasConsumption"
-                         className ={errors.waterConsumptionError? "error-label":""}>
+                         className ={errors.waterConsumptionError? "error-label":"dropdown-text roaming-black-text"}>
                     Water Consumption (kWh/ M^2 Year)
                   </label>
                 </Row>
@@ -534,9 +539,9 @@ const Accomodation = props =>{
                          value = {hotelName}
                          placeholder ='Name:'
                          onChange = {updateHotelName}
-                         className ={errors.nameError? "error-input":""}/>
+                         className ={errors.nameError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="hotelName"
-                         className ={errors.nameError? "error-label":""}>
+                         className ={errors.nameError? "error-label":"dropdown-text roaming-black-text"}>
                     Name:
                   </label>
                 </Row>
@@ -555,9 +560,9 @@ const Accomodation = props =>{
                          placeholder ='Number of Nights:'
                          value = {numberOfNights}
                          onChange = {updateNumberOfNights}
-                         className ={errors.nightsError? "error-input":""}/>
+                         className ={errors.nightsError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="numberOfNightsAdv"
-                         className ={errors.nightsError? "error-label":""}>
+                         className ={errors.nightsError? "error-label":"dropdown-text roaming-black-text"}>
                     Number of Nights
                   </label>
                 </Row>
@@ -575,9 +580,9 @@ const Accomodation = props =>{
                      value = {numberOfGuests}
                      placeholder ='People Per Room'
                      onChange = {updateNumberOfGuests}
-                     className ={errors.nightsError? "error-input":""}/>
+                     className ={errors.nightsError? "error-input":"dropdown-text roaming-black-text"}/>
               <label htmlFor="numberOfGuests"
-                     className ={errors.nightsError? "error-label":""}>
+                     className ={errors.nightsError? "error-label":"dropdown-text roaming-black-text"}>
                 People Per Room
               </label>
               </Row>
@@ -625,9 +630,9 @@ const Accomodation = props =>{
                          value = {hotelName}
                          placeholder ='Name:'
                          onChange = {updateHotelName}
-                         className ={errors.nameError? "error-input":""}/>
+                         className ={errors.nameError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="names"
-                         className ={errors.nameError? "error-label":""}>
+                         className ={errors.nameError? "error-label":"dropdown-text roaming-black-text"}>
                     Name:
                   </label>
                 </Row>
@@ -648,9 +653,9 @@ const Accomodation = props =>{
                      value = {numberOfNights}
                      placeholder ='Number of Nights:'
                      onChange = {updateNumberOfNights}
-                     className ={errors.nightsError? "error-input":""}/>
+                     className ={errors.nightsError? "error-input":"dropdown-text roaming-black-text"}/>
               <label htmlFor="numberOfNights"
-                     className ={errors.nightsError? "error-label":""}>
+                     className ={errors.nightsError? "error-label":"dropdown-text roaming-black-text"}>
                 Number of Nights:
               </label>
               </Row>
@@ -671,9 +676,9 @@ const Accomodation = props =>{
                    value = {numberOfGuests}
                    placeholder ='People Per Room'
                    onChange = {updateNumberOfGuests}
-                   className ={errors.nightsError? "error-input":""}/>
+                   className ={errors.nightsError? "error-input":"dropdown-text roaming-black-text"}/>
             <label htmlFor="numberOfGuests"
-                   className ={errors.nightsError? "error-label":""}>
+                   className ={errors.nightsError? "error-label":"dropdown-text roaming-black-text"}>
               People Per Room
             </label>
             </Row>
@@ -701,4 +706,8 @@ const Accomodation = props =>{
     </>
   )
 }
-export default Accomodation;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
+
+export default connect(mapStateToProps,{submitHotel})(Accomodation);

@@ -1,6 +1,14 @@
 cd Documents/websites/ritk && npm start
 cd Documents/websites/ritk && npm run build
 
+
+cd Documents/websites/ritk &&  npm i react-redux
+cd Documents/websites/ritk &&  npm i redux
+cd Documents/websites/ritk &&  npm i redux-thunk
+cd Documents/websites/ritk && npm i @redux-devtools/extension
+
+cd Documents/Apps && create-react-native-app my-project
+
 "redux": "^4.1.2",
 "redux-thunk": "^2.4.1",
 "react-on-images-loaded": "^2.2.8",

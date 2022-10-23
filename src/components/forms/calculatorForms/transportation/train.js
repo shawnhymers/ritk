@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
+import { connect } from "react-redux";
+import {submitTrain} from "../../../../store/actions/creators/submits"
 import {useState} from "react";
 import gridData from "../../../data/gridData"
 import SearchDrop from '../../../sharedComponents/formComponents/searchDrop';
@@ -10,10 +12,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 import CarbonTotal from "../../../sharedComponents/carbonTotal"
 import HelpIcon from "../../../sharedComponents/helpIcon"
 import GreenRadio from "../../../sharedComponents/formComponents/greenRadio"
-
+import { useDispatch } from "react-redux";
 
 const TrainForm = props => {
-
+  const dispatch = useDispatch();
   const [countrySearchValue, setCountrySearchValue] =useState('')
 
   const [countryOptions, setCountryOptions] = useState(gridData);
@@ -92,7 +94,8 @@ const TrainForm = props => {
                  type:'transport',
                  subType:'train'
              }
-      props.addCarbonCostItem(data)
+      // props.addCarbonCostItem(data)
+      dispatch(submitTrain(data))
       resetState()
     }
     else {
@@ -181,9 +184,9 @@ return(
                        name = "distance"
                        placeholder = "Distance (Km)"
                        onChange ={updateDistance}
-                       className ={distanceError? "error-input":""}/>
+                       className ={distanceError? "error-input":"dropdown-text roaming-black-text"}/>
                 <label htmlFor="distance"
-                       className ={distanceError? "error-label":""}>
+                       className ={distanceError? "error-label":"dropdown-text roaming-black-text"}>
                   Distance (km)
                 </label>
               </Row>
@@ -208,4 +211,8 @@ return(
   </>
 )}
 
-export default TrainForm;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
+
+export default connect(mapStateToProps,{submitTrain})(TrainForm);

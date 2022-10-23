@@ -1,5 +1,7 @@
 import { Container, Row, Col} from 'react-bootstrap';
 import {useState} from "react";
+import { connect } from "react-redux";
+
 import CarbonTotal from "../../sharedComponents/carbonTotal"
 import ReactApexCharts from 'react-apexcharts'
 import countryFootprintData from "../../data/countryFootprintData"
@@ -29,7 +31,30 @@ const Overview= props =>{
 
   const [itemType, setItemType]=useState('flight')
 
-
+  const flightCostSum = props.submits.flightList.reduce((accumulator, flight) => {
+    return accumulator + parseFloat(flight.carbonFootprint);
+  }, 0);
+  const carCostSum = props.submits.carList.reduce((accumulator, car) => {
+    return accumulator + parseFloat(car.carbonFootprint);
+  }, 0);
+  const busCostSum = props.submits.busList.reduce((accumulator, bus) => {
+    return accumulator + parseFloat(bus.carbonFootprint);
+  }, 0);
+  const trainCostSum = props.submits.trainList.reduce((accumulator, train) => {
+    return accumulator + parseFloat(train.carbonFootprint);
+  }, 0);
+  const transportCostSum=carCostSum+busCostSum+trainCostSum;
+  const foodCostSum = props.submits.foodList.reduce((accumulator, food) => {
+    return accumulator + parseFloat(food.carbonFootprint);
+  }, 0);
+  const dietCostSum = props.submits.dietList.reduce((accumulator, diet) => {
+    return accumulator + parseFloat(diet.carbonFootprint);
+  }, 0);
+  const foodTotalSum=foodCostSum+dietCostSum;
+  const hotelCostSum = props.submits.hotelList.reduce((accumulator, hotel) => {
+    return accumulator + parseFloat(hotel.carbonFootprint);
+  }, 0);
+  var totalCarbonCost=hotelCostSum+foodTotalSum+transportCostSum+flightCostSum;
 
   function updateCompareType(e){
     if (e.target.value!==compareType) {
@@ -65,7 +90,6 @@ const Overview= props =>{
   function selectCompareToCountry(country){
     setSelectedCountry(country)
   }
-
   function updateRegionSearchValue(value){
     setRegionSearchValue(value);
     if (value==='') {
@@ -89,10 +113,10 @@ const Overview= props =>{
       <div id="chart" className ='vertical-padding-sm'>
         <ReactApexCharts  type="bar" height={350}
         series = {[{name: 'Carbon Footprint',
-                                 data: [parseFloat(props.totalFlightCost).toFixed(2),
-                                        parseFloat(props.totalTransportCost).toFixed(2),
-                                        parseFloat(props.totalFoodCost).toFixed(2),
-                                        parseFloat(props.totalAccomodationCost).toFixed(2)]}]}
+                                 data: [parseFloat(flightCostSum).toFixed(2),
+                                        parseFloat(transportCostSum).toFixed(2),
+                                        parseFloat(foodTotalSum).toFixed(2),
+                                        parseFloat(hotelCostSum).toFixed(2)]}]}
                      options = {{chart: {height: 360,
                                          type: 'bar'
                                          },
@@ -186,7 +210,7 @@ const Overview= props =>{
           <Row style={{paddingBottom:'2em'}}>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}>
               <Row >
-                <CarbonTotal footprint={props.totalCarbonCost}
+                <CarbonTotal footprint={totalCarbonCost}
                              label={'Your trips Carbon Footprint (KG)'}/>
               </Row>
             </Col>
@@ -223,7 +247,7 @@ const Overview= props =>{
           <Row style={{paddingBottom:'2em'}}>
             <Col xs={12} sm={12} md={6} lg={6} xl={6}>
               <Row>
-                <CarbonTotal footprint={props.totalCarbonCost}
+                <CarbonTotal footprint={totalCarbonCost}
                              label={'Your trips Carbon Footprint (KG)'}/>
               </Row>
             </Col>
@@ -288,7 +312,7 @@ const Overview= props =>{
         <Row style={{paddingBottom:'2em'}}>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
             <Row >
-              <CarbonTotal footprint={props.totalCarbonCost}
+              <CarbonTotal footprint={totalCarbonCost}
                            label={'Your trips Carbon Footprint (KG)'}/>
             </Row>
           </Col>
@@ -330,7 +354,7 @@ const Overview= props =>{
         <Row style={{paddingBottom:'2em'}}>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
             <Row>
-              <CarbonTotal footprint={props.totalCarbonCost}
+              <CarbonTotal footprint={totalCarbonCost}
                            label={'Your trips Carbon Footprint (KG)'}/>
             </Row>
           </Col>
@@ -429,7 +453,7 @@ const Overview= props =>{
           <p className='roaming-text-sm '>Footprint (KG)</p>
         </Col>
       </Row>
-      {props.flightList.map((flight, i)=>{
+      {props.submits.flightList.map((flight, i)=>{
                     return <FlightList flight ={flight}
                                         isMobile={props.isMobile}
                                         key={i}/>})}
@@ -440,7 +464,7 @@ const Overview= props =>{
         </Col>
         <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
           <p className='roaming-text-sm roaming-yellow-text '>
-          {'Total: '+(props.totalFlightCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+          {'Total: '+(flightCostSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
           </p>
         </Col>
       </Row>
@@ -466,7 +490,7 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.carList.map((transport, i)=>{
+  {props.submits.carList.map((transport, i)=>{
                 return <CarList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
@@ -477,7 +501,7 @@ const Overview= props =>{
     </Col>
     <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
       <p className='roaming-text-sm '>
-      {'Total: '+(props.totalCarCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      {'Total: '+(carCostSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
       </p>
     </Col>
   </Row>
@@ -499,7 +523,7 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.busList.map((transport, i)=>{
+  {props.submits.busList.map((transport, i)=>{
                 return <BusList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
@@ -511,7 +535,7 @@ const Overview= props =>{
     </Col>
     <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
       <p className='roaming-text-sm '>
-      {'Total: '+(props.totalBusCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      {'Total: '+(busCostSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
       </p>
     </Col>
   </Row>
@@ -532,7 +556,7 @@ const Overview= props =>{
       <p className='roaming-text-sm '>Footprint (KG)</p>
     </Col>
   </Row>
-  {props.trainList.map((transport, i)=>{
+  {props.submits.trainList.map((transport, i)=>{
                 return <TrainList transport ={transport}
                                     isMobile={props.isMobile}
                                     key={i}/>})}
@@ -542,7 +566,7 @@ const Overview= props =>{
     </Col>
     <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
       <p className='roaming-text-sm '>
-      {'Total: '+(props.totalTrainCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+      {'Total: '+(trainCostSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
       </p>
     </Col>
   </Row>
@@ -564,7 +588,7 @@ const Overview= props =>{
     <p className='roaming-text-sm '>Footprint (KG)</p>
   </Col>
 </Row>
-{props.dietList.map((diet, i)=>{
+{props.submits.dietList.map((diet, i)=>{
               return <DietList diet ={diet}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
@@ -585,7 +609,7 @@ const Overview= props =>{
   <p className='roaming-text-sm '>Footprint (KG)</p>
 </Col>
 </Row>
-{props.foodList.map((food, i)=>{
+{props.submits.foodList.map((food, i)=>{
             return <FoodList food ={food}
                                 isMobile={props.isMobile}
                                 key={i}/>})}
@@ -595,7 +619,7 @@ const Overview= props =>{
   </Col>
   <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
     <p className='roaming-text-sm '>
-    {'Total: '+(props.totalFoodCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+    {'Total: '+(foodTotalSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
     </p>
   </Col>
 </Row>
@@ -618,7 +642,7 @@ const Overview= props =>{
     <p className='roaming-text-sm '>Footprint (KG)</p>
   </Col>
 </Row>
-{props.hotelList.map((hotel, i)=>{
+{props.submits.hotelList.map((hotel, i)=>{
               return <HotelList hotel ={hotel}
                                   isMobile={props.isMobile}
                                   key={i}/>})}
@@ -628,7 +652,7 @@ const Overview= props =>{
   </Col>
   <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
     <p className='roaming-text-sm '>
-    {'Total: '+(props.totalAccomodationCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
+    {'Total: '+(hotelCostSum).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
     </p>
   </Col>
 </Row>
@@ -817,17 +841,11 @@ const HotelList =props=>{
     </>
   )
 }
-export default Overview;
 
 
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation,
+         submits:state.submits}
+};
 
-// <Row>
-//   <Col xs={9} sm={9} md={9} lg={9} xl={9}>
-//     &nbsp;
-//   </Col>
-//   <Col xs={3} sm={3} md={3} lg={3} xl={3} className='small-top-border'>
-//     <p className='roaming-text-sm '>
-//     {'Total: '+(props.totalDietCost).toLocaleString(undefined, { maximumFractionDigits: 1,minimumFractionDigits:1 })+' (KG)'}
-//     </p>
-//   </Col>
-// </Row>
+export default connect(mapStateToProps,{})(Overview);

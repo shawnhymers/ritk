@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from "react-redux";
+import {submitBus} from "../../../../store/actions/creators/submits"
 import CarbonTotal from "../../../sharedComponents/carbonTotal"
 import { Container, Row, Col, Button} from 'react-bootstrap';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -8,10 +10,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 import  { useState } from 'react';
 import HelpIcon from "../../../sharedComponents/helpIcon"
 import GreenRadio from "../../../sharedComponents/formComponents/greenRadio"
-
+import { useDispatch } from "react-redux";
 
 const BusForm = props => {
-
+  const dispatch = useDispatch();
 
   const [milage, setMilage] = useState(40)
   const [distance, setDistance]=useState('')
@@ -91,7 +93,8 @@ const BusForm = props => {
                   subType:'bus'}
 
 
-      props.addCarbonCostItem(data)
+      // props.addCarbonCostItem(data)
+      dispatch(submitBus(data))
       resetState()
     }
     else {
@@ -160,9 +163,9 @@ return(
                        value = {distance}
                        placeholder = "Distance (Km)"
                        onChange = {updateDistance}
-                       className ={distanceError? "error-input":""}/>
+                       className ={distanceError? "error-input":"dropdown-text roaming-black-text"}/>
                 <label htmlFor="distance"
-                       className ={distanceError? "error-label":""}>
+                       className ={distanceError? "error-label":"dropdown-text roaming-black-text"}>
                   Distance (Km)
                 </label>
               </Row>
@@ -187,4 +190,8 @@ return(
   </>
 )}
 
-export default BusForm;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
+
+export default connect(mapStateToProps,{submitBus})(BusForm);

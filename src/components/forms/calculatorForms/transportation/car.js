@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
+import { connect } from "react-redux";
+import {submitCar} from "../../../../store/actions/creators/submits"
 import FormCheck from "react-bootstrap/FormCheck"
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,8 +14,10 @@ import SearchDrop from '../../../sharedComponents/formComponents/searchDrop';
 import CarbonTotal from "../../../sharedComponents/carbonTotal"
 import HelpIcon from "../../../sharedComponents/helpIcon"
 import GreenRadio from "../../../sharedComponents/formComponents/greenRadio"
+import { useDispatch } from "react-redux";
 
 const CarForm = props => {
+  const dispatch = useDispatch();
 
   const [isAdvanced, setType]=useState(false)
 
@@ -298,7 +302,8 @@ const CarForm = props => {
                     vehicle:vehicle.Make+', '+vehicle.Model,
                     type:'transport',
                     subType:'car'}
-        props.addCarbonCostItem(data)
+        // props.addCarbonCostItem(data)
+        dispatch(submitCar(data))
       }
       else {
         let data = {distance:distance,
@@ -308,7 +313,8 @@ const CarForm = props => {
                     vehicle:basicCarType,
                     type:'transport',
                     subType:'car'}
-        props.addCarbonCostItem(data)
+        // props.addCarbonCostItem(data)
+        dispatch(submitCar(data))
       }
       resetState()
     }
@@ -444,9 +450,9 @@ return(
                        value = {passengers}
                        placeholder = "Number of Passengers"
                        onChange = {updatePassengers}
-                       className ={basicErrors.passengerError? "error-input":""}/>
+                       className ={basicErrors.passengerError? "error-input":"dropdown-text roaming-black-text"}/>
                 <label htmlFor="passengers"
-                       className ={basicErrors.passengerError? "error-label":""}>
+                       className ={basicErrors.passengerError? "error-label":"dropdown-text roaming-black-text"}>
                   Number of Passengers
                 </label>
               </Row>
@@ -466,9 +472,9 @@ return(
                      value = {distance}
                      placeholder = "Distance (Km)"
                      onChange = {updateDistance}
-                     className ={basicErrors.distanceError? "error-input":""}/>
+                     className ={basicErrors.distanceError? "error-input":"dropdown-text roaming-black-text"}/>
               <label htmlFor="distance"
-                     className ={basicErrors.distanceError? "error-label":""}>
+                     className ={basicErrors.distanceError? "error-label":"dropdown-text roaming-black-text"}>
                 Distance (Km)
               </label>
             </Row>
@@ -546,9 +552,9 @@ return(
                          value = {passengers}
                          placeholder = "Number of Passengers"
                          onChange = {updatePassengers}
-                         className ={advancedErrors.passengerError? "error-input":""}/>
+                         className ={advancedErrors.passengerError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="passengers"
-                         className ={advancedErrors.passengerError? "error-label":""}>
+                         className ={advancedErrors.passengerError? "error-label":"dropdown-text roaming-black-text"}>
                     Number of Passengers
                   </label>
                 </Row>
@@ -569,9 +575,9 @@ return(
                          value = {distance}
                          placeholder = "Distance (Km)"
                          onChange = {updateDistance}
-                         className ={advancedErrors.distanceError? "error-input":""}/>
+                         className ={advancedErrors.distanceError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="distance"
-                         className = {advancedErrors.distanceError? "error-label":""}>
+                         className = {advancedErrors.distanceError? "error-label":"dropdown-text roaming-black-text"}>
                     Distance (Km)
                   </label>
                 </Row>
@@ -598,4 +604,8 @@ return(
   </>
 )}
 
-export default CarForm;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
+
+export default connect(mapStateToProps,{submitCar})(CarForm);

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container,Row,Col,Button} from 'react-bootstrap';
+import { connect } from "react-redux";
+import {submitFlight} from "../../../store/actions/creators/submits"
 import  { useState,useEffect } from 'react';
 import airportData from "../../data/airportData"
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -10,8 +12,11 @@ import SearchDrop from '../../sharedComponents/formComponents/searchDrop';
 import HelpIcon from "../../sharedComponents/helpIcon"
 import CarbonTotal from '../../sharedComponents/carbonTotal'
 import GreenRadio from "../../sharedComponents/formComponents/greenRadio"
+import { useDispatch } from "react-redux";
+
 
 const FlightForm = props => {
+  const dispatch = useDispatch();
 
   const [searchBy, setSearchBy]=useState('City')
 
@@ -232,7 +237,8 @@ const FlightForm = props => {
               type :'flight'}
 
     if (data.toAirport!==''&&data.fromAirport!=='' && data.carbonFootprint>0) {
-      props.addCarbonCostItem(data)
+      // props.addCarbonCostItem(data)
+      dispatch(submitFlight(data))
       resetState()
     }
     else {
@@ -368,4 +374,8 @@ return(
   </>
 )}
 
-export default FlightForm;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
+
+export default connect(mapStateToProps,{submitFlight})(FlightForm);

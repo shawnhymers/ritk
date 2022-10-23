@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import {  Row, Col, Container} from 'react-bootstrap';
 import ReactGA from 'react-ga';
+import store from './store/store';
+import {Provider} from 'react-redux';
 import  { useEffect } from 'react';
 import coupleIcon from "./assets/icons/coupleIcon.png"
 
@@ -74,7 +76,7 @@ function App() {
     }, []);
   return (
     <>
-
+      <Provider store ={store}>
         <Router>
           <Suspense fallback={
             <Container className ='roaming-white full-width' style ={{height:'100vh'}}>
@@ -154,6 +156,7 @@ function App() {
             </ScrollToTop>
           </Suspense>
         </Router>
+      </Provider>
 
     </>
   );

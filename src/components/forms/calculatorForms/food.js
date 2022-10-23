@@ -1,6 +1,6 @@
-// import NewFoodForm from './forms/newFoodForm'
 import { Container, Row, Col, Button,Form} from 'react-bootstrap';
-// import FoodList from "../lists/foodList"
+import { connect } from "react-redux";
+import {submitFood,submitDiet} from "../../../store/actions/creators/submits"
 import {useState} from "react";
 import Dropdown from '../../sharedComponents/formComponents/dropdown';
 import foodData from "../../data/foodData"
@@ -8,10 +8,10 @@ import dietData from "../../data/dietData"
 import CarbonTotal from "../../sharedComponents/carbonTotal"
 import FormCheck from "react-bootstrap/FormCheck"
 import HelpIcon from "../../sharedComponents/helpIcon"
+import { useDispatch } from "react-redux";
 
 const FoodForm = props =>{
-
-
+  const dispatch = useDispatch();
   const [foodQuantity, setFoodQuantity]=useState('')
   function updateFoodQuantity(e){
     console.log('updating food quantity test')
@@ -98,7 +98,8 @@ const FoodForm = props =>{
                     carbonFootprint: carbonFootprint
         }
         console.log(data)
-        props.addCarbonCostItem(data)
+        // props.addCarbonCostItem(data)
+        dispatch(submitFood(data))
       }
       else {
         let data ={ type:'diet',
@@ -108,7 +109,8 @@ const FoodForm = props =>{
                     carbonFootprint: carbonFootprint
         }
         console.log(data)
-        props.addCarbonCostItem(data)
+        // props.addCarbonCostItem(data)
+        dispatch(submitDiet(data))
       }
       setFoodQuantity('')
       setDietQuantity('')
@@ -203,9 +205,9 @@ const FoodForm = props =>{
                            value = {foodQuantity }
                            placeholder = 'Number of Servings'
                            onChange = {updateFoodQuantity}
-                           className ={foodQuantityError? "error-input":""}/>
+                           className ={foodQuantityError? "error-input":"dropdown-text roaming-black-text"}/>
                     <label htmlFor="foodQuantity"
-                           className ={foodQuantityError? "error-label":""}>
+                           className ={foodQuantityError? "error-label":"dropdown-text roaming-black-text"}>
                     {'Number of Servings'}
                     </label>
                   </Row>
@@ -251,9 +253,9 @@ const FoodForm = props =>{
                          value = {dietQuantity}
                          placeholder ='Number of Days'
                          onChange = {updateDietQuantity}
-                         className ={dietQuantityError? "error-input":""}/>
+                         className ={dietQuantityError? "error-input":"dropdown-text roaming-black-text"}/>
                   <label htmlFor="dietQuantity"
-                         className ={dietQuantityError? "error-label":""}>
+                         className ={dietQuantityError? "error-label":"dropdown-text roaming-black-text"}>
                     {'Number of Days'}
                   </label>
                 </Row>
@@ -280,24 +282,8 @@ const FoodForm = props =>{
     </>
   )
 }
-export default FoodForm;
+const mapStateToProps = (state) => {
+  return{navigation:state.navigation}
+};
 
-
-//
-//
-// <Row className ='form-line'>
-//   <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-//     <Row>
-//       <select value = {selectedDiet.food}
-//               onChange = {(e)=>updateDietType(e)}
-//               className="browser-default">
-//         {dietData.map((diet, i)=>{return <Dropdown value = {diet.food}
-//                                                    displayValue ={diet.food+' ('+diet.servingDescr+')'}
-//                                                    key={diet.food+i}/>})}
-//       </select>
-//     </Row>
-//   </Col>
-//   <Col>
-//     <HelpIcon message =""/>
-//   </Col>
-// </Row>
+export default connect(mapStateToProps,{submitFood,submitDiet})(FoodForm);
